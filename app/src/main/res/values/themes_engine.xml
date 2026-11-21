@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- v1.9.6 UI 引擎：三个引擎共用同一套功能代码，只换视觉层。
+         覆盖层由 MainActivity.applyPrefs 在种子色/动态颜色之后应用
+         （在 super.onCreate 之后、setContentView 之前，照 v1.9.3 的修法）。
+         Max 18:43/18:49 决定：Miuix 和 M3 Expressive 的颜色也要跟着应用
+         配色/动态颜色走——所以两个引擎覆盖层里不再写死任何颜色，只留
+         形状（圆角）和卡片样式；配色全部交给种子色/动态颜色生成的方案。
+         MD3（默认）不应用任何覆盖层，现有行为一个字不改。
+         卡片圆角不写死在 layout 里，改由 materialCardViewStyle 驱动
+         （基础主题默认 24dp，见 values[-night]/themes.xml）。 -->
+
+    <!-- M3 Expressive：更圆润、更鲜明——按钮药丸形、卡片 32dp、对话框
+         36dp 大圆角。颜色不写死，跟着应用配色/动态颜色变。 -->
+    <style name="ThemeOverlay.Fairu.Expressive" parent="">
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Fairu.Expressive.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Fairu.Expressive.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Fairu.Expressive.Large</item>
+        <item name="materialCardViewStyle">@style/Widget.Fairu.CardView.Expressive</item>
+    </style>
+
+    <!-- Miuix：按 compose-miuix-ui/miuix（commit 5ff41ba）的设计 token
+         在 View 体系里重做的外观（miuix 库本身是 Compose 的，接不进本
+         项目，和 HAZE 一样）。形状：卡片/按钮/输入框 16dp 圆角、对话框
+         32dp；顶栏用 surface 底 + onSurface 字（fairuToolbarBackground /
+         fairuToolbarTitleColor 仍引用主题的 surface/onSurface，所以顶栏
+         颜色也跟着种子色走）。颜色不写死，跟着应用配色/动态颜色变。 -->
+    <style name="ThemeOverlay.Fairu.Miuix" parent="">
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="fairuToolbarBackground">?attr/colorSurface</item>
+        <item name="fairuToolbarTitleColor">?attr/colorOnSurface</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Fairu.Miuix.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Fairu.Miuix.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Fairu.Miuix.Large</item>
+        <item name="materialCardViewStyle">@style/Widget.Fairu.CardView.Miuix</item>
+    </style>
+
+    <!-- Expressive 形状：按钮药丸形，卡片/对话框超大圆角。 -->
+    <style name="ShapeAppearance.Fairu.Expressive.Small" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerSize">50%</item>
+    </style>
+    <style name="ShapeAppearance.Fairu.Expressive.Medium" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerSize">24dp</item>
+    </style>
+    <style name="ShapeAppearance.Fairu.Expressive.Large" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerSize">32dp</item>
+    </style>
+
+    <!-- Miuix 形状（按 miuix 库：Card/Button/TextField/ListPopup 都是 16dp，
+         对话框 DialogDefaults.CornerRadius = 32dp）。 -->
+    <style name="ShapeAppearance.Fairu.Miuix.Small" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerSize">16dp</item>
+    </style>
+    <style name="ShapeAppearance.Fairu.Miuix.Medium" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerSize">16dp</item>
+    </style>
+    <style name="ShapeAppearance.Fairu.Miuix.Large" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerSize">32dp</item>
+    </style>
+
+    <!-- 卡片样式：默认（MD3）24dp，和以前 layout 里写死的 24dp 一致。 -->
+    <style name="Widget.Fairu.CardView" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">24dp</item>
+    </style>
+    <style name="Widget.Fairu.CardView.Expressive" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">32dp</item>
+    </style>
+    <style name="Widget.Fairu.CardView.Miuix" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">16dp</item>
+    </style>
+
+    <!-- v1.9.6 液态玻璃（浅色）：面板半透明。只改颜色，不改引擎的形状；
+         窗口背景模糊只在 API 31+ 生效（API 29 只有半透明、无模糊）。
+         colorSurface 保持不透明（窗口底色），透的是盖在上面的面板。
+         注意：这里故意不写 colorPrimary / colorPrimaryContainer /
+         colorSecondaryContainer——以前写死的 #D9475D92 就是默认种子蓝
+         的主色 #475D92，盖在种子色之后应用，把种子色/动态颜色算出来的
+         主色整个盖掉，glassTintColor() 读到的永远是默认蓝，玻璃色调
+         自然跟种子变不了（2026-11-20 红绿抽屉逐像素相同的根因）。
+         表面容器只留带透明度的底色（半透明机制），色相由玻璃染色层
+         glassTintColor() 从种子主色取。 -->
+    <style name="ThemeOverlay.Fairu.LiquidGlass" parent="">
+        <item name="colorSurfaceContainer">#E6F5EFF7</item>
+        <item name="colorSurfaceContainerLowest">#B3FFFFFF</item>
+        <item name="colorSurfaceContainerHigh">#B3EDE7F0</item>
+        <item name="colorSurfaceVariant">#CCE1E2EC</item>
+        <item name="android:windowBackgroundBlurRadius">24dp</item>
+        <item name="android:windowBlurBehindRadius">20dp</item>
+        <item name="android:windowBlurBehindEnabled">true</item>
+    </style>
+</resources>

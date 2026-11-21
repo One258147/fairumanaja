@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Appearance strings (v1.9.0). theme_mode / theme_system / theme_light /
+     theme_dark / cancel / confirm already exist in values/strings.xml. -->
+<resources>
+    <string name="appearance">Appearance</string>
+    <string name="dynamic_color">Dynamic color</string>
+    <string name="dynamic_color_hint">Only supported on Android 12 and above or desktop platforms</string>
+    <string name="dynamic_color_confirm_title">Dynamic color</string>
+    <string name="dynamic_color_confirm_msg">When dynamic color is on, the app colors follow your system wallpaper colors and change with the wallpaper. Turn on dynamic color?</string>
+    <string name="app_color">App color</string>
+    <string name="app_color_disabled_hint">To use this feature, please turn off dynamic color first</string>
+    <string name="font_color">Font color</string>
+    <string name="font_color_group_base">Base colors</string>
+    <string name="font_color_group_light">Light colors</string>
+    <string name="font_color_group_dark">Dark colors</string>
+</resources>

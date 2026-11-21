@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- v1.9.0 新增字符串（中文默认）。其他语言缺失时回落到这里。 -->
+<resources>
+    <string name="compress_item">压缩</string>
+    <string name="copy_path">复制路径</string>
+    <string name="move_item">移动</string>
+    <string name="more_actions">更多方式</string>
+    <string name="copy_to_other">复制 -&gt;</string>
+    <string name="move_to_other">移动 -&gt;</string>
+    <string name="share_zip">分享 ZIP</string>
+    <string name="pin_folder">Pin folder</string>
+    <string name="unpin_folder">取消置顶</string>
+    <string name="encrypt_file">文件加密</string>
+    <string name="decrypt_file">文件解密</string>
+    <string name="bookmarks_title">书签</string>
+    <string name="move_to_trash">移动到回收站</string>
+    <string name="delete_to_trash_msg">是否将文件 %1$s 移动到回收站？</string>
+    <string name="delete_to_trash_multi_msg">是否将 %1$d 个项目移动到回收站？</string>
+    <string name="file_count">文件数</string>
+    <string name="folder_count">文件夹数</string>
+    <string name="restore_confirm_msg">是否将文件 %1$s 恢复至原处？</string>
+    <string name="restore_confirm_multi_msg">是否将 %1$d 个项目恢复至原处？</string>
+    <string name="delete_permanent_msg">是否将文件 %1$s 永久删除？</string>
+    <string name="delete_permanent_multi_msg">是否将 %1$d 个项目永久删除？</string>
+    <string name="path_copied">路径已复制</string>
+    <string name="moved">已移动</string>
+    <string name="move_failed">移动失败</string>
+    <string name="move_not_supported">该储存不支持移动</string>
+    <string name="other_pane_no_folder">另一窗口未打开文件夹</string>
+    <string name="already_here">已在该文件夹</string>
+    <string name="new_title">新建</string>
+    <string name="new_file_short">文件</string>
+    <string name="new_folder_short">文件夹</string>
+    <string name="clipboard_empty">剪贴板为空或不是文本</string>
+    <string name="name_exists">已存在同名文件或文件夹</string>
+    <string name="invalid_name">名称无效</string>
+    <string name="trash_move_failed">移入回收站失败，未删除任何文件</string>
+    <string name="bookmark_added">已加入书签</string>
+    <string name="bookmark_removed">已取消书签</string>
+    <string name="pinned">已置顶</string>
+    <string name="unpinned">已取消置顶</string>
+    <string name="hidden_done">已隐藏</string>
+    <string name="unhidden_done">已取消隐藏</string>
+    <string name="password_hint">输入密码</string>
+    <string name="password_confirm_hint">再次输入密码</string>
+    <string name="password_mismatch">两次输入的密码不一致</string>
+    <string name="wrong_password">密码错误</string>
+    <string name="encrypt_failed">加密失败</string>
+    <string name="decrypt_failed">解密失败</string>
+    <string name="encrypted">已加密</string>
+    <string name="decrypted">已解密</string>
+    <string name="zip_failed">压缩失败</string>
+    <string name="dynamic_color_on_note">动态颜色已开启时，应用配色不生效</string>
+</resources>

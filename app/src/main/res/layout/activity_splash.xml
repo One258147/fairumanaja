@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- v1.9.4 开屏动画：图标（96dp，残影副本由代码加进 splashGhostBox）
+     + 下面 8dp 间隔的应用名字（初始 invisible，占位使图标居中不跳动）。 -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/splashGhostBox"
+            android:layout_width="96dp"
+            android:layout_height="96dp">
+
+            <ImageView
+                android:id="@+id/splashIcon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_app_icon" />
+        </FrameLayout>
+
+        <!-- v1.9.4（Max 21:45 纠正）：名字字体很大很粗（40sp 加粗），
+             从下向上升起、一边向上旋转着弹出，停在图标下面。 -->
+        <TextView
+            android:id="@+id/splashName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/app_name"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:visibility="invisible" />
+    </LinearLayout>
+</FrameLayout>

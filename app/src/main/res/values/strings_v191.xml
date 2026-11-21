@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- v1.9.1 新增字符串（中文默认）。其他语言缺失时回落到这里。 -->
+<resources>
+    <string name="create_shortcut">创建快捷方式</string>
+    <string name="shortcut_icon">图标</string>
+    <string name="shortcut_name">名称</string>
+    <string name="shortcut_type">类型</string>
+    <string name="shortcut_type_desktop">桌面快捷方式</string>
+    <string name="shortcut_type_desktop_desc">桌面上会生成一个独立的图标</string>
+    <string name="shortcut_type_icon">图标快捷方式</string>
+    <string name="shortcut_type_icon_desc">使用文件类型图标作为桌面图标</string>
+    <string name="shortcut_action">执行操作</string>
+    <string name="shortcut_action_locate">定位所在位置</string>
+    <string name="shortcut_action_locate_click">定位所在位置并点击</string>
+    <string name="shortcut_action_open_editor">使用文本编辑器打开</string>
+    <string name="shortcut_action_preview_html">预览 HTML 文件</string>
+    <string name="shortcut_created">已创建快捷方式</string>
+    <string name="shortcut_not_supported">该设备不支持桌面快捷方式</string>
+    <string name="shortcut_not_text">不是文本文件，已用系统查看器打开</string>
+    <string name="shortcut_target_missing">快捷方式指向的文件不存在或无法访问</string>
+</resources>

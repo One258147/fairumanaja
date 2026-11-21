@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- v1.9.6 UI 引擎（深色版）：形状与浅色版同一套；颜色不写死，
+         跟着应用配色/动态颜色走（Max 18:43/18:49 决定）。 -->
+
+    <!-- M3 Expressive（深色）：造型更圆润（药丸按钮、大圆角卡片）。 -->
+    <style name="ThemeOverlay.Fairu.Expressive" parent="">
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Fairu.Expressive.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Fairu.Expressive.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Fairu.Expressive.Large</item>
+        <item name="materialCardViewStyle">@style/Widget.Fairu.CardView.Expressive</item>
+    </style>
+
+    <!-- Miuix（深色）：按 compose-miuix-ui/miuix 的设计 token 移植的形状
+         （16dp 圆角、对话框 32dp）；顶栏仍用主题的 surface/onSurface。 -->
+    <style name="ThemeOverlay.Fairu.Miuix" parent="">
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="fairuToolbarBackground">?attr/colorSurface</item>
+        <item name="fairuToolbarTitleColor">?attr/colorOnSurface</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Fairu.Miuix.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Fairu.Miuix.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Fairu.Miuix.Large</item>
+        <item name="materialCardViewStyle">@style/Widget.Fairu.CardView.Miuix</item>
+    </style>
+
+    <!-- v1.9.6 液态玻璃（深色）：面板半透明，窗口背景模糊只在 API 31+ 生效。
+         不写 colorPrimary / 容器色（同浅色版根因：写死的 #D9B0C6FF 是
+         默认种子蓝深色主色 #B0C6FF，会盖掉种子色，玻璃色调跟不上）。 -->
+    <style name="ThemeOverlay.Fairu.LiquidGlass" parent="">
+        <item name="colorSurfaceContainer">#E6211F26</item>
+        <item name="colorSurfaceContainerLowest">#B30F0D13</item>
+        <item name="colorSurfaceContainerHigh">#B32B2930</item>
+        <item name="colorSurfaceVariant">#CC44464F</item>
+        <item name="android:windowBackgroundBlurRadius">24dp</item>
+        <item name="android:windowBlurBehindRadius">20dp</item>
+        <item name="android:windowBlurBehindEnabled">true</item>
+    </style>
+</resources>

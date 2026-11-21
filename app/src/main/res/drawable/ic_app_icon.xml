@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- v1.9.0 新应用图标（Max 12:51 纠正后的方向）：科技感的独特造型——
+     文件夹造型（文件管理器）+ 文件夹里的白色几何字母 F（Fairumanējā 首字母），
+     F 的两横带 45° 斜切，文件夹标签用青色点缀；白色背景。
+     注意：矢量 <gradient> 在 API 29 模拟器上实测不渲染（主体全透明，只剩实色
+     标签），所以主体改用扁平双色切面：亮蓝三角光面 + 深蓝主体，不用渐变。
+     标记按 1.25 倍放大（约 55dp 宽），F 本体仍在自适应图标 66dp 安全区内；
+     文件夹外圆角在极少数圆形遮罩启动器上会被轻微裁切，圆角方遮罩不受影响。 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- 白色背景 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M0,0h108v108h-108z" />
+    <!-- 文件夹主体：深蓝，底部圆角 -->
+    <path
+        android:fillColor="#0D47A1"
+        android:pathData="M26.5,34h55v44q0,6 -6,6h-43q-6,0 -6,-6z" />
+    <!-- 亮蓝三角光面（左上，斜边从右上到左下） -->
+    <path
+        android:fillColor="#1E88E5"
+        android:pathData="M26.5,34h35l-35,35z" />
+    <!-- 文件夹标签：青色斜切 -->
+    <path
+        android:fillColor="#00B0FF"
+        android:pathData="M26.5,24h25l-6.2,10h-18.8z" />
+    <!-- 白色几何字母 F：竖 + 两横（右端 45° 斜切） -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36.5,44h10v32.5h-10z M36.5,44h35l-6.2,10h-28.8z M36.5,59h25l-6.2,10h-18.8z" />
+</vector>

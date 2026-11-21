@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 字体颜色覆盖层（v1.9.6）：每个颜色只改 colorOnSurface（列表文件名、
+     标题、设置文字等主要文字都用它）。浅色/深色主题下用同一个值，不分
+     values-night，所以只放在 values/。 -->
+<resources>
+    <!-- Font01 #000000 -->
+    <style name="ThemeOverlay.Fairu.Font01" parent="">
+        <item name="colorOnSurface">#FF000000</item>
+    </style>
+    <!-- Font02 #FFFFFF -->
+    <style name="ThemeOverlay.Fairu.Font02" parent="">
+        <item name="colorOnSurface">#FFFFFFFF</item>
+    </style>
+    <!-- Font03 #F44336 -->
+    <style name="ThemeOverlay.Fairu.Font03" parent="">
+        <item name="colorOnSurface">#FFF44336</item>
+    </style>
+    <!-- Font04 #E91E63 -->
+    <style name="ThemeOverlay.Fairu.Font04" parent="">
+        <item name="colorOnSurface">#FFE91E63</item>
+    </style>
+    <!-- Font05 #9C27B0 -->
+    <style name="ThemeOverlay.Fairu.Font05" parent="">
+        <item name="colorOnSurface">#FF9C27B0</item>
+    </style>
+    <!-- Font06 #673AB7 -->
+    <style name="ThemeOverlay.Fairu.Font06" parent="">
+        <item name="colorOnSurface">#FF673AB7</item>
+    </style>
+    <!-- Font07 #3F51B5 -->
+    <style name="ThemeOverlay.Fairu.Font07" parent="">
+        <item name="colorOnSurface">#FF3F51B5</item>
+    </style>
+    <!-- Font08 #2196F3 -->
+    <style name="ThemeOverlay.Fairu.Font08" parent="">
+        <item name="colorOnSurface">#FF2196F3</item>
+    </style>
+    <!-- Font09 #03A9F4 -->
+    <style name="ThemeOverlay.Fairu.Font09" parent="">
+        <item name="colorOnSurface">#FF03A9F4</item>
+    </style>
+    <!-- Font10 #00BCD4 -->
+    <style name="ThemeOverlay.Fairu.Font10" parent="">
+        <item name="colorOnSurface">#FF00BCD4</item>
+    </style>
+    <!-- Font11 #009688 -->
+    <style name="ThemeOverlay.Fairu.Font11" parent="">
+        <item name="colorOnSurface">#FF009688</item>
+    </style>
+    <!-- Font12 #4CAF50 -->
+    <style name="ThemeOverlay.Fairu.Font12" parent="">
+        <item name="colorOnSurface">#FF4CAF50</item>
+    </style>
+    <!-- Font13 #8BC34A -->
+    <style name="ThemeOverlay.Fairu.Font13" parent="">
+        <item name="colorOnSurface">#FF8BC34A</item>
+    </style>
+    <!-- Font14 #CDDC39 -->
+    <style name="ThemeOverlay.Fairu.Font14" parent="">
+        <item name="colorOnSurface">#FFCDDC39</item>
+    </style>
+    <!-- Font15 #FFEB3B -->
+    <style name="ThemeOverlay.Fairu.Font15" parent="">
+        <item name="colorOnSurface">#FFFFEB3B</item>
+    </style>
+    <!-- Font16 #FFC107 -->
+    <style name="ThemeOverlay.Fairu.Font16" parent="">
+        <item name="colorOnSurface">#FFFFC107</item>
+    </style>
+    <!-- Font17 #FF9800 -->
+    <style name="ThemeOverlay.Fairu.Font17" parent="">
+        <item name="colorOnSurface">#FFFF9800</item>
+    </style>
+    <!-- Font18 #FF5722 -->
+    <style name="ThemeOverlay.Fairu.Font18" parent="">
+        <item name="colorOnSurface">#FFFF5722</item>
+    </style>
+    <!-- Font19 #795548 -->
+    <style name="ThemeOverlay.Fairu.Font19" parent="">
+        <item name="colorOnSurface">#FF795548</item>
+    </style>
+    <!-- Font20 #9E9E9E -->
+    <style name="ThemeOverlay.Fairu.Font20" parent="">
+        <item name="colorOnSurface">#FF9E9E9E</item>
+    </style>
+    <!-- Font21 #FFCDD2 -->
+    <style name="ThemeOverlay.Fairu.Font21" parent="">
+        <item name="colorOnSurface">#FFFFCDD2</item>
+    </style>
+    <!-- Font22 #F8BBD0 -->
+    <style name="ThemeOverlay.Fairu.Font22" parent="">
+        <item name="colorOnSurface">#FFF8BBD0</item>
+    </style>
+    <!-- Font23 #E1BEE7 -->
+    <style name="ThemeOverlay.Fairu.Font23" parent="">
+        <item name="colorOnSurface">#FFE1BEE7</item>
+    </style>
+    <!-- Font24 #D1C4E9 -->
+    <style name="ThemeOverlay.Fairu.Font24" parent="">
+        <item name="colorOnSurface">#FFD1C4E9</item>
+    </style>
+    <!-- Font25 #C5CAE9 -->
+    <style name="ThemeOverlay.Fairu.Font25" parent="">
+        <item name="colorOnSurface">#FFC5CAE9</item>
+    </style>
+    <!-- Font26 #BBDEFB -->
+    <style name="ThemeOverlay.Fairu.Font26" parent="">
+        <item name="colorOnSurface">#FFBBDEFB</item>
+    </style>
+    <!-- Font27 #B3E5FC -->
+    <style name="ThemeOverlay.Fairu.Font27" parent="">
+        <item name="colorOnSurface">#FFB3E5FC</item>
+    </style>
+    <!-- Font28 #B2EBF2 -->
+    <style name="ThemeOverlay.Fairu.Font28" parent="">
+        <item name="colorOnSurface">#FFB2EBF2</item>
+    </style>
+    <!-- Font29 #B2DFDB -->
+    <style name="ThemeOverlay.Fairu.Font29" parent="">
+        <item name="colorOnSurface">#FFB2DFDB</item>
+    </style>
+    <!-- Font30 #C8E6C9 -->
+    <style name="ThemeOverlay.Fairu.Font30" parent="">
+        <item name="colorOnSurface">#FFC8E6C9</item>
+    </style>
+    <!-- Font31 #DCEDC8 -->
+    <style name="ThemeOverlay.Fairu.Font31" parent="">
+        <item name="colorOnSurface">#FFDCEDC8</item>
+    </style>
+    <!-- Font32 #F0F4C3 -->
+    <style name="ThemeOverlay.Fairu.Font32" parent="">
+        <item name="colorOnSurface">#FFF0F4C3</item>
+    </style>
+    <!-- Font33 #FFF9C4 -->
+    <style name="ThemeOverlay.Fairu.Font33" parent="">
+        <item name="colorOnSurface">#FFFFF9C4</item>
+    </style>
+    <!-- Font34 #FFECB3 -->
+    <style name="ThemeOverlay.Fairu.Font34" parent="">
+        <item name="colorOnSurface">#FFFFECB3</item>
+    </style>
+    <!-- Font35 #FFE0B2 -->
+    <style name="ThemeOverlay.Fairu.Font35" parent="">
+        <item name="colorOnSurface">#FFFFE0B2</item>
+    </style>
+    <!-- Font36 #E0E0E0 -->
+    <style name="ThemeOverlay.Fairu.Font36" parent="">
+        <item name="colorOnSurface">#FFE0E0E0</item>
+    </style>
+    <!-- Font37 #B71C1C -->
+    <style name="ThemeOverlay.Fairu.Font37" parent="">
+        <item name="colorOnSurface">#FFB71C1C</item>
+    </style>
+    <!-- Font38 #880E4F -->
+    <style name="ThemeOverlay.Fairu.Font38" parent="">
+        <item name="colorOnSurface">#FF880E4F</item>
+    </style>
+    <!-- Font39 #4A148C -->
+    <style name="ThemeOverlay.Fairu.Font39" parent="">
+        <item name="colorOnSurface">#FF4A148C</item>
+    </style>
+    <!-- Font40 #311B92 -->
+    <style name="ThemeOverlay.Fairu.Font40" parent="">
+        <item name="colorOnSurface">#FF311B92</item>
+    </style>
+    <!-- Font41 #1A237E -->
+    <style name="ThemeOverlay.Fairu.Font41" parent="">
+        <item name="colorOnSurface">#FF1A237E</item>
+    </style>
+    <!-- Font42 #0D47A1 -->
+    <style name="ThemeOverlay.Fairu.Font42" parent="">
+        <item name="colorOnSurface">#FF0D47A1</item>
+    </style>
+    <!-- Font43 #01579B -->
+    <style name="ThemeOverlay.Fairu.Font43" parent="">
+        <item name="colorOnSurface">#FF01579B</item>
+    </style>
+    <!-- Font44 #006064 -->
+    <style name="ThemeOverlay.Fairu.Font44" parent="">
+        <item name="colorOnSurface">#FF006064</item>
+    </style>
+    <!-- Font45 #004D40 -->
+    <style name="ThemeOverlay.Fairu.Font45" parent="">
+        <item name="colorOnSurface">#FF004D40</item>
+    </style>
+    <!-- Font46 #1B5E20 -->
+    <style name="ThemeOverlay.Fairu.Font46" parent="">
+        <item name="colorOnSurface">#FF1B5E20</item>
+    </style>
+    <!-- Font47 #33691E -->
+    <style name="ThemeOverlay.Fairu.Font47" parent="">
+        <item name="colorOnSurface">#FF33691E</item>
+    </style>
+    <!-- Font48 #F57F17 -->
+    <style name="ThemeOverlay.Fairu.Font48" parent="">
+        <item name="colorOnSurface">#FFF57F17</item>
+    </style>
+    <!-- Font49 #FF6F00 -->
+    <style name="ThemeOverlay.Fairu.Font49" parent="">
+        <item name="colorOnSurface">#FFFF6F00</item>
+    </style>
+    <!-- Font50 #BF360C -->
+    <style name="ThemeOverlay.Fairu.Font50" parent="">
+        <item name="colorOnSurface">#FFBF360C</item>
+    </style>
+    <!-- Font51 #3E2723 -->
+    <style name="ThemeOverlay.Fairu.Font51" parent="">
+        <item name="colorOnSurface">#FF3E2723</item>
+    </style>
+    <!-- Font52 #212121 -->
+    <style name="ThemeOverlay.Fairu.Font52" parent="">
+        <item name="colorOnSurface">#FF212121</item>
+    </style>
+
+    <!-- v1.9.7 真满文/锡伯文：mnc/sjo 时全页字体换成随包的 Noto Sans Mongolian
+         （SIL OFL 1.1，见 assets/OFL-NotoSansMongolian.txt）。模拟器
+         /system/fonts 里其实自带 NotoSansMongolian，但 Max 的手机不一定有，
+         随包才能保证任何手机上都不出豆腐块。未覆盖的字形（拉丁、数字、
+         中文回落串）走系统字体回落链。 -->
+    <style name="ThemeOverlay.Fairu.Mongolian" parent="">
+        <item name="android:fontFamily">@font/noto_sans_mongolian</item>
+    </style>
+</resources>

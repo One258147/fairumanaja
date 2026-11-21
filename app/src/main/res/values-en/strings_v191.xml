@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- v1.9.1 new strings (English). -->
+<resources>
+    <string name="create_shortcut">Create shortcut</string>
+    <string name="shortcut_icon">Icon</string>
+    <string name="shortcut_name">Name</string>
+    <string name="shortcut_type">Type</string>
+    <string name="shortcut_type_desktop">Desktop shortcut</string>
+    <string name="shortcut_type_desktop_desc">A standalone icon will be created on the home screen</string>
+    <string name="shortcut_type_icon">Icon shortcut</string>
+    <string name="shortcut_type_icon_desc">Uses the file type icon as the home screen icon</string>
+    <string name="shortcut_action">Action</string>
+    <string name="shortcut_action_locate">Locate in folder</string>
+    <string name="shortcut_action_locate_click">Locate and open</string>
+    <string name="shortcut_action_open_editor">Open in text editor</string>
+    <string name="shortcut_action_preview_html">Preview HTML file</string>
+    <string name="shortcut_created">Shortcut created</string>
+    <string name="shortcut_not_supported">This device doesn\'t support pinned shortcuts</string>
+    <string name="shortcut_not_text">Not a text file, opened with the system viewer</string>
+    <string name="shortcut_target_missing">The shortcut target doesn\'t exist or can\'t be accessed</string>
+</resources>

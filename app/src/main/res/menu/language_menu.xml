@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 多语言设置页右上角的 ✓ 确认按钮。ic_check 自带 colorOnPrimary 着色，
+     工具栏底是 colorPrimary，所以白色对勾看得见。 -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_confirm"
+        android:icon="@drawable/ic_check"
+        android:title="@string/confirm"
+        app:showAsAction="always" />
+</menu>

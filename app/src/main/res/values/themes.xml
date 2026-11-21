@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TRUE Material Design 3 (material:1.13.0). DayNight handles light/dark. -->
+    <style name="Theme.Fairumanaja" parent="Theme.Material3.DayNight">
+        <!-- v1.5: 必须关掉窗口自带 ActionBar，否则 setSupportActionBar(Toolbar) 会抛
+             IllegalStateException（v1.4 在模拟器上就是死在这里）。 -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/m3_primary</item>
+        <item name="colorOnPrimary">@color/m3_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_secondary_container</item>
+        <item name="colorTertiary">@color/m3_tertiary</item>
+        <item name="colorSurface">@color/m3_surface</item>
+        <item name="colorOnSurface">@color/m3_on_surface</item>
+        <item name="colorSurfaceVariant">@color/m3_surface_variant</item>
+        <item name="colorOnSurfaceVariant">@color/m3_on_surface_variant</item>
+        <item name="colorSurfaceContainerHigh">@color/m3_surface_container_high</item>
+        <item name="colorError">@color/m3_error</item>
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <!-- v1.9.6：顶栏底色/标题色（默认 = 原来的 colorPrimary 底白字）。 -->
+        <item name="fairuToolbarBackground">?attr/colorPrimary</item>
+        <item name="fairuToolbarTitleColor">?attr/colorOnPrimary</item>
+        <!-- v1.9.6：卡片圆角改由主题样式驱动（默认 24dp，和以前 layout 里
+             写死的 24dp 一致），UI 引擎覆盖层可以换圆角。 -->
+        <item name="materialCardViewStyle">@style/Widget.Fairu.CardView</item>
+    </style>
+    <!-- Kept for compatibility with ThemeHelper's old light/dark names. -->
+    <style name="Theme.Fairumanaja.Light" parent="Theme.Material3.Light">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/m3_primary</item>
+        <item name="colorOnPrimary">@color/m3_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_primary_container</item>
+        <item name="colorSecondary">@color/m3_secondary</item>
+        <item name="colorSurface">@color/m3_surface</item>
+        <item name="colorOnSurface">@color/m3_on_surface</item>
+    </style>
+    <style name="Theme.Fairumanaja.Dark" parent="Theme.Material3.Dark">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/m3_primary_dark</item>
+        <item name="colorOnPrimary">@color/m3_on_primary_dark</item>
+        <item name="colorPrimaryContainer">@color/m3_primary_container_dark</item>
+        <item name="colorSecondary">@color/m3_secondary_dark</item>
+        <item name="colorSurface">@color/m3_surface_dark</item>
+        <item name="colorOnSurface">@color/m3_on_surface_dark</item>
+    </style>
+</resources>

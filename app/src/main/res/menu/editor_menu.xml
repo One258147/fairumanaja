@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 文本编辑器工具栏（v1.7.0，照 MT 的样子）：撤销 / 重做 / 保存 + ⋮ 菜单 -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_editor_undo"
+        android:icon="@drawable/ic_undo"
+        android:title="@string/undo"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_editor_redo"
+        android:icon="@drawable/ic_redo"
+        android:title="@string/redo"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_editor_save"
+        android:icon="@drawable/ic_save"
+        android:title="@string/save"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_editor_more"
+        android:icon="@drawable/ic_more_vert"
+        android:title="@string/more_options"
+        app:showAsAction="always" />
+</menu>

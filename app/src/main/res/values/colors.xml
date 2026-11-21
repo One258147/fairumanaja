@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material 3 color roles (light). Brand blue kept from v1.0 (#0061A4 family). -->
+    <color name="fairu_primary">#0061A4</color>
+    <color name="fairu_primary_dark">#00497E</color>
+    <color name="fairu_accent">#2E7D32</color>
+
+    <color name="m3_primary">#0B57D0</color>
+    <color name="m3_on_primary">#FFFFFF</color>
+    <color name="m3_primary_container">#D3E3FD</color>
+    <color name="m3_on_primary_container">#041E49</color>
+    <color name="m3_secondary">#00639B</color>
+    <color name="m3_secondary_container">#C2E7FF</color>
+    <color name="m3_tertiary">#146C2E</color>
+    <color name="m3_surface">#F8F9FF</color>
+    <color name="m3_on_surface">#1A1C1E</color>
+    <color name="m3_surface_variant">#E1E2EC</color>
+    <color name="m3_on_surface_variant">#44474E</color>
+    <color name="m3_surface_container_high">#E7E8EE</color>
+    <color name="m3_error">#B3261E</color>
+
+    <!-- Dark scheme -->
+    <color name="m3_primary_dark">#A8C7FA</color>
+    <color name="m3_on_primary_dark">#062E6F</color>
+    <color name="m3_primary_container_dark">#00458F</color>
+    <color name="m3_on_primary_container_dark">#D3E3FD</color>
+    <color name="m3_secondary_dark">#7FCFFF</color>
+    <color name="m3_secondary_container_dark">#004A77</color>
+    <color name="m3_tertiary_dark">#6DD58C</color>
+    <color name="m3_surface_dark">#131316</color>
+    <color name="m3_on_surface_dark">#E3E2E6</color>
+    <color name="m3_surface_variant_dark">#44474E</color>
+    <color name="m3_on_surface_variant_dark">#C4C6D0</color>
+    <color name="m3_surface_container_high_dark">#2A2B2F</color>
+    <color name="m3_error_dark">#F2B8B5</color>
+
+    <!-- File-type icon tile colors (MT-style dark folder tile + M3 tonal tiles) -->
+    <color name="tile_folder">#212121</color>
+    <color name="tile_apk">#7C4DFF</color>
+    <color name="tile_image">#00897B</color>
+    <color name="tile_archive">#FB8C00</color>
+    <color name="tile_text">#1565C0</color>
+    <color name="tile_audio">#8E24AA</color>
+    <color name="tile_video">#D81B60</color>
+    <color name="tile_pdf">#C62828</color>
+    <color name="tile_generic">#5F6368</color>
+    <color name="tile_parent">#37474F</color>
+</resources>

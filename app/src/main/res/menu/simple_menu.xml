@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- v1.9.0 重做（Max 11:15 补）：只剩 4 项，每项都带图标。
+     删掉的：语言、粘贴到另一窗格、粘贴、关于；
+     按名称/按日期/按大小合并成一个“排序”，点后弹对话框选，确认才排序。 -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/menu_search" android:title="@string/search_hint" android:icon="@drawable/ic_search" app:showAsAction="always|collapseActionView" app:actionViewClass="androidx.appcompat.widget.SearchView" />
+    <item android:id="@+id/menu_dual_pane" android:title="@string/dual_pane" android:icon="@drawable/ic_swap" android:checkable="true" android:checked="true" app:showAsAction="never" />
+    <item android:id="@+id/menu_sort" android:title="@string/sort" android:icon="@drawable/ic_sort" app:showAsAction="never" />
+    <item android:id="@+id/menu_show_hidden" android:title="@string/show_hidden" android:icon="@drawable/ic_eye" android:checkable="true" app:showAsAction="never" />
+    <item android:id="@+id/menu_refresh" android:title="@string/refresh" android:icon="@drawable/ic_redo" app:showAsAction="never" />
+</menu>

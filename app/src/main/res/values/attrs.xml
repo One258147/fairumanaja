@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- v1.9.6 UI 引擎：顶栏底色/标题色走这两个自定义属性。
+         默认（MD3/Expressive）= colorPrimary 底 + colorOnPrimary 字，和原来一样；
+         真 Miuix 引擎覆盖成 surface 底 + onSurface 字（按 compose-miuix-ui/miuix
+         的 TopAppBar：background = surface，title = onSurface）。 -->
+    <attr name="fairuToolbarBackground" format="color|reference" />
+    <attr name="fairuToolbarTitleColor" format="color|reference" />
+</resources>
