@@ -26,7 +26,6 @@
         <item name="fairuToolbarTitleColor">?attr/colorOnPrimary</item>
         <!-- v1.9.6：卡片圆角改由主题样式驱动（默认 24dp，和以前 layout 里
              写死的 24dp 一致），UI 引擎覆盖层可以换圆角。 -->
-        <item name="materialCardViewStyle">@style/Widget.Fairu.CardView</item>
     </style>
     <!-- Kept for compatibility with ThemeHelper's old light/dark names. -->
     <style name="Theme.Fairumanaja.Light" parent="Theme.Material3.Light">

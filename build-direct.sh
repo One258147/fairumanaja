@@ -19,11 +19,16 @@
 # The sandbox blocks Java TCP (Gradle daemon protocol), so this pipeline
 # uses aapt2 + kotlinc + d8 + zipalign + apksigner directly. All downloads
 # use curl (Python/curl TCP works; only Java TCP is blocked).
-# Material Design 3 is REAL here: material:1.13.0 + AppCompat 1.7.0 +
-# RecyclerView 1.3.2 AARs are resolved from Google Maven and linked with aapt2.
+# v1.9.8.1: View -> Jetpack Compose. UI is Compose (CMP 1.12.0-beta01,
+# Kotlin 2.4.20 + compose compiler plugin 2.4.20, d8 from build-tools 35);
+# AppCompat 1.7.0 stays (BaseActivity + setApplicationLocales); the real
+# Miuix library (compose-miuix-ui/miuix 0.9.4) and HAZE 2.1.0 (liquid
+# glass) are resolved by tools/resolve-compose.py. The old View stack
+# (material 1.13.0 / recyclerview / drawerlayout) is gone once migration
+# finishes; during the transition it is still resolved + linked.
 # Usage: ./build-direct.sh   (run from ~/workspace/fairumanaja)
 set -e
-export JAVA_HOME="${JAVA_HOME:-/usr/lib/jvm/java-17-openjdk-amd64}"
+export JAVA_HOME="${JAVA_HOME:-$HOME/jdk17}"
 # kotlinc 启动器默认只给 -Xmx256M，代码量到 v1.7.0 规模会在 PSI 加载时 OOM；
 # 这里默认给 2G（外部已设置 JAVA_OPTS 时不覆盖）。
 export JAVA_OPTS="${JAVA_OPTS:--Xmx2g}"
@@ -33,12 +38,25 @@ export JAVA_TOOL_OPTIONS="-Dfile.encoding=UTF-8"
 SDK=/home/hatch/Android/Sdk
 ANDROID_JAR=$SDK/platforms/android-34/android.jar
 AAPT2=$SDK/build-tools/34.0.0/aapt2
-D8=$SDK/build-tools/34.0.0/d8
+# d8 35 (R8 8.6.2): reads Java 21 (major 65) classes from Miuix 0.9.4;
+# min-api 26 (not 24): Miuix 0.9.4 MiuixIndication uses Kotlin UByte backport
+# methods that compile to invoke-dynamic, which DEX V37 (API 24/25) cannot
+# represent -- runtime throws "Instruction is unrepresentable in DEX V37".
+# Raising to 26 emits DEX V38 where invoke-dynamic is native. Drops API 24/25.
+# d8 34 (R8 8.2.2) fails with "Unsupported class file major version 65".
+# aapt2/zipalign/apksigner stay at 34.0.0.
+D8=$SDK/build-tools/35.0.0/d8
 ZIPALIGN=$SDK/build-tools/34.0.0/zipalign
 APKSIGNER=$SDK/build-tools/34.0.0/apksigner
-KOTLINC=/home/hatch/kotlin/kotlinc/bin/kotlinc
-STDLIB=/home/hatch/kotlin/kotlinc/lib/kotlin-stdlib.jar
+KOTLINC_LIB=/home/hatch/kotlin/kotlinc/lib
+# v1.9.8.1 Compose toolchain: Kotlin 2.4.20 + CMP 1.12. The stock kotlinc
+# 1.9.22 launcher CANNOT host the Compose plugin (AbstractMethodError:
+# the plugin targets kotlin-compiler-embeddable's relocated IntelliJ
+# packages). Run K2JVMCompiler from kotlin-compiler-embeddable-2.4.20.jar
+# with the Compose compiler plugin 2.4.20 (see step [4/7]).
 ROOT="$(cd "$(dirname "$0")" && pwd)"
+CMP_TOOLS=$ROOT/build-direct/tools
+STDLIB24=$ROOT/build-direct/aars/kotlin-stdlib-2.4.20.jar
 OUT=$ROOT/build-direct
 AARS=$ROOT/build-direct/aars
 APK_OUT=$ROOT/app/build/outputs/apk/debug/app-debug.apk
@@ -48,9 +66,11 @@ rm -rf "$OUT/gen" "$OUT/classes" "$OUT/dex" "$OUT/libjars" "$OUT/libres" \
   "$OUT/compiled-lib-"*.zip "$OUT/libs.json" "$OUT/clean-jars.json" "$OUT/cleanjars"
 mkdir -p "$OUT/gen" "$OUT/classes" "$OUT/dex" "$AARS" "$(dirname "$APK_OUT")"
 
-echo "== [0/7] resolve Material 3 / AndroidX AARs from Google Maven =="
-if [ ! -f "$AARS/manifest.json" ]; then
-  python3 "$ROOT/tools/resolve-aars.py" "$AARS"
+echo "== [0/7] resolve Compose (CMP 1.12) / AndroidX AARs from Google Maven =="
+# The Compose resolver merges with an existing manifest; run it only when
+# the Compose set is missing (fresh checkout, or a View-era manifest).
+if ! python3 -c "import json,sys,os; p='$AARS/manifest.json'; m=json.load(open(p)) if os.path.exists(p) else []; sys.exit(0 if any(e['artifact']=='runtime-android' for e in m) else 1)" 2>/dev/null; then
+  python3 "$ROOT/tools/resolve-compose.py" "$AARS"
 fi
 
 echo "== [1/7] extract AARs (classes.jar + res + package) =="
@@ -116,13 +136,16 @@ print(f"  libs: {len(man)} artifacts, {len(compiled)} with res, {len(jars)} jars
 # Carousel nor Material's SearchView (it uses AppCompat's SearchView), so
 # drop Material's two declare-styleable blocks; the <attr> definitions stay.
 import re
+# View-era only: drop Material's Carousel/SearchView styleables (they collide
+# with AppCompat's). Skipped once Material is gone (full Compose build).
 mp = os.path.join(out, "libres", "material-1.13.0", "values", "values.xml")
-s = open(mp).read()
-for _name in ("Carousel", "SearchView"):
-    s2 = re.sub(r'  <declare-styleable name="' + _name + r'"[^>]*>.*?</declare-styleable>\n', '', s, flags=re.S)
-    print(f"  stripped material styleable {_name}: {s != s2}")
-    s = s2
-open(mp, "w").write(s)
+if os.path.exists(mp):
+    s = open(mp).read()
+    for _name in ("Carousel", "SearchView"):
+        s2 = re.sub(r'  <declare-styleable name="' + _name + r'"[^>]*>.*?</declare-styleable>\n', '', s, flags=re.S)
+        print(f"  stripped material styleable {_name}: {s != s2}")
+        s = s2
+    open(mp, "w").write(s)
 PY
 
 echo "== [2/7] aapt2 compile resources (app + libraries) =="
@@ -144,8 +167,8 @@ done
 "$AAPT2" link -I "$ANDROID_JAR" \
   --manifest "$ROOT/app/src/main/AndroidManifest.xml" \
   --java "$OUT/gen" \
-  --min-sdk-version 24 --target-sdk-version 34 \
-  --version-code 21 --version-name 1.9.7 \
+  --min-sdk-version 26 --target-sdk-version 34 \
+  --version-code 22 --version-name 1.9.7.1 \
   --auto-add-overlay \
   -A "$ROOT/app/src/main/assets" \
   $EXTRA_PKGS_FLAGS \
@@ -168,20 +191,36 @@ n = sum(1 for _r, _d, fs in os.walk(os.path.join(out, "gen")) for f in fs if f =
 print(f"  R.java files: {n} ({len(libs['packages'])} library packages + app)")
 PY
 
-echo "== [4/7] kotlinc =="
+echo "== [4/7] kotlinc 2.4.20 + Compose compiler plugin =="
 CP="$ANDROID_JAR"
 for j in $(python3 -c "import json; print(' '.join(json.load(open('$OUT/libs.json'))['jars']))"); do CP="$CP:$j"; done
-# Drop duplicate plain annotation/collection jars when their -jvm twin is present.
+# Drop duplicate plain annotation/collection/lifecycle-common jars when their
+# -jvm twin is present (version-agnostic: base jars are KMP metadata stubs
+# with 0 classes, but their names still collide with the -jvm twins at dex).
 CP=$(python3 -c "
-import json
+import json, re
 jars = json.load(open('$OUT/libs.json'))['jars']
 names = {j.split('/')[-1] for j in jars}
 drop = set()
-if 'annotation-jvm-1.8.1.jar' in names: drop.add('annotation-1.8.1.jar')
-if 'collection-jvm-1.4.2.jar' in names: drop.add('collection-1.4.2.jar')
+for n in list(names):
+    m = re.match(r'^(annotation|collection|lifecycle-common)(-java8)?-[0-9][^-]*\.jar$', n)
+    if m and not n.startswith(('annotation-jvm', 'collection-jvm', 'lifecycle-common-jvm')):
+        base = m.group(1)
+        if any(x.startswith(base + '-jvm-') for x in names):
+            drop.add(n)
 print('$ANDROID_JAR:' + ':'.join(j for j in jars if j.split('/')[-1] not in drop))
 ")
-"$KOTLINC" -jvm-target 17 -nowarn -cp "$CP" -d "$OUT/classes" \
+# Compose compiler: run K2JVMCompiler from kotlin-compiler-embeddable-2.4.20.
+# The stock kotlinc 1.9.22 launcher cannot host the plugin (AbstractMethodError).
+# Compiler java-cp needs: trove4j, stdlib 2.4.20, reflect, script-runtime,
+# coroutines-core-jvm (CoroutineScope), lifecycle-common-jvm (LifecycleOwner),
+# annotations-13.0 (codegen Nullable). -no-stdlib/-no-reflect: stdlib comes
+# from the compile -cp (the resolved 2.4.20 jar).
+KOTLIN_CP="$CMP_TOOLS/kotlin-compiler-embeddable-2.4.20.jar:$KOTLINC_LIB/trove4j.jar:$STDLIB24:$CMP_TOOLS/kotlin-reflect-2.4.20.jar:$CMP_TOOLS/kotlin-script-runtime-2.4.20.jar:$AARS/kotlinx-coroutines-core-jvm-1.9.0.jar:$AARS/lifecycle-common-jvm-2.8.7.jar:$KOTLINC_LIB/annotations-13.0.jar"
+"$JAVA_HOME/bin/java" $JAVA_OPTS -cp "$KOTLIN_CP" org.jetbrains.kotlin.cli.jvm.K2JVMCompiler \
+  -jvm-target 17 -nowarn -no-stdlib -no-reflect \
+  -Xplugin="$CMP_TOOLS/kotlin-compose-compiler-plugin-embeddable-2.4.20.jar" \
+  -cp "$CP" -d "$OUT/classes" \
   $(find "$ROOT/app/src/main/java" -name '*.kt') \
   $(find "$OUT/gen" -name '*.java')
 
@@ -190,11 +229,15 @@ echo "== [4b/7] javac R.java (kotlinc resolves .java sources but emits no byteco
   $(find "$OUT/gen" -name '*.java')
 # Guard: R$styleable classes must exist in classes/ or the app dies at
 # startup with NoClassDefFoundError the first time AppCompat/Material reads
-# a styleable (exactly the v1.1 crash).
+# a styleable (exactly the v1.1 crash). Material check only while the View
+# material library is still in the set (gone in the full Compose build).
 if [ ! -f "$OUT/classes/androidx/appcompat/R\$styleable.class" ] || \
-   [ ! -f "$OUT/classes/com/google/android/material/R\$styleable.class" ] || \
    [ ! -f "$OUT/classes/com/fairuman/filemanager/R.class" ]; then
   echo "ERROR: R classes not compiled"; exit 1
+fi
+if [ -f "$OUT/classes/com/google/android/material/R\$styleable.class" ] || \
+   python3 -c "import json; print('com.google.android.material' in json.load(open('$OUT/libs.json'))['packages'])" | grep -q True; then
+  [ -f "$OUT/classes/com/google/android/material/R\$styleable.class" ] || { echo "ERROR: material R classes not compiled"; exit 1; }
 fi
 echo "  R classes compiled OK"
 # Guard: every R class referenced by any app/library class file must exist
@@ -249,7 +292,16 @@ for root, _d, files in os.walk(os.path.join(out, "classes")):
         if fn.endswith('.class'):
             with open(os.path.join(root, fn), 'rb') as fh:
                 scan_bytes(fh.read())
-drop = {'annotation-1.8.1.jar', 'collection-1.4.2.jar'}  # superseded by -jvm twins, not dexed
+# KMP base jars (annotation/collection/lifecycle-common) are 0-class metadata
+# stubs superseded by their -jvm twins; skip them when scanning R refs too.
+import re as _re
+_names = {os.path.basename(j) for j in libs["jars"]}
+drop = set()
+for _n in list(_names):
+    _m = _re.match(r'^(annotation|collection|lifecycle-common)(-java8)?-[0-9][^-]*\.jar$', _n)
+    if _m and not _n.startswith(('annotation-jvm', 'collection-jvm', 'lifecycle-common-jvm')):
+        if any(x.startswith(_m.group(1) + '-jvm-') for x in _names):
+            drop.add(_n)
 for j in libs["jars"]:
     if os.path.basename(j) in drop:
         continue
@@ -275,13 +327,17 @@ echo "== [5/7] d8 dex =="
 # multi-release jars. Strip them from library jars before dexing.
 export FAIRU_ROOT="$ROOT"
 python3 - "$OUT" << 'PY'
-import json, os, sys, zipfile
+import json, os, sys, zipfile, re
 out = sys.argv[1]
 jars = json.load(open(os.path.join(out, "libs.json")))["jars"]
 names = {j.split('/')[-1] for j in jars}
+# KMP base jars are 0-class stubs superseded by their -jvm twins (any version).
 drop = set()
-if 'annotation-jvm-1.8.1.jar' in names: drop.add('annotation-1.8.1.jar')
-if 'collection-jvm-1.4.2.jar' in names: drop.add('collection-1.4.2.jar')
+for n in list(names):
+    m = re.match(r'^(annotation|collection|lifecycle-common)(-java8)?-[0-9][^-]*\.jar$', n)
+    if m and not n.startswith(('annotation-jvm', 'collection-jvm', 'lifecycle-common-jvm')):
+        if any(x.startswith(m.group(1) + '-jvm-') for x in names):
+            drop.add(n)
 clean = os.path.join(out, "cleanjars")
 os.makedirs(clean, exist_ok=True)
 out_jars = []
@@ -310,9 +366,9 @@ for _j in out_jars:
     os.replace(_tmp, _j)
 print("  stripped MethodParameters from library jars")
 PY
-DEX_INPUTS="$OUT/classes.jar $STDLIB"
+DEX_INPUTS="$OUT/classes.jar"  # stdlib 2.4.20 already in clean-jars via aars/ (do NOT add twice: d8 "defined multiple times")
 for j in $(python3 -c "import json; print(' '.join(json.load(open('$OUT/clean-jars.json'))))"); do DEX_INPUTS="$DEX_INPUTS $j"; done
-"$D8" --release --min-api 24 --lib "$ANDROID_JAR" \
+"$D8" --release --min-api 26 --lib "$ANDROID_JAR" \
   --output "$OUT/dex" $DEX_INPUTS
 
 echo "== [6/7] add dex + align =="

@@ -1,0 +1,9 @@
+*.iml
+.gradle/
+local.properties
+build/
+build-direct/
+app/build/
+debug.keystore
+*.idsig
+.DS_Store

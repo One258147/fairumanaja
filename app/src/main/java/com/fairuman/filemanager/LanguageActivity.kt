@@ -1,30 +1,41 @@
 package com.fairuman.filemanager
 
 import android.content.SharedPreferences
-import android.graphics.Color
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
-import android.widget.RadioButton
-import android.widget.TextView
+import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.graphics.drawable.DrawableCompat
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.RadioButton
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.core.os.LocaleListCompat
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.appbar.MaterialToolbar
-import com.google.android.material.color.MaterialColors
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.util.Locale
 
 /**
- * 多语言设置页（简单版 1.3.0）：18 种语言列表。
+ * 多语言设置页（v1.9.8.1 Compose）：18 种语言列表。
  * 点语言只选中 RadioButton，不立即切换；点右上角 ✓ 确认才
  * AppCompatDelegate.setApplicationLocales 切换；直接按返回则不切换。
- * 语言切换用现代接口，不用已废弃的 resources.updateConfiguration。
  */
 class LanguageActivity : BaseActivity() {
 
@@ -69,97 +80,76 @@ class LanguageActivity : BaseActivity() {
     }
 
     private lateinit var prefs: SharedPreferences
-    private lateinit var adapter: LangAdapter
-    private var pendingTag: String = "zh-CN"
+    private var pendingTag by mutableStateOf("zh-CN")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         CrashHandler.install(this)
-        // 语言/主题/配色由 BaseActivity.onCreate 在 super.onCreate 之前统一应用。
         super.onCreate(savedInstanceState)
         try {
-            onCreateInner()
+            prefs = getSharedPreferences("fairu_prefs", MODE_PRIVATE)
+            pendingTag = currentTag(this)
+            setContent {
+                FairuTheme { LanguageScreen() }
+            }
         } catch (e: Throwable) {
             CrashHandler.writeLog(this, e)
-            try {
-                MaterialAlertDialogBuilder(this)
-                    .setTitle("启动失败")
-                    .setMessage("启动时出错了，错误已保存到 crash.log。\n\n" + CrashHandler.logPathText(this) + "\n\n错误：" + e.toString())
-                    .setPositiveButton(R.string.ok) { _, _ -> finish() }
-                    .setCancelable(false)
-                    .show()
-            } catch (_: Exception) { }
             try { finish() } catch (_: Exception) { }
         }
     }
 
-    private fun onCreateInner() {
-        setContentView(R.layout.activity_language)
-        prefs = getSharedPreferences("fairu_prefs", MODE_PRIVATE)
-        pendingTag = currentTag(this)
-
-        val toolbar = findViewById<MaterialToolbar>(R.id.languageToolbar)
-        setSupportActionBar(toolbar)
-        toolbar.setNavigationOnClickListener { finish() }
-
-        val list = findViewById<RecyclerView>(R.id.languageList)
-        list.layoutManager = LinearLayoutManager(this)
-        adapter = LangAdapter(pendingTag) { lang ->
-            // 只选中，不切换。
-            pendingTag = lang.tag
-            adapter.selectedTag = lang.tag
-            adapter.notifyDataSetChanged()
-        }
-        list.adapter = adapter
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.language_menu, menu)
-        // ✓ 图标自带 colorOnPrimary 白色着色；Miuix 下工具栏是浅色，须跟随标题色着色。
-        menu.findItem(R.id.menu_confirm)?.icon?.let { d ->
-            val c = MaterialColors.getColor(
-                this, R.attr.fairuToolbarTitleColor, Color.WHITE
+    @Composable
+    private fun LanguageScreen() {
+        Column(Modifier.fillMaxSize().background(fairuPageBackground())) {
+            FairuPageTopBar(
+                title = stringResource(R.string.language_settings),
+                onBack = { finish() },
+                actions = {
+                    IconButton(onClick = {
+                        prefs.edit().putString(MainActivity.PREF_LOCALE, pendingTag).apply()
+                        AppCompatDelegate.setApplicationLocales(
+                            LocaleListCompat.create(Locale.forLanguageTag(pendingTag))
+                        )
+                        finish()
+                    }) {
+                        Icon(
+                            painterResource(R.drawable.ic_check),
+                            contentDescription = stringResource(R.string.confirm),
+                            tint = fairuTopBarIconTint()
+                        )
+                    }
+                }
             )
-            DrawableCompat.setTint(d.mutate(), c)
-        }
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.menu_confirm) {
-            // 点了 ✓ 才真正切换语言。
-            prefs.edit().putString(MainActivity.PREF_LOCALE, pendingTag).apply()
-            AppCompatDelegate.setApplicationLocales(
-                LocaleListCompat.create(Locale.forLanguageTag(pendingTag))
-            )
-            finish()
-            return true
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
-    private class LangAdapter(var selectedTag: String, private val onPick: (Lang) -> Unit) :
-        RecyclerView.Adapter<LangAdapter.VH>() {
-
-        class VH(v: View) : RecyclerView.ViewHolder(v) {
-            val name: TextView = v.findViewById(R.id.langName)
-            val sub: TextView = v.findViewById(R.id.langSub)
-            val radio: RadioButton = v.findViewById(R.id.langRadio)
-        }
-
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
-            val v = LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_language, parent, false)
-            return VH(v)
-        }
-
-        override fun getItemCount(): Int = LANGUAGES.size
-
-        override fun onBindViewHolder(holder: VH, position: Int) {
-            val lang = LANGUAGES[position]
-            holder.name.text = lang.native
-            holder.sub.text = lang.sub
-            holder.radio.isChecked = lang.tag == selectedTag
-            holder.itemView.setOnClickListener { onPick(lang) }
+            LazyColumn {
+                items(LANGUAGES, key = { it.tag }) { lang ->
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable { pendingTag = lang.tag }
+                            .padding(horizontal = 16.dp, vertical = 12.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Column(Modifier.weight(1f)) {
+                            Text(
+                                lang.native,
+                                fontSize = 16.sp,
+                                fontWeight = if (isMiuixEngine()) androidx.compose.ui.text.font.FontWeight.Bold
+                                else androidx.compose.ui.text.font.FontWeight.Normal
+                            )
+                            Text(
+                                lang.sub,
+                                fontSize = 13.sp,
+                                color = if (isMiuixEngine()) top.yukonga.miuix.kmp.theme.MiuixTheme.colorScheme.onSurfaceVariantSummary
+                                else androidx.compose.material3.MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                        Spacer(Modifier.width(8.dp))
+                        RadioButton(
+                            selected = lang.tag == pendingTag,
+                            onClick = { pendingTag = lang.tag }
+                        )
+                    }
+                }
+            }
         }
     }
 }

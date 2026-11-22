@@ -33,11 +33,12 @@
     <string name="dynamic_color">ᡥᡡᠯᡥᡞ ᠪᠣᡱᠣ</string>
     <string name="empty_trash">ᡥᠣᠯᠣᡥᠣᡨᠣ ᡫᡝᡨᡝᡰᡝ</string>
     <string name="encrypt_file">ᠪᡞᡨᡥᡝ ᠪᡝᡞᡩᡝᠮᠪᡠ</string>
-    <string name="endangered_language_sub">ᠮᠠᠨᡪᡠ · ᠰᡞᠪᡝ · ᡥᠠᠸᠠᡞ · ᠮᠠᠣᡰᡞ · ᡱᡝᡰᠣᡣᡝ</string>
     <string name="endangered_language_switch">ᡫᠠᡱᡠ ᡤᡞᠰᡠᠨ ᡥᠠᠯᠠᠨᡪᠠᠪᡠ</string>
     <string name="error">ᡥᡡᠰᡠᠨ</string>
     <string name="experimental_features">ᠰᡞᠨᡩᠠᡰᠠ ᠸᡝᡞᠯᡝ</string>
     <string name="experimental_features_hint">ᡝᡰᡝ ᠸᡝᡞᠯᡝ ᠰᡞᠨᡩᠠᡰᠠ ᡩᡝ ᠪᡞ, ᡥᠠᠯᠠᠨᡪᠠᠮᡝ ᠮᠠᠩᡤᡞ.</string>
+    <string name="experimental_warning_msg">ᠰᡞᠨᡩᠠᡰᠠ ᠸᡝᡞᠯᡝ ᠰᡞᠨᡩᠠᡰᠠ ᡩᡝ ᠪᡞ, ᡝᡰᡝ ᠸᡝᡞᠯᡝ ᠪᡝ ᡩᠠᡥᠠᠪᡠᡫᡞ ᠪᠠᡞᡨᠠᠯᠠᠪᡠᡫᡞ, ᡝᡰᡝ ᡥᠠᡱᡞᠨ ᡨᡠᡱᡞᠮᠪᡞ ᠮᠠᠩᡤᡞ:\n\n• ᡩᡠᡰᡠᠨ ᡪᠣᡰᡞᠪᡠ ᡥᡡᠰᡠᠨ, ᡩᡠᡰᡠᠨ ᠸᠠᡣᠠ ᠣᠮᠪᡞ, ᠸᡝᡞᠯᡝ ᠶᠠᠪᡠᡰᠠᡣᡡ ᠮᠠᠩᡤᡞ;\n• ᡝᠮᡠ ᠸᡝᡞᠯᡝ ᠪᠠᡞᡨᠠᠯᠠᠪᡠᡰᠠᡣᡡ ᠮᠠᠩᡤᡞ, ᠠᠮᠠᠯᠠ ᡨᡝᠮᡤᡝᡨᡠ ᡩᡝ ᡥᠠᠯᠠᠨᡪᠠᠪᡠ ᡫᡝᡨᡝᡰᡝ ᠮᠠᠩᡤᡞ;\n• UI ᡩᡠᡰᡠᠨ ᠪᡝ ᡥᠠᠯᠠᠨᡪᠠᠪᡠᡫᡞ, ᡤᡝᠮᡠᠨ ᡩᡠᡰᡠᠨ ᠪᡝ ᡠᡨᡥᠠᡞ ᡩᠠᡥᠠᠮᡝ ᡪᠣᡰᡞᠪᡠ;\n• ᠮᡠᡣᡝ ᡤᡠᡱᡠ ᡝᠮᡠ ᡥᠠᡱᡞᠨ ᡩᡝ, ᡩᠠᠰᠠᠨ ᡞ ᡨᡝᠮᡤᡝᡨᡠ ᡝᠮᡠ ᡩᡝ ᡪᠣᡰᡞᠪᡠ ᡥᡡᠰᡠᠨ ᠮᠠᠩᡤᡞ, ᡩᡝᠨ ᠪᡝ ᠠᠮᠪᠠ ᠪᠠᡞᡨᠠᠯᠠᠪᡠᠮᠪᡞ ᠮᠠᠩᡤᡞ;\n• ᡝᡰᡝ ᠸᡝᡞᠯᡝ ᠠᡞ ᡝᡰᡞᠨ ᡩᡝ ᡥᠠᠯᠠᠨᡪᠠᠮᡝ ᠮᠠᠩᡤᡞ, ᠶᠠᡰᡤᡞᠶᠠᠨ ᠸᡝᡞᠯᡝ ᡩᡝ ᠠᡩᠠᠯᡞ ᠣᠮᠪᡞ ᠰᡝᡰᡝᠩᡤᡝ ᠠᡣᡡ.</string>
+    <string name="experimental_warning_title">ᠰᡞᠨᡩᠠᡰᠠ ᠸᡝᡞᠯᡝ ᡞ ᠵᠠᡰᡞᠨ</string>
     <string name="extract">ᠠᠯᡥᠠᠪᡠ</string>
     <string name="extracted">ᠠᠯᡥᠠᠪᡠᡥᠠ</string>
     <string name="file">ᠪᡞᡨᡥᡝ</string>

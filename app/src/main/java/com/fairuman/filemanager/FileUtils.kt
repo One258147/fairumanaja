@@ -112,12 +112,16 @@ object FileUtils {
     /** v1.9.4：递归算文件夹总大小，算不出返回 null（listFiles() 为 null
      *  表示无权读取，如根目录/SAF 之外的不可读目录；子目录读不出也算 null，
      *  宁可只显示日期，也别显示一个错的总和）。 */
+    // v1.9.8.1：尽力而为——读不到的子目录（如真机上别家应用的
+    // Android/data）跳过、只算能读到的，而不是让整棵树都算不出
+    // 大小（以前一个子目录 listFiles() 为 null 就整树返回 null，
+    // 文件夹永远不显示大小）。
     fun dirSizeOrNull(f: File): Long? {
         if (f.isFile) return f.length()
-        val children = f.listFiles() ?: return null
+        val children = f.listFiles() ?: return 0L
         var total = 0L
         for (child in children) {
-            total += dirSizeOrNull(child) ?: return null
+            total += dirSizeOrNull(child) ?: 0L
         }
         return total
     }

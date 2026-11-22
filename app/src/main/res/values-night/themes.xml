@@ -23,6 +23,5 @@
         <item name="fairuToolbarBackground">?attr/colorPrimary</item>
         <item name="fairuToolbarTitleColor">?attr/colorOnPrimary</item>
         <!-- v1.9.6：卡片圆角改由主题样式驱动（默认 24dp）。 -->
-        <item name="materialCardViewStyle">@style/Widget.Fairu.CardView</item>
     </style>
 </resources>

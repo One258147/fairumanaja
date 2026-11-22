@@ -30,41 +30,27 @@ import android.util.Log
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
-import android.widget.CheckBox
-import android.widget.EditText
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.PopupMenu
-import android.widget.ScrollView
-import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.compose.setContent
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateMapOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.mutableStateSetOf
+import androidx.compose.runtime.toMutableStateList
+import androidx.compose.runtime.snapshots.SnapshotStateList
+import androidx.compose.runtime.snapshots.SnapshotStateMap
+import androidx.compose.runtime.snapshots.SnapshotStateSet
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
-import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.core.os.LocaleListCompat
-import android.widget.ProgressBar
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.appbar.MaterialToolbar
-import com.google.android.material.button.MaterialButton
-import com.google.android.material.color.DynamicColors
 import com.google.android.material.color.MaterialColors
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.snackbar.Snackbar
-import com.example.liquidglass.BlurMethod
-import com.example.liquidglass.ChromaticAberrationEffect
-import com.example.liquidglass.GlassMaterial
-import com.example.liquidglass.LiquidGlassDialogBuilder
-import com.example.liquidglass.LiquidGlassView
 import java.io.File
 import java.io.FileInputStream
 import java.io.InputStream
@@ -169,7 +155,10 @@ class MainActivity : BaseActivity() {
         // 让模糊透出来。
         const val GLASS_TINT_ALPHA = 64 // 25%
         const val GLASS_TINT_ALPHA_BLUR = 26 // 10%
-        // v1.9.6 液态玻璃模式：0 半透明（默认）/ 1 透明模糊 / 2 全透明。
+        // v1.9.6 液态玻璃模式：0 半透明（默认）/ 1 全透明模糊 / 2 全透明。
+        // v1.9.8.1：模式 2 由“透明模糊”改名“全透明模糊”（面板全透明、
+        // 背景真实模糊）；模式 1 半透明改为半透明 + 实时毛玻璃模糊
+        // （20dp 强模糊，HAZE）。
         const val PREF_LIQUID_GLASS_MODE = "liquid_glass_mode"
         const val GLASS_MODE_TRANSLUCENT = 0
         const val GLASS_MODE_BLUR = 1
@@ -253,12 +242,8 @@ class MainActivity : BaseActivity() {
             -12627531, -16537100, -3285959, -19712, -7508381,
             -10453621, -16750244
         )
-        // applyPrefs 最近一次应用的值；onResume 拿它跟保存的设置比，不一致就重建
-        // （外观页改了动态颜色/种子色后，回来不用重启 App 也能生效）。
-        var lastAppliedSeed = DEFAULT_SEED
-        var lastAppliedDynamic = false
-        var lastAppliedFontColor = DEFAULT_FONT_COLOR
-
+        // v1.9.8.1：lastApplied* 已删——偏好变化由 BaseActivity 的实例字段
+        // 在 onResume 里比（偏好对偏好），不再用静态字段。
         // v1.9.2：壁纸取色的缓存（每进程算一次，壁纸中途换了要重启 App 才更新）。
         private var cachedWallpaperSeed: Int? = null
         private var wallpaperSeedComputed = false
@@ -317,137 +302,9 @@ class MainActivity : BaseActivity() {
             }
         }
 
-        /** 种子色 → 主题覆盖层 style（res/values[-night]/themes_seed.xml）。 */
-        fun seedStyleRes(seed: Int): Int {
-            val idx = SEED_COLORS.indexOf(seed)
-            if (idx < 0) return 0
-            return when (idx) {
-                0 -> R.style.ThemeOverlay_Fairu_Seed01
-                1 -> R.style.ThemeOverlay_Fairu_Seed02
-                2 -> R.style.ThemeOverlay_Fairu_Seed03
-                3 -> R.style.ThemeOverlay_Fairu_Seed04
-                4 -> R.style.ThemeOverlay_Fairu_Seed05
-                5 -> R.style.ThemeOverlay_Fairu_Seed06
-                6 -> R.style.ThemeOverlay_Fairu_Seed07
-                7 -> R.style.ThemeOverlay_Fairu_Seed08
-                8 -> R.style.ThemeOverlay_Fairu_Seed09
-                9 -> R.style.ThemeOverlay_Fairu_Seed10
-                10 -> R.style.ThemeOverlay_Fairu_Seed11
-                11 -> R.style.ThemeOverlay_Fairu_Seed12
-                12 -> R.style.ThemeOverlay_Fairu_Seed13
-                13 -> R.style.ThemeOverlay_Fairu_Seed14
-                14 -> R.style.ThemeOverlay_Fairu_Seed15
-                15 -> R.style.ThemeOverlay_Fairu_Seed16
-                16 -> R.style.ThemeOverlay_Fairu_Seed17
-                17 -> R.style.ThemeOverlay_Fairu_Seed18
-                18 -> R.style.ThemeOverlay_Fairu_Seed19
-                19 -> R.style.ThemeOverlay_Fairu_Seed20
-                20 -> R.style.ThemeOverlay_Fairu_Seed21
-                21 -> R.style.ThemeOverlay_Fairu_Seed22
-                22 -> R.style.ThemeOverlay_Fairu_Seed23
-                23 -> R.style.ThemeOverlay_Fairu_Seed24
-                24 -> R.style.ThemeOverlay_Fairu_Seed25
-                25 -> R.style.ThemeOverlay_Fairu_Seed26
-                26 -> R.style.ThemeOverlay_Fairu_Seed27
-                27 -> R.style.ThemeOverlay_Fairu_Seed28
-                28 -> R.style.ThemeOverlay_Fairu_Seed29
-                29 -> R.style.ThemeOverlay_Fairu_Seed30
-                30 -> R.style.ThemeOverlay_Fairu_Seed31
-                31 -> R.style.ThemeOverlay_Fairu_Seed32
-                32 -> R.style.ThemeOverlay_Fairu_Seed33
-                33 -> R.style.ThemeOverlay_Fairu_Seed34
-                34 -> R.style.ThemeOverlay_Fairu_Seed35
-                35 -> R.style.ThemeOverlay_Fairu_Seed36
-                36 -> R.style.ThemeOverlay_Fairu_Seed37
-                37 -> R.style.ThemeOverlay_Fairu_Seed38
-                38 -> R.style.ThemeOverlay_Fairu_Seed39
-                39 -> R.style.ThemeOverlay_Fairu_Seed40
-                40 -> R.style.ThemeOverlay_Fairu_Seed41
-                41 -> R.style.ThemeOverlay_Fairu_Seed42
-                42 -> R.style.ThemeOverlay_Fairu_Seed43
-                43 -> R.style.ThemeOverlay_Fairu_Seed44
-                44 -> R.style.ThemeOverlay_Fairu_Seed45
-                45 -> R.style.ThemeOverlay_Fairu_Seed46
-                46 -> R.style.ThemeOverlay_Fairu_Seed47
-                47 -> R.style.ThemeOverlay_Fairu_Seed48
-                48 -> R.style.ThemeOverlay_Fairu_Seed49
-                49 -> R.style.ThemeOverlay_Fairu_Seed50
-                50 -> R.style.ThemeOverlay_Fairu_Seed51
-                51 -> R.style.ThemeOverlay_Fairu_Seed52
-                else -> R.style.ThemeOverlay_Fairu_Seed52
-            }
-        }
 
 
-        /** 字体颜色 → 主题覆盖层 style（res/values/themes_font.xml）。
-         *  每个颜色只改 colorOnSurface；找不到返回黑色 Font01。 */
-        fun fontStyleRes(fontColor: Int): Int {
-            val idx = FONT_COLORS.indexOf(fontColor)
-            if (idx < 0) return R.style.ThemeOverlay_Fairu_Font01
-            return when (idx) {
-                0 -> R.style.ThemeOverlay_Fairu_Font01
-                1 -> R.style.ThemeOverlay_Fairu_Font02
-                2 -> R.style.ThemeOverlay_Fairu_Font03
-                3 -> R.style.ThemeOverlay_Fairu_Font04
-                4 -> R.style.ThemeOverlay_Fairu_Font05
-                5 -> R.style.ThemeOverlay_Fairu_Font06
-                6 -> R.style.ThemeOverlay_Fairu_Font07
-                7 -> R.style.ThemeOverlay_Fairu_Font08
-                8 -> R.style.ThemeOverlay_Fairu_Font09
-                9 -> R.style.ThemeOverlay_Fairu_Font10
-                10 -> R.style.ThemeOverlay_Fairu_Font11
-                11 -> R.style.ThemeOverlay_Fairu_Font12
-                12 -> R.style.ThemeOverlay_Fairu_Font13
-                13 -> R.style.ThemeOverlay_Fairu_Font14
-                14 -> R.style.ThemeOverlay_Fairu_Font15
-                15 -> R.style.ThemeOverlay_Fairu_Font16
-                16 -> R.style.ThemeOverlay_Fairu_Font17
-                17 -> R.style.ThemeOverlay_Fairu_Font18
-                18 -> R.style.ThemeOverlay_Fairu_Font19
-                19 -> R.style.ThemeOverlay_Fairu_Font20
-                20 -> R.style.ThemeOverlay_Fairu_Font21
-                21 -> R.style.ThemeOverlay_Fairu_Font22
-                22 -> R.style.ThemeOverlay_Fairu_Font23
-                23 -> R.style.ThemeOverlay_Fairu_Font24
-                24 -> R.style.ThemeOverlay_Fairu_Font25
-                25 -> R.style.ThemeOverlay_Fairu_Font26
-                26 -> R.style.ThemeOverlay_Fairu_Font27
-                27 -> R.style.ThemeOverlay_Fairu_Font28
-                28 -> R.style.ThemeOverlay_Fairu_Font29
-                29 -> R.style.ThemeOverlay_Fairu_Font30
-                30 -> R.style.ThemeOverlay_Fairu_Font31
-                31 -> R.style.ThemeOverlay_Fairu_Font32
-                32 -> R.style.ThemeOverlay_Fairu_Font33
-                33 -> R.style.ThemeOverlay_Fairu_Font34
-                34 -> R.style.ThemeOverlay_Fairu_Font35
-                35 -> R.style.ThemeOverlay_Fairu_Font36
-                36 -> R.style.ThemeOverlay_Fairu_Font37
-                37 -> R.style.ThemeOverlay_Fairu_Font38
-                38 -> R.style.ThemeOverlay_Fairu_Font39
-                39 -> R.style.ThemeOverlay_Fairu_Font40
-                40 -> R.style.ThemeOverlay_Fairu_Font41
-                41 -> R.style.ThemeOverlay_Fairu_Font42
-                42 -> R.style.ThemeOverlay_Fairu_Font43
-                43 -> R.style.ThemeOverlay_Fairu_Font44
-                44 -> R.style.ThemeOverlay_Fairu_Font45
-                45 -> R.style.ThemeOverlay_Fairu_Font46
-                46 -> R.style.ThemeOverlay_Fairu_Font47
-                47 -> R.style.ThemeOverlay_Fairu_Font48
-                48 -> R.style.ThemeOverlay_Fairu_Font49
-                49 -> R.style.ThemeOverlay_Fairu_Font50
-                50 -> R.style.ThemeOverlay_Fairu_Font51
-                51 -> R.style.ThemeOverlay_Fairu_Font52
-                else -> R.style.ThemeOverlay_Fairu_Font01
-            }
-        }
 
-        /** UI 引擎 → 主题覆盖层 style（res/values[-night]/themes_engine.xml）。
-         *  MD3（默认）返回 0，不应用任何覆盖层，现有行为一个字不改。 */
-        fun engineStyleRes(engine: Int): Int = when (engine) {
-            UI_ENGINE_EXPRESSIVE -> R.style.ThemeOverlay_Fairu_Expressive
-            UI_ENGINE_MIUIX -> R.style.ThemeOverlay_Fairu_Miuix
-            else -> 0
-        }
 
         /** UI 引擎的显示名（设置页副标题、实验性功能页副标题共用）。 */
         fun engineDisplayName(ctx: android.content.Context, engine: Int): String = when (engine) {
@@ -456,15 +313,12 @@ class MainActivity : BaseActivity() {
             else -> "Material Design 3"
         }
 
-        /** 液态玻璃覆盖层（res/values[-night]/themes_engine.xml）。
-         *  HAZE 是 Jetpack Compose 专用库，本项目是 View 体系 + 命令行直编、
-         *  没有 Compose 编译器插件，接不进来；这里用系统原生办法做同样效果：
-         *  半透明背景 + API 31+ 窗口背景模糊（API 29 只有半透明、无模糊）。 */
-        fun liquidGlassStyleRes(): Int = R.style.ThemeOverlay_Fairu_LiquidGlass
-
         /** 所有 Activity 启动前统一应用：语言 + 主题模式 + 动态颜色/种子色
          *  （要在 super.onCreate 之前调）。动态颜色开着时优先于种子色；
          *  种子色用 getTheme().applyStyle 合并覆盖层（浅/深各一套，按夜间模式自动取）。 */
+        /** v1.9.8.1：所有 Activity 启动前统一应用语言 + 夜间模式（AppCompat 级，
+         *  Compose 管不着）。配色/引擎/玻璃/字体颜色改由 Compose 的 FairuTheme
+         *  直接从偏好算，不再走主题覆盖层（themes_seed/engine/font 已删）。 */
         fun applyPrefs(ctx: android.content.Context) {
             try {
                 val sp = ctx.getSharedPreferences("fairu_prefs", MODE_PRIVATE)
@@ -480,53 +334,6 @@ class MainActivity : BaseActivity() {
                     else -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
                 }
                 AppCompatDelegate.setDefaultNightMode(mode)
-                val dynamic = sp.getBoolean(PREF_DYNAMIC_COLOR, false)
-                val seed = sp.getInt(PREF_SEED_COLOR, DEFAULT_SEED)
-                lastAppliedDynamic = dynamic
-                lastAppliedSeed = seed
-                val act = ctx as? Activity ?: return
-                if (dynamic) {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                        try { DynamicColors.applyToActivityIfAvailable(act) } catch (_: Exception) { }
-                    } else {
-                        // v1.9.2：Android 12 以下没有系统动态取色——从当前壁纸提主色，
-                        // 用最接近的种子色覆盖层兜底（版本限制已取消，任何版本都能开）。
-                        val wSeed = wallpaperSeed(ctx) ?: seed
-                        val style = seedStyleRes(wSeed)
-                        if (style != 0) {
-                            try { act.theme.applyStyle(style, true) } catch (_: Exception) { }
-                        }
-                    }
-                } else {
-                    val style = seedStyleRes(seed)
-                    if (style != 0) {
-                        try { act.theme.applyStyle(style, true) } catch (_: Exception) { }
-                    }
-                }
-                // v1.9.6 UI 引擎：最后应用，Expressive / Miuix 的配色与形状
-                // 盖掉种子色（引擎换的是整个 UI）；MD3 不应用，保持原样。
-                val engine = sp.getInt(PREF_UI_ENGINE, UI_ENGINE_MD3)
-                val engineStyle = engineStyleRes(engine)
-                if (engineStyle != 0) {
-                    try { act.theme.applyStyle(engineStyle, true) } catch (_: Exception) { }
-                }
-                // v1.9.6 液态玻璃：再盖一层半透明（只改颜色，不改引擎的形状）。
-                if (sp.getBoolean(PREF_LIQUID_GLASS, false)) {
-                    try { act.theme.applyStyle(liquidGlassStyleRes(), true) } catch (_: Exception) { }
-                }
-                // v1.9.6 字体颜色：最后应用，只改 colorOnSurface，盖掉种子色/
-                // 引擎的同名角色（字体颜色是用户点的，要赢）。
-                val fontColor = sp.getInt(PREF_FONT_COLOR, DEFAULT_FONT_COLOR)
-                lastAppliedFontColor = fontColor
-                val fontStyle = fontStyleRes(fontColor)
-                try { act.theme.applyStyle(fontStyle, true) } catch (_: Exception) { }
-                // v1.9.7 真满文/锡伯文：语言是 mnc/sjo 时，再盖一层字体覆盖层，
-                // 全页字体换成随包的 Noto Sans Mongolian（见 themes_font.xml）。
-                // 盖在字体颜色之后，字体颜色只改 colorOnSurface，两者不冲突。
-                val localeTag = sp.getString(PREF_LOCALE, null)
-                if (localeTag == "mnc" || localeTag == "sjo") {
-                    try { act.theme.applyStyle(R.style.ThemeOverlay_Fairu_Mongolian, true) } catch (_: Exception) { }
-                }
             } catch (_: Exception) { }
         }
 
@@ -534,22 +341,61 @@ class MainActivity : BaseActivity() {
         val safExecutor = Executors.newCachedThreadPool { r -> Thread(r, "saf-op").apply { isDaemon = true } }
     }
 
-    private lateinit var prefs: SharedPreferences
-    private lateinit var drawerLayout: DrawerLayout
-    private lateinit var topBar: MaterialToolbar
-    // v1.8.0 多选模式顶栏（照 Max 的参考图）：平时隐藏，选中后顶替掉 topBar。
-    private lateinit var selectionTopBar: LinearLayout
-    private lateinit var selTitle: TextView
-    private lateinit var selSubtitle: TextView
-    private lateinit var paneLeftRoot: View
-    private lateinit var paneRightRoot: View
-    private lateinit var paneDivider: View
-    private lateinit var btnSwap: MaterialButton
+    internal lateinit var prefs: SharedPreferences
+    internal lateinit var left: Pane
+    internal lateinit var right: Pane
+    internal var active by mutableStateOf(0) // 0 = 左窗格，1 = 右窗格
+    internal var dualPane by mutableStateOf(true)
 
-    private lateinit var left: Pane
-    private lateinit var right: Pane
-    private var active = 0 // 0 = 左窗格，1 = 右窗格
-    private var dualPane = true
+    // ---------- Compose 对话框 / 菜单状态（v1.9.8.1） ----------
+    // 对话框由状态驱动：置非空即显示，点取消/确认后置回 null。状态定义见 MainDialogs.kt。
+    var deleteDialog by mutableStateOf<DeleteRequest?>(null)
+    var renameDialog by mutableStateOf<RenameRequest?>(null)
+    var showNewDialog by mutableStateOf(false)
+
+    var fileMenu by mutableStateOf<FileMenuRequest?>(null)
+    var showSelectionMenu by mutableStateOf(false)
+
+    var moreActionsDialog by mutableStateOf<MoreActionsRequest?>(null)
+    var shortcutDialog by mutableStateOf<ShortcutRequest?>(null)
+    var propertiesDialog by mutableStateOf<PropertiesRequest?>(null)
+    var showSortDialog by mutableStateOf(false)
+
+    var showTopMenu by mutableStateOf(false)
+
+    var showDrawerOverflowMenu by mutableStateOf(false)
+
+    var bookmarkMenu by mutableStateOf<BookmarkMenuRequest?>(null)
+    var passwordDialog by mutableStateOf<PasswordRequest?>(null)
+    var showSearch by mutableStateOf(false)
+
+    var drawerOpen by mutableStateOf(false)
+    // 抽屉自定义储存 / 书签行（带显示副标题，后台算好再填；Compose 直接读）。
+    var customStorageRows by mutableStateOf<List<CustomStorageRow>>(emptyList())
+    var bookmarkRows by mutableStateOf<List<Bookmarks.Bookmark>>(emptyList())
+    // 自定义储存的长按菜单 / 重命名 / 删除确认 / 排序对话框。
+    var storageMenu by mutableStateOf<StorageMenuRequest?>(null)
+    var storageRenameDialog by mutableStateOf<StorageRenameRequest?>(null)
+    var storageDeleteDialog by mutableStateOf<StorageDeleteRequest?>(null)
+    var showSortStoragesDialog by mutableStateOf(false)
+
+    // 抽屉里储存用量（StatFs，后台算好再填；Compose 直接读状态）。
+    var drawerRootInfo by mutableStateOf("")
+
+    var drawerRootPct by mutableStateOf(0)
+
+    var drawerInternalInfo by mutableStateOf("")
+
+    var drawerInternalPct by mutableStateOf(0)
+
+    var customStoragesVersion by mutableStateOf(0)
+
+    var bookmarksVersion by mutableStateOf(0)
+
+    // Snackbar（Compose Scaffold 的 SnackbarHostState，由 MainUi 持有，这里只发消息）。
+    var snackbarMessage by mutableStateOf<String?>(null)
+
+    fun showSnackbar(msg: String) { snackbarMessage = msg }
 
     /** 剪贴板里的一项：普通 File，或 SAF 文档（URI + 名字 + 是否文件夹），
      *  或根目录（Shizuku）里的路径（isRoot=true，file 是真实路径但 App
@@ -579,9 +425,6 @@ class MainActivity : BaseActivity() {
     // 绝不碰任何 native 方法——否则库的 SMART 默认会在第一帧抛
     // ExceptionInInitializerError 闪退（loadLibrary 的 UnsatisfiedLinkError
     // 是 Error，库里的 catch (e: Exception) 接不住）。
-    val NATIVE_GLASS_OK: Boolean by lazy {
-        try { System.loadLibrary("nativegauss"); true } catch (t: Throwable) { false }
-    }
 
     /** v1.8.0：根目录文本文件用内置编辑器打开时，先经 Shizuku cp 到缓存里
      *  暂存，编辑器改的是暂存文件；编辑器退出后暂存文件变了就 cp 回原路径。
@@ -609,40 +452,53 @@ class MainActivity : BaseActivity() {
     }
 
     inner class Pane(val index: Int) {
-        var currentDir: File = Environment.getExternalStorageDirectory()
-        val backStack = mutableListOf<File>()
-        val forwardStack = mutableListOf<File>()
-        var files: List<File> = emptyList()
-        val selected = mutableSetOf<File>()
-        var searchQuery = ""
+        var currentDir: File by mutableStateOf(Environment.getExternalStorageDirectory())
+        val backStack = mutableStateListOf<File>()
+        val forwardStack = mutableStateListOf<File>()
+        // Compose 状态：列表/选中/搜索一变，LazyColumn 自动重组。
+        var files: List<File> by mutableStateOf(emptyList())
+        val selected = mutableStateSetOf<File>()
+        var searchQuery: String by mutableStateOf("")
         // Shizuku 模式：当前窗格在浏览根目录（File 读不到，用 ls -la 的解析结果）。
-        var shizukuMode = false
-        var shizukuEntries: List<ShizukuRoot.Entry> = emptyList()
+        var shizukuMode: Boolean by mutableStateOf(false)
+        var shizukuEntries: List<ShizukuRoot.Entry> by mutableStateOf(emptyList())
         // v1.8.0：根目录子目录读失败时记下错误原因，空列表里直接显示给用户看，
         // 不再留着旧列表（旧列表配新路径会误导人），也不再只显示“这里是空的”。
-        var shizukuError: String? = null
+        var shizukuError: String? by mutableStateOf(null)
         // SAF 模式：当前窗格在浏览一个 File 读不到的已添加储存（比如别家 App
         // 的目录，由 DocumentsProvider 暴露），用 DocumentsContract 列目录。
-        var safMode = false
-        var safStorage: CustomStorages.Storage? = null
+        var safMode: Boolean by mutableStateOf(false)
+        var safStorage: CustomStorages.Storage? by mutableStateOf(null)
         // SAF 浏览栈：一串（文档 ID，显示名），栈顶是当前目录。
-        var safStack = mutableListOf<SafDir>()
+        var safStack = mutableStateListOf<SafDir>()
         // 后退 / 前进栈：每次存一份 safStack 的快照。
-        var safBackStack = mutableListOf<List<SafDir>>()
-        var safForwardStack = mutableListOf<List<SafDir>>()
-        var safEntries: List<SafEntry> = emptyList()
+        var safBackStack = mutableStateListOf<List<SafDir>>()
+        var safForwardStack = mutableStateListOf<List<SafDir>>()
+        var safEntries: List<SafEntry> by mutableStateOf(emptyList())
         // 合成路径（/saf/…）→ 真实文档 URI，点行时用它进目录 / 打开文件。
-        var safUriByPath = mapOf<String, Uri>()
-        lateinit var root: View
-        lateinit var pathView: TextView
-        lateinit var recycler: RecyclerView
-        lateinit var emptyView: TextView
-        lateinit var adapter: FileAdapter
+        var safUriByPath: Map<String, Uri> by mutableStateOf(emptyMap())
+        // 行显示覆盖（Shizuku/SAF 模式：File 本身读不到属性，用解析结果提供）。
+        var isDirOverride: Map<String, Boolean> by mutableStateOf(emptyMap())
+        var sizeOverride: Map<String, Long> by mutableStateOf(emptyMap())
+        var dateOverride: Map<String, Long> by mutableStateOf(emptyMap())
+        var dirShowsFolderLabel: Boolean by mutableStateOf(false)
+        var pinnedKeys: Set<String> by mutableStateOf(emptySet())
+        // 是否显示“..”父目录行；空目录提示文字。
+        var showParent: Boolean by mutableStateOf(false)
+        var emptyText: String by mutableStateOf("")
+        var showEmpty: Boolean by mutableStateOf(false)
+        // 文件夹递归大小缓存（MP 样式副标题用，后台算 + 缓存，见 FileAdapter 旧实现）。
+        val dirSizeCache = mutableStateMapOf<String, Long>()
+        // v1.9.8.1：加载代次——loadPane 每次清缓存时 +1，行里的 LaunchedEffect
+        // 以它为 key，同一路径复用旧组合时也能重新算大小（否则清缓存后大小永久丢失）。
+        var loadSeq by mutableIntStateOf(0)
+        // 当前窗格是否激活（顶栏/路径条高亮用）。
+        var isActive: Boolean by mutableStateOf(false)
     }
 
     private fun panes(): List<Pane> = listOf(left, right)
-    private fun activePane(): Pane = if (active == 0) left else right
-    private fun otherPane(): Pane = if (active == 0) right else left
+    internal fun activePane(): Pane = if (active == 0) left else right
+    internal fun otherPane(): Pane = if (active == 0) right else left
 
     override fun onCreate(savedInstanceState: Bundle?) {
         CrashHandler.install(this)
@@ -669,78 +525,16 @@ class MainActivity : BaseActivity() {
     private fun applySavedLocale() = applyPrefs(this)
 
     private fun onCreateInner(savedInstanceState: Bundle?) {
-        setContentView(R.layout.activity_main)
         prefs = getSharedPreferences("fairu_prefs", MODE_PRIVATE)
         dualPane = prefs.getBoolean("dual_pane", true)
 
-        topBar = findViewById(R.id.topAppBar)
-        setSupportActionBar(topBar)
-        // 注意：不要再调 topBar.setOnMenuItemClickListener——它会盖掉
-        // ToolbarActionBar 转发到 onOptionsItemSelected 的监听，导致双分发；
-        // 菜单统一走下面的 onCreateOptionsMenu + onOptionsItemSelected。
-
-        // 左上角抽屉菜单（MT 式）：汉堡按钮滑出抽屉。
-        drawerLayout = findViewById(R.id.drawerLayout)
-        topBar.setNavigationIcon(R.drawable.ic_menu)
-        topBar.setNavigationOnClickListener { drawerLayout.openDrawer(GravityCompat.START) }
-        refreshDrawerTexts()
-        setupLiquidGlass()
-        findViewById<View>(R.id.drawerRootRow).setOnClickListener {
-            openRootViaShizuku()
-        }
-        findViewById<ImageButton>(R.id.drawerOverflow).setOnClickListener {
-            showDrawerOverflowMenu(it)
-        }
-        refreshCustomStorages()
-        refreshBookmarks()
-        findViewById<View>(R.id.drawerInternalRow).setOnClickListener {
-            navigateDrawerTo(Environment.getExternalStorageDirectory())
-        }
-        findViewById<View>(R.id.drawerTrashRow).setOnClickListener {
-            drawerLayout.closeDrawer(GravityCompat.START)
-            startActivity(Intent(this, TrashActivity::class.java))
-        }
-        findViewById<View>(R.id.drawerEditorRow).setOnClickListener {
-            drawerLayout.closeDrawer(GravityCompat.START)
-            startActivity(Intent(this, TextEditorActivity::class.java))
-        }
-        findViewById<View>(R.id.drawerSettingsRow).setOnClickListener {
-            drawerLayout.closeDrawer(GravityCompat.START)
-            startActivity(Intent(this, SettingsActivity::class.java))
-        }
-
-        // v1.8.0 多选模式顶栏（照 Max 的参考图）：✕ 退出多选，分享 / 删除 /
-        // ⋮ 走多选菜单。底部的选择操作条删了，不再两套并存。
-        selectionTopBar = findViewById(R.id.selectionTopBar)
-        selTitle = findViewById(R.id.selTitle)
-        selSubtitle = findViewById(R.id.selSubtitle)
-        findViewById<ImageButton>(R.id.btnSelClose).setOnClickListener { clearSelection(activePane()) }
-        findViewById<ImageButton>(R.id.btnSelShare).setOnClickListener { shareFiles(activePane(), activePane().selected.toList()) }
-        findViewById<ImageButton>(R.id.btnSelDelete).setOnClickListener { confirmDelete(activePane().selected.toList()) }
-        findViewById<ImageButton>(R.id.btnSelMore).setOnClickListener { showSelectionMenu(it) }
-        paneLeftRoot = findViewById(R.id.paneLeft)
-        paneRightRoot = findViewById(R.id.paneRight)
-        paneDivider = findViewById(R.id.paneDivider)
-
-        left = Pane(0).also { setupPane(it, paneLeftRoot) }
-        right = Pane(1).also { setupPane(it, paneRightRoot) }
-
-        findViewById<MaterialButton>(R.id.btnBack).setOnClickListener { goBack() }
-        findViewById<MaterialButton>(R.id.btnForward).setOnClickListener { goForward() }
-        findViewById<MaterialButton>(R.id.btnNew).setOnClickListener { showNewDialog() }
-        btnSwap = findViewById(R.id.btnSwap)
-        btnSwap.setOnClickListener { swapPanes() }
-        findViewById<MaterialButton>(R.id.btnUp).setOnClickListener { navigateUp(activePane()) }
-
-        // btnSwap 要先初始化，applyDualPane 里才会用到它。
-        applyDualPane()
+        left = Pane(0)
+        right = Pane(1)
+        left.isActive = true
 
         onBackPressedDispatcher.addCallback(this, object : androidx.activity.OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                if (::drawerLayout.isInitialized && drawerLayout.isDrawerOpen(GravityCompat.START)) {
-                    drawerLayout.closeDrawer(GravityCompat.START)
-                    return
-                }
+                if (drawerOpen) { drawerOpen = false; return }
                 val p = activePane()
                 if (p.selected.isNotEmpty()) { clearSelection(p); return }
                 if (goBack()) return
@@ -749,73 +543,39 @@ class MainActivity : BaseActivity() {
             }
         })
 
-        // setupSearch() 不在这里调：菜单还没 inflate，topBar.menu 是空的；
-        // 它在 onCreateOptionsMenu 里 inflate 之后调。
+        setContent {
+            FairuTheme { MainScreen() }
+        }
+
         checkPermissions()
         load()
         // v1.9.1：桌面快捷方式点进来时按动作定位/打开。
         handleShortcutIntent(intent)
     }
 
-    private fun setupPane(pane: Pane, root: View) {
-        pane.root = root
-        pane.pathView = root.findViewById(R.id.panePath)
-        pane.recycler = root.findViewById(R.id.recyclerView)
-        pane.emptyView = root.findViewById(R.id.emptyView)
-        pane.recycler.layoutManager = LinearLayoutManager(this)
-        pane.adapter = FileAdapter(
-            onClick = { f -> setActive(pane); onFileClick(pane, f) },
-            onLongClick = { f -> setActive(pane); toggleSelect(pane, f); true },
-            onParentClick = { setActive(pane); navigateUp(pane) },
-            // v1.8.0：每行末尾的 ⋮，点它弹出该项的操作菜单。
-            onMoreClick = { f, v -> setActive(pane); showFileMenu(pane, f, v) }
-        )
-        pane.adapter.selected = pane.selected
-        pane.recycler.adapter = pane.adapter
-        // 点窗格任意处即激活该窗格。
-        root.setOnClickListener { setActive(pane) }
-    }
-
-    private fun setActive(pane: Pane) {
+    internal fun setActive(pane: Pane) {
         if (active != pane.index) {
             active = pane.index
-            updateTopBar()
-            updateSelectionTopBar()
-            highlightActivePane()
+            left.isActive = active == 0
+            right.isActive = active == 1
         }
     }
 
-    private fun highlightActivePane() {
+    internal fun applyDualPane() {
         if (!::left.isInitialized || !::right.isInitialized) return
-        val activeBg = getColor(R.color.m3_primary_container)
-        val idleBg = getColor(R.color.m3_surface_container_high)
-        left.pathView.setBackgroundColor(if (active == 0) activeBg else idleBg)
-        right.pathView.setBackgroundColor(if (active == 1) activeBg else idleBg)
-    }
-
-    private fun applyDualPane() {
-        if (!::left.isInitialized || !::right.isInitialized) return
-        if (::btnSwap.isInitialized) {
-            btnSwap.visibility = if (dualPane) View.VISIBLE else View.GONE
-        }
-        if (dualPane) {
-            paneRightRoot.visibility = View.VISIBLE
-            paneDivider.visibility = View.VISIBLE
-        } else {
-            paneRightRoot.visibility = View.GONE
-            paneDivider.visibility = View.GONE
-            active = 0
-        }
-        topBar.menu.findItem(R.id.menu_dual_pane)?.isChecked = dualPane
+        if (!dualPane) active = 0
+        left.isActive = active == 0
+        right.isActive = active == 1
         load()
     }
+
 
     // ---------- 抽屉菜单 ----------
 
     /** 点抽屉里的目录项：切换当前活动窗格的目录并关抽屉；进不去就友好提示，绝不闪退。
      *  从 Shizuku 模式切回普通目录时先退出 Shizuku 模式。 */
-    private fun navigateDrawerTo(dir: File) {
-        drawerLayout.closeDrawer(GravityCompat.START)
+    internal fun navigateDrawerTo(dir: File) {
+        drawerOpen = false
         if (dir.listFiles() == null) {
             Toast.makeText(this, R.string.cannot_access, Toast.LENGTH_SHORT).show()
             return
@@ -829,8 +589,8 @@ class MainActivity : BaseActivity() {
      *  映射不到、或 File 读不了（比如别家 App 的目录），就走 SAF 方式。
      *  注意 File.listFiles() 返回 null（读不了）和空数组（空文件夹）是两回事，
      *  只有 null 才进 SAF。 */
-    private fun navigateDrawerToStorage(s: CustomStorages.Storage) {
-        drawerLayout.closeDrawer(GravityCompat.START)
+    internal fun navigateDrawerToStorage(s: CustomStorages.Storage) {
+        drawerOpen = false
         if (s.path.isNotBlank()) {
             val f = File(s.path)
             if (f.listFiles() != null) {
@@ -848,94 +608,107 @@ class MainActivity : BaseActivity() {
     }
 
     /** 抽屉里两组储存用量条：已用 / 可用 / 百分比（StatFs）。 */
-    private fun refreshDrawerInfo() {
+    internal fun refreshDrawerInfo() {
         try {
-            refreshOneDrawerStorage(File("/"), R.id.drawerRootBar, R.id.drawerRootInfo)
-            refreshOneDrawerStorage(
-                Environment.getExternalStorageDirectory(),
-                R.id.drawerInternalBar, R.id.drawerInternalInfo
-            )
+            val (rootTotal, rootFree) = FileUtils.storageInfo(File("/"))
+            if (rootTotal > 0) {
+                val used = rootTotal - rootFree
+                val pct = ((used * 100) / rootTotal).toInt()
+                drawerRootPct = pct
+                drawerRootInfo = getString(R.string.used_space) + " " + FileUtils.formatSize(used) +
+                    "  ·  " + getString(R.string.free_space) + " " + FileUtils.formatSize(rootFree) +
+                    "  ·  $pct%"
+            } else {
+                drawerRootPct = 0
+                drawerRootInfo = getString(R.string.cannot_access)
+            }
+            val (intTotal, intFree) = FileUtils.storageInfo(Environment.getExternalStorageDirectory())
+            if (intTotal > 0) {
+                val used = intTotal - intFree
+                val pct = ((used * 100) / intTotal).toInt()
+                drawerInternalPct = pct
+                drawerInternalInfo = getString(R.string.used_space) + " " + FileUtils.formatSize(used) +
+                    "  ·  " + getString(R.string.free_space) + " " + FileUtils.formatSize(intFree) +
+                    "  ·  $pct%"
+            } else {
+                drawerInternalPct = 0
+                drawerInternalInfo = getString(R.string.cannot_access)
+            }
         } catch (_: Exception) { }
     }
 
-    private fun refreshOneDrawerStorage(dir: File, barId: Int, infoId: Int) {
-        val bar = findViewById<ProgressBar>(barId) ?: return
-        val info = findViewById<TextView>(infoId) ?: return
-        val (total, free) = FileUtils.storageInfo(dir)
-        if (total <= 0) {
-            bar.progress = 0
-            info.text = getString(R.string.cannot_access)
-            return
+    /** 抽屉头版本号（从 PackageManager 读，升级不用改代码）。 */
+    internal fun drawerVersionText(): String {
+        return try {
+            val pi = packageManager.getPackageInfo(packageName, 0)
+            val code = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P) pi.longVersionCode else pi.versionCode.toLong()
+            getString(R.string.version) + " " + pi.versionName + " ($code)"
+        } catch (_: Exception) {
+            getString(R.string.version) + " 1.9.7.1 (22)"
         }
-        val used = total - free
-        val pct = ((used * 100) / total).toInt()
-        bar.progress = pct
-        info.text = getString(R.string.used_space) + " " + FileUtils.formatSize(used) +
-            "  ·  " + getString(R.string.free_space) + " " + FileUtils.formatSize(free) +
-            "  ·  $pct%"
     }
+
 
     // ---------- 浏览 / 搜索 / 排序 ----------
 
-    private fun load() {
+    internal fun load() {
         if (!::left.isInitialized || !::right.isInitialized) return
         loadPane(left)
         if (dualPane) loadPane(right)
-        updateTopBar()
-        updateSelectionTopBar()
-        highlightActivePane()
         refreshDrawerInfo()
     }
 
-    private fun loadPane(pane: Pane) {
+    internal fun loadPane(pane: Pane) {
         if (!::left.isInitialized) return
         // v1.9.0：置顶的文件夹排最前面（Pin folder），行末尾显示图钉标记。
-        pane.adapter.pinnedKeys = PinnedFolders.pinnedKeys(this)
+        pane.pinnedKeys = PinnedFolders.pinnedKeys(this)
         if (pane.safMode) {
             // SAF 模式：File 读不到这目录，用 DocumentsContract 读到的条目拼
-            // File 列表（合成路径只当 key）；目录/大小/日期由 adapter 的
-            // override 提供，跟 Shizuku 模式同一套做法。
+            // File 列表（合成路径只当 key）；目录/大小/日期由 override 提供，
+            // 跟 Shizuku 模式同一套做法。Compose 行直接读这些状态。
             var entries = pane.safEntries
             if (pane.searchQuery.isNotBlank()) {
                 val q = pane.searchQuery.lowercase()
                 entries = entries.filter { it.name.lowercase().contains(q) }
             }
             pane.files = applyPins(entries.map { File(it.keyPath) })
-            pane.pathView.text = safBreadcrumb(pane)
-            pane.adapter.isDirOverride = entries.associate { it.keyPath to it.isDir }
-            pane.adapter.sizeOverride = entries.associate { it.keyPath to it.size }
-            pane.adapter.dateOverride = entries.associate { it.keyPath to it.modified }
-            pane.adapter.dirShowsFolderLabel = true
-            pane.adapter.update(pane.files, pane.safStack.size > 1)
-            pane.emptyView.text = getString(R.string.no_files)
-            pane.emptyView.visibility = if (pane.files.isEmpty() && pane.safStack.size <= 1) View.VISIBLE else View.GONE
+            pane.isDirOverride = entries.associate { it.keyPath to it.isDir }
+            pane.sizeOverride = entries.associate { it.keyPath to it.size }
+            pane.dateOverride = entries.associate { it.keyPath to it.modified }
+            pane.dirShowsFolderLabel = true
+            pane.showParent = pane.safStack.size > 1
+            pane.dirSizeCache.clear()
+            pane.loadSeq++
+            pane.emptyText = getString(R.string.no_files)
+            pane.showEmpty = pane.files.isEmpty() && pane.safStack.size <= 1
             return
         }
         if (pane.shizukuMode) {
             // Shizuku 模式：用上次 ls -la 读到的条目拼 File 列表；
-            // 目录/大小/日期由 adapter 的 override 提供（File 本身读不到）。
+            // 目录/大小/日期由 override 提供（File 本身读不到）。
             var entries = pane.shizukuEntries
             if (pane.searchQuery.isNotBlank()) {
                 val q = pane.searchQuery.lowercase()
                 entries = entries.filter { it.name.lowercase().contains(q) }
             }
             pane.files = applyPins(entries.map { File(it.path) })
-            pane.pathView.text = pane.currentDir.absolutePath
-            pane.adapter.isDirOverride = entries.associate { it.path to it.isDir }
-            pane.adapter.sizeOverride = entries.associate { it.path to it.size }
-            pane.adapter.dateOverride = entries.associate { it.path to it.modified }
-            pane.adapter.dirShowsFolderLabel = true
-            pane.adapter.update(pane.files, pane.currentDir.parentFile != null)
+            pane.isDirOverride = entries.associate { it.path to it.isDir }
+            pane.sizeOverride = entries.associate { it.path to it.size }
+            pane.dateOverride = entries.associate { it.path to it.modified }
+            pane.dirShowsFolderLabel = true
+            pane.showParent = pane.currentDir.parentFile != null
+            pane.dirSizeCache.clear()
+            pane.loadSeq++
             // v1.8.0：读失败时空列表里直接显示错误原因（refreshShizukuList
             // 失败时把 shizukuError 填上），不再只显示“这里是空的”。
-            pane.emptyView.text = pane.shizukuError ?: getString(R.string.no_files)
-            pane.emptyView.visibility = if (pane.files.isEmpty()) View.VISIBLE else View.GONE
+            pane.emptyText = pane.shizukuError ?: getString(R.string.no_files)
+            pane.showEmpty = pane.files.isEmpty()
             return
         }
-        pane.adapter.isDirOverride = emptyMap()
-        pane.adapter.sizeOverride = emptyMap()
-        pane.adapter.dateOverride = emptyMap()
-        pane.adapter.dirShowsFolderLabel = false
+        pane.isDirOverride = emptyMap()
+        pane.sizeOverride = emptyMap()
+        pane.dateOverride = emptyMap()
+        pane.dirShowsFolderLabel = false
         val showHidden = prefs.getBoolean("show_hidden", false)
         val sort = prefs.getInt("sort", 0)
         var list: List<File> = pane.currentDir.listFiles()?.toList() ?: emptyList()
@@ -951,11 +724,11 @@ class MainActivity : BaseActivity() {
         }
         list = applyPins(list)
         pane.files = list
-        pane.pathView.text = pane.currentDir.absolutePath
-        val showParent = pane.currentDir.parentFile != null
-        pane.adapter.update(list, showParent)
-        pane.emptyView.text = getString(R.string.no_files)
-        pane.emptyView.visibility = if (list.isEmpty() && !showParent) View.VISIBLE else View.GONE
+        pane.showParent = pane.currentDir.parentFile != null
+        pane.dirSizeCache.clear()
+            pane.loadSeq++
+        pane.emptyText = getString(R.string.no_files)
+        pane.showEmpty = list.isEmpty() && !pane.showParent
     }
 
     /** v1.9.0 Pin folder：已置顶的文件夹排到列表最前面（其余顺序不变）。 */
@@ -978,35 +751,9 @@ class MainActivity : BaseActivity() {
         return out
     }
 
-    private fun updateTopBar() {
-        if (!::left.isInitialized) return
-        val p = activePane()
-        if (p.safMode) {
-            // SAF 模式：标题是面包屑（储存名/子目录），计数用 SAF 条目。
-            topBar.title = safBreadcrumb(p)
-            val dirs = p.safEntries.count { it.isDir }
-            val count = p.safEntries.count { !it.isDir }
-            val root = Environment.getExternalStorageDirectory()
-            val (total, free) = FileUtils.storageInfo(root)
-            topBar.subtitle = getString(
-                R.string.pane_stats, dirs, count,
-                FileUtils.formatSize(total - free), FileUtils.formatSize(total)
-            )
-            topBar.menu.findItem(R.id.menu_show_hidden)?.isChecked = prefs.getBoolean("show_hidden", false)
-            return
-        }
-        topBar.title = p.currentDir.absolutePath
-        // Shizuku 模式下 File.isDirectory 读不到，用 ls 的解析结果计数。
-        val dirs = if (p.shizukuMode) p.shizukuEntries.count { it.isDir } else p.files.count { it.isDirectory }
-        val count = if (p.shizukuMode) p.shizukuEntries.count { !it.isDir } else p.files.count { it.isFile }
-        val root = Environment.getExternalStorageDirectory()
-        val (total, free) = FileUtils.storageInfo(root)
-        topBar.subtitle = getString(
-            R.string.pane_stats, dirs, count,
-            FileUtils.formatSize(total - free), FileUtils.formatSize(total)
-        )
-        topBar.menu.findItem(R.id.menu_show_hidden)?.isChecked = prefs.getBoolean("show_hidden", false)
-    }
+    // v1.9.8.1：顶栏是 Compose，标题/副标题/隐藏开关直接读窗格状态，
+    // 不再由这里推 View。保留空函数体是让旧调用点照常编译。
+    private fun updateTopBar() { }
 
     private fun navigateTo(pane: Pane, dir: File) {
         if (dir == pane.currentDir && !pane.shizukuMode) return
@@ -1029,7 +776,7 @@ class MainActivity : BaseActivity() {
         updateTopBar()
     }
 
-    private fun navigateUp(pane: Pane) {
+    internal fun navigateUp(pane: Pane) {
         if (pane.safMode) {
             // SAF 模式：沿浏览栈往上走一层（同时压入后退栈，< 能回来）。
             if (pane.safStack.size <= 1) return
@@ -1053,12 +800,12 @@ class MainActivity : BaseActivity() {
         if (parent != null && parent.exists()) navigateTo(pane, parent)
     }
 
-    private fun goBack(): Boolean {
+    internal fun goBack(): Boolean {
         val p = activePane()
         if (p.safMode) {
             if (p.safBackStack.isEmpty()) return false
             p.safForwardStack.add(p.safStack.toList())
-            p.safStack = p.safBackStack.removeAt(p.safBackStack.lastIndex).toMutableList()
+            p.safStack = p.safBackStack.removeAt(p.safBackStack.lastIndex).toMutableStateList()
             p.currentDir = File(safKeyPath(p))
             p.searchQuery = ""
             refreshSafList(p)
@@ -1074,12 +821,12 @@ class MainActivity : BaseActivity() {
         return true
     }
 
-    private fun goForward(): Boolean {
+    internal fun goForward(): Boolean {
         val p = activePane()
         if (p.safMode) {
             if (p.safForwardStack.isEmpty()) return false
             p.safBackStack.add(p.safStack.toList())
-            p.safStack = p.safForwardStack.removeAt(p.safForwardStack.lastIndex).toMutableList()
+            p.safStack = p.safForwardStack.removeAt(p.safForwardStack.lastIndex).toMutableStateList()
             p.currentDir = File(safKeyPath(p))
             p.searchQuery = ""
             refreshSafList(p)
@@ -1095,7 +842,7 @@ class MainActivity : BaseActivity() {
         return true
     }
 
-    private fun swapPanes() {
+    internal fun swapPanes() {
         if (!dualPane) return
         val dirL = left.currentDir
         val dirR = right.currentDir
@@ -1121,7 +868,7 @@ class MainActivity : BaseActivity() {
         load()
     }
 
-    private fun onFileClick(pane: Pane, f: File) {
+    internal fun onFileClick(pane: Pane, f: File) {
         if (pane.selected.isNotEmpty()) { toggleSelect(pane, f); return }
         if (pane.safMode) {
             // SAF 模式：目录进得去；文本文件进内置编辑器（读流进来、保存写流回去），
@@ -1158,43 +905,28 @@ class MainActivity : BaseActivity() {
         openWith(f)
     }
 
-    private fun toggleSelect(pane: Pane, f: File) {
+    internal fun toggleSelect(pane: Pane, f: File) {
         // v1.8.0：根目录（Shizuku）也能多选了（以前直接弹“仅支持浏览”）。
         // SAF 窗格也能多选：选中态按合成路径（File(keyPath)）记，操作时再按
         // 合成路径找回 SafEntry。
         if (pane.selected.contains(f)) pane.selected.remove(f) else pane.selected.add(f)
-        pane.adapter.notifyDataSetChanged()
         updateSelectionTopBar()
     }
 
-    private fun clearSelection(pane: Pane) {
+    internal fun clearSelection(pane: Pane) {
         pane.selected.clear()
-        pane.adapter.notifyDataSetChanged()
         updateSelectionTopBar()
     }
 
     /** v1.8.0 多选模式顶栏（照 Max 的参考图）：有选中项时顶替掉工具栏，
      *  显示“已选择 N 项”+ 已选总大小；没选中项时恢复正常工具栏。
      *  底部的选择操作条删了，这套顶栏是唯一的选中操作入口。 */
-    private fun updateSelectionTopBar() {
-        if (!::left.isInitialized) return
-        val p = activePane()
-        val sel = p.selected
-        if (sel.isEmpty()) {
-            selectionTopBar.visibility = View.GONE
-            topBar.visibility = View.VISIBLE
-            updateTopBar()
-        } else {
-            topBar.visibility = View.GONE
-            selectionTopBar.visibility = View.VISIBLE
-            selTitle.text = getString(R.string.selected_count, sel.size)
-            selSubtitle.text = FileUtils.formatSize(selectionTotalSize(p))
-        }
-    }
+    // v1.9.8.1：多选顶栏是 Compose，直接读 selected 状态；同上留空函数体。
+    private fun updateSelectionTopBar() { }
 
     /** 已选中的总大小：普通文件按实际大小（文件夹递归算）；SAF 按列表里的
      *  大小；根目录按 ls 的大小（解析不上的条目是 0，算不进去）。 */
-    private fun selectionTotalSize(pane: Pane): Long {
+    internal fun selectionTotalSize(pane: Pane): Long {
         var total = 0L
         pane.selected.forEach { f ->
             total += when {
@@ -1226,13 +958,13 @@ class MainActivity : BaseActivity() {
         return pane.selected.map { ClipEntry.ofFile(it) }
     }
 
-    private fun copySelection() {
+    internal fun copySelection() {
         val p = activePane()
         clipboard = selectionToClipboard(p); clipboardCut = false
         clearSelection(p); snackbar(R.string.copied)
     }
 
-    private fun cutSelection() {
+    internal fun cutSelection() {
         val p = activePane()
         clipboard = selectionToClipboard(p); clipboardCut = true
         clearSelection(p); snackbar(R.string.copied)
@@ -1242,7 +974,7 @@ class MainActivity : BaseActivity() {
      *  目标是 SAF 目录就走 SAF 复制，根目录走 Shizuku shell，普通目录走原来的
      *  File 复制；剪贴板里 File 项、SAF 项和根目录项可以混装。失败的项留在
      *  剪贴板里，不丢。 */
-    private fun pasteInto(targetPane: Pane) {
+    internal fun pasteInto(targetPane: Pane) {
         if (clipboard.isEmpty()) return
         if (targetPane.shizukuMode) { pasteIntoRoot(targetPane); return }
         if (targetPane.safMode) { pasteIntoSaf(targetPane); return }
@@ -1467,9 +1199,9 @@ class MainActivity : BaseActivity() {
      *  文件夹数（递归统计），一个“移动到回收站”复选框默认勾选。勾选+确定→
      *  移入回收站；不勾选+确定→永久删除。根目录和 SAF 的删除也走这个对话框：
      *  移不进去就明确提示、不删文件。 */
-    private data class DeleteStats(val size: Long, val files: Int, val dirs: Int, val countsKnown: Boolean)
+    data class DeleteStats(val size: Long, val files: Int, val dirs: Int, val countsKnown: Boolean)
 
-    private fun confirmDelete(targets: List<File>) {
+    internal fun confirmDelete(targets: List<File>) {
         if (targets.isEmpty()) return
         val pane = activePane()
         Thread {
@@ -1552,218 +1284,19 @@ class MainActivity : BaseActivity() {
         return files to dirs
     }
 
-    // ---------- v1.9.6：液态玻璃（QWEA0/Liquid-Glass-Android v2.0.11） ----------
-    /** 给一块 LiquidGlassView 上统一配置（三种模式真的不一样）：
-     *  半透明 = 真实模糊 + 主题色调 25%；透明模糊 = 真实模糊 + 主题色调
-     *  10%（淡一些，让模糊透出来）；全透明 = 不模糊、不染色、不描边，
-     *  就是块透明玻璃。
-     *  动态背景（enableDynamicBackground）故意不开：它只是在每次绘制后
-     *  再调一次 invalidate，让玻璃每帧重绘——我们背后的内容是静态文件列
-     *  表，根本不需要逐帧刷。开着它在 CPU 经典管线（模拟器）上会让主线
-     *  程常年占三到六成，uiautomator dump/截图都变慢甚至超时（2026-11-20
-     *  08:05–08:15 逐页扫因此卡死在 goto_main 的反复重启里）。关掉后库
-     *  仍会在背景真的变化、树滚动、玻璃移动、贴图生成完时重绘（经典管线
-     *  有 8×8 背景签名检测 + backdropScrollListener，贴图生成完调
-     *  invalidate；透镜管线同理），肉眼效果一样，主线程回到空闲。
-     *  原生库不可用（x86）时强制纯 Kotlin 管线，绝不碰 native 方法；
-     *  arm 上保持库默认（SMART + 色差 AUTO，API 33+ 走 AGSL 透镜管线）。 */
-    private fun configureLiquidGlass(v: LiquidGlassView) {
-        v.enableDynamicBackground = false
-        v.material = GlassMaterial.REGULAR
-        when (prefs.getInt(PREF_LIQUID_GLASS_MODE, GLASS_MODE_TRANSLUCENT)) {
-            GLASS_MODE_CLEAR -> {
-                v.enableBackdropBlur = false
-                v.enableChromaticAberration = false
-                v.enableChromaticDispersion = false
-                v.enableEdgeHighlight = false
-                v.enableAdaptiveTint = false
-                v.glassTint = Color.TRANSPARENT
-                v.saturation = 100f
-            }
-            GLASS_MODE_BLUR -> {
-                v.enableBackdropBlur = true
-                v.enableChromaticAberration = true
-                v.enableChromaticDispersion = false
-                v.enableEdgeHighlight = true
-                v.enableAdaptiveTint = false
-                v.glassTint = glassTintColor(v.context, GLASS_TINT_ALPHA_BLUR)
-                if (!NATIVE_GLASS_OK) {
-                    v.blurMethod = BlurMethod.BOX_BLUR
-                    v.chromaticAberrationMode = ChromaticAberrationEffect.PerformanceMode.KOTLIN
-                }
-            }
-            else -> {
-                // 半透明（默认）：模糊 + 主题色调 25%。
-                v.enableBackdropBlur = true
-                v.enableChromaticAberration = true
-                v.enableChromaticDispersion = false
-                v.enableEdgeHighlight = true
-                v.enableAdaptiveTint = false
-                v.glassTint = glassTintColor(v.context)
-                if (!NATIVE_GLASS_OK) {
-                    v.blurMethod = BlurMethod.BOX_BLUR
-                    v.chromaticAberrationMode = ChromaticAberrationEffect.PerformanceMode.KOTLIN
-                }
-            }
-        }
+    /** v1.9.8.1：对话框是 Compose；旧的玻璃对话框 builder 只留给尚未迁移的
+     *  零星 AlertDialog 用，统一走 MaterialAlertDialogBuilder。 */
+    internal fun glassDialogBuilder(): MaterialAlertDialogBuilder {
+        return MaterialAlertDialogBuilder(this)
     }
 
-    /** 玻璃关着时的惰性配置：不模糊、不描边、不染色、不追背景——就是个透明
-     *  容器，主界面看起来和原来一模一样。
-     *  注意：只关 enableBackdropBlur 不够——renderGlassEffectSync 里模糊关
-     *  时 cachedBlurred 直接引用原背景，而色差默认是开的；位移贴图在后台
-     *  生成完（attach 后几秒）就会进色差分支，AUTO 模式对大图走 C++，
-     *  x86 上 loadLibrary 失败直接闪退（2026-11-20 05:51 实测）。所以关玻
-     *  璃必须同时关色差和色散；x86 上再把模糊方法也钉成纯 Kotlin 的 BOX_BLUR。 */
-    private fun configureLiquidGlassOff(v: LiquidGlassView) {
-        v.enableDynamicBackground = false
-        v.enableBackdropBlur = false
-        v.enableChromaticAberration = false
-        v.enableChromaticDispersion = false
-        v.enableEdgeHighlight = false
-        v.enableAdaptiveTint = false
-        v.glassTint = Color.TRANSPARENT
-        v.saturation = 100f
-        if (!NATIVE_GLASS_OK) {
-            v.blurMethod = BlurMethod.BOX_BLUR
-            v.chromaticAberrationMode = ChromaticAberrationEffect.PerformanceMode.KOTLIN
-        }
-    }
-
-    /** 主界面四块玻璃（工具栏/选择栏/底栏/抽屉）：开着时配玻璃 + 把被包面板
-     *  的实色背景改透明（玻璃本身做底）；关着时配惰性 + 恢复实色背景。
-     *  抽屉的背景是后面的主内容（backdropSource 指到 mainRoot）。
-     *  注意 API<33：库给每个玻璃在 attach/size 变化时生成 3 张整尺寸位移
-     *  贴图，抽屉那张（300dp×全高）约 13MB；本模拟器堆上限钉死 16MB
-     *  （largeHeap 也救不了），生成到一半就 OOM 闪退（2026-11-20 07:22、
-     *  07:39 两次实测；关着玻璃也会生成，因为生成跟开关无关）。
-     *  所以 API<33 时在 onCreate 里就把抽屉内容从玻璃里拆出来（此时还没
-     *  第一次 layout，贴图不会生成），抽屉退回半透明底（overlay 的
-     *  colorSurfaceContainerLowest），不糊但不断。API 33+ 走透镜管线，
-     *  根本不生成贴图，抽屉玻璃完整保留（Max 的手机是 API 36，不受影响）。 */
-    private fun setupLiquidGlass() {
-        val on = prefs.getBoolean(PREF_LIQUID_GLASS, false)
-        try {
-            val topGlass = findViewById<LiquidGlassView>(R.id.glassTopBar)
-            val selGlass = findViewById<LiquidGlassView>(R.id.glassSelectionBar)
-            val bottomGlass = findViewById<LiquidGlassView>(R.id.glassBottomBar)
-            var drawerGlass: LiquidGlassView? = findViewById(R.id.glassDrawer)
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU && drawerGlass != null) {
-                val drawerView = findViewById<ViewGroup>(R.id.drawerView)
-                val content = drawerGlass.getChildAt(0)
-                if (content != null) {
-                    drawerGlass.removeView(content)
-                    drawerView.removeView(drawerGlass)
-                    drawerView.addView(content)
-                }
-                drawerGlass = null
-            }
-            val glasses = listOfNotNull(topGlass, selGlass, bottomGlass, drawerGlass)
-            if (on) {
-                glasses.forEach { configureLiquidGlass(it) }
-                drawerGlass?.backdropSource = findViewById(R.id.mainRoot)
-                findViewById<View>(R.id.topAppBar).background = ColorDrawable(Color.TRANSPARENT)
-                // 玻璃开着时顶栏变浅：标题/副标题/导航图标原先是 colorOnPrimary
-                // （白字，配实色主色底才对），现在衬浅色玻璃底会发白难读（红绿
-                // 主界面图里都有）。改成 colorOnSurface——浅色主题是深字、
-                // 深色主题是浅字，两边都对。玻璃关着不走这行，XML 的
-                // ?attr/fairuToolbarTitleColor 原样生效。
-                val topBarDark = MaterialColors.getColor(this, com.google.android.material.R.attr.colorOnSurface, Color.BLACK)
-                val topBar = findViewById<MaterialToolbar>(R.id.topAppBar)
-                topBar.setTitleTextColor(topBarDark)
-                topBar.setSubtitleTextColor(topBarDark)
-                // 注意：不能用 navigationIcon.mutate() + setTint 再重新赋值——
-                // MaterialToolbar.setNavigationIcon 会重新套 XML 里
-                // navigationIconTint（白），等于把白字套回去。用现成的
-                // setNavigationIconTint（Material 1.13 有）直接改。
-                topBar.setNavigationIconTint(topBarDark)
-                findViewById<View>(R.id.selectionTopBar).background = ColorDrawable(Color.TRANSPARENT)
-                findViewById<View>(R.id.bottomBar).background = ColorDrawable(Color.TRANSPARENT)
-                if (drawerGlass != null) {
-                    findViewById<View>(R.id.drawerView).background = ColorDrawable(Color.TRANSPARENT)
-                    findViewById<View>(R.id.drawerHeader).background = ColorDrawable(Color.TRANSPARENT)
-                } else {
-                    // 抽屉没玻璃（API<33）：给不透明底。以前这里用带透明度的
-                    // colorSurfaceContainerLowest（#B3FFFFFF，70% 白），抽屉
-                    // 文字和后面透出来的文件列表文字重叠（红绿抽屉图里都有：
-                    // 标题压路径、菜单项压文件夹名、safetest 重影）——这是挡
-                    // 交付的 bug。底色仍带种子色调（色调跟着种子变），只把
-                    // 透明度钉成不透明：底色改用不透明的 colorSurface 混色调。
-                    // 三种模式仍可分：半透明 = 25% 色调不透明底；透明模糊 =
-                    // 10% 色调不透明底（更淡）；全透明 = 全透明（本来的意思，
-                    // 文字重叠是该模式固有的）。
-                    val mode = prefs.getInt(PREF_LIQUID_GLASS_MODE, GLASS_MODE_TRANSLUCENT)
-                    val surface = MaterialColors.getColor(this, com.google.android.material.R.attr.colorSurface, Color.WHITE)
-                    val drawerBg = when (mode) {
-                        GLASS_MODE_CLEAR -> Color.TRANSPARENT
-                        GLASS_MODE_BLUR -> tintSurfaceColor(surface, glassTintColor(this, GLASS_TINT_ALPHA_BLUR))
-                        else -> tintSurfaceColor(surface, glassTintColor(this))
-                    }
-                    findViewById<View>(R.id.drawerView).background = ColorDrawable(drawerBg)
-                    findViewById<View>(R.id.drawerHeader).background = ColorDrawable(drawerBg)
-                }
-            } else {
-                glasses.forEach { configureLiquidGlassOff(it) }
-            }
-        } catch (_: Exception) { }
-    }
-
-    /** 对话框 builder：液态玻璃开着时用库的 LiquidGlassDialogBuilder（整块
-     *  面板包进玻璃、背景从 Activity 后面采样），关着时走原来的
-     *  MaterialAlertDialogBuilder。只换新建/删除/更多方式/排序这 4 个对话框
-     *  （之前 BlurView 版也是这 4 个）。 */
-    private fun glassDialogBuilder(): MaterialAlertDialogBuilder {
-        return if (prefs.getBoolean(PREF_LIQUID_GLASS, false)) {
-            LiquidGlassDialogBuilder(this, glassSetup = { configureLiquidGlass(this) })
-        } else {
-            MaterialAlertDialogBuilder(this)
-        }
-    }
-
-    private fun showDeleteDialog(pane: Pane, targets: List<File>, stats: DeleteStats) {
-        val density = resources.displayMetrics.density
-        val pad = (20 * density).toInt()
-        val container = LinearLayout(this).apply {
-            orientation = LinearLayout.VERTICAL
-            setPadding(pad, 0, pad, 0)
-        }
-        val msg = if (targets.size == 1) getString(R.string.delete_to_trash_msg, targets[0].name)
-            else getString(R.string.delete_to_trash_multi_msg, targets.size)
-        val msgTv = TextView(this).apply { text = msg; textSize = 16f }
-        container.addView(msgTv)
-        val info = StringBuilder()
-        info.append("${getString(R.string.size)}  ${FileUtils.formatSize(stats.size)}")
-        val hasDir = targets.any { f ->
-            when {
-                pane.safMode -> pane.safEntries.firstOrNull { it.keyPath == f.absolutePath }?.isDir == true
-                pane.shizukuMode -> pane.shizukuEntries.firstOrNull { it.path == f.absolutePath }?.isDir == true
-                else -> f.isDirectory
-            }
-        }
-        if (hasDir && stats.countsKnown) {
-            info.append("\n${getString(R.string.file_count)}  ${stats.files}")
-            info.append("\n${getString(R.string.folder_count)}  ${stats.dirs}")
-        }
-        val infoTv = TextView(this).apply {
-            text = info.toString()
-            textSize = 15f
-            setPadding(0, (12 * density).toInt(), 0, (4 * density).toInt())
-        }
-        container.addView(infoTv)
-        val checkBox = CheckBox(this).apply {
-            text = getString(R.string.move_to_trash)
-            isChecked = true
-        }
-        container.addView(checkBox)
-        val deleteDlg = glassDialogBuilder().setTitle(R.string.delete).setIcon(R.drawable.ic_drawer_trash).setView(container)
-            .setPositiveButton(R.string.ok) { _, _ -> doDelete(pane, targets, checkBox.isChecked) }
-            .setNegativeButton(R.string.cancel, null).create()
-        deleteDlg.show()
+    internal fun showDeleteDialog(pane: Pane, targets: List<File>, stats: DeleteStats) {
+        deleteDialog = DeleteRequest(pane, targets, stats)
     }
 
     /** 删除的执行：勾选进回收站（移不进去就明确提示、不删文件），
      *  不勾选永久删除。 */
-    private fun doDelete(pane: Pane, targets: List<File>, toTrash: Boolean) {
+    internal fun doDelete(pane: Pane, targets: List<File>, toTrash: Boolean) {
         if (toTrash) {
             Thread {
                 var failed = 0
@@ -1828,7 +1361,9 @@ class MainActivity : BaseActivity() {
         }
         runBg {
             targets.forEach { FileUtils.deleteRecursive(it) }
-            runOnUiThread { clearSelection(pane); snackbar(R.string.deleted) }
+            // v1.9.8.1：永久删除也要重载列表，否则删掉的文件还留在列表里
+            // （搜索结果里删完也一样）；进回收站/SAF/根目录三路原来就有刷新。
+            runOnUiThread { clearSelection(pane); snackbar(R.string.deleted); refreshPane(pane) }
         }
     }
 
@@ -1871,151 +1406,67 @@ class MainActivity : BaseActivity() {
 
     // v1.7.2：重命名后清选择态 + 刷新列表，不然选中的旧名会留在选择条里，
     // 下次多选删除时按旧名重列找不到就报 false。
-    private fun showRenameDialog(pane: Pane, f: File) {
-        val input = EditText(this); input.setText(f.name)
-        MaterialAlertDialogBuilder(this).setTitle(R.string.rename).setView(input)
-            .setPositiveButton(R.string.ok) { _, _ ->
-                val n = input.text.toString().trim()
-                if (n.isNotEmpty() && n != f.name) runBg {
-                    f.renameTo(File(f.parentFile, n))
-                    runOnUiThread { clearSelection(pane); loadPane(pane); snackbar(R.string.renamed) }
-                }
-            }
-            .setNegativeButton(R.string.cancel, null).show()
+    internal fun showRenameDialog(pane: Pane, f: File) {
+        renameDialog = RenameRequest(pane, f, 0)
     }
 
     /** 根目录项重命名：Shizuku mv。失败（没权限 / 重名）弹“出错了”，
      *  成功清选择态、刷新列表。 */
-    private fun showShizukuRenameDialog(pane: Pane, entry: ShizukuRoot.Entry) {
-        val input = EditText(this); input.setText(entry.name)
-        MaterialAlertDialogBuilder(this).setTitle(R.string.rename).setView(input)
-            .setPositiveButton(R.string.ok) { _, _ ->
-                val n = input.text.toString().trim()
-                if (n.isNotEmpty() && n != entry.name) {
-                    val parent = entry.path.substringBeforeLast('/', "")
-                    val dst = if (parent.isEmpty()) "/$n" else "$parent/$n"
-                    Thread {
-                        val r = ShizukuRoot.exec("mv", entry.path, dst)
-                        Log.d(TAG, "root rename ${entry.path} -> $dst: exit=${r.exit} ${r.err.trim().take(120)}")
-                        runOnUiThread {
-                            if (isFinishing || isDestroyed) return@runOnUiThread
-                            if (r.exit == 0) { clearSelection(pane); snackbar(R.string.renamed); refreshShizukuList(pane) }
-                            else snackbar(R.string.error)
-                        }
-                    }.start()
-                }
-            }
-            .setNegativeButton(R.string.cancel, null).show()
+    internal fun showShizukuRenameDialog(pane: Pane, entry: ShizukuRoot.Entry) {
+        renameDialog = RenameRequest(pane, File(entry.path), 1, shizukuEntry = entry)
     }
 
     /** SAF 项重命名：DocumentsContract.renameDocument，成功刷新列表。 */
-    private fun showSafRenameDialog(pane: Pane, entry: SafEntry) {
-        val input = EditText(this); input.setText(entry.name)
-        MaterialAlertDialogBuilder(this).setTitle(R.string.rename).setView(input)
-            .setPositiveButton(R.string.ok) { _, _ ->
-                val n = input.text.toString().trim()
-                if (n.isNotEmpty() && n != entry.name) {
-                    // v1.7.1：重命名和删除走同一类提供方调用，也加超时 + 日志，
-                    // 免得卡住时同样静默挂着（v1.7.0 的毛病）。
-                    val treeUri = pane.safStorage?.let { try { Uri.parse(it.uri) } catch (_: Exception) { null } }
-                    val parentDocId = pane.safStack.lastOrNull()?.docId
-                    Log.d(TAG, "SAF rename ${entry.name} -> $n (parentDocId=$parentDocId)")
-                    runSafOpTimeout(30000L, block = {
-                        // 先按名重取新鲜 URI 再改名（docId 会过期，跟删除同一个毛病），
-                        // 重列失败就用缓存 URI 试一次。
-                        val freshUri = if (treeUri != null && parentDocId != null) {
-                            try { listSafChildren(treeUri, parentDocId)?.firstOrNull { it.name == entry.name }?.uri } catch (e: Exception) { Log.w(TAG, "SAF rename re-list threw: $e"); null }
-                        } else null
-                        Log.d(TAG, "SAF rename: freshUri=${freshUri ?: "null, using cached entry.uri"}")
-                        safRenameDocument(freshUri ?: entry.uri, n)
-                    }, onDone = { ok ->
-                        // v1.7.2：重命名成功后先清选择态再刷新，不然选中的旧名会留在
-                        // 选择条里，下次多选删除时按旧名重列找不到就报 false。
-                        if (ok) { clearSelection(pane); snackbar(R.string.renamed); refreshSafList(pane) }
+    internal fun showSafRenameDialog(pane: Pane, entry: SafEntry) {
+        renameDialog = RenameRequest(pane, File(entry.keyPath), 2, safEntry = entry)
+    }
+
+    /** 重命名执行（Compose 重命名对话框确认后调；三态各走各的原逻辑）。 */
+    internal fun doRename(request: RenameRequest, newName: String) {
+        val pane = request.pane
+        when (request.kind) {
+            1 -> {
+                val entry = request.shizukuEntry ?: return
+                val parent = entry.path.substringBeforeLast('/', "")
+                val dst = if (parent.isEmpty()) "/$newName" else "$parent/$newName"
+                Thread {
+                    val r = ShizukuRoot.exec("mv", entry.path, dst)
+                    Log.d(TAG, "root rename ${entry.path} -> $dst: exit=${r.exit} ${r.err.trim().take(120)}")
+                    runOnUiThread {
+                        if (isFinishing || isDestroyed) return@runOnUiThread
+                        if (r.exit == 0) { clearSelection(pane); snackbar(R.string.renamed); refreshShizukuList(pane) }
                         else snackbar(R.string.error)
-                    })
+                    }
+                }.start()
+            }
+            2 -> {
+                val entry = request.safEntry ?: return
+                val treeUri = pane.safStorage?.let { try { Uri.parse(it.uri) } catch (_: Exception) { null } }
+                val parentDocId = pane.safStack.lastOrNull()?.docId
+                Log.d(TAG, "SAF rename ${entry.name} -> $newName (parentDocId=$parentDocId)")
+                runSafOpTimeout(30000L, block = {
+                    val freshUri = if (treeUri != null && parentDocId != null) {
+                        try { listSafChildren(treeUri, parentDocId)?.firstOrNull { it.name == entry.name }?.uri } catch (e: Exception) { Log.w(TAG, "SAF rename re-list threw: $e"); null }
+                    } else null
+                    safRenameDocument(freshUri ?: entry.uri, newName)
+                }, onDone = { ok ->
+                    if (ok) { clearSelection(pane); snackbar(R.string.renamed); refreshSafList(pane) }
+                    else snackbar(R.string.error)
+                })
+            }
+            else -> {
+                val f = request.file
+                runBg {
+                    f.renameTo(File(f.parentFile, newName))
+                    runOnUiThread { clearSelection(pane); loadPane(pane); snackbar(R.string.renamed) }
                 }
             }
-            .setNegativeButton(R.string.cancel, null).show()
+        }
     }
 
-    /** v1.9.0 底部 + 重做（图9）：新建对话框——标题“新建”，上面一个名字输入框，
-     *  下面一排按钮：取消在左，右边依次是 文件 / 文件夹。
-     *  v1.9.5：粘贴按钮整个拿掉（Max 09:47 手机截图：双窗格下第四个按钮
-     *  “文件夹”只剩“文件”二字、“夹”被截掉，碍事的粘贴不要了）。文件建空文件，
-     *  文件夹建文件夹。 */
-    private fun showNewDialog() {
-        val p = activePane()
-        val density = resources.displayMetrics.density
-        // v1.9.4：容器内边距 20dp → 12dp，给按钮多留横向空间。
-        val pad = (12 * density).toInt()
-        val container = LinearLayout(this).apply {
-            orientation = LinearLayout.VERTICAL
-            setPadding(pad, 0, pad, 0)
-        }
-        val input = EditText(this).apply { hint = getString(R.string.file_name_hint) }
-        container.addView(input)
-        val row = LinearLayout(this).apply {
-            orientation = LinearLayout.HORIZONTAL
-            gravity = Gravity.CENTER_VERTICAL
-            setPadding(0, (16 * density).toInt(), 0, 0)
-        }
-        lateinit var dialog: androidx.appcompat.app.AlertDialog
-        fun textButton(res: Int): android.widget.Button =
-            // MaterialButton 在 1.13 里没有四参构造；用 Button 的四参构造套
-            // Material3 TextButton 样式（透明底 + 主色文字 + 涟漪）。
-            android.widget.Button(
-                this, null, 0,
-                com.google.android.material.R.style.Widget_Material3_Button_TextButton_Dialog
-            ).apply {
-                text = getString(res)
-                // v1.9.4：TextButton 默认最小宽 88dp + 大内边距，按钮挤不下
-                // 才把“文件夹”截掉；最小宽清零、横向内边距缩到 8dp，三个按钮
-                // 图标+文字都能完整显示。
-                minimumWidth = 0
-                setPadding((8 * density).toInt(), 0, (8 * density).toInt(), 0)
-            }
-        val btnCancel = textButton(R.string.cancel).apply { setOnClickListener { dialog.dismiss() } }
-        val spacer = View(this).apply {
-            layoutParams = LinearLayout.LayoutParams(0, 1, 1f)
-        }
-        val btnFile = textButton(R.string.new_file_short).apply {
-            setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_file, 0, 0, 0)
-            compoundDrawableTintList = ColorStateList.valueOf(MaterialColors.getColor(this, com.google.android.material.R.attr.colorPrimary))
-            setOnClickListener {
-                val name = input.text.toString().trim()
-                if (!checkNewName(p, name)) return@setOnClickListener
-                dialog.dismiss()
-                createFile(p, name)
-            }
-        }
-        val btnFolder = textButton(R.string.new_folder_short).apply {
-            setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_folder, 0, 0, 0)
-            compoundDrawableTintList = ColorStateList.valueOf(MaterialColors.getColor(this, com.google.android.material.R.attr.colorPrimary))
-            setOnClickListener {
-                val name = input.text.toString().trim()
-                if (!checkNewName(p, name)) return@setOnClickListener
-                dialog.dismiss()
-                createFolder(p, name)
-            }
-        }
-        row.addView(btnCancel)
-        row.addView(spacer)
-        row.addView(btnFile)
-        row.addView(btnFolder)
-        container.addView(row)
-        dialog = glassDialogBuilder().setTitle(R.string.new_title).setIcon(R.drawable.ic_add).setView(container).create()
-        dialog.show()
-        // v1.9.4：对话框默认宽度太窄是第四个按钮被截的另一半原因；把窗口
-        // 放宽到屏宽的 92%，取消/文件/文件夹三个按钮图标+文字完整显示。
-        dialog.window?.setLayout(
-            (resources.displayMetrics.widthPixels * 0.92).toInt(),
-            android.view.ViewGroup.LayoutParams.WRAP_CONTENT
-        )
-    }
 
     /** 新建的名字校验：非空、不含 "/"、不重名。 */
-    private fun checkNewName(pane: Pane, name: String): Boolean {
+    internal fun checkNewName(pane: Pane, name: String): Boolean {
         if (name.isBlank() || name.contains("/")) {
             Toast.makeText(this, R.string.invalid_name, Toast.LENGTH_SHORT).show()
             return false
@@ -2033,7 +1484,7 @@ class MainActivity : BaseActivity() {
     }
 
     /** 在当前目录新建空文件（普通 / 根目录 / SAF 三态）。 */
-    private fun createFile(pane: Pane, name: String) {
+    internal fun createFile(pane: Pane, name: String) {
         when {
             pane.shizukuMode -> {
                 val dir = pane.currentDir.absolutePath
@@ -2068,7 +1519,7 @@ class MainActivity : BaseActivity() {
     }
 
     /** 在当前目录新建文件夹（普通 / 根目录 / SAF 三态；原来 showNewFolderDialog 的逻辑）。 */
-    private fun createFolder(pane: Pane, name: String) {
+    internal fun createFolder(pane: Pane, name: String) {
         if (pane.shizukuMode) {
             // v1.8.0：根目录里新建文件夹走 Shizuku mkdir；没权限或已存在
             // 就失败，弹“出错了”，绝不静默。
@@ -2111,187 +1562,64 @@ class MainActivity : BaseActivity() {
      *  重命名 / 属性 / 打开方式；文件夹：打开 / 复制 / 剪切 / 删除 /
      *  重命名 / 属性。菜单项都带图标（浅色下也看得见），全部能用。
      *  新建文件夹、粘贴不在这儿，在顶部工具栏 / 底部按钮里。 */
-    private fun showFileMenu(pane: Pane, f: File, anchor: View) {
-        if (pane.safMode) {
-            // SAF 项的菜单，和普通文件夹同一套，全部能用（不是摆设）。
-            val entry = pane.safEntries.firstOrNull { it.keyPath == f.absolutePath } ?: return
-            val popup = PopupMenu(this, anchor)
-            popup.setForceShowIcon(true)
-            popup.menu.add(0, 1, 0, R.string.open).icon = tintedIcon(R.drawable.ic_folder)
-            if (!entry.isDir) popup.menu.add(0, 9, 0, R.string.share).icon = tintedIcon(R.drawable.ic_share)
-            if (FileUtils.isText(File(entry.name))) popup.menu.add(0, 8, 0, R.string.edit_text).icon = tintedIcon(R.drawable.ic_text)
-            popup.menu.add(0, 3, 0, R.string.copy).icon = tintedIcon(R.drawable.ic_copy)
-            popup.menu.add(0, 4, 0, R.string.cut).icon = tintedIcon(R.drawable.ic_cut)
-            popup.menu.add(0, 5, 0, R.string.delete).icon = tintedIcon(R.drawable.ic_drawer_trash)
-            popup.menu.add(0, 2, 0, R.string.rename).icon = tintedIcon(R.drawable.ic_edit)
-            popup.menu.add(0, 6, 0, R.string.properties).icon = tintedIcon(R.drawable.ic_info)
-            if (!entry.isDir) popup.menu.add(0, 7, 0, R.string.open_with).icon = tintedIcon(R.drawable.ic_arrow_forward)
-            popup.menu.add(0, 11, 0, R.string.copy_path).icon = tintedIcon(R.drawable.ic_copy)
-            val moveItemSaf = popup.menu.add(0, 12, 0, R.string.move_item)
-            moveItemSaf.icon = tintedIcon(R.drawable.ic_move)
-            moveItemSaf.isEnabled = otherPaneTargetValid()
-            popup.menu.add(0, 13, 0, R.string.more_actions).icon = tintedIcon(R.drawable.ic_more_vert)
-            // 剪贴板里多记 treeUri + 父 docId，剪切删源时能按名重取新鲜 URI。
-            val safTreeUri = pane.safStorage?.let { try { Uri.parse(it.uri) } catch (_: Exception) { null } }
-            val safParentDocId = pane.safStack.lastOrNull()?.docId
-            popup.setOnMenuItemClickListener { item ->
-                when (item.itemId) {
-                    1 -> onFileClick(pane, f)
-                    2 -> showSafRenameDialog(pane, entry)
-                    3 -> { clipboard = listOf(ClipEntry.ofSaf(entry, safTreeUri, safParentDocId)); clipboardCut = false; snackbar(R.string.copied) }
-                    4 -> { clipboard = listOf(ClipEntry.ofSaf(entry, safTreeUri, safParentDocId)); clipboardCut = true; snackbar(R.string.copied) }
-                    5 -> confirmDelete(listOf(f))
-                    6 -> showSafProperties(pane, entry)
-                    7 -> openSafFile(entry)
-                    8 -> startActivity(Intent(this, TextEditorActivity::class.java).apply {
-                        putExtra(TextEditorActivity.EXTRA_URI, entry.uri.toString())
-                    })
-                    9 -> shareFiles(pane, listOf(f))
-                    10 -> compressItem(pane, f)
-                    11 -> copyItemPath(pane, f)
-                    12 -> transferToOtherPane(pane, f, move = true)
-                    13 -> showMoreActionsDialog(pane, f)
-                }
-                true
-            }
-            popup.show()
-            return
-        }
-        if (pane.shizukuMode) {
-            // v1.8.0：根目录项的菜单——打开 / 分享（仅文件）/ 复制 / 剪切 /
-            // 删除 / 重命名 / 属性，全部走 Shizuku shell。
-            val entry = pane.shizukuEntries.firstOrNull { it.path == f.absolutePath } ?: return
-            val popup = PopupMenu(this, anchor)
-            popup.setForceShowIcon(true)
-            popup.menu.add(0, 1, 0, R.string.open).icon = tintedIcon(R.drawable.ic_folder)
-            if (!entry.isDir) popup.menu.add(0, 9, 0, R.string.share).icon = tintedIcon(R.drawable.ic_share)
-            popup.menu.add(0, 3, 0, R.string.copy).icon = tintedIcon(R.drawable.ic_copy)
-            popup.menu.add(0, 4, 0, R.string.cut).icon = tintedIcon(R.drawable.ic_cut)
-            popup.menu.add(0, 5, 0, R.string.delete).icon = tintedIcon(R.drawable.ic_drawer_trash)
-            popup.menu.add(0, 2, 0, R.string.rename).icon = tintedIcon(R.drawable.ic_edit)
-            popup.menu.add(0, 6, 0, R.string.properties).icon = tintedIcon(R.drawable.ic_info)
-            popup.menu.add(0, 11, 0, R.string.copy_path).icon = tintedIcon(R.drawable.ic_copy)
-            val moveItemRoot = popup.menu.add(0, 12, 0, R.string.move_item)
-            moveItemRoot.icon = tintedIcon(R.drawable.ic_move)
-            moveItemRoot.isEnabled = otherPaneTargetValid()
-            popup.menu.add(0, 13, 0, R.string.more_actions).icon = tintedIcon(R.drawable.ic_more_vert)
-            popup.setOnMenuItemClickListener { item ->
-                when (item.itemId) {
-                    1 -> onFileClick(pane, f)
-                    2 -> showShizukuRenameDialog(pane, entry)
-                    3 -> { clipboard = listOf(ClipEntry.ofRoot(f)); clipboardCut = false; snackbar(R.string.copied) }
-                    4 -> { clipboard = listOf(ClipEntry.ofRoot(f)); clipboardCut = true; snackbar(R.string.copied) }
-                    5 -> confirmDelete(listOf(f))
-                    6 -> showShizukuProperties(pane, entry)
-                    9 -> shareFiles(pane, listOf(f))
-                    10 -> compressItem(pane, f)
-                    11 -> copyItemPath(pane, f)
-                    12 -> transferToOtherPane(pane, f, move = true)
-                    13 -> showMoreActionsDialog(pane, f)
-                }
-                true
-            }
-            popup.show()
-            return
-        }
-        val isDir = f.isDirectory
-        val popup = PopupMenu(this, anchor)
-        popup.setForceShowIcon(true)
-        popup.menu.add(0, 1, 0, R.string.open).icon = tintedIcon(R.drawable.ic_folder)
-        if (!isDir) popup.menu.add(0, 9, 0, R.string.share).icon = tintedIcon(R.drawable.ic_share)
-        if (FileUtils.isText(f)) popup.menu.add(0, 8, 0, R.string.edit_text).icon = tintedIcon(R.drawable.ic_text)
-        popup.menu.add(0, 3, 0, R.string.copy).icon = tintedIcon(R.drawable.ic_copy)
-        popup.menu.add(0, 4, 0, R.string.cut).icon = tintedIcon(R.drawable.ic_cut)
-        popup.menu.add(0, 5, 0, R.string.delete).icon = tintedIcon(R.drawable.ic_drawer_trash)
-        popup.menu.add(0, 2, 0, R.string.rename).icon = tintedIcon(R.drawable.ic_edit)
-        popup.menu.add(0, 6, 0, R.string.properties).icon = tintedIcon(R.drawable.ic_info)
-        if (!isDir) popup.menu.add(0, 7, 0, R.string.open_with).icon = tintedIcon(R.drawable.ic_arrow_forward)
-        popup.menu.add(0, 11, 0, R.string.copy_path).icon = tintedIcon(R.drawable.ic_copy)
-        val moveItem = popup.menu.add(0, 12, 0, R.string.move_item)
-        moveItem.icon = tintedIcon(R.drawable.ic_move)
-        moveItem.isEnabled = otherPaneTargetValid()
-        popup.menu.add(0, 13, 0, R.string.more_actions).icon = tintedIcon(R.drawable.ic_more_vert)
-        popup.setOnMenuItemClickListener { item ->
-            when (item.itemId) {
-                1 -> onFileClick(pane, f)
-                2 -> showRenameDialog(pane, f)
-                3 -> { clipboard = listOf(ClipEntry.ofFile(f)); clipboardCut = false; snackbar(R.string.copied) }
-                4 -> { clipboard = listOf(ClipEntry.ofFile(f)); clipboardCut = true; snackbar(R.string.copied) }
-                5 -> confirmDelete(listOf(f))
-                6 -> showProperties(f)
-                7 -> openWith(f)
-                8 -> startActivity(Intent(this, TextEditorActivity::class.java).apply {
-                    putExtra(TextEditorActivity.EXTRA_PATH, f.absolutePath)
-                })
-                9 -> shareFiles(pane, listOf(f))
-                10 -> compressItem(pane, f)
-                11 -> copyItemPath(pane, f)
-                12 -> transferToOtherPane(pane, f, move = true)
-                13 -> showMoreActionsDialog(pane, f)
-            }
-            true
-        }
-        popup.show()
+    internal fun showFileMenu(pane: Pane, f: File) {
+        fileMenu = FileMenuRequest(pane, f)
     }
 
-    /** v1.8.0 多选模式顶栏右边的 ⋮ 菜单（照 Max 的参考图）：复制 / 剪切 /
-     *  粘贴 / 重命名 / 属性 / 全选 / 取消选择。重命名和属性一次只对一项，
-     *  选中多项时不显示这两项。 */
-    private fun showSelectionMenu(anchor: View) {
-        val pane = activePane()
-        val single = pane.selected.size == 1
-        val popup = PopupMenu(this, anchor)
-        popup.setForceShowIcon(true)
-        popup.menu.add(0, 1, 0, R.string.copy).icon = tintedIcon(R.drawable.ic_copy)
-        popup.menu.add(0, 2, 0, R.string.cut).icon = tintedIcon(R.drawable.ic_cut)
-        popup.menu.add(0, 3, 0, R.string.paste).icon = tintedIcon(R.drawable.ic_paste)
-        if (single) {
-            popup.menu.add(0, 4, 0, R.string.rename).icon = tintedIcon(R.drawable.ic_edit)
-            popup.menu.add(0, 5, 0, R.string.properties).icon = tintedIcon(R.drawable.ic_info)
-        }
-        popup.menu.add(0, 6, 0, R.string.select_all).icon = tintedIcon(R.drawable.ic_check)
-        popup.menu.add(0, 7, 0, R.string.deselect_all).icon = tintedIcon(R.drawable.ic_close)
-        popup.setOnMenuItemClickListener { item ->
-            when (item.itemId) {
-                1 -> copySelection()
-                2 -> cutSelection()
-                3 -> pasteInto(pane)
-                4 -> {
-                    val f = pane.selected.firstOrNull() ?: return@setOnMenuItemClickListener true
-                    when {
-                        pane.safMode -> pane.safEntries.firstOrNull { it.keyPath == f.absolutePath }
-                            ?.let { showSafRenameDialog(pane, it) }
-                        pane.shizukuMode -> pane.shizukuEntries.firstOrNull { it.path == f.absolutePath }
-                            ?.let { showShizukuRenameDialog(pane, it) }
-                        else -> showRenameDialog(pane, f)
-                    }
-                }
-                5 -> {
-                    val f = pane.selected.firstOrNull() ?: return@setOnMenuItemClickListener true
-                    when {
-                        pane.safMode -> pane.safEntries.firstOrNull { it.keyPath == f.absolutePath }
-                            ?.let { showSafProperties(pane, it) }
-                        pane.shizukuMode -> pane.shizukuEntries.firstOrNull { it.path == f.absolutePath }
-                            ?.let { showShizukuProperties(pane, it) }
-                        else -> showProperties(f)
-                    }
-                }
-                6 -> {
-                    pane.selected.addAll(pane.files)
-                    pane.adapter.notifyDataSetChanged()
-                    updateSelectionTopBar()
-                }
-                7 -> clearSelection(pane)
+    /** 行 ⋮ 菜单里“复制/剪切”：按窗格模式把该项放进剪贴板（普通 / 根目录 / SAF）。 */
+    internal fun copyItemToClipboard(pane: Pane, f: File, cut: Boolean) {
+        when {
+            pane.safMode -> {
+                val entry = pane.safEntries.firstOrNull { it.keyPath == f.absolutePath } ?: return
+                val treeUri = pane.safStorage?.let { try { Uri.parse(it.uri) } catch (_: Exception) { null } }
+                val parentDocId = pane.safStack.lastOrNull()?.docId
+                clipboard = listOf(ClipEntry.ofSaf(entry, treeUri, parentDocId))
             }
-            true
+            pane.shizukuMode -> clipboard = listOf(ClipEntry.ofRoot(f))
+            else -> clipboard = listOf(ClipEntry.ofFile(f))
         }
-        popup.show()
+        clipboardCut = cut
+        snackbar(R.string.copied)
     }
+
+    /** 行 ⋮ 菜单里“编辑文本”：普通文件按路径进编辑器，SAF 按 URI 进。 */
+    internal fun openTextEditor(pane: Pane, f: File) {
+        if (pane.safMode) {
+            val entry = pane.safEntries.firstOrNull { it.keyPath == f.absolutePath } ?: return
+            startActivity(Intent(this, TextEditorActivity::class.java).apply {
+                putExtra(TextEditorActivity.EXTRA_URI, entry.uri.toString())
+            })
+        } else {
+            startActivity(Intent(this, TextEditorActivity::class.java).apply {
+                putExtra(TextEditorActivity.EXTRA_PATH, f.absolutePath)
+            })
+        }
+    }
+
+    /** 行 ⋮ 菜单里“属性”：按窗格模式分发到对应的属性对话框。 */
+    internal fun showPropertiesFor(pane: Pane, f: File) {
+        when {
+            pane.safMode -> pane.safEntries.firstOrNull { it.keyPath == f.absolutePath }?.let { showSafProperties(pane, it) }
+            pane.shizukuMode -> pane.shizukuEntries.firstOrNull { it.path == f.absolutePath }?.let { showShizukuProperties(pane, it) }
+            else -> showProperties(f)
+        }
+    }
+
+    /** 行 ⋮ 菜单里“打开方式”：普通文件走 FileProvider，SAF 走 content URI。 */
+    internal fun openWithFor(pane: Pane, f: File) {
+        if (pane.safMode) {
+            val entry = pane.safEntries.firstOrNull { it.keyPath == f.absolutePath } ?: return
+            openSafFile(entry)
+        } else {
+            openWith(f)
+        }
+    }
+
 
     // ---------- v1.9.0：跨窗格移动 / 复制、压缩、分享 ZIP、书签、Pin ----------
 
     /** 按窗格当前模式刷新（普通 loadPane / SAF 刷新列表 / 根目录刷新列表）。 */
-    private fun refreshPane(pane: Pane) {
+    internal fun refreshPane(pane: Pane) {
         when {
             pane.safMode -> refreshSafList(pane)
             pane.shizukuMode -> refreshShizukuList(pane)
@@ -2334,7 +1662,7 @@ class MainActivity : BaseActivity() {
     /** “移动 / 复制 ->”是否可用：仅双窗格有效，且另一窗格打开着一个文件夹。
      *  单窗格、或另一窗格在根目录 "/"（路径为空或是根目录）时不可用，
      *  菜单项置灰（像 Max 图3里的 移动 那样）。 */
-    private fun otherPaneTargetValid(): Boolean {
+    internal fun otherPaneTargetValid(): Boolean {
         if (!dualPane) return false
         val o = otherPane()
         return when {
@@ -2346,7 +1674,7 @@ class MainActivity : BaseActivity() {
 
     /** 把一项移到另一窗格当前文件夹（移动）或复制过去（复制 ->）。
      *  同一个文件夹内移动是空操作，直接提示，不做任何事。 */
-    private fun transferToOtherPane(pane: Pane, f: File, move: Boolean) {
+    internal fun transferToOtherPane(pane: Pane, f: File, move: Boolean) {
         if (!otherPaneTargetValid()) {
             Toast.makeText(this, R.string.other_pane_no_folder, Toast.LENGTH_SHORT).show()
             return
@@ -2510,7 +1838,7 @@ class MainActivity : BaseActivity() {
     }
 
     /** 复制路径：把该项的绝对路径（SAF 是面包屑路径）放进系统剪贴板。 */
-    private fun copyItemPath(pane: Pane, f: File) {
+    internal fun copyItemPath(pane: Pane, f: File) {
         val path = if (pane.safMode) safBreadcrumb(pane) + "/" + f.name else f.absolutePath
         try {
             val cm = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
@@ -2520,7 +1848,7 @@ class MainActivity : BaseActivity() {
     }
 
     /** 压缩：把该项打成 name.zip 放当前目录（重名加 (1)），文件和文件夹都能压。 */
-    private fun compressItem(pane: Pane, f: File) {
+    internal fun compressItem(pane: Pane, f: File) {
         Thread {
             var ok = false
             try {
@@ -2601,7 +1929,7 @@ class MainActivity : BaseActivity() {
     }
 
     /** 分享 ZIP：先把该项打成 zip 放 App 缓存，再调系统分享（文件夹也能分享）。 */
-    private fun shareAsZip(pane: Pane, f: File) {
+    internal fun shareAsZip(pane: Pane, f: File) {
         Thread {
             val zipFile = File(cacheDir, "share_${System.currentTimeMillis()}.zip")
             var ok = false
@@ -2657,242 +1985,20 @@ class MainActivity : BaseActivity() {
 
     /** 图3式的更多方式对话框：标题是文件名 + 右上角铅笔（重命名），下面是
      *  两列网格按钮（带图标，不可用的置灰）。16 个按钮全部真能用。 */
-    private fun showMoreActionsDialog(pane: Pane, f: File) {
-        val isDir: Boolean
-        val name: String
-        when {
-            pane.safMode -> {
-                val e = pane.safEntries.firstOrNull { it.keyPath == f.absolutePath } ?: return
-                isDir = e.isDir; name = e.name
-            }
-            pane.shizukuMode -> {
-                val e = pane.shizukuEntries.firstOrNull { it.path == f.absolutePath } ?: return
-                isDir = e.isDir; name = e.name
-            }
-            else -> { isDir = f.isDirectory; name = f.name }
-        }
-        val isZip = FileUtils.isZip(File(name))
-        val isEnc = name.endsWith(".enc", ignoreCase = true)
-        val pinned = PinnedFolders.isPinned(this, f.absolutePath)
-        val bookmarked = Bookmarks.contains(this, bookmarkTarget(pane, f), bookmarkKind(pane))
-        val hidden = name.startsWith(".")
-        val density = resources.displayMetrics.density
-        val pad = (16 * density).toInt()
-        lateinit var dialog: androidx.appcompat.app.AlertDialog
-        val container = LinearLayout(this).apply {
-            orientation = LinearLayout.VERTICAL
-            setPadding(pad, pad, pad, pad)
-        }
-        // 标题行：文件名 + 右上角铅笔（点开是重命名）。
-        val titleRow = LinearLayout(this).apply {
-            orientation = LinearLayout.HORIZONTAL
-            gravity = Gravity.CENTER_VERTICAL
-        }
-        val titleTv = TextView(this).apply {
-            text = name
-            textSize = 20f
-            typeface = Typeface.DEFAULT_BOLD
-            layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
-        }
-        val pencil = ImageButton(this).apply {
-            setImageResource(R.drawable.ic_edit)
-            background = selectableBackground()
-            contentDescription = getString(R.string.rename)
-            setOnClickListener { dialog.dismiss(); renameItem(pane, f) }
-        }
-        titleRow.addView(titleTv)
-        titleRow.addView(pencil)
-        container.addView(titleRow)
-        // v1.9.0（Max 15:26 纠正，最终版）：更多方式只放 ⋮ 菜单之外的额外功能。
-        // v1.9.1（Max 16:41）：再加 创建快捷方式，共 9 个。
-        val buttons = listOf(
-            MoreAction(R.string.compress_item, R.drawable.ic_archive, true) { compressItem(pane, f) },
-            MoreAction(R.string.share_zip, R.drawable.ic_share, true) { shareAsZip(pane, f) },
-            MoreAction(if (pinned) R.string.unpin_folder else R.string.pin_folder, R.drawable.ic_pin, isDir) { pinToggle(pane, f) },
-            MoreAction(if (hidden) R.string.unhide else R.string.hide, R.drawable.ic_hide, true) { hideToggle(pane, f) },
-            MoreAction(R.string.bookmarks_title, R.drawable.ic_bookmark, true) { bookmarkToggle(pane, f) },
-            MoreAction(R.string.encrypt_file, R.drawable.ic_shield, !isDir && !isEnc) { encryptItem(pane, f) },
-            MoreAction(R.string.decrypt_file, R.drawable.ic_shield, !isDir && isEnc) { decryptItem(pane, f) },
-            MoreAction(R.string.extract, R.drawable.ic_archive, !isDir && isZip) { unzipItem(pane, f) },
-            MoreAction(R.string.create_shortcut, R.drawable.ic_shortcut, true) { showCreateShortcutDialog(pane, f) }
-        )
-        for (i in buttons.indices step 2) {
-            val row = LinearLayout(this).apply { orientation = LinearLayout.HORIZONTAL }
-            for (j in 0..1) {
-                val idx = i + j
-                if (idx >= buttons.size) break
-                val b = buttons[idx]
-                val btn = MaterialButton(this, null, com.google.android.material.R.attr.materialButtonTonalStyle).apply {
-                    text = getString(b.labelRes)
-                    icon = AppCompatResources.getDrawable(this@MainActivity, b.iconRes)
-                    iconGravity = MaterialButton.ICON_GRAVITY_TEXT_START
-                    isEnabled = b.enabled
-                    alpha = if (b.enabled) 1f else 0.45f
-                    layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f).apply {
-                        val m = (4 * density).toInt()
-                        setMargins(m, m, m, m)
-                    }
-                    setOnClickListener { dialog.dismiss(); b.run() }
-                }
-                row.addView(btn)
-            }
-            container.addView(row)
-        }
-        val scroll = ScrollView(this).apply { addView(container) }
-        dialog = glassDialogBuilder().setView(scroll).create()
-        dialog.show()
+    internal fun showMoreActionsDialog(pane: Pane, f: File) {
+        moreActionsDialog = MoreActionsRequest(pane, f)
     }
 
     // ---------- v1.9.1：创建快捷方式（照 MT 图4–图6） ----------
 
     /** 创建快捷方式对话框：图标 + 名称输入框 + 类型下拉 + 执行操作下拉，
      *  底部只有取消/确定（不要管理按钮；执行操作里不要执行脚本文件）。 */
-    private fun showCreateShortcutDialog(pane: Pane, f: File) {
-        val isDir: Boolean
-        val name: String
-        when {
-            pane.safMode -> {
-                val e = pane.safEntries.firstOrNull { it.keyPath == f.absolutePath } ?: return
-                isDir = e.isDir; name = e.name
-            }
-            pane.shizukuMode -> {
-                val e = pane.shizukuEntries.firstOrNull { it.path == f.absolutePath } ?: return
-                isDir = e.isDir; name = e.name
-            }
-            else -> { isDir = f.isDirectory; name = f.name }
-        }
-        val density = resources.displayMetrics.density
-        val pad = (20 * density).toInt()
-        val container = LinearLayout(this).apply {
-            orientation = LinearLayout.VERTICAL
-            setPadding(pad, 0, pad, 0)
-        }
-        fun label(res: Int): TextView = TextView(this).apply {
-            text = getString(res)
-            textSize = 16f
-            setPadding(0, (12 * density).toInt(), 0, (4 * density).toInt())
-        }
-        // 图标行：文件类型图标放在圆角色块里（和列表行同款）。
-        container.addView(label(R.string.shortcut_icon))
-        val iconRes = if (isDir) R.drawable.ic_folder else FileUtils.iconResFor(f)
-        val tileRes = if (isDir) R.color.tile_folder else FileUtils.tileColorResFor(f)
-        val iconView = ImageView(this).apply {
-            layoutParams = LinearLayout.LayoutParams((56 * density).toInt(), (56 * density).toInt())
-            val bg = GradientDrawable()
-            bg.cornerRadius = 14f * density
-            bg.setColor(ContextCompat.getColor(this@MainActivity, tileRes))
-            background = bg
-            setImageResource(iconRes)
-            imageTintList = ColorStateList.valueOf(Color.WHITE)
-            val ip = (12 * density).toInt()
-            setPadding(ip, ip, ip, ip)
-        }
-        container.addView(iconView)
-        // 名称输入框：默认填当前名字，全选方便改。
-        container.addView(label(R.string.shortcut_name))
-        val nameInput = EditText(this).apply { setText(name); selectAll() }
-        container.addView(nameInput)
-        // 类型下拉：桌面快捷方式 / 图标快捷方式（点开 PopupMenu）。
-        container.addView(label(R.string.shortcut_type))
-        var typeIcon = false // false=桌面快捷方式，true=图标快捷方式
-        val typeField = TextView(this).apply {
-            text = getString(R.string.shortcut_type_desktop)
-            textSize = 16f
-            setPadding(0, (4 * density).toInt(), 0, 0)
-        }
-        val typeSub = TextView(this).apply {
-            text = getString(R.string.shortcut_type_desktop_desc)
-            textSize = 13f
-            setTextColor(Color.GRAY)
-            setPadding(0, (2 * density).toInt(), 0, 0)
-        }
-        val typeRow = LinearLayout(this).apply {
-            orientation = LinearLayout.HORIZONTAL
-            gravity = Gravity.CENTER_VERTICAL
-            isClickable = true
-            setOnClickListener {
-                val pm = PopupMenu(this@MainActivity, typeField)
-                pm.menu.add(0, 0, 0, R.string.shortcut_type_desktop)
-                pm.menu.add(0, 1, 1, R.string.shortcut_type_icon)
-                pm.setOnMenuItemClickListener { item ->
-                    typeIcon = item.itemId == 1
-                    typeField.text = getString(if (typeIcon) R.string.shortcut_type_icon else R.string.shortcut_type_desktop)
-                    typeSub.text = getString(if (typeIcon) R.string.shortcut_type_icon_desc else R.string.shortcut_type_desktop_desc)
-                    true
-                }
-                pm.show()
-            }
-            addView(typeField, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f))
-            addView(TextView(this@MainActivity).apply { text = "▼"; textSize = 14f })
-        }
-        container.addView(typeRow)
-        container.addView(typeSub)
-        // 执行操作下拉：只留 4 项（不要执行脚本文件）。
-        container.addView(label(R.string.shortcut_action))
-        val actions = listOf(
-            R.string.shortcut_action_locate to SHORTCUT_LOCATE,
-            R.string.shortcut_action_locate_click to SHORTCUT_LOCATE_OPEN,
-            R.string.shortcut_action_open_editor to SHORTCUT_OPEN_EDITOR,
-            R.string.shortcut_action_preview_html to SHORTCUT_PREVIEW_HTML
-        )
-        var selectedAction = SHORTCUT_LOCATE
-        val actionField = TextView(this).apply {
-            text = getString(R.string.shortcut_action_locate)
-            textSize = 16f
-            setPadding(0, (4 * density).toInt(), 0, 0)
-        }
-        val actionRow = LinearLayout(this).apply {
-            orientation = LinearLayout.HORIZONTAL
-            gravity = Gravity.CENTER_VERTICAL
-            isClickable = true
-            setOnClickListener {
-                val pm = PopupMenu(this@MainActivity, actionField)
-                actions.forEachIndexed { i, (res, _) -> pm.menu.add(0, i, i, res) }
-                pm.setOnMenuItemClickListener { item ->
-                    val (res, code) = actions[item.itemId]
-                    selectedAction = code
-                    actionField.text = getString(res)
-                    true
-                }
-                pm.show()
-            }
-            addView(actionField, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f))
-            addView(TextView(this@MainActivity).apply { text = "▼"; textSize = 14f })
-        }
-        container.addView(actionRow)
-        // 底部只有取消/确定（自定义按钮，名字为空时不关框）。
-        val dlg = MaterialAlertDialogBuilder(this).setTitle(R.string.create_shortcut).setView(container).create()
-        val btnRow = LinearLayout(this).apply {
-            orientation = LinearLayout.HORIZONTAL
-            gravity = Gravity.END
-            setPadding(0, (16 * density).toInt(), 0, 0)
-        }
-        fun textButton(res: Int, onClick: () -> Unit): android.widget.Button =
-            // 和 showNewDialog 同款：MaterialButton 在 1.13 里没有四参构造，
-            // 用 Button 的四参构造套 Material3 TextButton 样式。
-            android.widget.Button(
-                this, null, 0,
-                com.google.android.material.R.style.Widget_Material3_Button_TextButton_Dialog
-            ).apply {
-                text = getString(res)
-                setOnClickListener { onClick() }
-            }
-        btnRow.addView(textButton(R.string.cancel) { dlg.dismiss() })
-        btnRow.addView(textButton(R.string.confirm) {
-            val label = nameInput.text.toString().trim()
-            if (label.isEmpty()) {
-                Toast.makeText(this, R.string.invalid_name, Toast.LENGTH_SHORT).show()
-                return@textButton
-            }
-            dlg.dismiss()
-            pinShortcut(f.absolutePath, label, isDir, typeIcon, selectedAction)
-        })
-        container.addView(btnRow)
-        dlg.show()
+    internal fun showCreateShortcutDialog(pane: Pane, f: File) {
+        shortcutDialog = ShortcutRequest(pane, f)
     }
 
     /** 生成桌面快捷方式（ShortcutManager.requestPinShortcut）。 */
-    private fun pinShortcut(path: String, label: String, isDir: Boolean, useTypeIcon: Boolean, action: Int) {
+    internal fun pinShortcut(path: String, label: String, isDir: Boolean, useTypeIcon: Boolean, action: Int) {
         try {
             val sm = getSystemService(ShortcutManager::class.java)
             if (sm == null || !sm.isRequestPinShortcutSupported) {
@@ -2952,7 +2058,7 @@ class MainActivity : BaseActivity() {
 
     /** 处理桌面快捷方式点进来的 Intent：进到文件所在目录，再按动作执行。
      *  进不了目录或文件没了就弹明确提示，不闪退。 */
-    private fun handleShortcutIntent(intent: Intent) {
+    internal fun handleShortcutIntent(intent: Intent) {
         if (intent.action != ACTION_SHORTCUT) return
         val path = intent.getStringExtra(EXTRA_SHORTCUT_PATH) ?: return
         val action = intent.getIntExtra(EXTRA_SHORTCUT_ACTION, SHORTCUT_LOCATE)
@@ -3020,7 +2126,7 @@ class MainActivity : BaseActivity() {
         }
     }
 
-    private fun renameItem(pane: Pane, f: File) {
+    internal fun renameItem(pane: Pane, f: File) {
         when {
             pane.safMode -> pane.safEntries.firstOrNull { it.keyPath == f.absolutePath }?.let { showSafRenameDialog(pane, it) }
             pane.shizukuMode -> pane.shizukuEntries.firstOrNull { it.path == f.absolutePath }?.let { showShizukuRenameDialog(pane, it) }
@@ -3028,14 +2134,14 @@ class MainActivity : BaseActivity() {
         }
     }
 
-    private fun isDirOf(pane: Pane, f: File): Boolean = when {
+    internal fun isDirOf(pane: Pane, f: File): Boolean = when {
         pane.safMode -> pane.safEntries.firstOrNull { it.keyPath == f.absolutePath }?.isDir ?: false
         pane.shizukuMode -> pane.shizukuEntries.firstOrNull { it.path == f.absolutePath }?.isDir ?: false
         else -> f.isDirectory
     }
 
     /** 隐藏 / 取消隐藏：改名加 "." 前缀（已隐藏的去掉 "."）。 */
-    private fun hideToggle(pane: Pane, f: File) {
+    internal fun hideToggle(pane: Pane, f: File) {
         val name = f.name
         val newName = if (name.startsWith(".")) name.removePrefix(".") else ".$name"
         if (newName.isBlank() || newName == ".") {
@@ -3078,7 +2184,7 @@ class MainActivity : BaseActivity() {
     }
 
     /** Pin folder：置顶到列表最前面（带图钉标记），再点取消置顶。仅文件夹。 */
-    private fun pinToggle(pane: Pane, f: File) {
+    internal fun pinToggle(pane: Pane, f: File) {
         val nowPinned = PinnedFolders.toggle(this, f.absolutePath)
         Toast.makeText(this, if (nowPinned) R.string.pinned else R.string.unpinned, Toast.LENGTH_SHORT).show()
         loadPane(pane)
@@ -3088,36 +2194,11 @@ class MainActivity : BaseActivity() {
 
     /** 文件加密（仅文件）：弹密码框（输两遍防手误），AES 加密生成 .enc 文件，
      *  成功后删原文件。密码错只影响解密，加密本身不校验密码。 */
-    private fun encryptItem(pane: Pane, f: File) {
-        val pass = EditText(this).apply {
-            hint = getString(R.string.password_hint)
-            inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-        }
-        val pass2 = EditText(this).apply {
-            hint = getString(R.string.password_confirm_hint)
-            inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-        }
-        val container = LinearLayout(this).apply {
-            orientation = LinearLayout.VERTICAL
-            val p = (16 * resources.displayMetrics.density).toInt()
-            setPadding(p, p, p, p)
-            addView(pass)
-            addView(pass2)
-        }
-        MaterialAlertDialogBuilder(this).setTitle(R.string.encrypt_file).setIcon(R.drawable.ic_shield).setView(container)
-            .setPositiveButton(R.string.ok) { _, _ ->
-                val p1 = pass.text.toString()
-                val p2 = pass2.text.toString()
-                when {
-                    p1.isEmpty() -> Toast.makeText(this, R.string.password_hint, Toast.LENGTH_SHORT).show()
-                    p1 != p2 -> Toast.makeText(this, R.string.password_mismatch, Toast.LENGTH_SHORT).show()
-                    else -> Thread { doEncrypt(pane, f, p1) }.start()
-                }
-            }
-            .setNegativeButton(R.string.cancel, null).show()
+    internal fun encryptItem(pane: Pane, f: File) {
+        passwordDialog = PasswordRequest(pane, f, encrypt = true)
     }
 
-    private fun doEncrypt(pane: Pane, f: File, password: String) {
+    internal fun doEncrypt(pane: Pane, f: File, password: String) {
         var ok = false
         try {
             when {
@@ -3182,24 +2263,11 @@ class MainActivity : BaseActivity() {
 
     /** 文件解密（仅 .enc 文件）：弹密码框，解密回原名，成功后删 .enc；
      *  密码错提示且不动文件。 */
-    private fun decryptItem(pane: Pane, f: File) {
-        val pass = EditText(this).apply {
-            hint = getString(R.string.password_hint)
-            inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-        }
-        MaterialAlertDialogBuilder(this).setTitle(R.string.decrypt_file).setIcon(R.drawable.ic_shield).setView(pass)
-            .setPositiveButton(R.string.ok) { _, _ ->
-                val p = pass.text.toString()
-                if (p.isEmpty()) {
-                    Toast.makeText(this, R.string.password_hint, Toast.LENGTH_SHORT).show()
-                    return@setPositiveButton
-                }
-                Thread { doDecrypt(pane, f, p) }.start()
-            }
-            .setNegativeButton(R.string.cancel, null).show()
+    internal fun decryptItem(pane: Pane, f: File) {
+        passwordDialog = PasswordRequest(pane, f, encrypt = false)
     }
 
-    private fun doDecrypt(pane: Pane, f: File, password: String) {
+    internal fun doDecrypt(pane: Pane, f: File, password: String) {
         var ok = false
         var wrongPassword = false
         try {
@@ -3283,7 +2351,7 @@ class MainActivity : BaseActivity() {
     }
 
     /** 解压（仅 .zip）：解到同名文件夹里（重名加 (1)）。 */
-    private fun unzipItem(pane: Pane, f: File) {
+    internal fun unzipItem(pane: Pane, f: File) {
         Thread {
             var ok = false
             try {
@@ -3364,19 +2432,19 @@ class MainActivity : BaseActivity() {
 
     // ---------- v1.9.0：书签（抽屉分组） ----------
 
-    private fun bookmarkKind(pane: Pane): String = when {
+    internal fun bookmarkKind(pane: Pane): String = when {
         pane.safMode -> "saf"
         pane.shizukuMode -> "root"
         else -> "file"
     }
 
-    private fun bookmarkTarget(pane: Pane, f: File): String = when {
+    internal fun bookmarkTarget(pane: Pane, f: File): String = when {
         pane.safMode -> pane.safEntries.firstOrNull { it.keyPath == f.absolutePath }?.uri?.toString() ?: f.absolutePath
         else -> f.absolutePath
     }
 
     /** 书签开关：没加过就加到抽屉书签分组，加过就取消。 */
-    private fun bookmarkToggle(pane: Pane, f: File) {
+    internal fun bookmarkToggle(pane: Pane, f: File) {
         val target = bookmarkTarget(pane, f)
         val kind = bookmarkKind(pane)
         if (Bookmarks.contains(this, target, kind)) {
@@ -3390,49 +2458,19 @@ class MainActivity : BaseActivity() {
     }
 
     /** 抽屉里的书签分组（没有书签时整个分组隐藏）。 */
-    private fun refreshBookmarks() {
-        if (!::drawerLayout.isInitialized || !::prefs.isInitialized) return
-        val container = findViewById<LinearLayout>(R.id.drawerBookmarksContainer) ?: return
-        val title = findViewById<TextView>(R.id.drawerBookmarksTitle)
-        val list = Bookmarks.list(this)
-        title?.visibility = if (list.isEmpty()) View.GONE else View.VISIBLE
-        container.removeAllViews()
-        for (b in list) {
-            val row = layoutInflater.inflate(R.layout.item_drawer_storage, container, false)
-            row.findViewById<TextView>(R.id.storageName).text = b.name
-            row.findViewById<TextView>(R.id.storagePath).text = b.target
-            // item_drawer_storage 的图标没有 id：第一个子 View 就是它，换成书签图标。
-            try {
-                val icon = (row as? android.view.ViewGroup)?.getChildAt(0) as? ImageView
-                icon?.setImageResource(R.drawable.ic_bookmark)
-            } catch (_: Exception) { }
-            row.setOnClickListener {
-                drawerLayout.closeDrawer(GravityCompat.START)
-                openBookmark(b)
-            }
-            row.setOnLongClickListener { showBookmarkMenu(it, b); true }
-            container.addView(row)
-        }
+    internal fun refreshBookmarks() {
+        if (!::prefs.isInitialized) return
+        bookmarkRows = Bookmarks.list(this)
+        bookmarksVersion++
     }
 
     /** 长按书签：删掉这条书签（只删记录，不动文件本身）。 */
-    private fun showBookmarkMenu(anchor: View, bookmark: Bookmarks.Bookmark) {
-        val popup = PopupMenu(this, anchor)
-        popup.setForceShowIcon(true)
-        popup.menu.add(0, 1, 0, R.string.delete).icon = tintedIcon(R.drawable.ic_drawer_trash)
-        popup.setOnMenuItemClickListener {
-            if (it.itemId == 1) {
-                Bookmarks.remove(this, bookmark.target, bookmark.kind)
-                refreshBookmarks()
-                Toast.makeText(this, R.string.bookmark_removed, Toast.LENGTH_SHORT).show()
-            }
-            true
-        }
-        popup.show()
+    internal fun showBookmarkMenu(bookmark: Bookmarks.Bookmark) {
+        bookmarkMenu = BookmarkMenuRequest(bookmark)
     }
 
     /** 点书签跳到对应位置：文件夹进目录，文件打开。 */
-    private fun openBookmark(b: Bookmarks.Bookmark) {
+    internal fun openBookmark(b: Bookmarks.Bookmark) {
         when (b.kind) {
             "root" -> {
                 if (!ShizukuRoot.isRunning() || !ShizukuRoot.isAuthorized()) {
@@ -3474,7 +2512,7 @@ class MainActivity : BaseActivity() {
                     exitShizukuMode(p)
                     p.safMode = true
                     p.safStorage = CustomStorages.Storage(b.name, "", false, treeUri.toString())
-                    p.safStack = mutableListOf(SafDir(docId, b.name))
+                    p.safStack = mutableStateListOf(SafDir(docId, b.name))
                     p.safBackStack.clear()
                     p.safForwardStack.clear()
                     p.selected.clear()
@@ -3515,7 +2553,7 @@ class MainActivity : BaseActivity() {
      *  普通文件走 FileProvider，SAF 文档直接用 content URI，根目录文件
      *  先经 Shizuku cp 到缓存里暂存再分享；文件夹不能分享（跳过，选中的
      *  全是文件夹就弹“出错了”）。 */
-    private fun shareFiles(pane: Pane, targets: List<File>) {
+    internal fun shareFiles(pane: Pane, targets: List<File>) {
         if (targets.isEmpty()) return
         Thread {
             val uris = mutableListOf<Uri>()
@@ -3564,42 +2602,40 @@ class MainActivity : BaseActivity() {
     }
 
     /** SAF 项属性：名字、大小（文件夹递归算）、修改时间、位置（储存面包屑）。 */
-    private fun showSafProperties(pane: Pane, entry: SafEntry) {
+    internal fun showSafProperties(pane: Pane, entry: SafEntry) {
         val location = safBreadcrumb(pane) + "/" + entry.name
         if (entry.isDir) {
             Thread {
                 val size = safDirSize(entry.uri)
                 runOnUiThread {
                     if (isFinishing || isDestroyed) return@runOnUiThread
-                    showSafPropertiesDialog(entry, location, size)
+                    propertiesDialog = PropertiesRequest(safPropertiesMessage(entry, location, size))
                 }
             }.start()
         } else {
-            showSafPropertiesDialog(entry, location, entry.size)
+            propertiesDialog = PropertiesRequest(safPropertiesMessage(entry, location, entry.size))
         }
     }
 
-    private fun showSafPropertiesDialog(entry: SafEntry, location: String, size: Long) {
-        val msg = "${getString(R.string.name)}: ${entry.name}\n${getString(R.string.path)}: $location\n" +
+    private fun safPropertiesMessage(entry: SafEntry, location: String, size: Long): String {
+        return "${getString(R.string.name)}: ${entry.name}\n${getString(R.string.path)}: $location\n" +
             "${getString(R.string.size)}: ${FileUtils.formatSize(size)}\n${getString(R.string.modified)}: ${FileUtils.formatDate(entry.modified)}\n" +
             "${getString(R.string.file)}: ${if (entry.isDir) getString(R.string.folder) else getString(R.string.file)}"
-        MaterialAlertDialogBuilder(this).setTitle(R.string.properties).setMessage(msg)
-            .setPositiveButton(R.string.ok, null).show()
     }
 
-    private fun showProperties(f: File) {
+
+    internal fun showProperties(f: File) {
         val size = if (f.isDirectory) FileUtils.dirSize(f) else f.length()
         val msg = "${getString(R.string.name)}: ${f.name}\n${getString(R.string.path)}: ${f.absolutePath}\n" +
             "${getString(R.string.size)}: ${FileUtils.formatSize(size)}\n${getString(R.string.modified)}: ${FileUtils.formatDate(f.lastModified())}\n" +
             "${getString(R.string.file)}: ${if (f.isDirectory) getString(R.string.folder) else getString(R.string.file)}"
-        MaterialAlertDialogBuilder(this).setTitle(R.string.properties).setMessage(msg)
-            .setPositiveButton(R.string.ok, null).show()
+        propertiesDialog = PropertiesRequest(msg)
     }
 
     /** v1.8.0 根目录项属性：名字、路径、大小、修改时间、类型。文件夹大小
      *  用 du -sb 现算（读不了的目录算不出来就显示“未知”）；解析不上的
      *  条目（大小/日期未知）也显示“未知”，不要编一个 1970 年出来。 */
-    private fun showShizukuProperties(pane: Pane, entry: ShizukuRoot.Entry) {
+    internal fun showShizukuProperties(pane: Pane, entry: ShizukuRoot.Entry) {
         if (entry.isDir) {
             Thread {
                 val size = ShizukuRoot.exec("du", "-sb", entry.path, timeoutMs = 15000L).let { r ->
@@ -3607,15 +2643,15 @@ class MainActivity : BaseActivity() {
                 }
                 runOnUiThread {
                     if (isFinishing || isDestroyed) return@runOnUiThread
-                    showShizukuPropertiesDialog(entry, size)
+                    propertiesDialog = PropertiesRequest(shizukuPropertiesMessage(entry, size))
                 }
             }.start()
         } else {
-            showShizukuPropertiesDialog(entry, entry.size)
+            propertiesDialog = PropertiesRequest(shizukuPropertiesMessage(entry, entry.size))
         }
     }
 
-    private fun showShizukuPropertiesDialog(entry: ShizukuRoot.Entry, size: Long?) {
+    private fun shizukuPropertiesMessage(entry: ShizukuRoot.Entry, size: Long?): String {
         val unknown = entry.modified == 0L && size == null
         val sizeText = when {
             size != null -> FileUtils.formatSize(size)
@@ -3624,14 +2660,13 @@ class MainActivity : BaseActivity() {
         }
         val modText = if (entry.modified == 0L) getString(R.string.unknown)
             else FileUtils.formatDate(entry.modified)
-        val msg = "${getString(R.string.name)}: ${entry.name}\n${getString(R.string.path)}: ${entry.path}\n" +
+        return "${getString(R.string.name)}: ${entry.name}\n${getString(R.string.path)}: ${entry.path}\n" +
             "${getString(R.string.size)}: $sizeText\n${getString(R.string.modified)}: $modText\n" +
             "${getString(R.string.file)}: ${if (entry.isDir) getString(R.string.folder) else getString(R.string.file)}"
-        MaterialAlertDialogBuilder(this).setTitle(R.string.properties).setMessage(msg)
-            .setPositiveButton(R.string.ok, null).show()
     }
 
-    private fun openWith(f: File) {
+
+    internal fun openWith(f: File) {
         try {
             val uri = FairuFileProvider.uriFor(f)
             val intent = Intent(Intent.ACTION_VIEW).apply {
@@ -3644,8 +2679,8 @@ class MainActivity : BaseActivity() {
     // ---------- Shizuku 根目录 ----------
 
     /** 点抽屉里的根目录：先确认 Shizuku 可用且已授权，再进根目录浏览。 */
-    private fun openRootViaShizuku() {
-        drawerLayout.closeDrawer(GravityCompat.START)
+    internal fun openRootViaShizuku() {
+        drawerOpen = false
         if (!ShizukuRoot.isRunning()) {
             // 没装 Shizuku 或没启动：弹提示，可去下载，绝不闪退。
             MaterialAlertDialogBuilder(this)
@@ -3699,7 +2734,7 @@ class MainActivity : BaseActivity() {
      *  v1.8.0：失败时把旧列表清空、把错误原因记到 pane.shizukuError 里，
      *  空列表上直接显示错误原因——以前失败时不刷新列表，窗格里还留着
      *  上个目录的旧条目，路径栏却是新目录，会误导人。 */
-    private fun refreshShizukuList(pane: Pane) {
+    internal fun refreshShizukuList(pane: Pane) {
         ShizukuRoot.listDir(pane.currentDir.absolutePath) { entries, error ->
             if (isFinishing || isDestroyed) return@listDir
             if (!::left.isInitialized || !::right.isInitialized) return@listDir
@@ -3722,7 +2757,7 @@ class MainActivity : BaseActivity() {
     }
 
     /** 退出 Shizuku 模式（切回普通目录前调）。 */
-    private fun exitShizukuMode(pane: Pane) {
+    internal fun exitShizukuMode(pane: Pane) {
         if (!pane.shizukuMode) return
         pane.shizukuMode = false
         pane.shizukuEntries = emptyList()
@@ -3781,7 +2816,7 @@ class MainActivity : BaseActivity() {
     }
 
     /** SAF 面包屑：储存名/子目录/子目录，显示在标题栏和窗格路径行。 */
-    private fun safBreadcrumb(pane: Pane): String =
+    internal fun safBreadcrumb(pane: Pane): String =
         pane.safStack.joinToString("/") { it.name }
 
     /** 进一个 SAF 储存的根目录（抽屉里点它时调）。 */
@@ -3799,7 +2834,7 @@ class MainActivity : BaseActivity() {
         exitShizukuMode(p)
         p.safMode = true
         p.safStorage = storage
-        p.safStack = mutableListOf(SafDir(treeDocId, storage.name))
+        p.safStack = mutableStateListOf(SafDir(treeDocId, storage.name))
         p.safBackStack.clear()
         p.safForwardStack.clear()
         p.currentDir = File(safRootKey(treeUri))
@@ -3809,7 +2844,7 @@ class MainActivity : BaseActivity() {
     }
 
     /** 退出 SAF 模式（切回普通目录 / 另一个储存前调）。 */
-    private fun exitSafMode(pane: Pane) {
+    internal fun exitSafMode(pane: Pane) {
         if (!pane.safMode) return
         pane.safMode = false
         pane.safStorage = null
@@ -3836,7 +2871,7 @@ class MainActivity : BaseActivity() {
 
     /** 用 DocumentsContract 列出当前 SAF 目录；后台查，主线程刷新。
      *  失败弹真实错误，不闪退，也绝不静默显示空。 */
-    private fun refreshSafList(pane: Pane) {
+    internal fun refreshSafList(pane: Pane) {
         val storage = pane.safStorage ?: return
         val treeUri = try { Uri.parse(storage.uri) } catch (_: Exception) { return }
         val dir = pane.safStack.lastOrNull() ?: return
@@ -3905,7 +2940,7 @@ class MainActivity : BaseActivity() {
     }
 
     /** SAF 模式里点一个文件：用 ACTION_VIEW + content URI 打开（带读授权）。 */
-    private fun openSafFile(entry: SafEntry) {
+    internal fun openSafFile(entry: SafEntry) {
         try {
             val mime = try { contentResolver.getType(entry.uri) } catch (_: Exception) { null }
                 ?: FileUtils.mimeFor(File(entry.name))
@@ -4130,15 +3165,8 @@ class MainActivity : BaseActivity() {
 
     /** 抽屉头右上角的 ⋮ 菜单：v1.5.0 起只剩“添加本地储存”一项（Max 的要求：
      * 别的都不要，主题在设置→主题模式里改，设置本来就在抽屉工具组里）。 */
-    private fun showDrawerOverflowMenu(anchor: View) {
-        val popup = PopupMenu(this, anchor)
-        popup.setForceShowIcon(true)
-        popup.menu.add(0, 3, 0, R.string.add_local_storage).icon = tintedIcon(R.drawable.ic_drawer_storage)
-        popup.setOnMenuItemClickListener { item ->
-            if (item.itemId == 3) openStoragePicker()
-            true
-        }
-        popup.show()
+    internal fun showDrawerOverflowMenu() {
+        showDrawerOverflowMenu = true
     }
 
     /** 系统文档选择器（ACTION_OPEN_DOCUMENT_TREE）：点“添加本地储存”直接跳
@@ -4147,7 +3175,7 @@ class MainActivity : BaseActivity() {
         if (uri != null) onStorageTreePicked(uri)
     }
 
-    private fun openStoragePicker() {
+    internal fun openStoragePicker() {
         try {
             pickStorageLauncher.launch(null)
         } catch (e: Exception) {
@@ -4282,7 +3310,7 @@ class MainActivity : BaseActivity() {
      *  以前取 tree docId 尾段，downloads 提供方的 docId 是 msd:82 这种，
      *  尾段只剩 "82" 很难看。现在先问提供方要树文档的显示名（比如 Download），
      *  问不到才回落到 docId 尾段——纯数字的尾段不要，改显示提供方 authority。 */
-    private fun storageDisplayPath(s: CustomStorages.Storage): String {
+    internal fun storageDisplayPath(s: CustomStorages.Storage): String {
         if (s.path.isNotBlank()) return s.path
         if (s.uri.isBlank()) return ""
         return try {
@@ -4300,275 +3328,54 @@ class MainActivity : BaseActivity() {
     }
 
     /** 抽屉本地组里的自定义储存行（未隐藏的才显示）。 */
-    private fun refreshCustomStorages() {
-        if (!::drawerLayout.isInitialized || !::prefs.isInitialized) return
-        val container = findViewById<LinearLayout>(R.id.drawerCustomContainer) ?: return
-        container.removeAllViews()
-        for (s in CustomStorages.load(prefs)) {
-            if (s.hidden) continue
-            val row = layoutInflater.inflate(R.layout.item_drawer_storage, container, false)
-            row.findViewById<TextView>(R.id.storageName).text = s.name
-            row.findViewById<TextView>(R.id.storagePath).text = storageDisplayPath(s)
-            row.setOnClickListener {
-                drawerLayout.closeDrawer(GravityCompat.START)
-                navigateDrawerToStorage(s)
-            }
-            row.setOnLongClickListener {
-                showCustomStorageMenu(it, s)
-                true
-            }
-            container.addView(row)
-        }
+    internal fun refreshCustomStorages() {
+        if (!::prefs.isInitialized) return
+        customStorageRows = CustomStorages.load(prefs)
+            .filter { !it.hidden }
+            .map { CustomStorageRow(it, storageDisplayPath(it)) }
+        customStoragesVersion++
     }
 
     /** 长按自定义储存弹出的菜单（照 MT 那个面板）：重命名 / 删除 / 隐藏 / 排序。 */
-    private fun showCustomStorageMenu(anchor: View, storage: CustomStorages.Storage) {
-        val popup = PopupMenu(this, anchor)
-        popup.setForceShowIcon(true)
-        popup.menu.add(0, 1, 0, R.string.rename).icon = tintedIcon(R.drawable.ic_edit)
-        popup.menu.add(0, 2, 0, R.string.delete).icon = tintedIcon(R.drawable.ic_drawer_trash)
-        popup.menu.add(0, 3, 0, R.string.hide).icon = tintedIcon(R.drawable.ic_hide)
-        popup.menu.add(0, 4, 0, R.string.sort).icon = tintedIcon(R.drawable.ic_sort)
-        popup.setOnMenuItemClickListener { item ->
-            when (item.itemId) {
-                1 -> showRenameStorageDialog(storage)
-                2 -> confirmDeleteStorage(storage)
-                3 -> {
-                    val list = CustomStorages.load(prefs)
-                    val i = list.indexOfFirst { CustomStorages.key(it) == CustomStorages.key(storage) }
-                    if (i >= 0) {
-                        list[i] = list[i].copy(hidden = true)
-                        CustomStorages.save(prefs, list)
-                        refreshCustomStorages()
-                    }
-                    Toast.makeText(this, R.string.saved, Toast.LENGTH_SHORT).show()
-                }
-                4 -> showSortStoragesDialog()
-            }
-            true
-        }
-        popup.show()
+    internal fun showCustomStorageMenu(storage: CustomStorages.Storage) {
+        storageMenu = StorageMenuRequest(storage)
     }
 
-    private fun showRenameStorageDialog(storage: CustomStorages.Storage) {
-        val input = EditText(this)
-        input.setText(storage.name)
-        MaterialAlertDialogBuilder(this)
-            .setTitle(R.string.rename)
-            .setView(input)
-            .setPositiveButton(R.string.ok) { _, _ ->
-                val n = input.text.toString().trim().replace("\t", " ").replace("\n", " ")
-                if (n.isNotEmpty() && n != storage.name) {
-                    val list = CustomStorages.load(prefs)
-                    val i = list.indexOfFirst { CustomStorages.key(it) == CustomStorages.key(storage) }
-                    if (i >= 0) {
-                        list[i] = list[i].copy(name = n)
-                        CustomStorages.save(prefs, list)
-                        refreshCustomStorages()
-                    }
-                    Toast.makeText(this, R.string.renamed, Toast.LENGTH_SHORT).show()
-                }
-            }
-            .setNegativeButton(R.string.cancel, null)
-            .show()
+    internal fun showRenameStorageDialog(storage: CustomStorages.Storage) {
+        storageRenameDialog = StorageRenameRequest(storage)
     }
 
     /** 删除自定义储存：只删记录，不删文件夹本身；通过选择器加的还要释放
      *  持久 URI 授权（v1.5.0：不释放的话系统里一直挂着授权记录）。 */
-    private fun confirmDeleteStorage(storage: CustomStorages.Storage) {
-        MaterialAlertDialogBuilder(this)
-            .setTitle(R.string.confirm_delete)
-            .setMessage(storage.name + "\n" + storage.path)
-            .setPositiveButton(R.string.delete) { _, _ ->
-                if (storage.uri.isNotBlank()) {
-                    try {
-                        contentResolver.releasePersistableUriPermission(
-                            Uri.parse(storage.uri),
-                            Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
-                        )
-                    } catch (_: Exception) { }
-                }
-                val list = CustomStorages.load(prefs)
-                list.removeAll { CustomStorages.key(it) == CustomStorages.key(storage) }
-                CustomStorages.save(prefs, list)
-                refreshCustomStorages()
-                Toast.makeText(this, R.string.deleted, Toast.LENGTH_SHORT).show()
-            }
-            .setNegativeButton(R.string.cancel, null)
-            .show()
+    internal fun confirmDeleteStorage(storage: CustomStorages.Storage) {
+        storageDeleteDialog = StorageDeleteRequest(storage)
+    }
+
+    /** 自定义储存删除执行：只删记录，不删文件夹本身；释放持久 URI 授权。 */
+    internal fun deleteCustomStorage(storage: CustomStorages.Storage) {
+        if (storage.uri.isNotBlank()) {
+            try {
+                contentResolver.releasePersistableUriPermission(
+                    Uri.parse(storage.uri),
+                    Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
+                )
+            } catch (_: Exception) { }
+        }
+        val list = CustomStorages.load(prefs)
+        list.removeAll { CustomStorages.key(it) == CustomStorages.key(storage) }
+        CustomStorages.save(prefs, list)
+        refreshCustomStorages()
+        android.widget.Toast.makeText(this, R.string.deleted, android.widget.Toast.LENGTH_SHORT).show()
     }
 
     /** 排序：弹出列表，每行上下移按钮，顺序即抽屉里的顺序（只排自定义储存）。 */
-    private fun showSortStoragesDialog() {
-        val list = CustomStorages.load(prefs)
-        if (list.isEmpty()) {
-            Toast.makeText(this, R.string.no_files, Toast.LENGTH_SHORT).show()
-            return
-        }
-        val density = resources.displayMetrics.density
-        val pad = (12 * density).toInt()
-        val container = LinearLayout(this).apply {
-            orientation = LinearLayout.VERTICAL
-            setPadding(pad, pad, pad, pad)
-        }
-        fun render() {
-            container.removeAllViews()
-            list.forEachIndexed { index, s ->
-                val row = LinearLayout(this).apply {
-                    orientation = LinearLayout.HORIZONTAL
-                    gravity = android.view.Gravity.CENTER_VERTICAL
-                }
-                val nameTv = TextView(this).apply {
-                    text = s.name + if (s.hidden) "（" + getString(R.string.hide) + "）" else ""
-                    layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
-                }
-                val upBtn = ImageButton(this).apply {
-                    setImageResource(R.drawable.ic_arrow_up)
-                    contentDescription = getString(R.string.move_up)
-                    background = selectableBackground()
-                    isEnabled = index > 0
-                    alpha = if (index > 0) 1f else 0.3f
-                    setOnClickListener {
-                        if (index > 0) {
-                            val tmp = list[index - 1]
-                            list[index - 1] = list[index]
-                            list[index] = tmp
-                            CustomStorages.save(prefs, list)
-                            refreshCustomStorages()
-                            render()
-                        }
-                    }
-                }
-                val downBtn = ImageButton(this).apply {
-                    setImageResource(R.drawable.ic_arrow_down)
-                    contentDescription = getString(R.string.move_down)
-                    background = selectableBackground()
-                    isEnabled = index < list.size - 1
-                    alpha = if (index < list.size - 1) 1f else 0.3f
-                    setOnClickListener {
-                        if (index < list.size - 1) {
-                            val tmp = list[index + 1]
-                            list[index + 1] = list[index]
-                            list[index] = tmp
-                            CustomStorages.save(prefs, list)
-                            refreshCustomStorages()
-                            render()
-                        }
-                    }
-                }
-                row.addView(nameTv)
-                if (s.hidden) {
-                    // 已隐藏的项在这里取消隐藏（v1.5.0：手填对话框删了，找回入口搬到这儿）。
-                    val unhideBtn = android.widget.Button(this).apply {
-                        text = getString(R.string.unhide)
-                        setOnClickListener {
-                            list[index] = list[index].copy(hidden = false)
-                            CustomStorages.save(prefs, list)
-                            refreshCustomStorages()
-                            Toast.makeText(this@MainActivity, R.string.saved, Toast.LENGTH_SHORT).show()
-                            render()
-                        }
-                    }
-                    row.addView(unhideBtn)
-                }
-                row.addView(upBtn)
-                row.addView(downBtn)
-                container.addView(row)
-            }
-        }
-        render()
-        MaterialAlertDialogBuilder(this)
-            .setTitle(R.string.sort)
-            .setView(container)
-            .setPositiveButton(R.string.ok, null)
-            .show()
-    }
 
     // ---------- 菜单 / 搜索 / 权限 ----------
 
-    /** v1.7.0 修复：顶部工具栏菜单一直打不开，就是缺了这个——以前只在布局里写了
-     *  app:menu，但 setSupportActionBar 接管工具栏后，菜单必须由 Activity 的
-     *  onCreateOptionsMenu 来 inflate，否则搜索图标和 ⋮ 根本不会出现。 */
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.simple_menu, menu)
-        // v1.9.6 玻璃开着时顶栏变浅：搜索图标是白色矢量图（为实色主色底
-        // 设计），衬浅色玻璃底会发白难读；标题/副标题/导航图标已在
-        // setupLiquidGlass 里改深色，这里把搜索图标也改深（colorOnSurface，
-        // 浅色主题深字、深色主题浅字）。菜单每次 inflate 都重走这里，
-        // 玻璃开关变化重建 Activity 时也会重走，不会漏。
-        if (::prefs.isInitialized && prefs.getBoolean(PREF_LIQUID_GLASS, false)) {
-            val dark = MaterialColors.getColor(this, com.google.android.material.R.attr.colorOnSurface, Color.BLACK)
-            menu.findItem(R.id.menu_search)?.icon?.mutate()?.let { DrawableCompat.setTint(it, dark) }
-        }
-        // v1.9.0：溢出菜单默认不显示图标，强制显示（Max 要求每项带图标）。
-        try {
-            (menu as? androidx.appcompat.view.menu.MenuBuilder)?.setOptionalIconsVisible(true)
-        } catch (_: Exception) { }
-        menu.findItem(R.id.menu_dual_pane)?.isChecked = dualPane
-        menu.findItem(R.id.menu_show_hidden)?.isChecked =
-            if (::prefs.isInitialized) prefs.getBoolean("show_hidden", false) else false
-        setupSearch()
-        return true
-    }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return onMenu(item)
-    }
 
-    private fun setupSearch() {
-        val searchItem = topBar.menu.findItem(R.id.menu_search) ?: return
-        val searchView = searchItem.actionView as? SearchView ?: return
-        searchView.queryHint = getString(R.string.search_hint)
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(q: String?): Boolean {
-                activePane().searchQuery = q ?: ""; loadPane(activePane()); return true
-            }
-            override fun onQueryTextChange(newText: String?): Boolean {
-                activePane().searchQuery = newText ?: ""; loadPane(activePane()); return true
-            }
-        })
-        searchView.setOnCloseListener { activePane().searchQuery = ""; loadPane(activePane()); false }
-    }
 
-    private fun onMenu(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.menu_sort -> { showSortDialog(); return true }
-            R.id.menu_show_hidden -> {
-                val v = !prefs.getBoolean("show_hidden", false)
-                prefs.edit().putBoolean("show_hidden", v).apply(); item.isChecked = v
-            }
-            R.id.menu_dual_pane -> {
-                dualPane = !dualPane
-                prefs.edit().putBoolean("dual_pane", dualPane).apply()
-                item.isChecked = dualPane
-                applyDualPane()
-                return true
-            }
-            R.id.menu_refresh -> { load(); return true }
-            else -> return false
-        }
-        load()
-        return true
-    }
 
-    /** v1.9.0 排序对话框：列出 按名称 / 按日期 / 按大小 三个选项，
-     *  选一个再点确认才排序（取消不改）。 */
-    private fun showSortDialog() {
-        var selected = prefs.getInt("sort", 0)
-        val options = arrayOf(
-            getString(R.string.sort_name),
-            getString(R.string.sort_date),
-            getString(R.string.sort_size)
-        )
-        val sortDlg = glassDialogBuilder().setTitle(R.string.sort).setIcon(R.drawable.ic_sort)
-            .setSingleChoiceItems(options, selected) { _, which -> selected = which }
-            .setPositiveButton(R.string.confirm) { _, _ ->
-                prefs.edit().putInt("sort", selected).apply()
-                load()
-            }
-            .setNegativeButton(R.string.cancel, null).create()
-        sortDlg.show()
-    }
 
     private fun showAbout() {
         startActivity(Intent(this, AboutActivity::class.java))
@@ -4609,26 +3416,9 @@ class MainActivity : BaseActivity() {
      * 现在每次 onResume 都按当前语言重填一遍；版本号改从 PackageManager 读，
      * 升级不用再改代码里的硬编码。
      */
-    private fun refreshDrawerTexts() {
-        if (!::drawerLayout.isInitialized) return
-        try {
-            val versionText = try {
-                val pi = packageManager.getPackageInfo(packageName, 0)
-                val code = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) pi.longVersionCode else pi.versionCode.toLong()
-                getString(R.string.version) + " " + pi.versionName + " ($code)"
-            } catch (_: Exception) {
-                getString(R.string.version) + " 1.9.0 (14)"
-            }
-            findViewById<TextView>(R.id.drawerVersion).text = versionText
-            findViewById<TextView>(R.id.drawerLocalTitle).text = getString(R.string.drawer_local)
-            findViewById<TextView>(R.id.drawerBookmarksTitle)?.text = getString(R.string.bookmarks_title)
-            findViewById<TextView>(R.id.drawerToolsTitle).text = getString(R.string.drawer_tools)
-            findViewById<TextView>(R.id.drawerRootLabel).text = getString(R.string.root_directory)
-            findViewById<TextView>(R.id.drawerInternalLabel).text = getString(R.string.storage_internal)
-            findViewById<TextView>(R.id.drawerTrashLabel).text = getString(R.string.trash)
-            findViewById<TextView>(R.id.drawerEditorLabel).text = getString(R.string.text_editor)
-            findViewById<TextView>(R.id.drawerSettingsLabel).text = getString(R.string.settings)
-        } catch (_: Exception) { }
+    internal fun refreshDrawerTexts() {
+        // v1.9.8.1：抽屉是 Compose，文字直接读字符串资源 + PackageManager，
+        // 切语言后重建即更新；这里留空函数体是让 onResume 的调用点照常编译。
     }
 
     override fun onResume() {
@@ -4694,7 +3484,7 @@ class MainActivity : BaseActivity() {
         }.start()
     }
 
-    private fun snackbar(res: Int) {
-        Snackbar.make(findViewById(R.id.mainRoot), res, Snackbar.LENGTH_SHORT).show()
+    internal fun snackbar(res: Int) {
+        showSnackbar(getString(res))
     }
 }

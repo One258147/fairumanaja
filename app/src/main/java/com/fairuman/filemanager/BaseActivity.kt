@@ -1,20 +1,19 @@
 package com.fairuman.filemanager
 
-import android.graphics.Color
 import android.os.Bundle
-import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.card.MaterialCardView
 
 /**
  * v1.9.2：所有 Activity 的基类。
- * 1. onCreate 里在 super.onCreate 之前统一应用语言/主题/配色
- *    （以前各 Activity 自己调 MainActivity.applyPrefs，容易漏）。
+ * 1. onCreate 里在 super.onCreate 之后统一应用语言/主题模式
+ *    （MainActivity.applyPrefs：只剩语言 + 夜间模式；配色/引擎/玻璃/
+ *    字体颜色改由 Compose 的 FairuTheme 直接从偏好算，不再走主题覆盖层）。
  * 2. 记下本次创建时应用的动态颜色/种子色；onResume 时跟保存的设置比，
  *    不一致就重建——外观页改了配色后，返回的每个页面都能立即变色，
  *    不用杀后台（v1.9.1 的 bug：lastApplied* 是静态的，外观页自己
  *    recreate 时就把它更新了，主界面 onResume 再比永远一致，所以不变色）。
+ * v1.9.8.1：液态玻璃的 View 卡片染色（tintGlassCards）已删——玻璃改由
+ * Compose 的 HAZE 实现（FairuTheme.fairuGlassStyle），不再遍历 View 树。
  */
 open class BaseActivity : AppCompatActivity() {
 
@@ -45,48 +44,6 @@ open class BaseActivity : AppCompatActivity() {
             appliedFontColor = sp.getInt(MainActivity.PREF_FONT_COLOR, MainActivity.DEFAULT_FONT_COLOR)
             appliedLocaleTag = sp.getString(MainActivity.PREF_LOCALE, null)
         } catch (_: Exception) { }
-        // v1.9.6 液态玻璃跟随主题：玻璃开着时，本页的 MaterialCardView 背景
-        // 染上当前主题主色（低透明度叠加）。decorView.post 跑在子类
-        // setContentView 之后；主题一换整栈重建，每个 Activity 重建时都会
-        // 重跑，色调自然跟上。只跑一次（新实例从 XML 重建，颜色是干净的）。
-        if (appliedGlass) {
-            window.decorView.post { tintGlassCards() }
-        }
-    }
-
-    /** 把本页所有 MaterialCardView 的背景按液态玻璃模式染色。
-     *  半透明 = 半透明底 + 主题色调；透明模糊 = 很淡的主题色（基本透明）；
-     *  全透明 = 全透明。只改色相/透明度，圆角/阴影都不动。 */
-    private fun tintGlassCards() {
-        if (isFinishing || isDestroyed) return
-        try {
-            val sp = getSharedPreferences("fairu_prefs", MODE_PRIVATE)
-            val mode = sp.getInt(MainActivity.PREF_LIQUID_GLASS_MODE, MainActivity.GLASS_MODE_TRANSLUCENT)
-            val tint = when (mode) {
-                MainActivity.GLASS_MODE_BLUR -> MainActivity.glassTintColor(this, MainActivity.GLASS_TINT_ALPHA_BLUR)
-                else -> MainActivity.glassTintColor(this)
-            }
-            val root = window.decorView as? ViewGroup ?: return
-            tintCardsRecursive(root, mode, tint)
-        } catch (_: Exception) { }
-    }
-
-    private fun tintCardsRecursive(v: View, mode: Int, tint: Int) {
-        if (v is MaterialCardView) {
-            try {
-                when (mode) {
-                    MainActivity.GLASS_MODE_CLEAR -> v.setCardBackgroundColor(Color.TRANSPARENT)
-                    MainActivity.GLASS_MODE_BLUR -> v.setCardBackgroundColor(tint)
-                    else -> {
-                        val cur = v.cardBackgroundColor?.defaultColor
-                        if (cur != null) v.setCardBackgroundColor(MainActivity.tintSurfaceColor(cur, tint))
-                    }
-                }
-            } catch (_: Exception) { }
-        }
-        if (v is ViewGroup) {
-            for (i in 0 until v.childCount) tintCardsRecursive(v.getChildAt(i), mode, tint)
-        }
     }
 
     override fun onResume() {

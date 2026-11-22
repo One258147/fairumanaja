@@ -1,9 +1,9 @@
 # Fairumanējā
 
 > **Fairumanējā is a free, open-source dual-pane file manager for Android.**
-> Built with Kotlin and Material Design 3. Its goal is to become one of the open-source alternatives to MT Manager, and it is one of the few file managers that support China's minority languages — Tibetan, Uyghur, Zhuang, Traditional Mongolian, Cyrillic Mongolian, Manchu and Xibe among them.
+> Built with Kotlin and Jetpack Compose (Material Design 3 by default). Its goal is to become one of the open-source alternatives to MT Manager, and it is one of the few file managers that support China's minority languages — Tibetan, Uyghur, Zhuang, Traditional Mongolian, Cyrillic Mongolian, Manchu and Xibe among them.
 >
-> Fairumanējā 是一款免费开源的 Android 双窗格文件管理器，采用 Kotlin 与 Material Design 3 开发。目标是成为 MT 管理器的开源替代品之一，也是少数支持中国少数民族语言的文件管理器之一。
+> Fairumanējā 是一款免费开源的 Android 双窗格文件管理器，采用 Kotlin 与 Jetpack Compose 开发（默认 Material Design 3 引擎）。目标是成为 MT 管理器的开源替代品之一，也是少数支持中国少数民族语言的文件管理器之一。
 >
 > GitHub 仓库：https://github.com/One258147/fairumanaja
 
@@ -13,7 +13,7 @@
 
 Fairumanējā（名字沿用重建前的项目名）是一款为 Android 手机和平板设计的本地文件管理器。它像 MT 管理器一样左右分两栏：两个窗格各自独立浏览、各自保留历史，可以把文件从一栏复制、剪切、移动到另一栏；也可以一键切回单窗格。
 
-它不只是一个“能看文件”的工具：浏览、复制、剪切、粘贴、重命名、删除、压缩、解压、加密、分享、书签、快捷方式、回收站、文本编辑、根目录访问、SAF 外部储存、换肤、换字体颜色、液态玻璃、开屏动画——这些功能都在一个 7 MB 左右的安装包里，不含广告，不联网上传你的文件。
+它不只是一个“能看文件”的工具：浏览、复制、剪切、粘贴、重命名、删除、压缩、解压、加密、分享、书签、快捷方式、回收站、文本编辑、根目录访问、SAF 外部储存、换肤、换字体颜色、液态玻璃、开屏动画——这些功能都在一个 16 MB 左右的安装包里，不含广告，不联网上传你的文件。
 
 本项目从 v1.0.0 起完全重写（简单版），与更早的旧版本不共享代码。
 
@@ -97,18 +97,18 @@ Fairumanējā（名字沿用重建前的项目名）是一款为 Android 手机�
 
 ### 外观与个性化
 
-- 外观页：主题模式（跟随系统 / 浅色 / 深色，点选立即切换）、动态颜色、应用配色、字体颜色
+- 外观页：主题模式（跟随系统 / 浅色 / 深色，点后弹出菜单，选后点确认才切换）、动态颜色、应用配色、字体颜色
 - 动态颜色：Android 12+ 用系统 Monet 取色；12 以下用壁纸取色回退。开启时应用配色行置灰，提示“若想使用此功能，请先关闭动态颜色”
-- 应用配色：52 种颜色，选好点确认才应用；字体颜色：52 种颜色，默认黑色，选好点确认才应用
-- 开屏动画：应用图标快速旋转 3 秒（带半透明残影），名字从下向上弹出、旋转落定；每次桌面冷启动播放；设置里可关闭
+- 应用配色：52 种颜色，选好点确认才应用；字体颜色：52 种颜色，默认黑色，选好点确认才应用，应用到全 App 所有文字
+- 开屏动画：应用图标与名字各快速旋转 360 度（各 1.5 秒，带半透明残影），名字从屏幕底部弹至图标下面、中间留空隙；每次桌面冷启动播放；设置里可关闭
 - 应用图标：白色背景，文件夹造型 + 几何 “F” 字母，科技感设计
 
 ### 实验性功能（设置 → 实验性功能）
 
 点进实验性功能前每次都会先弹警告框，说明可能造成的后果，确认才进入，取消则留在设置页。
 
-- **UI 引擎**：切换整个 App 的界面风格——Material Design 3（默认）、M3 Expressive（更圆润、更鲜明的造型）、Miuix（小米 MIUI 风格）。切换到别的引擎前先弹确认框，确认才切换。三个引擎的颜色都跟随应用配色与动态颜色。Miuix 是按开源项目 compose-miuix-ui/miuix 的设计 token 做的 View 移植，并非直接接入该 Compose 库。
-- **液态玻璃**：用 QWEA0 的 Liquid-Glass-Android（真 SDF 折射）把 UI 面板变成半透明。点行选模式（半透明 / 透明模糊 / 全透明），点开关开启；开启前先弹确认提示，确认才开。玻璃 tint 跟随当前应用主题色变化。
+- **UI 引擎**：切换整个 App 的界面风格——Material Design 3（默认）、M3 Expressive（更圆润、更鲜明的造型）、Miuix（小米 MIUI 风格）。切换到别的引擎前先弹确认框，确认才切换；切换后整个 App 所有界面都跟着换，不只是设置页和主界面。三个引擎的颜色都跟随应用配色与动态颜色。Miuix 直接接入真的 compose-miuix-ui/miuix 库（0.9.4）。
+- **液态玻璃**：用 chrisbanes 的 HAZE（Jetpack Compose 模糊库）把 UI 面板变成半透明。点行选模式（半透明：半透明 + 实时毛玻璃模糊；全透明模糊；全透明），点开关开启；开启前先弹确认提示，确认才开。玻璃 tint 跟随当前应用主题色变化。
 - **濒危多语言切换**（v1.9.7 新增）：满语、锡伯语、夏威夷语、毛利语、切罗基语，选后点确认才切换。详见“语言”一节。
 
 ## 语言
@@ -208,7 +208,9 @@ Fairumanējā（名字沿用重建前的项目名）是一款为 Android 手机�
 
 ## 构建方法
 
-本项目**不用 Android Studio，不用 Gradle**。命令行直编：`build-direct.sh` 依次调用 aapt2（链接资源）→ kotlinc 1.9.22（编译 Kotlin/Java 源码）→ d8（ dex）→ zipalign → apksigner（签名）。
+本项目**不用 Android Studio，不用 Gradle**。命令行直编：`build-direct.sh` 依次调用 aapt2（链接资源）→ kotlinc 2.4.20 + Compose 编译器插件（编译 Kotlin/Java 源码）→ d8（dex）→ zipalign → apksigner（签名）。
+
+依赖的 AAR（Jetpack Compose、Miuix、HAZE 等）由 `tools/resolve-compose.py` 与 `tools/resolve-aars.py` 在构建时从 Google Maven / Maven Central 解析，不进仓库。
 
 环境要求：
 
@@ -230,7 +232,7 @@ export ANDROID_HOME=$HOME/Android/Sdk
 
 本应用自身的源代码以 **MIT 许可证**发布，全文见应用内“关于 → 开源许可证”。
 
-使用的开源组件（与应用内“关于 → 开源组件”逐项一致，另加第 8 项液态玻璃库）：
+使用的开源组件（与应用内“关于 → 开源组件”逐项一致，另加第 8 项液态玻璃库、第 9 项 Jetpack Compose 与第 10 项 Miuix）：
 
 | # | 组件 | 版本 | 许可证 | 链接 |
 |---|---|---|---|---|
@@ -239,9 +241,11 @@ export ANDROID_HOME=$HOME/Android/Sdk
 | 3 | AndroidX RecyclerView | 1.3.2 | Apache License 2.0 | https://developer.android.com/jetpack/androidx/releases/recyclerview |
 | 4 | AndroidX DrawerLayout | 1.2.0 | Apache License 2.0 | https://developer.android.com/jetpack/androidx/releases/drawerlayout |
 | 5 | Shizuku API | 13.1.0 | Apache License 2.0 | https://github.com/RikkaApps/Shizuku-API |
-| 6 | Kotlin 标准库 | 1.9.22 | Apache License 2.0 | https://github.com/JetBrains/kotlin |
+| 6 | Kotlin 标准库 | 2.4.20 | Apache License 2.0 | https://github.com/JetBrains/kotlin |
 | 7 | Noto Sans Mongolian | — | SIL Open Font License 1.1 | https://github.com/google/fonts/tree/main/ofl/notosansmongolian |
-| 8 | Liquid-Glass-Android（QWEA0） | 2.0.11 | 许可证见其仓库 | https://github.com/QWEA0/Liquid-Glass-Android |
+| 8 | HAZE（chrisbanes） | 2.1.0 | Apache License 2.0 | https://github.com/chrisbanes/haze |
+| 9 | Jetpack Compose（Runtime / UI / Foundation / Material 3） | 1.12.0-beta01（Material 3：1.5.0-alpha22） | Apache License 2.0 | https://developer.android.com/jetpack/compose |
+| 10 | Miuix（compose-miuix-ui/miuix） | 0.9.4 | Apache License 2.0 | https://github.com/compose-miuix-ui/miuix |
 
 以上组件的依赖（如 AndroidX Core、Fragment、Lifecycle 等）同样为 Apache License 2.0。
 
@@ -277,3 +281,4 @@ export ANDROID_HOME=$HOME/Android/Sdk
 - v1.9.5：新建对话框去掉粘贴按钮、开屏旋转改 3 秒快转
 - v1.9.6：实验性功能（UI 引擎、液态玻璃、52 色应用配色与字体颜色、警告框）
 - v1.9.7：濒危多语言切换（满语、锡伯语、夏威夷语、毛利语、切罗基语），满语/锡伯语真满文 + 内置字体
+- v1.9.7.1：界面框架全面换成 Jetpack Compose、真 Miuix 库、液态玻璃改用真 HAZE、警告框满语/锡伯语翻译、主题模式弹菜单、字体颜色管全 App、开屏动画 1.5 秒×2 快转
