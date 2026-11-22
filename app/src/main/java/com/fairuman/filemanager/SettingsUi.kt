@@ -139,6 +139,8 @@ fun FairuRow(
     iconRes: Int,
     title: String,
     sub: String? = null,
+    // v1.9.7.2：标准解释小字（显示在 sub 下面一行，更小更淡）。
+    hint: String? = null,
     showChevron: Boolean = true,
     iconTint: Color? = null,
     trailing: (@Composable () -> Unit)? = null,
@@ -174,6 +176,10 @@ fun FairuRow(
                 Spacer(Modifier.height(2.dp))
                 Text(sub, fontSize = 13.sp, color = subColor)
             }
+            if (hint != null) {
+                Spacer(Modifier.height(2.dp))
+                Text(hint, fontSize = 12.sp, color = subColor)
+            }
         }
         if (trailing != null) {
             trailing()
@@ -194,6 +200,8 @@ fun FairuSwitchRow(
     iconRes: Int,
     title: String,
     sub: String? = null,
+    // v1.9.7.2：标准解释小字（显示在 sub 下面一行）。
+    hint: String? = null,
     checked: Boolean,
     onToggle: () -> Unit
 ) {
@@ -202,6 +210,7 @@ fun FairuSwitchRow(
             iconRes = iconRes,
             title = title,
             sub = sub,
+            hint = hint,
             showChevron = false,
             trailing = {
                 top.yukonga.miuix.kmp.basic.Switch(
@@ -218,6 +227,7 @@ fun FairuSwitchRow(
         iconRes = iconRes,
         title = title,
         sub = sub,
+        hint = hint,
         showChevron = false,
         trailing = {
             Switch(checked = checked, onCheckedChange = { onToggle() })

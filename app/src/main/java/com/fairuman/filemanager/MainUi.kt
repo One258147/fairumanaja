@@ -152,21 +152,17 @@ fun MainActivity.MainScreen() {
         }
     }
 
-    // ---------- 对话框 / 菜单（状态驱动） ----------
+    // ---------- 对话框（状态驱动） ----------
+    // v1.9.7.2：下拉菜单不再放根部——DropdownMenu 的弹窗按父布局锚定，
+    // 放根部会落到左下角（Max 手机截图）。各菜单已移到触发按钮的 Box 里。
     deleteDialog?.let { DeleteDialog(it) }
     renameDialog?.let { RenameDialog(it) }
     if (showNewDialog) NewDialog()
-    fileMenu?.let { FileMenuDialog(it) }
-    if (showSelectionMenu) SelectionMenuDialog()
     moreActionsDialog?.let { MoreActionsGridDialog(it) }
     shortcutDialog?.let { ShortcutDialog(it) }
     propertiesDialog?.let { PropertiesDialog(it) }
     if (showSortDialog) SortDialog()
-    if (showTopMenu) TopMenuDialog()
-    if (showDrawerOverflowMenu) DrawerOverflowMenuDialog()
-    bookmarkMenu?.let { BookmarkMenuDialog(it) }
     passwordDialog?.let { PasswordDialog(it) }
-    storageMenu?.let { StorageMenuDialog(it) }
     storageRenameDialog?.let { StorageRenameDialog(it) }
     storageDeleteDialog?.let { StorageDeleteDialog(it) }
     if (showSortStoragesDialog) SortStoragesDialog()
@@ -238,8 +234,12 @@ fun MainActivity.FairuTopBar(glassOn: Boolean, glassStyle: HazeBlurStyle?, glass
             IconButton(onClick = { confirmDelete(pane.selected.toList()) }) {
                 Icon(painterResource(R.drawable.ic_drawer_trash), contentDescription = stringResource(R.string.delete), tint = fg)
             }
-            IconButton(onClick = { showSelectionMenu = true }) {
-                Icon(painterResource(R.drawable.ic_more_vert), contentDescription = null, tint = fg)
+            // v1.9.7.2：菜单包在触发按钮的 Box 里锚定，否则落到左下角。
+            Box {
+                IconButton(onClick = { showSelectionMenu = true }) {
+                    Icon(painterResource(R.drawable.ic_more_vert), contentDescription = null, tint = fg)
+                }
+                if (showSelectionMenu) SelectionMenuDialog()
             }
         }
         return
@@ -309,8 +309,12 @@ fun MainActivity.FairuTopBar(glassOn: Boolean, glassStyle: HazeBlurStyle?, glass
         IconButton(onClick = { showSearch = true }) {
             Icon(painterResource(R.drawable.ic_search), contentDescription = stringResource(R.string.search_hint), tint = fg)
         }
-        IconButton(onClick = { showTopMenu = true }) {
-            Icon(painterResource(R.drawable.ic_more_vert), contentDescription = null, tint = fg)
+        // v1.9.7.2：菜单包在触发按钮的 Box 里锚定，否则落到左下角。
+        Box {
+            IconButton(onClick = { showTopMenu = true }) {
+                Icon(painterResource(R.drawable.ic_more_vert), contentDescription = null, tint = fg)
+            }
+            if (showTopMenu) TopMenuDialog()
         }
     }
 }
@@ -602,8 +606,13 @@ fun MainActivity.PaneFileRow(pane: MainActivity.Pane, f: File) {
                 }
             }
         } else {
-            IconButton(onClick = { setActive(pane); fileMenu = FileMenuRequest(pane, f) }) {
-                Icon(painterResource(R.drawable.ic_more_vert), contentDescription = null, modifier = Modifier.size(20.dp))
+            // v1.9.7.2：菜单包在触发按钮的 Box 里锚定，否则落到左下角。
+            // 只画属于这一行的菜单（pane 是同一对象、file 按路径相等）。
+            Box {
+                IconButton(onClick = { setActive(pane); fileMenu = FileMenuRequest(pane, f) }) {
+                    Icon(painterResource(R.drawable.ic_more_vert), contentDescription = null, modifier = Modifier.size(20.dp))
+                }
+                fileMenu?.takeIf { it.pane === pane && it.file == f }?.let { FileMenuDialog(it) }
             }
         }
     }
@@ -698,8 +707,13 @@ fun MainActivity.FairuDrawer() {
                 modifier = Modifier.weight(1f),
                 onClick = { drawerOpen = false; openRootViaShizuku() }
             )
-            IconButton(onClick = { showDrawerOverflowMenu = true }) {
-                Icon(painterResource(R.drawable.ic_more_vert), contentDescription = null)
+            // v1.9.7.2：菜单包在触发按钮的 Box 里锚定，否则落到左下角
+            //（Max 手机上“添加本地存储”卡片掉到左下角就是这个菜单）。
+            Box {
+                IconButton(onClick = { showDrawerOverflowMenu = true }) {
+                    Icon(painterResource(R.drawable.ic_more_vert), contentDescription = null)
+                }
+                if (showDrawerOverflowMenu) DrawerOverflowMenuDialog()
             }
         }
         // 内部储存行（带用量条）。
@@ -720,17 +734,22 @@ fun MainActivity.FairuDrawer() {
             FairuSectionLabel(stringResource(R.string.drawer_local))
             MiuixGroupCard {
             customStorageRows.forEach { row ->
-                DrawerRow(
-                    iconRes = R.drawable.ic_drawer_storage,
-                    label = row.storage.name,
-                    sub = row.displayPath,
-                    modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp),
-                    onClick = {
-                        drawerOpen = false
-                        navigateDrawerToStorage(row.storage)
-                    },
-                    onLongClick = { storageMenu = StorageMenuRequest(row.storage) }
-                )
+                // v1.9.7.2：长按菜单包在行外面的 Box 里锚定，否则落到左下角。
+                // 按储存 key 匹配（刷新后对象可能重建，引用相等不可靠）。
+                Box(Modifier.fillMaxWidth()) {
+                    DrawerRow(
+                        iconRes = R.drawable.ic_drawer_storage,
+                        label = row.storage.name,
+                        sub = row.displayPath,
+                        modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp),
+                        onClick = {
+                            drawerOpen = false
+                            navigateDrawerToStorage(row.storage)
+                        },
+                        onLongClick = { storageMenu = StorageMenuRequest(row.storage) }
+                    )
+                    storageMenu?.takeIf { CustomStorages.key(it.storage) == CustomStorages.key(row.storage) }?.let { StorageMenuDialog(it) }
+                }
             }
             }
         }
@@ -739,17 +758,21 @@ fun MainActivity.FairuDrawer() {
             FairuSectionLabel(stringResource(R.string.bookmarks_title))
             MiuixGroupCard {
             bookmarkRows.forEach { b ->
-                DrawerRow(
-                    iconRes = R.drawable.ic_bookmark,
-                    label = b.name,
-                    sub = b.target,
-                    modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp),
-                    onClick = {
-                        drawerOpen = false
-                        openBookmark(b)
-                    },
-                    onLongClick = { bookmarkMenu = BookmarkMenuRequest(b) }
-                )
+                // v1.9.7.2：长按菜单包在行外面的 Box 里锚定，否则落到左下角。
+                Box(Modifier.fillMaxWidth()) {
+                    DrawerRow(
+                        iconRes = R.drawable.ic_bookmark,
+                        label = b.name,
+                        sub = b.target,
+                        modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp),
+                        onClick = {
+                            drawerOpen = false
+                            openBookmark(b)
+                        },
+                        onLongClick = { bookmarkMenu = BookmarkMenuRequest(b) }
+                    )
+                    bookmarkMenu?.takeIf { it.bookmark == b }?.let { BookmarkMenuDialog(it) }
+                }
             }
             }
         }

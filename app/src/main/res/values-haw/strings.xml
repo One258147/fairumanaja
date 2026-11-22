@@ -37,6 +37,8 @@
     <string name="error">Hewa</string>
     <string name="experimental_features">Nā Hana Hoʻāʻo</string>
     <string name="experimental_features_hint">Ke hoʻāʻo ʻia nei kēia mau hana, hiki ke loli.</string>
+    <string name="experimental_warning_msg">Ke hoʻāʻo ʻia nei kēia mau hana, a ʻo ka hoʻohana ʻana iā lākou, hiki ke hana mai i kēia mau hopena:\n\n• Hiki ke hōʻike hewa a huikau paha ka pale, a hiki i ka pani koke ʻana o ka polokalamu;\n• Hiki ke loaʻa ʻole kekahi mau hana, a i ʻole e hoʻololi a wehe ʻia paha i nā mana hou;\n• ʻO ka hoʻololi ʻana i ka Mīkini UI, e hoʻouka hou koke ia ka pale holoʻokoʻa o ka polokalamu;\n• Hiki ke hōʻike hewa ka Aniani Wai ma kekahi mau kelepona a mana ʻōnaehana paha, a e hoʻonui paha i ka hoʻohana uila;\n• Hiki ke loli kēia mau hana i kēlā me kēia manawa, ʻaʻole e hōʻoiaʻiʻo like me nā hana kūhelu.</string>
+    <string name="experimental_warning_title">Hoʻolaha no nā Hana Hoʻāʻo</string>
     <string name="extract">Wehe</string>
     <string name="extracted">Ua wehe ʻia</string>
     <string name="file">Waihona</string>

@@ -76,6 +76,8 @@ class SettingsActivity : BaseActivity() {
                     FairuSwitchRow(
                         iconRes = R.drawable.ic_play,
                         title = stringResource(R.string.splash_animation),
+                        // v1.9.7.2：View 时代的提示在 Compose 重写时丢了，补回来。
+                        sub = stringResource(R.string.splash_animation_hint),
                         checked = splashOn,
                         onToggle = {
                             splashOn = !splashOn

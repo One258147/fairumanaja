@@ -213,24 +213,6 @@ class TrashActivity : BaseActivity() {
                 }
             }
         }
-        // 每项后面的 ⋮：只有 删除 / 恢复。
-        itemMenu?.let { item ->
-            FairuDropdownMenu(
-                expanded = true,
-                onDismissRequest = { itemMenu = null }
-            ) {
-                DropdownMenuItem(
-                    text = { Text(stringResource(R.string.restore)) },
-                    leadingIcon = { Icon(painterResource(R.drawable.ic_undo), contentDescription = null) },
-                    onClick = { itemMenu = null; restoreTargets = listOf(item) }
-                )
-                DropdownMenuItem(
-                    text = { Text(stringResource(R.string.delete_permanently)) },
-                    leadingIcon = { Icon(painterResource(R.drawable.ic_drawer_trash), contentDescription = null) },
-                    onClick = { itemMenu = null; deleteTargets = listOf(item) }
-                )
-            }
-        }
         restoreTargets?.let { targets ->
             FairuAlertDialog(
                 onDismissRequest = { restoreTargets = null },
@@ -378,8 +360,29 @@ class TrashActivity : BaseActivity() {
                     }
                 }
             } else {
-                IconButton(onClick = { itemMenu = item }) {
-                    Icon(painterResource(R.drawable.ic_more_vert), contentDescription = null)
+                // v1.9.7.2：菜单包在触发按钮的 Box 里锚定，否则落到左下角。
+                // 每项后面的 ⋮：只有 删除 / 恢复。
+                Box {
+                    IconButton(onClick = { itemMenu = item }) {
+                        Icon(painterResource(R.drawable.ic_more_vert), contentDescription = null)
+                    }
+                    if (itemMenu == item) {
+                        FairuDropdownMenu(
+                            expanded = true,
+                            onDismissRequest = { itemMenu = null }
+                        ) {
+                            DropdownMenuItem(
+                                text = { Text(stringResource(R.string.restore)) },
+                                leadingIcon = { Icon(painterResource(R.drawable.ic_undo), contentDescription = null) },
+                                onClick = { itemMenu = null; restoreTargets = listOf(item) }
+                            )
+                            DropdownMenuItem(
+                                text = { Text(stringResource(R.string.delete_permanently)) },
+                                leadingIcon = { Icon(painterResource(R.drawable.ic_drawer_trash), contentDescription = null) },
+                                onClick = { itemMenu = null; deleteTargets = listOf(item) }
+                            )
+                        }
+                    }
                 }
             }
         }

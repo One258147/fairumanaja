@@ -149,6 +149,12 @@ class AppearanceActivity : BaseActivity() {
                                 fontSize = 13.sp,
                                 color = androidx.compose.material3.MaterialTheme.colorScheme.onSurfaceVariant
                             )
+                            // v1.9.7.2：标准解释小字。
+                            Text(
+                                stringResource(R.string.theme_mode_hint),
+                                fontSize = 12.sp,
+                                color = androidx.compose.material3.MaterialTheme.colorScheme.onSurfaceVariant
+                            )
                         }
                         Icon(
                             painterResource(R.drawable.ic_arrow_forward),
@@ -161,6 +167,8 @@ class AppearanceActivity : BaseActivity() {
                     FairuSwitchRow(
                         iconRes = R.drawable.ic_image,
                         title = stringResource(R.string.dynamic_color),
+                        // v1.9.7.2：标准解释小字。
+                        sub = stringResource(R.string.dynamic_color_hint),
                         checked = dynamicOn,
                         onToggle = {
                             if (!dynamicOn) {
@@ -196,6 +204,12 @@ class AppearanceActivity : BaseActivity() {
                                 fontSize = 13.sp,
                                 color = androidx.compose.material3.MaterialTheme.colorScheme.onSurfaceVariant
                             )
+                            // v1.9.7.2：标准解释小字。
+                            Text(
+                                stringResource(R.string.app_color_hint),
+                                fontSize = 12.sp,
+                                color = androidx.compose.material3.MaterialTheme.colorScheme.onSurfaceVariant
+                            )
                         }
                         if (colorRowEnabled) {
                             Icon(
@@ -211,6 +225,8 @@ class AppearanceActivity : BaseActivity() {
                         iconRes = R.drawable.ic_font_color,
                         title = stringResource(R.string.font_color),
                         sub = "#%06X".format(0xFFFFFF and fontColor),
+                        // v1.9.7.2：标准解释小字。
+                        hint = stringResource(R.string.font_color_hint),
                         onClick = { showFontDialog = true }
                     )
                 }

@@ -37,6 +37,8 @@
     <string name="error">Hapa</string>
     <string name="experimental_features">Ngā Āhuatanga Whakamātau</string>
     <string name="experimental_features_hint">Kei te whakamātauria tonu ēnei āhuatanga, ā, tērā pea ka huri.</string>
+    <string name="experimental_warning_msg">Kei te whakamātauria tonutia ēnei āhuatanga, ā, mā te whakamahi i a rātou, tērā pea ka puta ēnei hua:\n\n• Ka hē pea te whakaatu o te atanga, ka raru, ka tūohu rānei te taupānga;\n• Kāore pea e wātea ana ētahi āhuatanga, ka whakarerekētia, ka tangohia rānei i ngā putanga o muri;\n• Mā te whakawhiti i te Pūkaha UI, ka utaina anōtia te atanga katoa o te taupānga;\n• Ka hē pea te whakaatu o te Karāhe Wai i ētahi tauira waea, putanga pūnaha rānei, ka nui ake hoki te pau o te pūhiko;\n• Ka huri pea ēnei āhuatanga i ngā wā katoa, kāore e taurangi ana ka ōrite ki ngā āhuatanga ōkawa.</string>
+    <string name="experimental_warning_title">Whakatūpato mō ngā Āhuatanga Whakamātau</string>
     <string name="extract">Tango</string>
     <string name="extracted">Kua tangohia</string>
     <string name="file">Kōnae</string>

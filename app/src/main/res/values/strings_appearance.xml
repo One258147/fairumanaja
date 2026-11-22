@@ -4,12 +4,15 @@
 <resources>
     <string name="appearance">外观</string>
     <string name="dynamic_color">动态颜色</string>
-    <string name="dynamic_color_hint">该功能仅支持安卓12以上或桌面平台</string>
+    <string name="dynamic_color_hint">开启后，应用颜色跟随系统壁纸颜色变化；关闭后使用应用配色。</string>
     <string name="dynamic_color_confirm_title">动态颜色</string>
     <string name="dynamic_color_confirm_msg">开启动态颜色后，应用颜色会跟随系统壁纸颜色变化。是否开启动态颜色？</string>
     <string name="app_color">应用配色</string>
+    <string name="app_color_hint">选择应用的主题颜色，界面主色随之变化；动态颜色开启时不可用。</string>
     <string name="app_color_disabled_hint">若想使用此功能，请先关闭动态颜色</string>
     <string name="font_color">字体颜色</string>
+    <string name="font_color_hint">选择应用内文字的颜色，全部界面的文字都会跟着变。</string>
+    <string name="theme_mode_hint">跟随系统会随系统深色模式自动切换；浅色始终用浅色界面；深色始终用深色界面。</string>
     <string name="font_color_group_base">基础颜色</string>
     <string name="font_color_group_light">浅颜色</string>
     <string name="font_color_group_dark">深颜色</string>

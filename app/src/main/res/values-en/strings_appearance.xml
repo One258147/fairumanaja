@@ -4,12 +4,15 @@
 <resources>
     <string name="appearance">Appearance</string>
     <string name="dynamic_color">Dynamic color</string>
-    <string name="dynamic_color_hint">Only supported on Android 12 and above or desktop platforms</string>
+    <string name="dynamic_color_hint">When on, the app colors follow your system wallpaper. When off, the app color is used.</string>
     <string name="dynamic_color_confirm_title">Dynamic color</string>
     <string name="dynamic_color_confirm_msg">When dynamic color is on, the app colors follow your system wallpaper colors and change with the wallpaper. Turn on dynamic color?</string>
     <string name="app_color">App color</string>
+    <string name="app_color_hint">Choose the app theme color. The main interface color changes with it. Unavailable while dynamic color is on.</string>
     <string name="app_color_disabled_hint">To use this feature, please turn off dynamic color first</string>
     <string name="font_color">Font color</string>
+    <string name="font_color_hint">Choose the color of text in the app. Text on all screens changes with it.</string>
+    <string name="theme_mode_hint">Follow system switches with the system dark mode. Light always uses a light interface. Dark always uses a dark interface.</string>
     <string name="font_color_group_base">Base colors</string>
     <string name="font_color_group_light">Light colors</string>
     <string name="font_color_group_dark">Dark colors</string>

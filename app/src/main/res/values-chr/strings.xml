@@ -37,6 +37,9 @@
     <string name="error">ᎠᏎᏍᏗ</string>
     <string name="experimental_features">ᎠᏓᏅᏖᏍᎬ ᎤᏬᏪᎳᏅᎯ</string>
     <string name="experimental_features_hint">ᎠᏓᏅᏖᏍᎬ ᎤᏬᏪᎳᏅᎯ ᎠᏓᏍᏓᏴᏗ ᎢᏤ.</string>
+    <!-- UNCERTAIN_CHR：警告框切罗基语翻译为尽力翻译（沿用本文件已有词），需母语者复核 -->
+    <string name="experimental_warning_msg">ᎠᏓᏅᏖᏍᎬ ᎤᏬᏪᎳᏅᎯ ᎠᏓᏍᏓᏴᏗ ᎢᏤ:\n\n• ᎤᏬᏪᎳᏅᎯ ᎠᏓᏍᏓᏴᏗ ᎥᏝ, ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ ᎥᏝ;\n• ᎤᏬᏪᎳᏅᎯ ᏂᎦᏛ ᎥᏝ, ᏫᏥᏂ ᎢᏤ ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ ᎥᏝ;\n• UI ᎠᏓᏅᏖᏍᎬ ᎢᏤ, ᎤᏬᏪᎳᏅᎯ ᏂᎦᏛ ᎢᏤ;\n• ᎠᎹ ᎤᎦᏔᏅᎯ ᎠᏓᏍᏓᏴᏗ ᎥᏝ;\n• ᎤᏬᏪᎳᏅᎯ ᏂᎦᏛ ᎢᏤ, ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ ᎥᏝ.</string>
+    <string name="experimental_warning_title">ᎠᏓᏅᏖᏍᎬ ᎤᏬᏪᎳᏅᎯ ᏩᏂᏂ</string>
     <string name="extract">ᎡᏍᏘᎳᎩᏘ</string>
     <string name="extracted">ᎡᏍᏘᎳᎩᏘᎢ</string>
     <string name="file">ᎪᏪᎵ</string>
