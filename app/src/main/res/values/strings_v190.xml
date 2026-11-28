@@ -8,7 +8,7 @@
     <string name="copy_to_other">复制 -&gt;</string>
     <string name="move_to_other">移动 -&gt;</string>
     <string name="share_zip">分享 ZIP</string>
-    <string name="pin_folder">Pin folder</string>
+    <string name="pin_folder">顶置</string>
     <string name="unpin_folder">取消置顶</string>
     <string name="encrypt_file">文件加密</string>
     <string name="decrypt_file">文件解密</string>

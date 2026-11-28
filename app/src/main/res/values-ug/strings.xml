@@ -10,6 +10,43 @@
     <string name="sort_date">ۋاقىت بويىچە</string>
     <string name="sort_size">چوڭلۇق بويىچە</string>
     <string name="sort_type">تىپ بويىچە</string>
+    <string name="sort_by_type">تىپ بويىچە</string>
+    <string name="sort_reverse">تەتۈر تەرتىپ</string>
+    <string name="sort_type_folders_only">پەقەت قىسقۇچلار</string>
+    <!-- UNCERTAIN_UG：背景切换尽力翻译，需母语者复核 -->
+    <string name="viewer_background">ئارقا كۆرۈنۈشنى ئالماشتۇرۇش</string>
+    <string name="viewer_bg_black">قارا</string>
+    <string name="viewer_bg_white">ئاق</string>
+    <string name="viewer_bg_gray">كۈلرەڭ</string>
+    <!-- UNCERTAIN_UG：横向翻页尽力翻译，需母语者复核 -->
+    <string name="viewer_view_horizontal">توغرىسىغا ۋاراقلاش</string>
+    <!-- UNCERTAIN_UG：纵向排序尽力翻译，需母语者复核 -->
+    <string name="viewer_view_vertical">تىك تىزىملىك</string>
+    <string name="viewer_dimensions">ئۆلچەم</string>
+    <string name="viewer_format">فورمات</string>
+    <string name="media_images">سۈرەتلەر</string>
+    <string name="media_videos">سىنلار</string>
+    <string name="media_audios">ئاۋاز</string>
+    <string name="jump_title">ئۆتۈش</string>
+    <string name="create_html">HTML قۇرۇش</string>
+    <string name="jump_invalid_path">يول مەۋجۇت ئەمەس ياكى قالتا ئەمەس</string>
+    <string name="media_gifs">ھەرىكەتچان سۈرەت</string>
+    <string name="media_today">بۈگۈن</string>
+    <string name="media_yesterday">تۈنۈگۈن</string>
+    <string name="media_images_videos">سۈرەتلەر ۋە سىنلار</string>
+    <string name="play_video">سىن ئوينا</string>
+    <string name="view_image">سۈرەت كۆر</string>
+    <string name="browse_archive">پىرىسلانغان ھۆججەتنى كۆر</string>
+    <string name="video_speed">تېزلىك</string>
+    <string name="video_cannot_play">بۇ سىننى ئوينىغىلى بولمايدۇ</string>
+    <string name="play_music">مۇزىكا ئوينا</string>
+    <string name="music_cannot_play">بۇ ئاۋازنى ئوينىغىلى بولمايدۇ</string>
+    <string name="video_play">ئوينا</string>
+    <string name="video_pause">ۋاقىتلىق توختا</string>
+    <string name="video_fill_screen">ئېكراننى تولدۇرۇش</string>
+    <string name="video_loop">قايتا ئوينا</string>
+    <string name="video_landscape">توغرا ھالەت</string>
+    <string name="video_duration">ۋاقىت ئۇزۇنلۇقى</string>
     <string name="show_hidden">يوشۇرۇن ھۆججەتلەرنى كۆرسىتىش</string>
     <string name="copy">كۆچۈرۈش</string>
     <string name="cut">كېسىش</string>
@@ -108,6 +145,8 @@
     <string name="original_path">ئەسلى يول</string>
     <string name="confirm_empty_trash">ئەخلەت ساندۇقىنى بوشاتماقچىمۇ؟ بۇ مەشغۇلاتنى قايتۇرغىلى بولمايدۇ.</string>
     <string name="language_settings">تىل تەڭشىكى</string>
+    <string name="settings_group_language_appearance">تىل ۋە تاشقى كۆرۈنۈش</string>
+    <string name="settings_group_app">ئەپ</string>
     <string name="confirm">جەزملەش</string>
     <string name="theme_mode">باش تېما ھالىتى</string>
     <string name="more_options">تېخىمۇ كۆپ تاللاش</string>
@@ -177,4 +216,133 @@
     <string name="syntax_c">C/C++</string>
     <string name="deselect_all">تاللاشنى بىكار قىلىش</string>
     <string name="unknown">نامەلۇم</string>
+    <string name="about_intro_title">ئەپ ھەققىدىكى تونۇشتۇرۇش</string>
+    <string name="already_here">بۇ قىسقۇچتا بار</string>
+    <string name="app_color">ئەپ رەڭگى</string>
+    <string name="app_color_disabled_hint">بۇ ئىقتىدارنى ئىشلىتىش ئۈچۈن ئالدى بىلەن ھەرىكەتچان رەڭنى ئېتىۋېتىڭ</string>
+    <string name="app_color_hint">ئەپنىڭ باش تېما رەڭگىنى تاللاڭ، كۆرۈنۈشنىڭ ئاساسلىق رەڭگى شۇنىڭغا ئەگىشىپ ئۆزگىرىدۇ</string>
+    <string name="appearance">تاشقى كۆرۈنۈش</string>
+    <string name="bookmark_added">ساقلىۋېلىندى</string>
+    <string name="bookmark_removed">ساقلاش بىكار قىلىندى</string>
+    <string name="bookmarks_title">ساقلىۋالغان</string>
+    <!-- UNCERTAIN_UG：“剪贴板”译法待核，需母语者复核 -->
+    <string name="clipboard_empty">چاپلاش تاختىسى بوش ياكى تېكىست ئەمەس</string>
+    <string name="compress_item">قىسىش</string>
+    <string name="copy_path">يولنى كۆچۈرۈش</string>
+    <string name="copy_to_other">كۆچۈرۈش -&gt;</string>
+    <!-- UNCERTAIN_UG：“快捷方式”译法待核，需母语者复核 -->
+    <string name="create_shortcut">تېز يول قۇرۇش</string>
+    <!-- UNCERTAIN_UG：“解密”译法待核，需母语者复核 -->
+    <string name="decrypt_failed">شىفىر يېشىش مەغلۇپ بولدى</string>
+    <!-- UNCERTAIN_UG：“解密”译法待核，需母语者复核 -->
+    <string name="decrypt_file">ھۆججەت شىفىرىنى يېشىش</string>
+    <!-- UNCERTAIN_UG：“解密”译法待核，需母语者复核 -->
+    <string name="decrypted">شىفىر يېشىلدى</string>
+    <string name="delete_permanent_msg">ھۆججەت %1$s نى مەڭگۈلۈك ئۆچۈرەمسىز؟</string>
+    <string name="delete_permanent_multi_msg">%1$d تۈرنى مەڭگۈلۈك ئۆچۈرەمسىز؟</string>
+    <string name="delete_to_trash_msg">ھۆججەت %1$s نى ئەخلەت ساندۇقىغا يۆتكىمەمسىز؟</string>
+    <string name="delete_to_trash_multi_msg">%1$d تۈرنى ئەخلەت ساندۇقىغا يۆتكىمەمسىز؟</string>
+    <string name="disclaimer">مەسئۇلىيەتسىزلىك باياناتى</string>
+    <!-- UNCERTAIN_UG：新词直译，需母语者复核 -->
+    <string name="dynamic_color">ھەرىكەتچان رەڭ</string>
+    <string name="dynamic_color_confirm_msg">ھەرىكەتچان رەڭنى ئاچقاندىن كېيىن، ئەپنىڭ رەڭگى سىستېما تام قەغىزىنىڭ رەڭگىگە ئەگىشىپ ئۆزگىرىدۇ. ھەرىكەتچان رەڭنى ئاچامسىز؟</string>
+    <string name="dynamic_color_confirm_title">ھەرىكەتچان رەڭ</string>
+    <string name="dynamic_color_hint">ئاچقاندا، ئەپنىڭ رەڭگى سىستېما تام قەغىزىنىڭ رەڭگىگە ئەگىشىدۇ</string>
+    <string name="dynamic_color_on_note">ھەرىكەتچان رەڭ ئېچىق بولغاندا، ئەپ رەڭگى كۈچكە ئىگە بولمايدۇ</string>
+    <!-- UNCERTAIN_UG：“加密”译法待核，需母语者复核 -->
+    <string name="encrypt_failed">شىفىرلاش مەغلۇپ بولدى</string>
+    <!-- UNCERTAIN_UG：“加密”译法待核，需母语者复核 -->
+    <string name="encrypt_file">ھۆججەت شىفىرلاش</string>
+    <!-- UNCERTAIN_UG：“加密”译法待核，需母语者复核 -->
+    <string name="encrypted">شىفىرلاندى</string>
+    <string name="endangered_language_sub">ھازىر پەقەت 5 خىل تىللا قوللىنىدۇ، كېيىنچە قوشۇلۇشى مۇمكىن</string>
+    <string name="endangered_language_switch">خەتەر ئاستىدىكى تىللارنى ئالماشتۇرۇش</string>
+    <string name="experimental_features">سىناق ئىقتىدارلىرى</string>
+    <string name="experimental_features_hint">بۇ يەردىكى ئىقتىدارلار ھازىر سىناق باسقۇچىدا، ئۆزگىرىشى مۇمكىن</string>
+    <!-- UNCERTAIN_UG：长警告框，措辞待核，需母语者复核 -->
+    <string name="experimental_warning_msg">سىناق ئىقتىدارلىرى ھازىر سىناق باسقۇچىدا. ئۇلارنى ئىشلىتىش تۆۋەندىكىدەك ئاقىۋەتلەرنى كەلتۈرۈپ چىقىرىشى مۇمكىن:\n\n• كۆرۈنۈش خاتا كۆرۈنۈشى ياكى قالايمىقانلىشىشى، ھەتتا ئەپ تاقىلىپ قېلىشى مۇمكىن؛\n• بەزى ئىقتىدارلار ئىشلىمەسلىكى، ياكى كېيىنكى نەشرىدە ئۆزگەرتىلىشى ياكى ئېلىۋېتىلىشى مۇمكىن؛\n• UI ماتورىنى ئالماشتۇرۇش پۈتۈن ئەپ كۆرۈنۈشىنى دەرھال قايتا يۈكلەيدۇ؛\n• بۇ ئىقتىدارلار ھەر ۋاقىت ئۆزگىرىشى مۇمكىن، مۇقىم ئىقتىدارلارغا ئوخشاش بولۇشىغا كاپالەتلىك قىلىنمايدۇ.</string>
+    <string name="experimental_warning_title">سىناق ئىقتىدارلىرى ئاگاھلاندۇرۇشى</string>
+    <string name="file_count">ھۆججەت سانى</string>
+    <string name="folder_count">قىسقۇچ سانى</string>
+    <string name="font_color">خەت رەڭگى</string>
+    <string name="font_color_group_base">ئاساسلىق رەڭلەر</string>
+    <string name="font_color_group_dark">قاراڭغۇ رەڭلەر</string>
+    <string name="font_color_group_light">ئوچۇق رەڭلەر</string>
+    <string name="font_color_hint">ئەپ ئىچىدىكى خەتلەرنىڭ رەڭگىنى تاللاڭ، بارلىق بەتلەردىكى خەتلەر شۇنىڭغا ئەگىشىپ ئۆزگىرىدۇ</string>
+    <string name="hidden_done">يوشۇرۇلدى</string>
+    <string name="invalid_name">نام ئىناۋەتسىز</string>
+    <!-- UNCERTAIN_UG：新词直译，需母语者复核 -->
+    <string name="more_actions">تېخىمۇ كۆپ مەشغۇلات</string>
+    <string name="move_failed">يۆتكەش مەغلۇپ بولدى</string>
+    <string name="move_item">يۆتكەش</string>
+    <string name="move_not_supported">بۇ ساقلاش ئورنى يۆتكەشنى قوللىمايدۇ</string>
+    <string name="move_to_other">يۆتكەش -&gt;</string>
+    <string name="move_to_trash">ئەخلەت ساندۇقىغا يۆتكەش</string>
+    <string name="moved">يۆتكەلدى</string>
+    <string name="name_exists">بۇ نامدىكى ھۆججەت ياكى قىسقۇچ بار</string>
+    <string name="new_file_short">ھۆججەت</string>
+    <string name="new_folder_short">قىسقۇچ</string>
+    <string name="new_title">يېڭى</string>
+    <string name="oss_components">ئوچۇق مەنبەلىك زاپچاسلار</string>
+    <string name="other_pane_no_folder">باشقا كۆزنەكتە ئېچىلغان قىسقۇچ يوق</string>
+    <string name="password_confirm_hint">پارولنى قايتا كىرگۈزۈڭ</string>
+    <string name="password_hint">پارول كىرگۈزۈڭ</string>
+    <string name="password_mismatch">ئىككى قېتىم كىرگۈزگەن پارول ئوخشاش ئەمەس</string>
+    <string name="path_copied">يول كۆچۈرۈلدى</string>
+    <!-- UNCERTAIN_UG：“Pin”译法待核，需母语者复核 -->
+    <string name="pin_folder">قىسقۇچنى يۇقىرىغا قويۇش</string>
+    <!-- UNCERTAIN_UG：“Pin”译法待核，需母语者复核 -->
+    <string name="pinned">يۇقىرىغا قويۇلدى</string>
+    <string name="restore_confirm_msg">ھۆججەت %1$s نى ئەسلى ئورنىغا ئەسلىگە كەلتۈرەمسىز؟</string>
+    <string name="restore_confirm_multi_msg">%1$d تۈرنى ئەسلى ئورنىغا ئەسلىگە كەلتۈرەمسىز؟</string>
+    <string name="share_zip">ZIP ھەمبەھرلىنىش</string>
+    <string name="shortcut_action">مەشغۇلات</string>
+    <string name="shortcut_action_locate">ئورنىنى بېكىتىش</string>
+    <string name="shortcut_action_locate_click">ئورنىنى بېكىتىپ ئېچىش</string>
+    <string name="shortcut_action_open_editor">تېكىست تەھرىرلىگۈچتە ئېچىش</string>
+    <string name="shortcut_action_preview_html">HTML ھۆججەتنى ئالدىن كۆرۈش</string>
+    <!-- UNCERTAIN_UG：“快捷方式”译法待核，需母语者复核 -->
+    <string name="shortcut_created">تېز يول قۇرۇلدى</string>
+    <string name="shortcut_icon">سىنبەلگە</string>
+    <string name="shortcut_name">نام</string>
+    <!-- UNCERTAIN_UG：“桌面快捷方式”译法待核，需母语者复核 -->
+    <string name="shortcut_not_supported">بۇ ئۈسكۈنە ئۈستەل تېز يولىنى قوللىمايدۇ</string>
+    <string name="shortcut_not_text">تېكىست ھۆججەت ئەمەس، سىستېما كۆرگۈچتە ئېچىلدى</string>
+    <string name="shortcut_target_missing">تېز يول كۆرسەتكەن ھۆججەت مەۋجۇت ئەمەس ياكى زىيارەت قىلغىلى بولمايدۇ</string>
+    <string name="shortcut_type">تىپ</string>
+    <!-- UNCERTAIN_UG：“桌面”译法待核，需母语者复核 -->
+    <string name="shortcut_type_desktop">ئۈستەل تېز يولى</string>
+    <string name="shortcut_type_desktop_desc">ئۈستەلدە يالغۇز بىر سىنبەلگە ھاسىل بولىدۇ</string>
+    <string name="shortcut_type_icon">سىنبەلگە تېز يولى</string>
+    <string name="shortcut_type_icon_desc">ھۆججەت تىپىنىڭ سىنبەلگىسىنى ئۈستەل سىنبەلگىسى قىلىپ ئىشلىتىدۇ</string>
+    <!-- UNCERTAIN_UG：新词直译，需母语者复核 -->
+    <string name="splash_animation">ئېچىلىش ئېنىماتسىيەسى</string>
+    <string name="splash_animation_hint">ئاچقاندا، ئۈستەلدىن ئەپنى ئاچقاندا ھەر قېتىم ئالدى بىلەن ئېچىلىش ئېنىماتسىيەسى قويۇلىدۇ</string>
+    <!-- UNCERTAIN_UG：长文，术语与措辞待核，需母语者复核 -->
+    <string name="thanks_mp_desc">بۇ ئەپ MP-Manager دىن تۆۋەندىكىلەرنى ئۆرنەك ئالغان: قوش كۆزنەكلىك يانمۇيان كۆرۈنۈش ۋە كۆزنەكلەر ئارا مەشغۇلاتلار (كۆچۈرۈش، يۆتكەش، باشقا كۆزنەككە چاپلاش)؛ ھۆججەت تىزىملىكى قۇرلىرىنىڭ ئۇسلۇبى — كىچىك يۇمىلاق چاسا سىنبەلگىلەر، نام ۋە «ۋاقىت + چوڭلۇق» ئىزاھاتى؛ قۇر ئاخىرىدىكى ⋮ تىزىملىكى ۋە توققۇز كاتەكلىك «تېخىمۇ كۆپ مەشغۇلات» تاختىسى؛ ئەسلىگە كەلتۈرۈش ۋە مەڭگۈلۈك ئۆچۈرۈشنى جەزملەشتۈرۈش سۆزلىشىش كۆزنىكى بار ئەخلەت ساندۇقى؛ قۇرۇش سۆزلىشىش كۆزنىكى؛ قۇر نومۇرى ۋە بەلگە سۇپىسى بار تېكىست تەھرىرلىگۈچ؛ ئەخلەت ساندۇقى، ساقلىۋالغان ۋە يۇقىرىغا قويۇلغان قىسقۇچلار؛ Shizuku / يىلتىز زىيارىتى؛ قىسىش ۋە يېشىش، ھۆججەت شىفىرلاش ۋە شىفىر يېشىش؛ ئىختىيارىي يەرلىك ساقلاش. MP-Manager نىڭ GitHub (https://github.com/AbdurazaaqMohammed/MP-Manager) دا GPL-3.0 ئىجازەتنامىسى بىلەن ئوچۇق مەنبە بولغانلىقىغا، بۇ ئەپكە بىۋاسىتە ئۆگىنىپ ئەگەشكىلى بولىدىغان لايىھە ئۆرنىكى بەرگەنلىكىگە رەھمەت؛ ئاپتورى AbdurazaaqMohammed نىڭ داۋاملىق ئاسراپ يېڭىلاپ تۇرغانلىقىغا رەھمەت؛ ئاددىي ئادەمنىڭمۇ MT باشقۇرغۇچنىڭ ئېسىل ئوچۇق ئالماشتۇرغۇچىنى ياسىيالايدىغانلىقىنى ئىسپاتلاپ، بۇ ئەپكە ئېنىق ئۆگىنىش نىشانى بەرگەنلىكىگە رەھمەت.</string>
+    <string name="thanks_mt_desc">بۇ ئەپ MT باشقۇرغۇچنىڭ قوش كۆزنەكلىك ئورۇنلاشتۇرۇشى، ھۆججەت تىزىملىكى، توققۇز كاتەكلىك «تېخىمۇ كۆپ مەشغۇلات» تاختىسى، ئۆچۈرۈش ۋە ئەسلىگە كەلتۈرۈش سۆزلىشىش كۆزنەكلىرى قاتارلىق كۆرۈنۈش لايىھەلىرىدىن ئۆرنەك ئالغان. لايىھە ئۆرنىكى ۋە ئىلھام بەرگەنلىكى ئۈچۈن MT باشقۇرغۇچقا رەھمەت.</string>
+    <string name="thanks_muse_desc">Muse غا تەرەققىيات ياردىمى ۋە تېخنىكا قوللىشى بەرگەنلىكى ئۈچۈن رەھمەت: بۇ ئەپنىڭ كودىنى يېزىش، ئىقتىدارلىرىنى ئەمەلگە ئاشۇرۇش ۋە مەسىلىلەرنى تەكشۈرۈپ ھەل قىلىش Muse نىڭ ياردىمى بىلەن تاماملاندى.</string>
+    <string name="trash_move_failed">ئەخلەت ساندۇقىغا يۆتكەش مەغلۇپ بولدى، ھېچقانداق ھۆججەت ئۆچۈرۈلمىدى</string>
+    <!-- UNCERTAIN_UG：“UI引擎”直译，需母语者复核 -->
+    <string name="ui_engine">UI ماتورى</string>
+    <string name="ui_engine_desc_expressive">تېخىمۇ يۇمىلاق، تېخىمۇ روشەن شەكىل</string>
+    <string name="ui_engine_desc_md3">سۈكۈتتىكى ئۇسلۇب، ھازىرقىدەك</string>
+    <string name="ui_engine_desc_miuix">Xiaomi MIUI ئۇسلۇبى</string>
+    <string name="ui_engine_switch_msg">ئالماشتۇرغاندىن كېيىن، پۈتۈن ئەپنىڭ كۆرۈنۈشى «%1$s» گە ئۆزگىرىپ، دەرھال قايتا يۈكلىنىدۇ.</string>
+    <string name="ui_engine_switch_title">UI ماتورىنى ئالماشتۇرۇش</string>
+    <string name="unhidden_done">يوشۇرۇش بىكار قىلىندى</string>
+    <!-- UNCERTAIN_UG：“Pin”译法待核，需母语者复核 -->
+    <string name="unpin_folder">يۇقىرىغا قويۇشنى بىكار قىلىش</string>
+    <!-- UNCERTAIN_UG：“Pin”译法待核，需母语者复核 -->
+    <string name="unpinned">يۇقىرىغا قويۇش بىكار قىلىندى</string>
+    <string name="wrong_password">پارول خاتا</string>
+    <string name="zip_failed">قىسىش مەغلۇپ بولدى</string>
+    <!-- Theme settings (v1.9.7.4) --><!-- UNCERTAIN_UG: “يېپيېڭى” for 全新 and “لايىھە” for 设计 are my constructions, needs native check --><!-- UNCERTAIN_UG: “رەڭ تاختىسى” for 调色板 is my construction, needs native check -->
+    <string name="palette_color_group_base">ئاساسلىق رەڭلەر</string>
+    <string name="palette_color_group_light">ئوچۇق رەڭلەر</string>
+    <string name="palette_color_group_dark">قاراڭغۇ رەڭلەر</string>
+    <string name="reset_defaults">سۈكۈتتىكى تەڭشەشنى ئەسلىگە كەلتۈرۈش</string>
+    <!-- UNCERTAIN_UG: "ئۆزى بەلگىلىگەن ساقلاش ئورنى" for custom storages is my construction, needs native check -->
+    <string name="reset_defaults_msg">بۇ تىل، باش تېما ھالىتى، ھەرىكەتچان رەڭ، ئەپ رەڭگى، خەت رەڭگى، UI ماتورى، ئېچىلىش ئېنىماتسىيەسى، تەرتىپلەش، قوش كۆزنەك ۋە يوشۇرۇن ھۆججەتلەرنى كۆرسىتىشنى سۈكۈتتىكى تەڭشەككە قايتۇرىدۇ. ساقلىۋېلىش، يۇقىرىغا قويۇلغان ھۆججەت قىسقۇچ، ئۆزى بەلگىلىگەن ساقلاش ئورنى ۋە ئەخلەت ساندۇقىغا تەسىر كۆرسەتمەيدۇ. ھازىر قايتۇرامسىز؟</string>
+    <string name="follow_system_language">سىستېمىغا ئەگىشىش</string>
 </resources>

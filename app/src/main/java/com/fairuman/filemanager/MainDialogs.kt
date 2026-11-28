@@ -30,6 +30,7 @@ import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -37,13 +38,17 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -150,6 +155,79 @@ fun MainActivity.RenameDialog(request: RenameRequest) {
         },
         dismissButton = {
             TextButton(onClick = { renameDialog = null }) { Text(stringResource(R.string.cancel)) }
+        }
+    )
+}
+
+// ---------- 路径跳转对话框（v1.9.8：点顶栏路径 / 窗格路径条弹出；
+// 输入框预填当前活动窗格的路径、文字默认全选；只有取消 / 确定，
+// 没有粘贴按钮——参考图里那个粘贴按钮 Max 明确说了不要） ----------
+
+@Composable
+fun MainActivity.JumpDialog() {
+    val pane = activePane()
+    val initial = paneTitle(pane)
+    var path by remember {
+        mutableStateOf(TextFieldValue(initial, TextRange(0, initial.length)))
+    }
+    val focusRequester = remember { FocusRequester() }
+    LaunchedEffect(Unit) { focusRequester.requestFocus() }
+    FairuAlertDialog(
+        onDismissRequest = { showJumpDialog = false },
+        title = { Text(stringResource(R.string.jump_title)) },
+        text = {
+            OutlinedTextField(
+                value = path,
+                onValueChange = { path = it },
+                singleLine = true,
+                modifier = Modifier.fillMaxWidth().focusRequester(focusRequester)
+            )
+        },
+        confirmButton = {
+            TextButton(onClick = {
+                val p = path.text
+                showJumpDialog = false
+                jumpToPath(pane, p)
+            }) { Text(stringResource(R.string.ok)) }
+        },
+        dismissButton = {
+            TextButton(onClick = { showJumpDialog = false }) { Text(stringResource(R.string.cancel)) }
+        }
+    )
+}
+
+// ---------- 创建 HTML 对话框（v1.9.8：沿用新建对话框样式，输入任意名字，
+// 点确定在当前窗格文件夹里建一个 .html 文件，建好直接自动打开文本编辑器） ----------
+
+@Composable
+fun MainActivity.CreateHtmlDialog() {
+    val pane = activePane()
+    var name by remember { mutableStateOf("") }
+    FairuAlertDialog(
+        onDismissRequest = { showCreateHtmlDialog = false },
+        title = { Text(stringResource(R.string.create_html)) },
+        text = {
+            OutlinedTextField(
+                value = name,
+                onValueChange = { name = it },
+                placeholder = { Text(stringResource(R.string.file_name_hint)) },
+                singleLine = true,
+                modifier = Modifier.fillMaxWidth()
+            )
+        },
+        confirmButton = {
+            TextButton(onClick = {
+                val n = name.trim()
+                if (n.isEmpty()) {
+                    android.widget.Toast.makeText(this, R.string.invalid_name, android.widget.Toast.LENGTH_SHORT).show()
+                    return@TextButton
+                }
+                showCreateHtmlDialog = false
+                createHtmlFile(pane, n)
+            }) { Text(stringResource(R.string.ok)) }
+        },
+        dismissButton = {
+            TextButton(onClick = { showCreateHtmlDialog = false }) { Text(stringResource(R.string.cancel)) }
         }
     )
 }
@@ -363,7 +441,8 @@ fun MainActivity.SelectionMenuDialog() {
     }
 }
 
-// ---------- 更多方式九宫格（v1.9.0 最终版：只放 ⋮ 菜单之外的额外功能，共 9 个） ----------
+// ---------- 更多方式九宫格（v1.9.0 最终版：只放 ⋮ 菜单之外的额外功能；
+// v1.9.8：末尾加播放视频 / 查看图片 / 浏览压缩包 / 编辑文本 / 播放音乐，共 14 个） ----------
 
 @Composable
 fun MainActivity.MoreActionsGridDialog(request: MoreActionsRequest) {
@@ -372,6 +451,10 @@ fun MainActivity.MoreActionsGridDialog(request: MoreActionsRequest) {
     val isDir = isDirOf(pane, f)
     val name = f.name
     val isZip = FileUtils.isZip(File(name))
+    val isVideo = FileUtils.isVideo(File(name))
+    val isImage = FileUtils.isImage(File(name))
+    val isText = FileUtils.isText(File(name))
+    val isAudio = FileUtils.isAudio(File(name))
     val isEnc = name.endsWith(".enc", ignoreCase = true)
     val pinned = PinnedFolders.isPinned(this, f.absolutePath)
     val bookmarked = Bookmarks.contains(this, bookmarkTarget(pane, f), bookmarkKind(pane))
@@ -386,7 +469,12 @@ fun MainActivity.MoreActionsGridDialog(request: MoreActionsRequest) {
         GridAction(R.string.encrypt_file, R.drawable.ic_shield, !isDir && !isEnc) { encryptItem(pane, f) },
         GridAction(R.string.decrypt_file, R.drawable.ic_shield, !isDir && isEnc) { decryptItem(pane, f) },
         GridAction(R.string.extract, R.drawable.ic_archive, !isDir && isZip) { unzipItem(pane, f) },
-        GridAction(R.string.create_shortcut, R.drawable.ic_shortcut, true) { showCreateShortcutDialog(pane, f) }
+        GridAction(R.string.create_shortcut, R.drawable.ic_shortcut, true) { showCreateShortcutDialog(pane, f) },
+        GridAction(R.string.play_video, R.drawable.ic_video, !isDir && isVideo) { openGridVideo(pane, f) },
+        GridAction(R.string.view_image, R.drawable.ic_image, !isDir && isImage) { openGridImage(pane, f) },
+        GridAction(R.string.browse_archive, R.drawable.ic_archive, !isDir && isZip) { openGridArchive(pane, f) },
+        GridAction(R.string.edit_text, R.drawable.ic_edit, !isDir && isText) { openGridText(pane, f) },
+        GridAction(R.string.play_music, R.drawable.ic_audio, !isDir && (isAudio || isVideo)) { openGridMusic(pane, f) }
     )
     FairuAlertDialog(
         onDismissRequest = { moreActionsDialog = null },
@@ -597,35 +685,114 @@ fun MainActivity.PropertiesDialog(request: PropertiesRequest) {
 
 // ---------- 排序对话框（v1.9.0：选一个再点确认才排序） ----------
 
+/** 排序对话框里的一个圆圈单选项（一格），两列布局用。 */
+@Composable
+private fun SortRadioCell(
+    label: String,
+    selected: Boolean,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Row(
+        modifier = modifier.clickable(onClick = onClick).padding(vertical = 4.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        RadioButton(selected = selected, onClick = onClick)
+        Text(label)
+    }
+}
+
 @Composable
 fun MainActivity.SortDialog() {
-    var selected by remember { mutableStateOf(prefs.getInt("sort", 0)) }
+    // v1.9.8.1：5 个圆圈单选（按名称/按日期/按大小/按类型/逆向排序）+
+    // “仅用于文件夹”独立复选框。三项都是待确认的本地状态，点确认才保存；
+    // 取消/点框外什么都不改。复选框完全独立：勾不勾不影响上面圆圈的选中，
+    // 点别的排序方式、点逆向排序都不会把它清掉。勾上后不管当前是哪种排序
+    // 方式，排序只对文件夹生效、文件保持原顺序（见 FileUtils.sortNamed）；
+    // 不勾时文件夹和文件都正常排序。
+    var selectedSort by remember { mutableStateOf(prefs.getInt("sort", 0)) }
+    var reverse by remember { mutableStateOf(prefs.getBoolean("sort_reverse", false)) }
+    var typeFoldersOnly by remember { mutableStateOf(prefs.getBoolean("sort_type_folders_only", false)) }
     val options = listOf(
         stringResource(R.string.sort_name),
         stringResource(R.string.sort_date),
-        stringResource(R.string.sort_size)
+        stringResource(R.string.sort_size),
+        stringResource(R.string.sort_by_type),
+        stringResource(R.string.sort_reverse)
     )
+    // 逆向为真时选中第 5 个圆圈，否则选中当前 sort 对应的那一个；
+    // 任何时候只能选中一个圆圈。
+    val selected = if (reverse) 4 else selectedSort
     FairuAlertDialog(
         onDismissRequest = { showSortDialog = false },
         icon = { Icon(painterResource(R.drawable.ic_sort), contentDescription = null) },
         title = { Text(stringResource(R.string.sort)) },
         text = {
             Column {
-                options.forEachIndexed { i, label ->
+                // v1.9.8.2：两列布局（3 行 × 2 列，共 6 项），原来一列竖排太长了。
+                // 第一行左：仅用于文件夹（独立复选框）；右：按名称。
+                // 第二行：按日期 / 按大小；第三行：按类型 / 逆向排序。
+                // 逻辑不变：5 个圆圈仍互斥单选（点第 5 个只置 reverse），
+                // 复选框仍独立，确认才保存。
+                Row(Modifier.fillMaxWidth()) {
                     Row(
-                        modifier = Modifier.fillMaxWidth().clickable { selected = i }.padding(vertical = 8.dp),
+                        modifier = Modifier.weight(1f)
+                            .clickable { typeFoldersOnly = !typeFoldersOnly }
+                            .padding(vertical = 4.dp),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        RadioButton(selected = selected == i, onClick = { selected = i })
-                        Text(label)
+                        Checkbox(
+                            checked = typeFoldersOnly,
+                            onCheckedChange = { typeFoldersOnly = it }
+                        )
+                        Text(stringResource(R.string.sort_type_folders_only))
                     }
+                    SortRadioCell(
+                        label = options[0],
+                        selected = selected == 0,
+                        onClick = { selectedSort = 0; reverse = false },
+                        modifier = Modifier.weight(1f)
+                    )
+                }
+                Row(Modifier.fillMaxWidth()) {
+                    SortRadioCell(
+                        label = options[1],
+                        selected = selected == 1,
+                        onClick = { selectedSort = 1; reverse = false },
+                        modifier = Modifier.weight(1f)
+                    )
+                    SortRadioCell(
+                        label = options[2],
+                        selected = selected == 2,
+                        onClick = { selectedSort = 2; reverse = false },
+                        modifier = Modifier.weight(1f)
+                    )
+                }
+                Row(Modifier.fillMaxWidth()) {
+                    SortRadioCell(
+                        label = options[3],
+                        selected = selected == 3,
+                        onClick = { selectedSort = 3; reverse = false },
+                        modifier = Modifier.weight(1f)
+                    )
+                    SortRadioCell(
+                        label = options[4],
+                        selected = selected == 4,
+                        // 点“逆向排序”：sort 不变，只把当前排序方式的结果倒过来。
+                        onClick = { reverse = true },
+                        modifier = Modifier.weight(1f)
+                    )
                 }
             }
         },
         confirmButton = {
             TextButton(onClick = {
                 showSortDialog = false
-                prefs.edit().putInt("sort", selected).apply()
+                prefs.edit()
+                    .putInt("sort", selectedSort)
+                    .putBoolean("sort_reverse", reverse)
+                    .putBoolean("sort_type_folders_only", typeFoldersOnly)
+                    .apply()
                 load()
             }) { Text(stringResource(R.string.confirm)) }
         },
@@ -682,6 +849,12 @@ fun MainActivity.TopMenuDialog() {
             text = { Text(stringResource(R.string.refresh)) },
             leadingIcon = { Icon(painterResource(R.drawable.ic_redo), contentDescription = null) },
             onClick = { showTopMenu = false; load() }
+        )
+        // v1.9.8：菜单末尾加“创建HTML”（刷新下面），配 ic_html 图标。
+        DropdownMenuItem(
+            text = { Text(stringResource(R.string.create_html)) },
+            leadingIcon = { Icon(painterResource(R.drawable.ic_html), contentDescription = null) },
+            onClick = { showTopMenu = false; showCreateHtmlDialog = true }
         )
     }
 }

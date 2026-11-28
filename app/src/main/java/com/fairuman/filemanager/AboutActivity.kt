@@ -61,7 +61,7 @@ class AboutActivity : BaseActivity() {
 
     /** 协议正文：当前语言是中文或英文就直接显示，否则显示中文版并在前面注明。 */
     private fun localizedText(resId: Int): String {
-        val tag = LanguageActivity.currentTag(this)
+        val tag = LanguageActivity.effectiveTag(this)
         return if (tag.startsWith("zh", ignoreCase = true) || tag.equals("en", ignoreCase = true)) {
             getString(resId)
         } else {

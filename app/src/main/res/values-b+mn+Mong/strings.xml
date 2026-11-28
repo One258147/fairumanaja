@@ -10,6 +10,66 @@
     <string name="sort_date">ᠣᠭᠨᠣᠣᠭᠣᠣᠷ</string>
     <string name="sort_size">ᠬᠡᠮᠵᠡᠡᠭᠡᠡᠷ</string>
     <string name="sort_type">ᠲᠥᠷᠯᠥᠥᠷ</string>
+    <string name="sort_by_type">ᠲᠥᠷᠯᠥᠥᠷ</string>
+    <!-- UNCERTAIN_MONG：新词直译，需母语者复核 -->
+    <string name="sort_reverse">ᠤᠷᠪᠤᠤ ᠡᠷᠡᠮᠪᠡ</string>
+    <!-- UNCERTAIN_MONG：新词直译，需母语者复核 -->
+    <string name="sort_type_folders_only">ᠵᠥᠪᠬᠡᠨ ᠬᠠᠸᠲᠠᠰ</string>
+    <!-- UNCERTAIN_MONG：背景切换尽力翻译，需母语者复核 -->
+    <string name="viewer_background">ᠳᠡᠪᠰᠢᠭᠡᠷ ᠰᠣᠯᠢᠬᠤ</string>
+    <string name="viewer_bg_black">ᠬᠠᠷᠠ</string>
+    <string name="viewer_bg_white">ᠴᠠᠭᠠᠨ</string>
+    <string name="viewer_bg_gray">ᠰᠠᠷᠠᠯ</string>
+    <!-- UNCERTAIN_MONG：横向翻页尽力翻译，需母语者复核 -->
+    <string name="viewer_view_horizontal">ᠬᠡᠪᠲᠡᠭᠡ ᠡᠷᠭᠢᠭᠦᠯᠬᠦ</string>
+    <!-- UNCERTAIN_MONG：纵向排序尽力翻译，需母语者复核 -->
+    <string name="viewer_view_vertical">ᠪᠣᠰᠣᠭ᠎ᠠ ᠵᠢᠭᠰᠠᠭᠠᠯᠲᠠ</string>
+    <string name="viewer_dimensions">ᠬᠡᠮᠵᠡᠭᠡ</string>
+    <string name="viewer_format">ᠬᠡᠪ</string>
+    <!-- UNCERTAIN_MONG：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_images">ᠵᠢᠷᠤᠭ</string>
+    <!-- UNCERTAIN_MONG：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_videos">ᠪᠢᠴᠢᠯᠡᠭ</string>
+    <!-- UNCERTAIN_MONG：媒体页音频分类新词尽力翻译，需母语者复核 -->
+    <string name="media_audios">ᠳᠠᠭᠤ</string>
+    <!-- UNCERTAIN_MONG：跳转 / 创建HTML 新词尽力翻译，需母语者复核 -->
+    <string name="jump_title">ᠣᠴᠢᠬᠤ</string>
+    <string name="create_html">HTML ᠪᠦᠲᠦᠭᠡᠬᠦ</string>
+    <string name="jump_invalid_path">ᠵᠠᠮ ᠪᠠᠶᠢᠬᠤ ᠦᠭᠡᠢ ᠪᠤᠶᠤ ᠬᠠᠪᠲᠠᠰᠤ ᠪᠢᠰᠢ</string>
+    <!-- UNCERTAIN_MONG：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_gifs">GIF</string>
+    <!-- UNCERTAIN_MONG：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_today">ᠡᠨᠡ ᠡᠳᠦᠷ</string>
+    <!-- UNCERTAIN_MONG：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_yesterday">ᠦᠴᠦᠭᠡᠳᠦᠷ</string>
+    <!-- UNCERTAIN_MONG：抽屉合并新词尽力翻译，需母语者复核 -->
+    <string name="media_images_videos">ᠵᠢᠷᠤᠭ ᠪᠣᠯᠤᠨ ᠪᠢᠴᠢᠯᠡᠭ</string>
+    <!-- UNCERTAIN_MONG：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="play_video">ᠪᠢᠴᠢᠯᠡᠭ ᠲᠣᠭᠯᠠᠬᠤ</string>
+    <!-- UNCERTAIN_MONG：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="view_image">ᠵᠢᠷᠤᠭ ᠦᠵᠡᠬᠦ</string>
+    <!-- UNCERTAIN_MONG：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="browse_archive">ᠳᠠᠷᠤᠭᠰᠠᠨ ᠪᠢᠴᠢᠭ ᠦᠵᠡᠬᠦ</string>
+    <!-- UNCERTAIN_MONG：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_speed">ᠬᠤᠷᠳᠤ</string>
+    <!-- UNCERTAIN_MONG：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_cannot_play">ᠡᠨᠡ ᠪᠢᠴᠢᠯᠡᠭ ᠲᠣᠭᠯᠠᠵᠤ ᠪᠣᠯᠤᠬᠤ ᠦᠭᠡᠢ</string>
+    <!-- UNCERTAIN_MONG：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="play_music">ᠬᠥᠭᠵᠢᠮ ᠲᠣᠭᠯᠠᠬᠤ</string>
+    <!-- UNCERTAIN_MONG：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="music_cannot_play">ᠡᠨᠡ ᠳᠠᠭᠤ ᠲᠣᠭᠯᠠᠵᠤ ᠪᠣᠯᠤᠬᠤ ᠦᠭᠡᠢ</string>
+    <!-- UNCERTAIN_MONG：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_play">ᠲᠣᠭᠯᠠᠬᠤ</string>
+    <!-- UNCERTAIN_MONG：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_pause">ᠲᠦᠷ ᠵᠣᠭᠰᠣᠬᠤ</string>
+    <!-- UNCERTAIN_MONG：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_fill_screen">ᠳᠡᠯᠭᠡᠴᠡ ᠳᠦᠭᠦᠷᠭᠡᠬᠦ</string>
+    <!-- UNCERTAIN_MONG：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_loop">ᠳᠠᠪᠲᠠᠬᠤ</string>
+    <!-- UNCERTAIN_MONG：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_landscape">ᠬᠡᠪᠲᠡᠭᠡ ᠬᠡᠪ</string>
+    <!-- UNCERTAIN_MONG：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_duration">ᠬᠤᠭᠤᠴᠠᠭ᠎ᠠ</string>
     <string name="show_hidden">ᠨᠤᠤᠴ ᠹᠠᠶᠯᠤᠤᠳᠢᠭ ᠬᠠᠷᠤᠤᠯᠠᠬ</string>
     <string name="copy">ᠬᠤᠤᠯᠠᠬ</string>
     <string name="cut">ᠲᠠᠰᠯᠠᠬ</string>
@@ -108,6 +168,9 @@
     <string name="original_path">ᠠᠩᠬᠠᠨ ᠤ ᠵᠠᠮ</string>
     <string name="confirm_empty_trash">ᠬᠣᠭ ᠤᠨ ᠰᠠᠪᠠ ᠶᠢ ᠬᠣᠭᠣᠰᠣᠯᠠᠬᠤ ᠤᠤ? ᠡᠨᠡ ᠦᠢᠯᠡ ᠶᠢ ᠪᠤᠴᠠᠭᠠᠵᠤ ᠪᠣᠯᠣᠬᠤ ᠦᠭᠡᠢ.</string>
     <string name="language_settings">ᠬᠡᠯᠡ ᠶᠢᠨ ᠲᠣᠬᠢᠷᠠᠭᠤᠯᠭᠠ</string>
+    <!-- v1.9.7.8: UNCERTAIN_MONG：分组名尽力翻译，需母语者复核 -->
+    <string name="settings_group_language_appearance">ᠬᠡᠯᠡ ᠪᠠ ᠭᠠᠳᠠᠭᠠᠳᠤ ᠪᠠᠢᠳᠠᠯ</string>
+    <string name="settings_group_app">ᠠᠫᠫ</string>
     <string name="confirm">ᠪᠠᠲᠤᠯᠠᠬᠤ</string>
     <string name="theme_mode">ᠰᠡᠳᠦᠪ ᠦᠨ ᠬᠡᠪ</string>
     <string name="more_options">ᠨᠡᠮᠡᠯᠲᠢ ᠰᠣᠩᠭᠣᠯᠲᠤ</string>
@@ -177,4 +240,140 @@
     <string name="syntax_c">C/C++</string>
     <string name="deselect_all">ᠰᠣᠩᠭᠣᠯᠲᠣ ᠴᠤᠴᠯᠠᠬᠤ</string>
     <string name="unknown">ᠲᠣᠳᠣᠷᠬᠣᠢᠭᠦᠢ</string>
+    <string name="about_intro_title">ᠠᠫᠫ ᠤᠨ ᠲᠠᠨᠢᠯᠴᠤᠤᠯᠭᠠ</string>
+    <string name="already_here">ᠡᠨᠡ ᠬᠠᠸᠲᠠᠰ ᠳᠤ ᠠᠯᠢ ᠬᠡᠳᠢᠢᠨ ᠪᠠᠶᠨᠠ</string>
+    <string name="app_color">ᠠᠫᠫ ᠤᠨ ᠥᠩᠭᠡ</string>
+    <!-- UNCERTAIN_MONG：新词“动态颜色”直译，句式待核，需母语者复核 -->
+    <string name="app_color_disabled_hint">ᠡᠨᠡ ᠹᠦᠨᠺᠼᠢ ᠶᠢᠢᠭ ᠠᠱᠢᠭᠯᠠᠬᠢᠭ ᠬᠦᠰᠪᠡᠯ ᠡᠬᠡᠯᠡᠡᠳ ᠳᠢᠨᠠᠮᠢᠺ ᠥᠩᠭᠡ ᠶᠢᠢᠭ ᠤᠨᠲᠤᠷᠠᠠᠨᠠ ᠤᠤ</string>
+    <!-- UNCERTAIN_MONG：“界面”转写待核，需母语者复核 -->
+    <string name="app_color_hint">ᠠᠫᠫ ᠤᠨ ᠰᠡᠳᠦᠪ ᠦᠨ ᠥᠩᠭᠡ ᠶᠢᠢᠭ ᠰᠣᠩᠭᠣᠬᠤ᠂ ᠢᠨᠲᠡᠷᠹᠡᠢᠰ ᠦᠨ ᠦᠨᠳᠦᠰᠦᠨ ᠥᠩᠭᠡ ᠳᠠᠭᠠᠵᠤ ᠥᠪᠡᠷᠴᠢᠯᠡᠭᠳᠡᠨ᠎ᠡ</string>
+    <!-- UNCERTAIN_MONG：“外观”转写待核，需母语者复核 -->
+    <string name="appearance">ᠭᠠᠳᠠᠭᠠᠳᠤ ᠦᠵᠡᠭᠳᠡᠯ</string>
+    <string name="bookmark_added">ᠳᠤᠷᠲᠠᠶ ᠳᠤ ᠨᠡᠮᠡᠭᠳᠡᠪᠡ</string>
+    <string name="bookmark_removed">ᠳᠤᠷᠲᠠᠶ ᠡᠴᠡ ᠬᠠᠰᠤᠭᠳᠠᠪᠠ</string>
+    <string name="bookmarks_title">ᠳᠤᠷᠲᠠᠶ</string>
+    <!-- UNCERTAIN_MONG：“剪贴板”转写待核，需母语者复核 -->
+    <string name="clipboard_empty">ᠬᠤᠤᠯᠠᠬᠤ ᠰᠠᠨᠠᠬ ᠣᠶ ᠬᠣᠭᠣᠰᠣᠨ ᠡᠰᠡᠪᠡᠯ ᠪᠢᠴᠢᠭ ᠪᠢᠰᠢ ᠪᠠᠶᠨᠠ</string>
+    <string name="compress_item">ᠱᠠᠬᠠᠬᠤ</string>
+    <string name="copy_path">ᠵᠠᠮ ᠬᠤᠤᠯᠠᠬᠤ</string>
+    <string name="copy_to_other">ᠬᠤᠤᠯᠠᠬᠤ -&gt;</string>
+    <!-- UNCERTAIN_MONG：“快捷方式”转写待核，需母语者复核 -->
+    <string name="create_shortcut">ᠲᠣᠪᠴᠢᠯᠣᠯ ᠦᠦᠰᠭᠡᠬᠦ</string>
+    <!-- UNCERTAIN_MONG：“解密”转写待核，需母语者复核 -->
+    <string name="decrypt_failed">ᠲᠠᠶᠢᠯᠠᠵᠤ ᠴᠢᠳᠠᠭᠰᠠᠨ ᠦᠭᠡᠢ</string>
+    <!-- UNCERTAIN_MONG：“解密”转写待核，需母语者复核 -->
+    <string name="decrypt_file">ᠹᠠᠶᠯ ᠲᠠᠶᠢᠯᠠᠬᠤ</string>
+    <!-- UNCERTAIN_MONG：“解密”转写待核，需母语者复核 -->
+    <string name="decrypted">ᠲᠠᠶᠢᠯᠠᠭᠳᠠᠪᠠ</string>
+    <string name="delete_permanent_msg">ᠹᠠᠶᠯ %1$s ᠢᠢᠭ ᠪᠦᠷᠮᠥᠰᠦᠨ ᠤᠰᠠᠳᠬᠠᠬᠤ ᠤᠤ?</string>
+    <string name="delete_permanent_multi_msg">%1$d ᠵᠦᠢᠯ ᠢᠢᠭ ᠪᠦᠷᠮᠥᠰᠦᠨ ᠤᠰᠠᠳᠬᠠᠬᠤ ᠤᠤ?</string>
+    <string name="delete_to_trash_msg">ᠹᠠᠶᠯ %1$s ᠢᠢᠭ ᠬᠣᠭ ᠤᠨ ᠰᠠᠪᠠ ᠷᠤᠤ ᠵᠥᠭᠡᠬᠦ ᠦᠦ?</string>
+    <string name="delete_to_trash_multi_msg">%1$d ᠵᠦᠢᠯ ᠢᠢᠭ ᠬᠣᠭ ᠤᠨ ᠰᠠᠪᠠ ᠷᠤᠤ ᠵᠥᠭᠡᠬᠦ ᠦᠦ?</string>
+    <string name="disclaimer">ᠬᠠᠷᠢᠤᠴᠠᠯᠭᠠ ᠡᠴᠡ ᠲᠠᠲᠭᠠᠯᠵᠠᠬᠤ ᠮᠡᠳᠡᠭᠳᠡᠯ</string>
+    <!-- UNCERTAIN_MONG：新词直译，需母语者复核 -->
+    <string name="dynamic_color">ᠳᠢᠨᠠᠮᠢᠺ ᠥᠩᠭᠡ</string>
+    <string name="dynamic_color_confirm_msg">ᠳᠢᠨᠠᠮᠢᠺ ᠥᠩᠭᠡ ᠶᠢᠢᠭ ᠠᠰᠠᠭᠠᠰᠠᠨ ᠤ ᠳᠠᠷᠠᠭ᠎ᠠ ᠠᠫᠫ ᠤᠨ ᠥᠩᠭᠡ ᠰᠢᠰᠲᠶᠡᠮ ᠦᠨ ᠬᠠᠨᠢᠨ ᠵᠤᠷᠤᠭ ᠤᠨ ᠥᠩᠭᠡ ᠶᠢᠢᠭ ᠳᠠᠭᠠᠵᠤ ᠥᠪᠡᠷᠴᠢᠯᠡᠭᠳᠡᠨ᠎ᠡ. ᠳᠢᠨᠠᠮᠢᠺ ᠥᠩᠭᠡ ᠶᠢᠢᠭ ᠠᠰᠠᠬᠤ ᠤᠤ?</string>
+    <string name="dynamic_color_confirm_title">ᠳᠢᠨᠠᠮᠢᠺ ᠥᠩᠭᠡ</string>
+    <string name="dynamic_color_hint">ᠠᠰᠠᠭᠠᠯᠲᠠᠢ ᠦᠶᠡ ᠳᠦ ᠠᠫᠫ ᠤᠨ ᠥᠩᠭᠡ ᠰᠢᠰᠲᠶᠡᠮ ᠦᠨ ᠬᠠᠨᠢᠨ ᠵᠤᠷᠤᠭ ᠤᠨ ᠥᠩᠭᠡ ᠶᠢᠢᠭ ᠳᠠᠭᠠᠨᠠ</string>
+    <string name="dynamic_color_on_note">ᠳᠢᠨᠠᠮᠢᠺ ᠥᠩᠭᠡ ᠠᠰᠠᠭᠠᠯᠲᠠᠢ ᠦᠶᠡ ᠳᠦ ᠠᠫᠫ ᠤᠨ ᠥᠩᠭᠡ ᠦᠢᠯᠴᠢᠯᠡᠬᠦᠭᠦᠢ</string>
+    <!-- UNCERTAIN_MONG：“加密”转写待核，需母语者复核 -->
+    <string name="encrypt_failed">ᠨᠢᠭᠤᠴᠠᠯᠠᠵᠤ ᠴᠢᠳᠠᠭᠰᠠᠨ ᠦᠭᠡᠢ</string>
+    <!-- UNCERTAIN_MONG：“加密”转写待核，需母语者复核 -->
+    <string name="encrypt_file">ᠹᠠᠶᠯ ᠨᠢᠭᠤᠴᠠᠯᠠᠬᠤ</string>
+    <!-- UNCERTAIN_MONG：“加密”转写待核，需母语者复核 -->
+    <string name="encrypted">ᠨᠢᠭᠤᠴᠠᠯᠠᠭᠳᠠᠪᠠ</string>
+    <string name="endangered_language_sub">ᠣᠳᠣᠬᠠᠨ ᠵᠥᠪᠬᠡᠨ 5 ᠬᠡᠯᠡ ᠳᠡᠮᠵᠢᠭᠳᠡᠵ ᠪᠠᠶᠢᠭᠠᠠ ᠪᠥᠭᠡᠳ ᠳᠠᠷᠠᠭ᠎ᠠ ᠨᠢ ᠨᠡᠮᠡᠵᠤ ᠪᠣᠯᠤᠨ᠎ᠠ</string>
+    <string name="endangered_language_switch">ᠬᠣᠪᠣᠷᠳᠤᠭᠰᠤᠨ ᠬᠡᠯᠡ ᠰᠣᠯᠢᠬᠤ</string>
+    <string name="experimental_features">ᠲᠤᠷᠱᠢᠯᠲᠤ ᠤᠨ ᠹᠦᠨᠺᠼᠢ</string>
+    <string name="experimental_features_hint">ᠡᠨᠳᠡ ᠪᠠᠶᠢᠭᠠᠠ ᠹᠦᠨᠺᠼᠢ ᠨᠤᠭᠤᠳ ᠲᠤᠷᠱᠢᠯᠲᠤ ᠤᠨ ᠱᠠᠲᠤ ᠳᠤᠭᠠᠨ ᠪᠠᠶᠢᠭᠠᠠ ᠲᠤᠯᠠ ᠥᠪᠡᠷᠴᠢᠯᠡᠭᠳᠡᠵᠤ ᠪᠣᠯᠤᠨ᠎ᠠ</string>
+    <!-- UNCERTAIN_MONG：长警告框，转写与措辞待核，需母语者复核 -->
+    <string name="experimental_warning_msg">ᠲᠤᠷᠱᠢᠯᠲᠤ ᠤᠨ ᠹᠦᠨᠺᠼᠢ ᠨᠤᠭᠤᠳ ᠲᠤᠷᠱᠢᠯᠲᠤ ᠤᠨ ᠱᠠᠲᠤ ᠳᠤᠭᠠᠨ ᠪᠠᠶᠨᠠ. ᠲᠡᠳᠡᠭᠡᠷ ᠢᠢᠭ ᠠᠱᠢᠭᠯᠠᠬᠤ ᠨᠢ ᠳᠠᠷᠠᠭᠠᠬᠢ ᠦᠷ ᠳᠠᠭᠠᠪᠤᠷᠢ ᠳᠤ ᠬᠦᠷᠭᠡᠵᠤ ᠪᠣᠯᠤᠨ᠎ᠠ:\n\n• ᠢᠨᠲᠡᠷᠹᠡᠢᠰ ᠪᠤᠷᠤᠤ ᠬᠠᠷᠠᠭᠳᠠᠬᠤ᠂ ᠭᠠᠵᠢᠬᠤ᠂ ᠠᠫᠫ ᠬᠠᠭᠠᠭᠳᠠᠬᠤ ᠮᠠᠭᠠᠳᠭᠦᠢ;\n• ᠵᠠᠷᠢᠮ ᠹᠦᠨᠺᠼᠢ ᠠᠵᠢᠯᠯᠠᠬᠤᠭᠦᠢ ᠪᠠᠶᠬᠤ᠂ ᠡᠰᠡᠪᠡᠯ ᠳᠠᠷᠠᠭᠠᠬᠢ ᠬᠤᠸᠢᠯᠪᠠᠷ ᠳᠤ ᠥᠪᠡᠷᠴᠢᠯᠡᠭᠳᠡᠵᠤ᠂ ᠬᠠᠰᠤᠭᠳᠠᠵᠤ ᠪᠣᠯᠤᠨ᠎ᠠ;\n• UI ᠬᠥᠳᠥᠯᠭᠦᠦᠷ ᠰᠣᠯᠢᠬᠤ ᠨᠢ ᠠᠫᠫ ᠤᠨ ᠢᠨᠲᠡᠷᠹᠡᠢᠰ ᠢᠢᠭ ᠪᠦᠬᠦᠯᠢ ᠶᠢᠢᠷ ᠨᠡᠨ ᠳᠠᠷᠤᠢ ᠳᠠᠬᠢᠨ ᠠᠴᠠᠠᠯᠠᠨᠠ;\n• ᠡᠳᠡᠭᠡᠷ ᠹᠦᠨᠺᠼᠢ ᠨᠤᠭᠤᠳ ᠬᠡᠵᠢᠶ᠎ᠡ ᠴᠦ ᠥᠪᠡᠷᠴᠢᠯᠡᠭᠳᠡᠵᠤ ᠪᠣᠯᠤᠨ᠎ᠠ ᠪᠥᠭᠡᠳ ᠲᠣᠭᠲᠤᠪᠤᠷᠲᠠᠢ ᠹᠦᠨᠺᠼᠢ ᠲᠡᠢ ᠠᠳᠢᠯᠬᠠᠨ ᠠᠵᠢᠯᠯᠠᠨᠠ ᠭᠡᠵᠤ ᠪᠠᠲᠠᠯᠭᠠᠠ ᠥᠭᠬᠦᠭᠦᠢ.</string>
+    <string name="experimental_warning_title">ᠲᠤᠷᠱᠢᠯᠲᠤ ᠤᠨ ᠹᠦᠨᠺᠼᠢ ᠶᠢᠨ ᠠᠩᠬᠠᠠᠷᠤᠤᠯᠭᠠ</string>
+    <string name="file_count">ᠹᠠᠶᠯ</string>
+    <string name="folder_count">ᠬᠠᠸᠲᠠᠰ</string>
+    <string name="font_color">ᠦᠰᠦᠭ ᠦᠨ ᠥᠩᠭᠡ</string>
+    <string name="font_color_group_base">ᠦᠨᠳᠦᠰᠦᠨ ᠥᠩᠭᠡ</string>
+    <string name="font_color_group_dark">ᠬᠠᠷᠠ ᠥᠩᠭᠡ</string>
+    <string name="font_color_group_light">ᠴᠠᠶᠸᠠᠷ ᠥᠩᠭᠡ</string>
+    <string name="font_color_hint">ᠠᠫᠫ ᠳᠤᠲᠣᠣᠷᠠᠬᠢ ᠪᠢᠴᠢᠭ ᠦᠨ ᠥᠩᠭᠡ ᠶᠢᠢᠭ ᠰᠣᠩᠭᠣᠬᠤ᠂ ᠪᠦᠬᠦ ᠳᠡᠯᠭᠡᠴ ᠦᠨ ᠪᠢᠴᠢᠭ ᠳᠠᠭᠠᠵᠤ ᠥᠪᠡᠷᠴᠢᠯᠡᠭᠳᠡᠨ᠎ᠡ</string>
+    <string name="hidden_done">ᠨᠢᠭᠤᠭᠳᠠᠪᠠ</string>
+    <string name="invalid_name">ᠨᠡᠷ ᠪᠤᠷᠤᠤ ᠪᠠᠶᠨᠠ</string>
+    <!-- UNCERTAIN_MONG：新词直译，需母语者复核 -->
+    <string name="more_actions">ᠨᠡᠮᠡᠯᠲᠢ ᠦᠢᠯᠡᠳᠦᠯ</string>
+    <string name="move_failed">ᠵᠥᠭᠡᠵᠤ ᠴᠢᠳᠠᠭᠰᠠᠨ ᠦᠭᠡᠢ</string>
+    <string name="move_item">ᠵᠥᠭᠡᠬᠦ</string>
+    <string name="move_not_supported">ᠡᠨᠡ ᠰᠠᠩ ᠵᠥᠭᠡᠬᠦ ᠶᠢᠢᠭ ᠳᠡᠮᠵᠢᠭᠳᠡᠭᠦᠢ</string>
+    <string name="move_to_other">ᠵᠥᠭᠡᠬᠦ -&gt;</string>
+    <string name="move_to_trash">ᠬᠣᠭ ᠤᠨ ᠰᠠᠪᠠ ᠷᠤᠤ ᠵᠥᠭᠡᠬᠦ</string>
+    <string name="moved">ᠵᠥᠭᠡᠭᠳᠡᠪᠡ</string>
+    <string name="name_exists">ᠠᠳᠢᠯ ᠨᠡᠷ ᠲᠡᠢ ᠹᠠᠶᠯ ᠡᠰᠡᠪᠡᠯ ᠬᠠᠸᠲᠠᠰ ᠠᠯᠢ ᠬᠡᠳᠢᠢᠨ ᠪᠠᠶᠨᠠ</string>
+    <string name="new_file_short">ᠹᠠᠶᠯ</string>
+    <string name="new_folder_short">ᠬᠠᠸᠲᠠᠰ</string>
+    <string name="new_title">ᠱᠢᠨᠡ</string>
+    <string name="oss_components">ᠨᠡᠭᠡᠯᠲᠡᠲᠡᠢ ᠡᠬᠢ ᠶᠢᠨ ᠪᠦᠷᠡᠯᠳᠦᠬᠦᠨ ᠬᠡᠰᠡᠭ</string>
+    <string name="other_pane_no_folder">ᠨᠥᠭᠥᠥ ᠴᠣᠨᠬᠣᠨᠳ ᠨᠡᠭᠡᠭᠳᠡᠭᠰᠡᠨ ᠬᠠᠸᠲᠠᠰ ᠦᠭᠡᠢ</string>
+    <string name="password_confirm_hint">ᠨᠢᠭᠤᠴᠠ ᠦᠭᠡ ᠶᠢᠢᠭ ᠳᠠᠬᠢᠨ ᠣᠷᠣᠭᠤᠯᠤᠬᠤ</string>
+    <string name="password_hint">ᠨᠢᠭᠤᠴᠠ ᠦᠭᠡ ᠣᠷᠣᠭᠤᠯᠤᠬᠤ</string>
+    <string name="password_mismatch">ᠬᠣᠶᠠᠷ ᠤᠳᠠᠭ᠎ᠠ ᠣᠷᠣᠭᠤᠯᠤᠭᠰᠠᠨ ᠨᠢᠭᠤᠴᠠ ᠦᠭᠡ ᠲᠠᠠᠷᠠᠬᠤᠭᠦᠢ ᠪᠠᠶᠨᠠ</string>
+    <string name="path_copied">ᠵᠠᠮ ᠬᠤᠤᠯᠠᠭᠳᠠᠪᠠ</string>
+    <!-- UNCERTAIN_MONG：“Pin”转写待核，需母语者复核 -->
+    <!-- UNCERTAIN_MONG：顶置新译法，需母语者复核 -->
+    <string name="pin_folder">ᠳᠡᠭᠡᠳᠦ ᠪᠡᠬᠡᠯᠡᠬᠦ</string>
+    <!-- UNCERTAIN_MONG：“Pin”转写待核，需母语者复核 -->
+    <string name="pinned">ᠪᠡᠬᠡᠯᠡᠭᠳᠡᠪᠡ</string>
+    <string name="restore_confirm_msg">ᠹᠠᠶᠯ %1$s ᠢᠢᠭ ᠠᠩᠬᠠᠨ ᠤ ᠭᠠᠵᠠᠷ ᠲᠤ ᠨᠢ ᠰᠡᠷᠭᠦᠭᠡᠬᠦ ᠦᠦ?</string>
+    <string name="restore_confirm_multi_msg">%1$d ᠵᠦᠢᠯ ᠢᠢᠭ ᠠᠩᠬᠠᠨ ᠤ ᠭᠠᠵᠠᠷ ᠲᠤ ᠨᠢ ᠰᠡᠷᠭᠦᠭᠡᠬᠦ ᠦᠦ?</string>
+    <string name="share_zip">ZIP ᠬᠤᠸᠠᠠᠯᠴᠠᠬᠤ</string>
+    <string name="shortcut_action">ᠦᠢᠯᠡᠳᠦᠯ</string>
+    <string name="shortcut_action_locate">ᠪᠠᠶᠢᠷᠢᠰᠢᠯ ᠢᠢᠭ ᠣᠯᠬᠤ</string>
+    <string name="shortcut_action_locate_click">ᠪᠠᠶᠢᠷᠢᠰᠢᠯ ᠢᠢᠭ ᠣᠯᠵᠤ ᠨᠡᠡᠬᠦ</string>
+    <string name="shortcut_action_open_editor">ᠪᠢᠴᠢᠭ ᠦᠨ ᠵᠠᠰᠠᠭᠤᠷ ᠢᠶᠠᠷ ᠨᠡᠡᠬᠦ</string>
+    <string name="shortcut_action_preview_html">HTML ᠹᠠᠶᠯ ᠬᠠᠷᠠᠬᠤ</string>
+    <!-- UNCERTAIN_MONG：“快捷方式”转写待核，需母语者复核 -->
+    <string name="shortcut_created">ᠲᠣᠪᠴᠢᠯᠣᠯ ᠦᠦᠰᠭᠡᠭᠳᠡᠪᠡ</string>
+    <string name="shortcut_icon">ᠳᠦᠷᠰᠦ ᠲᠡᠮᠳᠡᠭ</string>
+    <string name="shortcut_name">ᠨᠡᠷ</string>
+    <!-- UNCERTAIN_MONG：“桌面快捷方式”转写待核，需母语者复核 -->
+    <string name="shortcut_not_supported">ᠡᠨᠡ ᠲᠥᠬᠥᠭᠥᠷᠥᠮᠵᠢ ᠱᠢᠷᠡᠡᠨᠢᠶ ᠲᠣᠪᠴᠢᠯᠣᠯ ᠢᠢᠭ ᠳᠡᠮᠵᠢᠭᠳᠡᠭᠦᠢ</string>
+    <string name="shortcut_not_text">ᠪᠢᠴᠢᠭ ᠦᠨ ᠹᠠᠶᠯ ᠪᠢᠰᠢ ᠲᠤᠯᠠ ᠰᠢᠰᠲᠶᠡᠮ ᠦᠨ ᠬᠠᠷᠠᠭᠤᠯᠤᠭᠴᠢ ᠶᠢᠠᠷ ᠨᠡᠡᠭᠳᠡᠪᠡ</string>
+    <string name="shortcut_target_missing">ᠲᠣᠪᠴᠢᠯᠣᠯ ᠤᠨ ᠵᠠᠭᠠᠵᠤ ᠪᠠᠶᠢᠭᠠᠠ ᠹᠠᠶᠯ ᠦᠭᠡᠢ ᠡᠰᠡᠪᠡᠯ ᠨᠡᠪᠲᠡᠷᠡᠬᠦ ᠪᠣᠯᠣᠮᠵᠢ ᠦᠭᠡᠢ</string>
+    <string name="shortcut_type">ᠲᠥᠷᠥᠯ</string>
+    <!-- UNCERTAIN_MONG：“桌面”转写待核，需母语者复核 -->
+    <string name="shortcut_type_desktop">ᠱᠢᠷᠡᠡᠨᠢᠶ ᠲᠣᠪᠴᠢᠯᠣᠯ</string>
+    <string name="shortcut_type_desktop_desc">ᠨᠡᠭᠦᠷ ᠳᠡᠯᠭᠡᠴ ᠳᠡᠭᠡᠷᠡ ᠭᠠᠨᠴᠠᠭᠠᠷᠠᠭᠰᠠᠨ ᠳᠦᠷᠰᠦ ᠲᠡᠮᠳᠡᠭ ᠦᠦᠰᠭᠡᠭᠳᠡᠨ᠎ᠡ</string>
+    <string name="shortcut_type_icon">ᠳᠦᠷᠰᠦ ᠲᠡᠮᠳᠡᠭ ᠦᠨ ᠲᠣᠪᠴᠢᠯᠣᠯ</string>
+    <string name="shortcut_type_icon_desc">ᠹᠠᠶᠯ ᠤᠨ ᠲᠥᠷᠥᠯ ᠦᠨ ᠳᠦᠷᠰᠦ ᠲᠡᠮᠳᠡᠭ ᠢᠢᠭ ᠨᠡᠭᠦᠷ ᠳᠡᠯᠭᠡᠴ ᠦᠨ ᠳᠦᠷᠰᠦ ᠲᠡᠮᠳᠡᠭ ᠪᠣᠯᠭᠣᠵᠤ ᠠᠱᠢᠭᠯᠠᠨᠠ</string>
+    <!-- UNCERTAIN_MONG：新词直译，需母语者复核 -->
+    <string name="splash_animation">ᠡᠬᠡᠯᠡᠬᠦ ᠬᠥᠳᠥᠯᠭᠥᠭᠡᠨᠲᠦ ᠳᠦᠷᠰᠦ</string>
+    <string name="splash_animation_hint">ᠠᠰᠠᠭᠠᠯᠲᠠᠢ ᠦᠶᠡ ᠳᠦ ᠨᠡᠭᠦᠷ ᠳᠡᠯᠭᠡᠴ ᠡᠴᠡ ᠠᠫᠫ ᠨᠡᠡᠬᠦ ᠪᠦᠷᠢ ᠳᠦ ᠡᠷᠲᠡᠨᠢ ᠡᠬᠡᠯᠡᠬᠦ ᠬᠥᠳᠥᠯᠭᠥᠭᠡᠨᠲᠦ ᠳᠦᠷᠰᠦ ᠭᠠᠷᠨᠠ</string>
+    <!-- UNCERTAIN_MONG：长文，转写与措辞待核，需母语者复核 -->
+    <string name="thanks_mp_desc">ᠡᠨᠡ ᠠᠫᠫ ᠨᠢ MP-Manager ᠡᠴᠡ ᠳᠠᠷᠠᠭᠠᠬᠢ ᠵᠦᠢᠯᠰ ᠢᠢᠭ ᠰᠠᠨᠠᠠ ᠠᠪᠤᠭᠰᠠᠨ: ᠬᠣᠰ ᠴᠣᠨᠬ ᠵᠡᠷᠡᠭᠴᠡᠨ ᠬᠠᠷᠠᠬᠤ ᠪᠠ ᠴᠣᠨᠬ ᠬᠣᠭᠣᠷᠣᠨᠳᠣᠬᠢ ᠦᠢᠯᠡᠳᠦᠯ (ᠬᠤᠤᠯᠠᠬᠤ᠂ ᠵᠥᠭᠡᠬᠦ᠂ ᠨᠥᠭᠥᠥ ᠴᠣᠨᠬᠣᠨᠳ ᠪᠤᠤᠯᠭᠠᠬᠤ); ᠹᠠᠶᠯ ᠤᠨ ᠵᠠᠭᠰᠠᠠᠯᠲ ᠤᠨ ᠮᠥᠷ ᠦᠨ ᠬᠡᠪ — ᠪᠠᠭᠠ ᠪᠥᠭᠡᠷᠡᠨ ᠳᠥᠷᠪᠡᠯᠵᠢᠨ ᠳᠦᠷᠰᠦ ᠲᠡᠮᠳᠡᠭ᠂ ᠨᠡᠷ ᠪᠠ ᠳᠠᠭᠠᠤ “ᠣᠭᠨᠣᠣ + ᠬᠡᠮᠵᠡᠡ” ᠳᠠᠭᠠᠤ ᠭᠠᠷᠴᠢᠭ; ᠮᠥᠷ ᠦᠨ ᠲᠡᠭᠦᠰᠭᠡᠯ ᠦᠨ ⋮ ᠴᠡᠰᠦ ᠪᠠ ᠶᠢᠰᠦᠨ ᠨᠦᠳᠦ ᠲᠡᠢ “ᠨᠡᠮᠡᠯᠲᠢ ᠦᠢᠯᠡᠳᠦᠯ” ᠦᠨ ᠰᠠᠮᠪᠠᠷ; ᠰᠡᠷᠭᠦᠭᠡᠬᠦ ᠪᠠ ᠪᠦᠷᠮᠥᠰᠦᠨ ᠤᠰᠠᠳᠬᠠᠬᠤ ᠶᠢᠢᠭ ᠪᠠᠲᠤᠯᠠᠬᠤ ᠬᠡᠯᠡᠯᠴᠡᠭᠦᠯᠦᠭ ᠲᠡᠢ ᠬᠣᠭ ᠤᠨ ᠰᠠᠪᠠ; ᠦᠦᠰᠭᠡᠬᠦ ᠶᠢᠨ ᠬᠡᠯᠡᠯᠴᠡᠭᠦᠯᠦᠭ; ᠮᠥᠷ ᠦᠨ ᠳᠤᠭᠠᠷ ᠪᠠ ᠲᠡᠮᠳᠡᠭᠲᠦ ᠮᠥᠷ ᠲᠡᠢ ᠪᠢᠴᠢᠭ ᠦᠨ ᠵᠠᠰᠠᠭᠤᠷ; ᠬᠣᠭ ᠤᠨ ᠰᠠᠪᠠ᠂ ᠳᠤᠷᠲᠠᠶ᠂ ᠪᠡᠬᠡᠯᠡᠭᠳᠡᠭᠰᠡᠨ ᠬᠠᠸᠲᠠᠰ; Shizuku ᠪᠠ ᠦᠨᠳᠦᠰᠦᠨ ᠬᠠᠨᠳᠤᠬᠤ; ᠱᠠᠬᠠᠬᠤ ᠪᠠ ᠽᠠᠳᠯᠠᠬᠤ᠂ ᠹᠠᠶᠯ ᠨᠢᠭᠤᠴᠠᠯᠠᠬᠤ ᠪᠠ ᠲᠠᠶᠢᠯᠠᠬᠤ; ᠵᠠᠬᠢᠶᠠᠯᠲᠤ ᠣᠷᠣᠨ ᠨᠤᠲᠤᠭ ᠤᠨ ᠰᠠᠩ. MP-Manager ᠨᠢ GitHub (https://github.com/AbdurazaaqMohammed/MP-Manager) ᠳᠡᠭᠡᠷᠡ GPL-3.0 ᠯᠢᠴᠶᠡᠨᠽᠡ ᠶᠢᠢᠷ ᠨᠡᠭᠡᠯᠲᠡᠲᠡᠢ ᠪᠠᠶᠢᠭᠠᠠ ᠲᠤᠯᠠ ᠡᠨᠡ ᠠᠫᠫ ᠳᠤ ᠰᠢᠤᠳ ᠰᠤᠷᠤᠯᠴᠠᠵᠤ ᠳᠠᠭᠠᠵᠤ ᠪᠣᠯᠬᠤ ᠪᠠᠢᠭᠤᠯᠤᠯᠲᠤ ᠤᠨ ᠵᠢᠱᠢᠭᠡ ᠥᠭᠭᠥᠭᠰᠡᠨ ᠳᠦ ᠲᠠᠯᠠᠷᠬᠠᠯ ᠢᠯᠡᠷᠬᠡᠢᠯᠡᠶ᠎ᠡ; ᠵᠣᠬᠢᠶᠣᠭᠴᠢ AbdurazaaqMohammed ᠳᠤ ᠲᠠᠰᠤᠷᠠᠯᠲᠠᠢ ᠠᠷᠴᠢᠯᠠᠵᠤ ᠰᠢᠨᠡᠴᠢᠯᠡᠵ ᠪᠠᠶᠢᠭᠠᠠ ᠳᠤ ᠲᠠᠯᠠᠷᠬᠠᠯ ᠢᠯᠡᠷᠬᠡᠢᠯᠡᠶ᠎ᠡ; ᠪᠥᠭᠡᠳ ᠵᠢᠷᠦᠦᠬᠦ ᠬᠦᠨ ᠴᠦ MT Manager ᠤᠨ ᠰᠠᠢᠨ ᠨᠡᠭᠡᠯᠲᠡᠲᠡᠢ ᠣᠷᠣᠯᠠᠭᠴᠢ ᠶᠢᠢᠭ ᠪᠦᠲᠦᠭᠡᠵᠤ ᠪᠣᠯᠤᠨ᠎ᠠ ᠭᠡᠵᠤ ᠬᠠᠷᠤᠤᠯᠤᠭᠰᠠᠨ ᠳᠤ ᠲᠠᠯᠠᠷᠬᠠᠯ ᠢᠯᠡᠷᠬᠡᠢᠯᠡᠶ᠎ᠡ᠂ ᠡᠨᠡ ᠨᠢ ᠡᠨᠡ ᠠᠫᠫ ᠳᠤ ᠲᠣᠳᠣᠷᠬᠣᠢ ᠰᠤᠷᠤᠯᠴᠠᠬᠤ ᠵᠣᠷᠢᠯᠭ᠎ᠠ ᠥᠭᠭᠥᠭᠰᠡᠨ ᠶᠤᠮ.</string>
+    <string name="thanks_mt_desc">ᠡᠨᠡ ᠠᠫᠫ ᠨᠢ MT Manager ᠤᠨ ᠬᠣᠰ ᠴᠣᠨᠬᠤ ᠤᠨ ᠪᠠᠢᠭᠤᠯᠤᠯᠲᠤ᠂ ᠹᠠᠶᠯ ᠤᠨ ᠴᠡᠰᠦ᠂ ᠶᠢᠰᠦᠨ ᠨᠦᠳᠦ ᠲᠡᠢ “ᠨᠡᠮᠡᠯᠲᠢ ᠦᠢᠯᠡᠳᠦᠯ”᠂ ᠤᠰᠠᠳᠬᠠᠬᠤ ᠪᠠ ᠰᠡᠷᠭᠦᠭᠡᠬᠦ ᠶᠢᠨ ᠬᠡᠯᠡᠯᠴᠡᠭᠦᠯᠦᠭ ᠵᠡᠷᠭᠡ ᠢᠨᠲᠡᠷᠹᠡᠢᠰ ᠦᠨ ᠪᠠᠢᠭᠤᠯᠤᠯᠲᠤ ᠡᠴᠡ ᠰᠠᠨᠠᠠ ᠠᠪᠤᠭᠰᠠᠨ. ᠪᠠᠢᠭᠤᠯᠤᠯᠲᠤ ᠤᠨ ᠵᠢᠱᠢᠭᠡ ᠪᠠ ᠰᠠᠨᠠᠠ ᠥᠭᠭᠥᠭᠰᠡᠨ ᠳᠦ MT Manager ᠲᠤ ᠲᠠᠯᠠᠷᠬᠠᠯ ᠢᠯᠡᠷᠬᠡᠢᠯᠡᠶ᠎ᠡ.</string>
+    <string name="thanks_muse_desc">Muse ᠳᠤ ᠬᠥᠭᠵᠢᠯᠲᠦ ᠶᠢᠨ ᠲᠤᠰᠠᠯᠠᠭᠴᠢ ᠪᠠ ᠲᠧᠻᠨᠢᠺ ᠦᠨ ᠳᠡᠮᠵᠢᠯᠭᠡ ᠦᠵᠡᠭᠦᠯᠦᠭᠰᠡᠨ ᠳᠦ ᠲᠠᠯᠠᠷᠬᠠᠯ ᠢᠯᠡᠷᠬᠡᠢᠯᠡᠶ᠎ᠡ: ᠡᠨᠡ ᠠᠫᠫ ᠤᠨ ᠺᠣᠳ ᠪᠢᠴᠢᠬᠦ᠂ ᠹᠦᠨᠺᠼᠢ ᠬᠡᠷᠡᠭᠵᠢᠭᠦᠯᠬᠦ᠂ ᠠᠰᠠᠭᠤᠳᠠᠯ ᠰᠢᠢᠳᠪᠦᠷᠢᠯᠡᠬᠦ ᠵᠡᠷᠭᠡ ᠠᠵᠢᠯ ᠨᠢ Muse ᠶᠢᠨ ᠲᠤᠰᠠᠯᠠᠭᠴᠢ ᠲᠠᠢ ᠬᠢᠭᠳᠡᠭᠳᠡᠪᠡ.</string>
+    <string name="trash_move_failed">ᠬᠣᠭ ᠤᠨ ᠰᠠᠪᠠ ᠷᠤᠤ ᠵᠥᠭᠡᠵᠤ ᠴᠢᠳᠠᠭᠰᠠᠨ ᠦᠭᠡᠢ᠂ ᠶᠠᠮᠠᠷ ᠴᠦ ᠹᠠᠶᠯ ᠤᠰᠠᠳᠬᠠᠭᠳᠠᠭᠦᠢ</string>
+    <!-- UNCERTAIN_MONG：“UI引擎”直译，需母语者复核 -->
+    <string name="ui_engine">UI ᠬᠥᠳᠥᠯᠭᠦᠦᠷ</string>
+    <string name="ui_engine_desc_expressive">ᠢᠯᠡᠭᠦᠦ ᠪᠥᠭᠡᠷᠡᠨ᠂ ᠢᠯᠡᠭᠦᠦ ᠲᠣᠳᠣ ᠬᠡᠪ</string>
+    <string name="ui_engine_desc_md3">ᠥᠩᠭᠡᠷᠡᠭᠰᠡᠨ ᠵᠠᠭᠪᠤᠷ᠂ ᠣᠳᠣᠬᠢ ᠶᠠᠮᠠᠷ</string>
+    <string name="ui_engine_desc_miuix">Xiaomi MIUI ᠵᠠᠭᠪᠤᠷ</string>
+    <string name="ui_engine_switch_msg">ᠰᠣᠯᠢᠭᠰᠠᠨ ᠤ ᠳᠠᠷᠠᠭ᠎ᠠ ᠠᠫᠫ ᠤᠨ ᠢᠨᠲᠡᠷᠹᠡᠢᠰ ᠪᠦᠬᠦᠯᠢ ᠶᠢᠢᠷ “%1$s” ᠪᠣᠯᠵᠤ ᠥᠪᠡᠷᠴᠢᠯᠡᠭᠳᠡᠵᠤ ᠨᠡᠨ ᠳᠠᠷᠤᠢ ᠳᠠᠬᠢᠨ ᠠᠴᠠᠠᠯᠠᠭᠳᠠᠨ᠎ᠠ.</string>
+    <string name="ui_engine_switch_title">UI ᠬᠥᠳᠥᠯᠭᠦᠦᠷ ᠰᠣᠯᠢᠬᠤ</string>
+    <string name="unhidden_done">ᠨᠢᠭᠤᠭᠰᠠᠨ ᠢᠢᠭ ᠠᠷᠢᠯᠭᠠᠪᠠ</string>
+    <!-- UNCERTAIN_MONG：“Pin”转写待核，需母语者复核 -->
+    <string name="unpin_folder">ᠪᠡᠬᠡᠯᠡᠯᠲᠡ ᠶᠢᠢᠭ ᠠᠷᠢᠯᠭᠠᠬᠤ</string>
+    <!-- UNCERTAIN_MONG：“Pin”转写待核，需母语者复核 -->
+    <string name="unpinned">ᠪᠡᠬᠡᠯᠡᠯᠲᠡ ᠠᠷᠢᠯᠭᠠᠭᠳᠠᠪᠠ</string>
+    <string name="wrong_password">ᠨᠢᠭᠤᠴᠠ ᠦᠭᠡ ᠪᠤᠷᠤᠤ</string>
+    <string name="zip_failed">ᠱᠠᠬᠠᠵᠤ ᠴᠢᠳᠠᠭᠰᠠᠨ ᠦᠭᠡᠢ</string>
+    <!-- Theme settings (v1.9.7.4) --><!-- UNCERTAIN_MONG：标准意译为默认（öngörögsön），需母语者复核 --><!-- UNCERTAIN_MONG：“类…风格”意译，需母语者复核 --><!-- UNCERTAIN_MONG：新编词句，需母语者复核 --><!-- UNCERTAIN_MONG：新编词句，需母语者复核 --><!-- UNCERTAIN_MONG：调色板无对应词，意译为颜色样式，需母语者复核 --><!-- UNCERTAIN_MONG：多彩（önggetei）意译，需母语者复核 -->
+    <!-- UNCERTAIN_MONG：按钮（tobchi）转写未核实，需母语者复核 -->
+
+    <string name="palette_color_group_base">ᠦᠨᠳᠦᠰᠦᠨ ᠥᠩᠭᠡ</string>
+    <string name="palette_color_group_light">ᠴᠠᠶᠸᠠᠷ ᠥᠩᠭᠡ</string>
+    <string name="palette_color_group_dark">ᠬᠠᠷᠠ ᠥᠩᠭᠡ</string>
+    <!-- UNCERTAIN_MONG：ᠠᠩᠬᠠᠨ ᠤ ᠲᠣᠬᠢᠷᠠᠭᠤᠯᠤᠯᠲᠠ（默认设置）为意译，未核实，需母语者复核 -->
+    <string name="reset_defaults">ᠠᠩᠬᠠᠨ ᠤ ᠲᠣᠬᠢᠷᠠᠭᠤᠯᠤᠯᠲᠠ ᠷᠤᠤ ᠰᠡᠷᠭᠦᠭᠡᠬᠦ</string>
+    <!-- UNCERTAIN_MONG：新编长句及“自定义储存”意译，未核实，需母语者复核 -->
+    <string name="reset_defaults_msg">ᠡᠨᠡ ᠬᠡᠯᠡ᠂ ᠰᠡᠳᠦᠪ ᠦᠨ ᠬᠡᠪ᠂ ᠳᠢᠨᠠᠮᠢᠺ ᠥᠩᠭᠡ᠂ ᠠᠫᠫ ᠤᠨ ᠥᠩᠭᠡ᠂ ᠦᠰᠦᠭ ᠦᠨ ᠥᠩᠭᠡ᠂ UI ᠬᠥᠳᠥᠯᠭᠦᠦᠷ᠂ ᠡᠬᠡᠯᠡᠬᠦ ᠬᠥᠳᠥᠯᠭᠥᠭᠡᠨᠲᠦ ᠳᠦᠷᠰᠦ᠂ ᠡᠷᠡᠮᠪᠡᠯᠡᠬᠦ᠂ ᠬᠣᠰ ᠴᠣᠨᠬ᠂ ᠨᠤᠤᠴ ᠹᠠᠶᠯᠤᠤᠳᠢᠭ ᠬᠠᠷᠤᠤᠯᠠᠬᠤ ᠢ ᠠᠩᠬᠠᠨ ᠤ ᠲᠣᠬᠢᠷᠠᠭᠤᠯᠤᠯᠲᠠ ᠷᠤᠤ ᠪᠤᠴᠠᠭᠠᠨ᠎ᠠ᠃ ᠳᠤᠷᠲᠠᠶ᠂ ᠪᠡᠬᠡᠯᠡᠭᠳᠡᠭᠰᠡᠨ ᠬᠠᠸᠲᠠᠰᠤ᠂ ᠥᠪᠡᠷᠲᠡᠭᠡᠨ ᠨᠡᠮᠡᠭᠰᠡᠨ ᠰᠠᠨᠠᠬ ᠣᠶ᠂ ᠬᠣᠭ ᠤᠨ ᠰᠠᠪᠠ ᠳᠤ ᠨᠥᠯᠥᠭᠡᠯᠡᠬᠦ ᠦᠭᠡᠢ᠃ ᠣᠳᠣᠬᠠᠨ ᠰᠡᠷᠭᠦᠭᠡᠬᠦ ᠦᠦ?</string>
+    <string name="follow_system_language">ᠰᠢᠰᠲᠶᠡᠮᠢᠶᠭ ᠳᠠᠭᠠᠬ</string>
 </resources>

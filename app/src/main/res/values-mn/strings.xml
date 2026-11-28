@@ -10,6 +10,40 @@
     <string name="sort_date">Огноогоор</string>
     <string name="sort_size">Хэмжээгээр</string>
     <string name="sort_type">Төрлөөр</string>
+    <string name="sort_by_type">Төрлөөр</string>
+    <string name="sort_reverse">Урвуу дараалал</string>
+    <string name="sort_type_folders_only">Зөвхөн хавтас</string>
+    <string name="viewer_background">Дэвсгэр солих</string>
+    <string name="viewer_bg_black">Хар</string>
+    <string name="viewer_bg_white">Цагаан</string>
+    <string name="viewer_bg_gray">Саарал</string>
+    <string name="viewer_view_horizontal">Хэвтээ эргүүлэх</string>
+    <string name="viewer_view_vertical">Босоо жагсаалт</string>
+    <string name="viewer_dimensions">Хэмжээс</string>
+    <string name="viewer_format">Формат</string>
+    <string name="media_images">Зураг</string>
+    <string name="media_videos">Видео</string>
+    <string name="media_audios">Аудио</string>
+    <string name="jump_title">Очих</string>
+    <string name="create_html">HTML үүсгэх</string>
+    <string name="jump_invalid_path">Зам байхгүй эсвэл хавтас биш байна</string>
+    <string name="media_gifs">GIF</string>
+    <string name="media_today">Өнөөдөр</string>
+    <string name="media_yesterday">Өчигдөр</string>
+    <string name="media_images_videos">Зураг болон видео</string>
+    <string name="play_video">Видео тоглуулах</string>
+    <string name="view_image">Зураг харах</string>
+    <string name="browse_archive">Архив үзэх</string>
+    <string name="video_speed">Хурд</string>
+    <string name="video_cannot_play">Энэ видеог тоглуулах боломжгүй</string>
+    <string name="play_music">Хөгжим тоглуулах</string>
+    <string name="music_cannot_play">Энэ аудиог тоглуулах боломжгүй</string>
+    <string name="video_play">Тоглуулах</string>
+    <string name="video_pause">Түр зогсоох</string>
+    <string name="video_fill_screen">Дэлгэц дүүргэх</string>
+    <string name="video_loop">Давтах</string>
+    <string name="video_landscape">Хэвтээ горим</string>
+    <string name="video_duration">Хугацаа</string>
     <string name="show_hidden">Нууц файлуудыг харуулах</string>
     <string name="copy">Хуулах</string>
     <string name="cut">Таслах</string>
@@ -108,6 +142,8 @@
     <string name="original_path">Анхны зам</string>
     <string name="confirm_empty_trash">Хогийн савыг хоослох уу? Энэ үйлдлийг буцаах боломжгүй.</string>
     <string name="language_settings">Хэлний тохиргоо</string>
+    <string name="settings_group_language_appearance">Хэл ба гадаад төрх</string>
+    <string name="settings_group_app">Апп</string>
     <string name="confirm">Баталгаажуулах</string>
     <string name="theme_mode">Сэдвийн горим</string>
     <string name="more_options">Нэмэлт сонголт</string>
@@ -177,4 +213,123 @@
     <string name="syntax_c">C/C++</string>
     <string name="deselect_all">Сонголтыг цуцлах</string>
     <string name="unknown">Тодорхойгүй</string>
+    <string name="about_intro_title">Аппын танилцуулга</string>
+    <string name="already_here">Энэ хавтсанд аль хэдийн байна</string>
+    <string name="app_color">Аппын өнгө</string>
+    <string name="app_color_disabled_hint">Энэ функцийг ашиглахыг хүсвэл эхлээд динамик өнгийг унтраана уу</string>
+    <string name="app_color_hint">Аппын сэдвийн өнгийг сонгох, интерфэйсийн үндсэн өнгө дагаж өөрчлөгдөнө</string>
+    <string name="appearance">Гадаад үзэмж</string>
+    <string name="bookmark_added">Дуртайд нэмэгдлээ</string>
+    <string name="bookmark_removed">Дуртайгаас хасагдлаа</string>
+    <string name="bookmarks_title">Дуртай</string>
+    <!-- UNCERTAIN_MN：“剪贴板”译法待核，需母语者复核 -->
+    <string name="clipboard_empty">Хуулах санах ой хоосон эсвэл текст биш байна</string>
+    <string name="compress_item">Шахах</string>
+    <string name="copy_path">Зам хуулах</string>
+    <string name="copy_to_other">Хуулах -&gt;</string>
+    <string name="create_shortcut">Товчлол үүсгэх</string>
+    <string name="decrypt_failed">Тайлж чадсангүй</string>
+    <string name="decrypt_file">Файл тайлах</string>
+    <string name="decrypted">Тайлагдлаа</string>
+    <string name="delete_permanent_msg">Файл %1$s-г бүрмөсөн устгах уу?</string>
+    <string name="delete_permanent_multi_msg">%1$d зүйлийг бүрмөсөн устгах уу?</string>
+    <string name="delete_to_trash_msg">Файл %1$s-г хогийн сав руу зөөх үү?</string>
+    <string name="delete_to_trash_multi_msg">%1$d зүйлийг хогийн сав руу зөөх үү?</string>
+    <string name="disclaimer">Хариуцлагаас татгалзах мэдэгдэл</string>
+    <!-- UNCERTAIN_MN：新词直译，需母语者复核 -->
+    <string name="dynamic_color">Динамик өнгө</string>
+    <string name="dynamic_color_confirm_msg">Динамик өнгийг асаасны дараа аппын өнгө системийн ханын зургийн өнгийг дагаж өөрчлөгдөнө. Динамик өнгийг асаах уу?</string>
+    <string name="dynamic_color_confirm_title">Динамик өнгө</string>
+    <string name="dynamic_color_hint">Асаалттай үед аппын өнгө системийн ханын зургийн өнгийг дагана</string>
+    <string name="dynamic_color_on_note">Динамик өнгө асаалттай үед аппын өнгө үйлчлэхгүй</string>
+    <string name="encrypt_failed">Нууцалж чадсангүй</string>
+    <string name="encrypt_file">Файл нууцлах</string>
+    <string name="encrypted">Нууцлагдлаа</string>
+    <string name="endangered_language_sub">Одоогоор зөвхөн 5 хэл дэмжигдэж байгаа бөгөөд дараа нь нэмж магадгүй</string>
+    <string name="endangered_language_switch">Ховордсон хэл солих</string>
+    <string name="experimental_features">Туршилтын функц</string>
+    <string name="experimental_features_hint">Энд байгаа функцууд туршилтын шатандаа байгаа тул өөрчлөгдөж магадгүй</string>
+    <!-- UNCERTAIN_MN：长警告框，措辞待核，需母语者复核 -->
+    <string name="experimental_warning_msg">Туршилтын функцууд туршилтын шатандаа байна. Тэдгээрийг ашиглах нь дараах үр дагаварт хүргэж магадгүй:\n\n• Интерфэйс буруу харагдах, гажих, апп хаагдах магадлалтай;\n• Зарим функц ажиллахгүй байх, эсвэл дараагийн хувилбарт өөрчлөгдөж, хасагдаж магадгүй;\n• UI хөдөлгүүр солих нь аппын интерфэйсийг бүхэлд нь нэн даруй дахин ачаална;\n• Эдгээр функц хэзээ ч өөрчлөгдөж болох бөгөөд тогтвортой функцтэй адилхан ажиллана гэж баталгаа өгөхгүй.</string>
+    <string name="experimental_warning_title">Туршилтын функцийн анхааруулга</string>
+    <string name="file_count">Файл</string>
+    <string name="folder_count">Хавтас</string>
+    <string name="font_color">Үсгийн өнгө</string>
+    <string name="font_color_group_base">Үндсэн өнгө</string>
+    <string name="font_color_group_dark">Хар өнгө</string>
+    <string name="font_color_group_light">Цайвар өнгө</string>
+    <string name="font_color_hint">Апп доторх текстийн өнгийг сонгох, бүх дэлгэцийн текст дагаж өөрчлөгдөнө</string>
+    <string name="hidden_done">Нуугдлаа</string>
+    <string name="invalid_name">Нэр буруу байна</string>
+    <!-- UNCERTAIN_MN：新词直译，需母语者复核 -->
+    <string name="more_actions">Нэмэлт үйлдлүүд</string>
+    <string name="move_failed">Зөөж чадсангүй</string>
+    <string name="move_item">Зөөх</string>
+    <string name="move_not_supported">Энэ сан зөөхийг дэмждэггүй</string>
+    <string name="move_to_other">Зөөх -&gt;</string>
+    <string name="move_to_trash">Хогийн сав руу зөөх</string>
+    <string name="moved">Зөөгдлөө</string>
+    <string name="name_exists">Ижил нэртэй файл эсвэл хавтас аль хэдийн байна</string>
+    <string name="new_file_short">Файл</string>
+    <string name="new_folder_short">Хавтас</string>
+    <string name="new_title">Шинэ</string>
+    <string name="oss_components">Нээлттэй эхийн бүрэлдэхүүн хэсэг</string>
+    <string name="other_pane_no_folder">Нөгөө цонхонд нээгдсэн хавтас алга</string>
+    <string name="password_confirm_hint">Нууц үгээ дахин оруулах</string>
+    <string name="password_hint">Нууц үг оруулах</string>
+    <string name="password_mismatch">Хоёр удаа оруулсан нууц үг таарахгүй байна</string>
+    <string name="path_copied">Зам хуулагдлаа</string>
+    <!-- UNCERTAIN_MN：“Pin”译法待核，需母语者复核 -->
+    <string name="pin_folder">Дээд талд бэхлэх</string>
+    <!-- UNCERTAIN_MN：“Pin”译法待核，需母语者复核 -->
+    <string name="pinned">Бэхлэгдлээ</string>
+    <string name="restore_confirm_msg">Файл %1$s-г анхны газарт нь сэргээх үү?</string>
+    <string name="restore_confirm_multi_msg">%1$d зүйлийг анхны газарт нь сэргээх үү?</string>
+    <string name="share_zip">ZIP хуваалцах</string>
+    <string name="shortcut_action">Үйлдэл</string>
+    <string name="shortcut_action_locate">Байршлыг олох</string>
+    <string name="shortcut_action_locate_click">Байршлыг олж нээх</string>
+    <string name="shortcut_action_open_editor">Текст засварлагчаар нээх</string>
+    <string name="shortcut_action_preview_html">HTML файл харах</string>
+    <string name="shortcut_created">Товчлол үүсгэгдлээ</string>
+    <string name="shortcut_icon">Дүрс тэмдэг</string>
+    <string name="shortcut_name">Нэр</string>
+    <string name="shortcut_not_supported">Энэ төхөөрөмж ширээний товчлолыг дэмждэггүй</string>
+    <string name="shortcut_not_text">Текст файл биш тул системийн харагчаар нээгдлээ</string>
+    <string name="shortcut_target_missing">Товчлолын зааж буй файл байхгүй эсвэл нэвтрэх боломжгүй</string>
+    <string name="shortcut_type">Төрөл</string>
+    <string name="shortcut_type_desktop">Ширээний товчлол</string>
+    <string name="shortcut_type_desktop_desc">Нүүр дэлгэц дээр тусдаа дүрс тэмдэг үүсгэнэ</string>
+    <string name="shortcut_type_icon">Дүрс тэмдгийн товчлол</string>
+    <string name="shortcut_type_icon_desc">Файлын төрлийн дүрс тэмдэгтийг нүүр дэлгэцийн дүрс болгон ашиглана</string>
+    <!-- UNCERTAIN_MN：新词直译，需母语者复核 -->
+    <string name="splash_animation">Эхлэх хөдөлгөөнт дүрс</string>
+    <string name="splash_animation_hint">Асаалттай үед нүүр дэлгэцээс апп нээх бүрд эхлээд нээлтийн хөдөлгөөнт дүрс гарна</string>
+    <!-- UNCERTAIN_MN：长文，措辞待核，需母语者复核 -->
+    <string name="thanks_mp_desc">Энэ апп нь MP-Manager-аас дараах зүйлсийг санаа авсан: хос цонх зэрэгцэн харах болон цонх хоорондын үйлдлүүд (хуулах, зөөх, нөгөө цонхонд буулгах); файлын жагсаалтын мөрийн хэв маяг — жижиг бөөрөнхий дөрвөлжин дүрс, нэр болон “огноо + хэмжээ” дэд гарчиг; мөрийн төгсгөлийн ⋮ цэс болон есөн нүдтэй “Нэмэлт үйлдлүүд” самбар; сэргээх болон бүрмөсөн устгахыг баталгаажуулах харилцах цонхтой хогийн сав; үүсгэх харилцах цонх; мөрийн дугаар болон тэмдэгтийн мөр бүхий текст засварлагч; хогийн сав, дуртай зүйл, бэхэлсэн хавтас; Shizuku буюу root хандалт; шахах болон задлах, файл нууцлах болон тайлах; захиалгат орон нутгийн сан. MP-Manager нь GitHub (https://github.com/AbdurazaaqMohammed/MP-Manager) дээр GPL-3.0 лицензээр нээлттэй байгаа тул энэ аппад шууд судалж, дагаж болох загварын жишээ өгсөнд талархаж байна; зохиогч AbdurazaaqMohammed-д тогтмол арчилж, шинэчилж байгаад талархаж байна; мөн жирийн хүн ч MT Manager-ийн гайхалтай нээлттэй хувилбарыг хийж чадна гэдгийг харуулснаар энэ аппад тодорхой суралцах зорилго өгсөнд талархаж байна.</string>
+    <string name="thanks_mt_desc">Энэ апп нь MT менежерийн хос цонхны бүтэц, файлын цэс, есөн нүдтэй “Нэмэлт үйлдлүүд”, устгах болон сэргээх харилцах цонх зэрэг интерфэйсийн загвараас санаа авсан. Дизайн лавлагаа, санаа өгсөнд MT менежерт талархаж байна.</string>
+    <string name="thanks_muse_desc">Muse-д хөгжүүлэлтийн туслалцаа, техникийн дэмжлэг үзүүлсэнд талархаж байна: энэ аппын код бичих, функц хэрэгжүүлэх, асуудал шийдвэрлэх ажлыг Muse-гийн туслалцаатай хийсэн.</string>
+    <string name="trash_move_failed">Хогийн сав руу зөөж чадсангүй, ямар ч файл устгагдаагүй</string>
+    <!-- UNCERTAIN_MN：“UI引擎”直译，需母语者复核 -->
+    <string name="ui_engine">UI хөдөлгүүр</string>
+    <string name="ui_engine_desc_expressive">Илүү бөөрөнхий, илүү тод хэлбэр</string>
+    <string name="ui_engine_desc_md3">Өгөгдмөл загвар, одоогийнх</string>
+    <string name="ui_engine_desc_miuix">Xiaomi MIUI загвар</string>
+    <string name="ui_engine_switch_msg">Солисны дараа аппын интерфэйс бүхэлдээ “%1$s” болж өөрчлөгдөж, нэн даруй дахин ачаалагдана.</string>
+    <string name="ui_engine_switch_title">UI хөдөлгүүр солих</string>
+    <string name="unhidden_done">Нуусныг арилгалаа</string>
+    <!-- UNCERTAIN_MN：“Pin”译法待核，需母语者复核 -->
+    <string name="unpin_folder">Бэхлэлтийг арилгах</string>
+    <!-- UNCERTAIN_MN：“Pin”译法待核，需母语者复核 -->
+    <string name="unpinned">Бэхлэлт арилгагдлаа</string>
+    <string name="wrong_password">Нууц үг буруу</string>
+    <string name="zip_failed">Шахаж чадсангүй</string>
+    <!-- Theme settings (v1.9.7.4) --><!-- UNCERTAIN_MN: “хэв маяг” for 风格 is my choice, needs native check --><!-- UNCERTAIN_MN: “Бүрэн шинэ” for 全新 and “дизайн” loanword are my choices, needs native check --><!-- UNCERTAIN_MN: “Палитр” is a Russian loanword, native term uncertain -->
+    <string name="palette_color_group_base">Үндсэн өнгө</string>
+    <string name="palette_color_group_light">Цайвар өнгө</string>
+    <string name="palette_color_group_dark">Хар өнгө</string>
+    <string name="reset_defaults">Анхны тохиргоог сэргээх</string>
+    <!-- UNCERTAIN_MN: "захиалгат сан" for custom storages is my choice, needs native check -->
+    <string name="reset_defaults_msg">Энэ нь хэл, сэдвийн горим, динамик өнгө, аппын өнгө, үсгийн өнгө, UI хөдөлгүүр, эхлэх хөдөлгөөнт дүрс, эрэмбэлэх, хос цонх, нууц файлуудыг харуулах тохиргоог анхны байдалд нь оруулна. Дуртай зүйлс, бэхлэгдсэн хавтас, захиалгат сан, хогийн саванд нөлөөлөхгүй. Одоо сэргээх үү?</string>
+    <string name="follow_system_language">Системийг дагах</string>
 </resources>

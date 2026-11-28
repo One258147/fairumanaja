@@ -10,6 +10,66 @@
     <string name="sort_date">དུས་ཚོད་ཀྱིས་</string>
     <string name="sort_size">ཚད་ཀྱིས་</string>
     <string name="sort_type">རིགས་ཀྱིས་</string>
+    <string name="sort_by_type">རིགས་ཀྱིས་</string>
+    <!-- UNCERTAIN_BO：新词直译，需母语者复核 -->
+    <string name="sort_reverse">གོ་རིམ་བཟློག་པ་</string>
+    <!-- UNCERTAIN_BO：新词直译，需母语者复核 -->
+    <string name="sort_type_folders_only">ཡིག་སྒམ་ཁོ་ན་</string>
+    <!-- UNCERTAIN_BO：背景切换尽力翻译，需母语者复核 -->
+    <string name="viewer_background">རྒྱབ་ལྗོངས་བརྗེ་བ་</string>
+    <string name="viewer_bg_black">ནག་པོ་</string>
+    <string name="viewer_bg_white">དཀར་པོ་</string>
+    <string name="viewer_bg_gray">སྐྱ་བོ་</string>
+    <!-- UNCERTAIN_BO：横向翻页尽力翻译，需母语者复核 -->
+    <string name="viewer_view_horizontal">འཕྲེད་དུ་ཤོག་བུ་བརྗེ་བ་</string>
+    <!-- UNCERTAIN_BO：纵向排序尽力翻译，需母语者复核 -->
+    <string name="viewer_view_vertical">གཟུགས་ཀྱི་རེའུ་མིག་</string>
+    <string name="viewer_dimensions">ཚད་གཞི་</string>
+    <string name="viewer_format">རྣམ་པ་</string>
+    <!-- UNCERTAIN_BO：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_images">པར་</string>
+    <!-- UNCERTAIN_BO：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_videos">བརྙན་</string>
+    <!-- UNCERTAIN_BO：媒体页音频分类新词尽力翻译，需母语者复核 -->
+    <string name="media_audios">སྒྲ་</string>
+    <!-- UNCERTAIN_BO：跳转 / 创建HTML 新词尽力翻译，需母语者复核 -->
+    <string name="jump_title">འགྲོ་</string>
+    <string name="create_html">HTML བཟོ་</string>
+    <string name="jump_invalid_path">ལམ་འདི་མེད་པའམ་སྣོད་མིན་པ་རེད་</string>
+    <!-- UNCERTAIN_BO：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_gifs">འགུལ་པར་</string>
+    <!-- UNCERTAIN_BO：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_today">དེ་རིང་</string>
+    <!-- UNCERTAIN_BO：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_yesterday">ཁ་སང་</string>
+    <!-- UNCERTAIN_BO：抽屉合并新词尽力翻译，需母语者复核 -->
+    <string name="media_images_videos">པར་དང་བརྙན་</string>
+    <!-- UNCERTAIN_BO：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="play_video">བརྙན་འཁྲབ་</string>
+    <!-- UNCERTAIN_BO：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="view_image">པར་ལྟ་</string>
+    <!-- UNCERTAIN_BO：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="browse_archive">གཉིས་འགྱུར་ཡིག་ཆ་ལྟ་</string>
+    <!-- UNCERTAIN_BO：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_speed">མགྱོགས་ཚད་</string>
+    <!-- UNCERTAIN_BO：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_cannot_play">བརྙན་འདི་འཁྲབ་མི་ཐུབ་</string>
+    <!-- UNCERTAIN_BO：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="play_music">རོལ་དབྱངས་འཁྲབ་</string>
+    <!-- UNCERTAIN_BO：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="music_cannot_play">སྒྲ་འདི་འཁྲབ་མི་ཐུབ་</string>
+    <!-- UNCERTAIN_BO：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_play">འཁྲབ་</string>
+    <!-- UNCERTAIN_BO：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_pause">བར་མཚམས་བཞག་</string>
+    <!-- UNCERTAIN_BO：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_fill_screen">སྟོན་ཆས་ཁྱབ་ཚད་རྫོགས་པ་</string>
+    <!-- UNCERTAIN_BO：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_loop">ཡང་བསྐྱར་འཁྲབ་པ་</string>
+    <!-- UNCERTAIN_BO：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_landscape">འགྲམ་ཕྱོགས་འཁྲབ་ཚུལ་</string>
+    <!-- UNCERTAIN_BO：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_duration">དུས་ཡུན་</string>
     <string name="show_hidden">སྦས་པའི་ཡིག་ཆ་སྟོན་</string>
     <string name="copy">འདྲ་བཤུས་</string>
     <string name="cut">གཅོད་པ་</string>
@@ -108,6 +168,9 @@
     <string name="original_path">སྔོན་གྱི་ལམ་</string>
     <string name="confirm_empty_trash">གསོག་ཉར་སྟོང་བར་བྱེད་པ་ཡིན་ནམ་ འདི་ཕྱིར་བཅོས་ཐུབ་མི་འདུག་</string>
     <string name="language_settings">སྐད་ཡིག་གི་སྒྲིག་སྟངས་</string>
+    <!-- v1.9.7.8: UNCERTAIN_BO：分组名尽力翻译，需母语者复核 -->
+    <string name="settings_group_language_appearance">སྐད་རིག་དང་ཕྱི་རྣམ།</string>
+    <string name="settings_group_app">མཉེན་ཆས།</string>
     <string name="confirm">གཏན་འཁེལ་བྱེད་པ་</string>
     <string name="theme_mode">བརྗོད་གཞིའི་རྣམ་པ་</string>
     <string name="more_options">གདམ་ཀ་གཞན་</string>
@@ -154,7 +217,7 @@
     <string name="prev_position">གནས་སྔ་མ།</string>
     <string name="next_position">གནས་རྗེས་མ།</string>
     <string name="go_to_line">ཚིག་ཕྲེང་དུ་འགྲོ།</string>
-    <string name="go_to_line_hint">ཚིག་ཕྲེང་གི་ཨང་གྲངས་འཇུག་པ།</string>
+    <string name="go_to_line_hint">ཚིག་ཕྲེང་གི་ཨང་གྲངས་འཇུག་པ</string>
     <string name="word_wrap">རང་འགུལ་གྱིས་ཚིག་ཕྲེང་གཅོད་པ།</string>
     <string name="read_only">ཀློག་ཙམ།</string>
     <string name="smooth_mode">འཇམ་པོའི་རྣམ་པ།</string>
@@ -165,7 +228,7 @@
     <string name="unsaved_title">མ་གསོག་པའི་བསྒྱུར་བ།</string>
     <string name="unsaved_message">ད་ལྟའི་ཡིག་ཆ་ལ་མ་གསོག་པའི་བསྒྱུར་བ་ཡོད། གསོག་གམ།</string>
     <string name="dont_save">མི་གསོག་པ།</string>
-    <string name="search_keyword_hint">གནད་ཚིག་འཇུག་པ།</string>
+    <string name="search_keyword_hint">གནད་ཚིག་འཇུག་པ</string>
     <string name="search_match_count">%1$d / %2$d</string>
     <string name="no_match">མཐུན་པ་མེད།</string>
     <string name="syntax_java">Java</string>
@@ -177,4 +240,144 @@
     <string name="syntax_c">C/C++</string>
     <string name="deselect_all">གདམ་ཁ་ཕྱིར་འཐེན་པ།</string>
     <string name="unknown">མི་ཤེས་པ།</string>
+    <string name="about_intro_title">མཉེན་ཆས་ངོ་སྤྲོད་</string>
+    <!-- UNCERTAIN_BO：“已在该文件夹”为状态提示，译法待核，需母语者复核 -->
+    <string name="already_here">ཡིག་སྒམ་འདིར་ཡོད་ཟིན་</string>
+    <string name="app_color">མཉེན་ཆས་ཀྱི་ཚོན་མདོག་</string>
+    <!-- UNCERTAIN_BO：新词“动态颜色”直译，句式待核，需母语者复核 -->
+    <string name="app_color_disabled_hint">དེའི་བྱེད་ནུས་བེད་སྤྱོད་བྱེད་ན་ སྔོན་ལ་གཡོ་འགུལ་ཚོན་མདོག་མེད་པར་བྱོས་</string>
+    <string name="app_color_hint">མཉེན་ཆས་ཀྱི་བརྗོད་གཞིའི་ཚོན་མདོག་གདམ་ག་ ངོས་འཛིན་གྱི་གཙོ་བོའི་ཚོན་མདོག་དེ་དང་མཉམ་དུ་འགྱུར་བ་</string>
+    <!-- UNCERTAIN_BO：“外观”译法待核，需母语者复核 -->
+    <string name="appearance">ཕྱི་ཚུལ་</string>
+    <string name="bookmark_added">དགའ་ཕྱོགས་སུ་ཁ་སྣོན་བྱས་ཟིན་</string>
+    <string name="bookmark_removed">དགའ་ཕྱོགས་ནས་ཕྱིར་འཐེན་བྱས་ཟིན་</string>
+    <string name="bookmarks_title">དགའ་ཕྱོགས་</string>
+    <!-- UNCERTAIN_BO：“剪贴板”译法待核，需母语者复核 -->
+    <string name="clipboard_empty">བཤུས་སྒམ་སྟོང་པ་ཡིན་པའམ་ ཡི་གེ་མིན་པ་</string>
+    <string name="compress_item">བསྡུ་བ་</string>
+    <string name="copy_path">ལམ་འདྲ་བཤུས་</string>
+    <string name="copy_to_other">འདྲ་བཤུས་ -&gt;</string>
+    <!-- UNCERTAIN_BO：“快捷方式”译法待核，需母语者复核 -->
+    <string name="create_shortcut">མཐུད་ལམ་གསར་འཛུགས་</string>
+    <!-- UNCERTAIN_BO：“解密”译法待核，需母语者复核 -->
+    <string name="decrypt_failed">གསང་བ་ཁ་ཕྱེ་བར་མ་ཐུབ་</string>
+    <!-- UNCERTAIN_BO：“解密”译法待核，需母语者复核 -->
+    <string name="decrypt_file">ཡིག་ཆའི་གསང་བ་ཁ་ཕྱེ་</string>
+    <!-- UNCERTAIN_BO：“解密”译法待核，需母语者复核 -->
+    <string name="decrypted">གསང་བ་ཁ་ཕྱེ་ཟིན་</string>
+    <string name="delete_permanent_msg">ཡིག་ཆ་ %1$s རྩད་ནས་བསུབ་བ་ཡིན་ནམ་?</string>
+    <string name="delete_permanent_multi_msg">%1$d དངོས་པོ་རྩད་ནས་བསུབ་བ་ཡིན་ནམ་?</string>
+    <string name="delete_to_trash_msg">ཡིག་ཆ་ %1$s གསོག་ཉར་ལ་སྤོ་བ་ཡིན་ནམ་?</string>
+    <string name="delete_to_trash_multi_msg">%1$d དངོས་པོ་གསོག་ཉར་ལ་སྤོ་བ་ཡིན་ནམ་?</string>
+    <!-- UNCERTAIN_BO：“免责声明”译法待核，需母语者复核 -->
+    <string name="disclaimer">ལས་འགན་མེད་པའི་གསལ་བཤད་</string>
+    <!-- UNCERTAIN_BO：新词直译，需母语者复核 -->
+    <string name="dynamic_color">གཡོ་འགུལ་ཚོན་མདོག་</string>
+    <string name="dynamic_color_confirm_msg">གཡོ་འགུལ་ཚོན་མདོག་ཁ་ཕྱེ་ན་ མཉེན་ཆས་ཀྱི་ཚོན་མདོག་མ་ལག་གི་ལྡེབས་རིས་ཀྱི་ཚོན་མདོག་དང་མཉམ་དུ་འགྱུར་བ་ཡིན་ གཡོ་འགུལ་ཚོན་མདོག་ཁ་ཕྱེ་བ་ཡིན་ནམ་?</string>
+    <string name="dynamic_color_confirm_title">གཡོ་འགུལ་ཚོན་མདོག་</string>
+    <string name="dynamic_color_hint">ཁ་ཕྱེ་ན་ མཉེན་ཆས་ཀྱི་ཚོན་མདོག་མ་ལག་གི་ལྡེབས་རིས་ཀྱི་ཚོན་མདོག་ལ་བརྟེན་ནས་འགྱུར་བ་</string>
+    <!-- UNCERTAIN_BO：句式待核，需母语者复核 -->
+    <string name="dynamic_color_on_note">གཡོ་འགུལ་ཚོན་མདོག་ཁ་ཕྱེ་བའི་སྐབས་སུ་ མཉེན་ཆས་ཀྱི་ཚོན་མདོག་ལས་མི་འགྲིག་</string>
+    <!-- UNCERTAIN_BO：“加密”译法待核，需母语者复核 -->
+    <string name="encrypt_failed">གསང་བར་བྱེད་པར་མ་ཐུབ་</string>
+    <!-- UNCERTAIN_BO：“加密”译法待核，需母语者复核 -->
+    <string name="encrypt_file">ཡིག་ཆ་གསང་བར་བྱེད་</string>
+    <!-- UNCERTAIN_BO：“加密”译法待核，需母语者复核 -->
+    <string name="encrypted">གསང་བར་བྱས་ཟིན་</string>
+    <string name="endangered_language_sub">ད་ལྟ་སྐད་ཡིག་ 5 ལ་རྒྱབ་སྐྱོར་བྱེད་ཀྱི་ཡོད་ རྗེས་སུ་ཁ་སྣོན་སྲིད་</string>
+    <string name="endangered_language_switch">ཉེན་ཁར་ལྷུང་བའི་སྐད་ཡིག་བརྗེ་བ་</string>
+    <string name="experimental_features">ཚོད་ལྟའི་བྱེད་ནུས་</string>
+    <string name="experimental_features_hint">འདིའི་བྱེད་ནུས་ཚོད་ལྟའི་དུས་སྐབས་སུ་ཡོད་ རྗེས་སུ་འགྱུར་སྲིད་</string>
+    <!-- UNCERTAIN_BO：长警告框，措辞待核，需母语者复核 -->
+    <string name="experimental_warning_msg">ཚོད་ལྟའི་བྱེད་ནུས་ད་དུང་ཚོད་ལྟའི་དུས་སྐབས་སུ་ཡོད་ དེ་དག་ཁ་ཕྱེ་ནས་བེད་སྤྱོད་བྱས་ན་ གཤམ་གྱི་གནད་དོན་འབྱུང་སྲིད་:\n\n• ངོས་འཛིན་ནོར་འཁྲུལ་ངོ་མཚུངས་སུ་སྟོན་པའམ་ མཉེན་ཆས་རང་ཉིད་ཁ་རྒྱག་སྲིད་;\n• བྱེད་ནུས་ཁ་ཤས་བེད་སྤྱོད་མི་ཐུབ་པའམ་ རྗེས་ཀྱི་པར་གཞིར་བསྒྱུར་བའམ་ བསུབ་སྲིད་;\n• UI འཕྲུལ་ཆས་བརྗེ་ན་ མཉེན་ཆས་ཀྱི་ངོས་འཛིན་ཡོངས་ཐད་ཀར་བསྐྱར་དུ་འཇུག་བྱེད་;\n• བྱེད་ནུས་འདི་དག་དུས་ནམ་ཡང་འགྱུར་སྲིད་ བརྟན་པོའི་བྱེད་ནུས་དང་མཐུན་པར་ངེས་གཏན་མེད་།</string>
+    <string name="experimental_warning_title">ཚོད་ལྟའི་བྱེད་ནུས་ཀྱི་ཉེན་བརྡ་</string>
+    <string name="file_count">ཡིག་ཆའི་གྲངས་</string>
+    <string name="folder_count">ཡིག་སྒམ་གྱི་གྲངས་</string>
+    <string name="font_color">ཡི་གེའི་ཚོན་མདོག་</string>
+    <string name="font_color_group_base">གཞི་རྩའི་ཚོན་མདོག་</string>
+    <string name="font_color_group_dark">ནག་པོའི་ཚོན་མདོག་</string>
+    <string name="font_color_group_light">དཀར་པོའི་ཚོན་མདོག་</string>
+    <string name="font_color_hint">མཉེན་ཆས་ནང་གི་ཡི་གེའི་ཚོན་མདོག་གདམ་ག་ ངོས་འཛིན་ཚང་མའི་ཡི་གེ་དེ་དང་མཉམ་དུ་འགྱུར་བ་</string>
+    <string name="hidden_done">སྦས་ཟིན་</string>
+    <string name="invalid_name">མིང་མི་འགྲིག་པ་</string>
+    <!-- UNCERTAIN_BO：新词直译，需母语者复核 -->
+    <string name="more_actions">བྱེད་སྤྱོད་གཞན་</string>
+    <string name="move_failed">སྤོ་བར་མ་ཐུབ་</string>
+    <string name="move_item">སྤོ་བ་</string>
+    <string name="move_not_supported">འདིའི་གསོག་ཁུལ་གྱིས་སྤོ་བར་རྒྱབ་སྐྱོར་མེད་</string>
+    <string name="move_to_other">སྤོ་ -&gt;</string>
+    <string name="move_to_trash">གསོག་ཉར་ལ་སྤོ་བ་</string>
+    <string name="moved">སྤོས་ཟིན་</string>
+    <string name="name_exists">མིང་གཅིག་པའི་ཡིག་ཆའམ་ཡིག་སྒམ་ཡོད་</string>
+    <string name="new_file_short">ཡིག་ཆ་</string>
+    <string name="new_folder_short">ཡིག་སྒམ་</string>
+    <string name="new_title">གསར་པ་</string>
+    <string name="oss_components">ཁུངས་སྒོ་ཕྱེ་བའི་ཆ་ཤས་</string>
+    <string name="other_pane_no_folder">སྒོ་གཞན་ལ་ཡིག་སྒམ་ཁ་ཕྱེ་མེད་</string>
+    <string name="password_confirm_hint">གསང་ཨང་ཡང་བསྐྱར་འཇུག་པ་</string>
+    <string name="password_hint">གསང་ཨང་འཇུག་པ་</string>
+    <string name="password_mismatch">གསང་ཨང་གཉིས་མི་མཐུན་པ་</string>
+    <string name="path_copied">ལམ་འདྲ་བཤུས་བྱས་ཟིན་</string>
+    <!-- UNCERTAIN_BO：“Pin”译法待核，需母语者复核 -->
+    <!-- UNCERTAIN_BO：顶置新译法，需母语者复核 -->
+    <string name="pin_folder">ཡིག་སྒམ་སྟེང་དུ་གཏད་</string>
+    <!-- UNCERTAIN_BO：“Pin”译法待核，需母语者复核 -->
+    <string name="pinned">གཏད་ཟིན་</string>
+    <string name="restore_confirm_msg">ཡིག་ཆ་ %1$s སྔོན་གྱི་གནས་སུ་སླར་གསོ་བྱེད་པ་ཡིན་ནམ་?</string>
+    <string name="restore_confirm_multi_msg">%1$d དངོས་པོ་སྔོན་གྱི་གནས་སུ་སླར་གསོ་བྱེད་པ་ཡིན་ནམ་?</string>
+    <string name="share_zip">ZIP བགོ་བ་</string>
+    <string name="shortcut_action">བྱེད་སྤྱོད་</string>
+    <string name="shortcut_action_locate">གནས་སར་ངོས་འཛིན་བྱེད་</string>
+    <string name="shortcut_action_locate_click">གནས་སར་ངོས་འཛིན་བྱས་ནས་ཁ་ཕྱེ་</string>
+    <string name="shortcut_action_open_editor">ཡིག་ཆ་རྩོམ་སྒྲིག་གིས་ཁ་ཕྱེ་</string>
+    <string name="shortcut_action_preview_html">HTML ཡིག་ཆ་ལྟ་བ་</string>
+    <!-- UNCERTAIN_BO：“快捷方式”译法待核，需母语者复核 -->
+    <string name="shortcut_created">མཐུད་ལམ་གསར་འཛུགས་བྱས་ཟིན་</string>
+    <!-- UNCERTAIN_BO：“图标”译法待核，需母语者复核 -->
+    <string name="shortcut_icon">མཚན་རྟགས་</string>
+    <string name="shortcut_name">མིང་</string>
+    <!-- UNCERTAIN_BO：“桌面快捷方式”译法待核，需母语者复核 -->
+    <string name="shortcut_not_supported">འདིའི་སྒྲིག་ཆས་ཀྱིས་གཏོང་ཁུངས་ཀྱི་མཐུད་ལམ་ལ་རྒྱབ་སྐྱོར་མེད་</string>
+    <string name="shortcut_not_text">ཡི་གེའི་ཡིག་ཆ་མིན་པས་ མ་ལག་གི་ལྟ་བྱེད་ཀྱིས་ཁ་ཕྱེ་ཟིན་</string>
+    <string name="shortcut_target_missing">མཐུད་ལམ་གྱིས་སྟོན་པའི་ཡིག་ཆ་མེད་པའམ་ འཇུག་མི་ཐུབ་</string>
+    <string name="shortcut_type">རིགས་</string>
+    <!-- UNCERTAIN_BO：“桌面”译法待核，需母语者复核 -->
+    <string name="shortcut_type_desktop">གཏོང་ཁུངས་ཀྱི་མཐུད་ལམ་</string>
+    <string name="shortcut_type_desktop_desc">གཏོང་ཁུངས་སུ་རིས་མོ་རང་འཇོག་ཅིག་བཟོ་བ་ཡིན་</string>
+    <!-- UNCERTAIN_BO：“图标”译法待核，需母语者复核 -->
+    <string name="shortcut_type_icon">མཚན་རྟགས་ཀྱི་མཐུད་ལམ་</string>
+    <string name="shortcut_type_icon_desc">ཡིག་ཆའི་རིགས་ཀྱི་མཚན་རྟགས་གཏོང་ཁུངས་ཀྱི་མཚན་རྟགས་སུ་བེད་སྤྱོད་བྱེད་</string>
+    <!-- UNCERTAIN_BO：新词直译，需母语者复核 -->
+    <string name="splash_animation">ཁ་ཕྱེའི་འགུལ་རིས་</string>
+    <!-- UNCERTAIN_BO：“桌面”译法待核，需母语者复核 -->
+    <string name="splash_animation_hint">ཁ་ཕྱེ་ན་ གཏོང་ཁུངས་ནས་མཉེན་ཆས་ཁ་ཕྱེ་བའི་སྐབས་རེ་རེར་ སྔོན་ལ་ཁ་ཕྱེའི་འགུལ་རིས་འགྲོ་བ་</string>
+    <!-- UNCERTAIN_BO：长文，术语与措辞待核，需母语者复核 -->
+    <string name="thanks_mp_desc">མཉེན་ཆས་འདིས་ MP-Manager ལ་དཔེ་བླངས་པ་ནི་ སྒོ་གཉིས་མཉམ་དུ་ལྟ་བ་དང་སྒོ་གཉིས་ཀྱི་བར་གྱི་བྱེད་སྤྱོད་ (འདྲ་བཤུས་ སྤོ་བ་ སྒོ་གཞན་ལ་སྦྱར་བ་) ཡིན་; ཡིག་ཆའི་ཐོའི་ཕྲེང་གི་རྣམ་པ་ — རིས་མོ་ཆུང་ཆུང་ཟླུམ་པོ་ མིང་དང་ “དུས་ཚོད་ + ཚད་” ཞེས་པའི་འོག་མའི་མིང་; ཕྲེང་གི་མཇུག་གི་ ⋮ ཟུར་ཐོ་དང་དགུ་ཁ་ཡི་ “བྱེད་སྤྱོད་གཞན་” ཟུར་ཐོ་; གསོག་ཉར་གྱི་འགྲོ་ལམ་དང་སླར་གསོ་དང་རྩད་ནས་བསུབ་པའི་གཏན་འཁེལ་བྱེད་པའི་གསལ་བཤད་; གསར་འཛུགས་ཀྱི་གསལ་བཤད་; ཚིག་ཕྲེང་གི་ཨང་གྲངས་དང་མཚན་རྟགས་ཀྱི་ཕྲེང་ཡོད་པའི་ཡིག་ཆ་རྩོམ་སྒྲིག་; གསོག་ཉར་ དགའ་ཕྱོགས་ གཏད་པའི་ཡིག་སྒམ་; Shizuku དང་རྩ་བའི་དབང་ཆ་; བསྡུ་བ་དང་འགྲོལ་བ་ ཡིག་ཆ་གསང་བར་བྱེད་པ་དང་གསང་བ་ཁ་ཕྱེ་བ་; རང་ཉིད་ཀྱི་ས་གནས་གསོག་ཁུལ་། MP-Manager གིས་ GPL-3.0 ཆོག་མཁན་འོག་ཏུ་ GitHub (https://github.com/AbdurazaaqMohammed/MP-Manager) ལ་ཁུངས་སྒོ་ཕྱེ་བར་ཐུགས་རྗེ་ཆེ་ མཉེན་ཆས་འདིས་ཐད་ཀར་སློབ་སྦྱོང་བྱེད་ཐུབ་པའི་བཀོད་པའི་དཔེ་ཞིག་གནང་བར་; རྩོམ་པ་པོ་ AbdurazaaqMohammed ལ་རྒྱུན་དུ་ཉར་ཚགས་དང་གསར་བསྒྱུར་བྱེད་པར་ཐུགས་རྗེ་ཆེ་; མི་སུ་ཞིག་གིས་ཀྱང་ MT Manager གི་ཁུངས་སྒོ་ཕྱེ་བའི་ཚབ་ཚོགས་ལེགས་པོ་ཞིག་བཟོ་ཐུབ་པ་མངོན་པར་བྱས་པར་ཐུགས་རྗེ་ཆེ་ མཉེན་ཆས་འདིར་སློབ་སྦྱོང་གི་དམིགས་འབེན་གསལ་པོ་ཞིག་གནང་བར་།</string>
+    <string name="thanks_mt_desc">མཉེན་ཆས་འདིས་ MT Manager གྱི་སྒོ་གཉིས་ཀྱི་བཀོད་པ་ ཡིག་ཆའི་ཟུར་ཐོ་ དགུ་ཁ་ཡི་ “བྱེད་སྤྱོད་གཞན་” བསུབ་པ་དང་སླར་གསོའི་གསལ་བཤད་སོགས་ཀྱི་ངོས་འཛིན་བཀོད་པ་ལ་དཔེ་བླངས་པ་ཡིན་ བཀོད་པའི་དཔེ་དང་བསམ་བློའི་ལྕག་སྐུལ་གནང་བར་ MT Manager ལ་ཐུགས་རྗེ་ཆེ་།</string>
+    <string name="thanks_muse_desc">Muse ལ་འགོ་འཛུགས་ཀྱི་རོགས་རམ་དང་ལག་རྩལ་གྱི་རྒྱབ་སྐྱོར་གནང་བར་ཐུགས་རྗེ་ཆེ་ མཉེན་ཆས་འདིའི་ཚིག་གྲུབ་འབྲི་བ་ བྱེད་ནུས་ལག་བསྟར་ གནད་དོན་ཞིབ་དཔྱོད་བཅས་ Muse ཀྱི་རོགས་རམ་ལ་བརྟེན་ནས་ལེགས་གྲུབ་བྱུང་བ་ཡིན་།</string>
+    <string name="trash_move_failed">གསོག་ཉར་ལ་སྤོ་བར་མ་ཐུབ་ ཡིག་ཆ་གང་ཡང་བསུབ་མེད་</string>
+    <!-- UNCERTAIN_BO：“UI引擎”直译，需母语者复核 -->
+    <string name="ui_engine">UI འཕྲུལ་ཆས་</string>
+    <string name="ui_engine_desc_expressive">གྲུབ་གཟུགས་ཟླུམ་པོ་དང་ཚོན་མདོག་གསལ་པོ་</string>
+    <string name="ui_engine_desc_md3">གཞི་རྩའི་རྣམ་པ་ ད་ལྟའི་འདྲ་</string>
+    <string name="ui_engine_desc_miuix">Xiaomi MIUI རྣམ་པ་</string>
+    <string name="ui_engine_switch_msg">བརྗེ་ན་ མཉེན་ཆས་ཀྱི་ངོས་འཛིན་ཡོངས་ “%1$s” ལ་འགྱུར་བ་དང་ ཐད་ཀར་བསྐྱར་དུ་འཇུག་བྱེད་།</string>
+    <string name="ui_engine_switch_title">UI འཕྲུལ་ཆས་བརྗེ་བ་</string>
+    <string name="unhidden_done">སྦ་བ་ཕྱིར་འཐེན་བྱས་ཟིན་</string>
+    <!-- UNCERTAIN_BO：“Pin”译法待核，需母语者复核 -->
+    <string name="unpin_folder">གཏད་པ་ཕྱིར་འཐེན་</string>
+    <!-- UNCERTAIN_BO：“Pin”译法待核，需母语者复核 -->
+    <string name="unpinned">གཏད་པ་ཕྱིར་འཐེན་བྱས་ཟིན་</string>
+    <string name="wrong_password">གསང་ཨང་ནོར་འཁྲུལ་</string>
+    <string name="zip_failed">བསྡུ་བར་མ་ཐུབ་</string>
+    <!-- Theme settings (v1.9.7.4) --><!-- UNCERTAIN_BO：theme_mode 已用 བརྗོད་གཞིའི་རྣམ་པ་，style 另用 བཀོད་པ་ 以示区分，需母语者复核 --><!-- UNCERTAIN_BO：palette 在藏语里无约定译法，暂译“色彩的式样”，需母语者复核 --><!-- UNCERTAIN_BO：dialog 沿用 thanks_mt_desc 里的 གསལ་བཤད་，需母语者复核 -->
+
+    <string name="palette_color_group_base">གཞི་རྩའི་ཚོན་མདོག་</string>
+    <string name="palette_color_group_light">དཀར་པོའི་ཚོན་མདོག་</string>
+    <string name="palette_color_group_dark">ནག་པོའི་ཚོན་མདོག་</string>
+    <!-- UNCERTAIN_BO：“默认设置”译法待核，需母语者复核 -->
+    <string name="reset_defaults">སྔོན་གྱི་སྒྲིག་འགོད་ལ་སླར་གསོ་བྱེད་</string>
+    <!-- UNCERTAIN_BO：新编长句及“自定义储存”译法待核，需母语者复核 -->
+    <string name="reset_defaults_msg">སྐད་ཡིག་ བརྗོད་གཞིའི་རྣམ་པ་ གཡོ་འགུལ་ཚོན་མདོག་ མཉེན་ཆས་ཀྱི་ཚོན་མདོག་ ཡི་གེའི་ཚོན་མདོག་ UI འཕྲུལ་ཆས་ ཁ་ཕྱེའི་འགུལ་རིས་ གོ་རིམ་ སྒོ་གཉིས་ སྦས་པའི་ཡིག་ཆ་སྟོན་པ་རྣམས་སྔོན་གྱི་སྒྲིག་འགོད་ལ་སླར་གསོ་བྱེད་པ་ཡིན་། དགའ་ཕྱོགས་ གཏད་ཟིན་པའི་ཡིག་སྒམ་ རང་གིས་ཁ་སྣོན་བྱས་པའི་གསོག་ཁུལ་ གསོག་ཉར་རྣམས་ལ་ཤུགས་རྐྱེན་མེད་། ད་ལྟ་སླར་གསོ་བྱེད་པ་ཡིན་ནམ་?</string>
+    <string name="follow_system_language">མ་ལག་ལ་བརྟེན་</string>
 </resources>

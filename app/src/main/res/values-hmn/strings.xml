@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- v1.9.8：苗语（Hmoob）；尽力翻译，需母语者复核；6 篇长文未列出，回落中文。 -->
+<resources>
+    <string name="about">Txog</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="about_intro_title">Qhia Txog Lub App</string>
+    <!-- UNCERTAIN_HMN：意译浓缩，需母语者复核 -->
+    <string name="about_text">Fairumanējā yog ib lub app tswj ntaub ntawv qhib (open-source), tau txais kev tshoov siab los ntawm MT Manager. Nws txhawb Android, Linux thiab Windows (desktop tseem npaj), thiab qhib raws li MIT License.</string>
+    <string name="add">Ntxiv</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="add_local_storage">Ntxiv Chaw Cia Hauv Zos</string>
+    <!-- UNCERTAIN_HMN：Network 无苗语对应词，暂留英文，需母语者复核 -->
+    <string name="add_network_group">Ntxiv Pab Pawg Network</string>
+    <!-- UNCERTAIN_HMN：Network 无苗语对应词，暂留英文，需母语者复核 -->
+    <string name="add_network_storage">Ntxiv Chaw Cia Network</string>
+    <string name="already_here">Twb Nyob Hauv Nplaub Ntawv No Lawm</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="apk_package">Npe Pob</string>
+    <string name="app_color">Xim App</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="app_color_disabled_hint">Yog xav siv qhov no, thov kaw xim hloov tau ua ntej</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="app_color_hint">Xaiv xim ntawm lub app. Xim tseem ceeb ntawm lub app yuav hloov raws li nws</string>
+    <string name="app_name">Fairumanējā</string>
+    <!-- UNCERTAIN_HMN：Tsos 为“样子”意译，需母语者复核 -->
+    <string name="appearance">Tsos</string>
+    <string name="back">Rov Qab</string>
+    <string name="bookmark">Cim</string>
+    <string name="bookmark_added">Twb Cim Lawm</string>
+    <string name="bookmark_removed">Twb Tshem Cim Lawm</string>
+    <string name="bookmarks_empty">Tsis tau muaj cim — nias ntev rau ntawm nplaub ntawv thiaj cim tau</string>
+    <string name="bookmarks_title">Cov Cim</string>
+    <!-- UNCERTAIN_HMN：Tso Tseg 为“停止”意译，需母语者复核 -->
+    <string name="cancel">Tso Tseg</string>
+    <string name="cannot_access">Tsis Nkag Tau Rau Hauv Qhov Chaw No</string>
+    <string name="chinese_version_note">Cov Lus Hauv Qab No Yog Lus Suav</string>
+    <!-- UNCERTAIN_HMN：剪贴板无苗语对应词，意译，需母语者复核 -->
+    <string name="clipboard_empty">Daim Ntawv Lo Khoob lossis Tsis Yog Ntawv</string>
+    <string name="close_file">Kaw Ntaub Ntawv</string>
+    <!-- UNCERTAIN_HMN：Code 无苗语对应词，暂留英文，需母语者复核 -->
+    <string name="code_completion">Sau Code Tiav</string>
+    <!-- UNCERTAIN_HMN：Nyem 为“挤压”意译，需母语者复核 -->
+    <string name="compress">Nyem Ua ZIP</string>
+    <string name="compress_item">Nyem</string>
+    <string name="compressed">Twb Nyem Lawm</string>
+    <string name="confirm">Pom Zoo</string>
+    <string name="confirm_delete">Pom Zoo Rho Tawm</string>
+    <string name="confirm_empty_trash">Koj puas xav khoob thoob khib nyiab? Qhov no thim tsis tau.</string>
+    <string name="copied">Twb Luam Lawm</string>
+    <string name="copy">Luam</string>
+    <string name="copy_path">Luam Txoj Kev</string>
+    <string name="copy_to_other">Luam -&gt;</string>
+    <string name="create">Tsim</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="create_shortcut">Tsim Txoj Kev Luv</string>
+    <string name="created">Twb Tsim Lawm</string>
+    <string name="cut">Txiav</string>
+    <!-- UNCERTAIN_HMN：解密无现成词，用“打开隐藏”意译，需母语者复核 -->
+    <string name="decrypt_failed">Qhib Zais Tsis Tau</string>
+    <!-- UNCERTAIN_HMN：解密无现成词，用“打开隐藏”意译，需母语者复核 -->
+    <string name="decrypt_file">Qhib Ntaub Ntawv Zais</string>
+    <!-- UNCERTAIN_HMN：解密无现成词，用“打开隐藏”意译，需母语者复核 -->
+    <string name="decrypted">Twb Qhib Zais Lawm</string>
+    <string name="delete">Rho Tawm</string>
+    <string name="delete_direct_message">Koj puas xav rho tawm? Nws yuav raug rho tawm ncaj qha, tsis mus rau hauv thoob khib nyiab, thiab rov qab tsis tau.</string>
+    <string name="delete_failed">Rho Tawm Tsis Tau, Thov Sim Dua</string>
+    <string name="delete_message">Koj puas xav rho tawm cov uas xaiv lawm?</string>
+    <string name="delete_permanent_msg">Rho cov ntaub ntawv %1$s tawm mus ib txhis?</string>
+    <string name="delete_permanent_multi_msg">Rho %1$d yam tawm mus ib txhis?</string>
+    <string name="delete_permanently">Rho Tawm Mus Ib Txhis</string>
+    <string name="delete_to_trash_msg">Muab cov ntaub ntawv %1$s mus rau hauv thoob khib nyiab?</string>
+    <string name="delete_to_trash_multi_msg">Muab %1$d yam mus rau hauv thoob khib nyiab?</string>
+    <string name="deleted">Twb Rho Tawm Lawm</string>
+    <string name="deselect_all">Tsis Xaiv Ib Yam Li</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="disclaimer">Lus Ceeb Toom</string>
+    <string name="dont_save">Tsis Khaws</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="drawer_local">Hauv Zos</string>
+    <string name="drawer_tools">Cuab Yeej</string>
+    <string name="dual_pane">Ob Sab</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="dynamic_color">Xim Hloov Tau</string>
+    <!-- UNCERTAIN_HMN：wallpaper 暂留英文，意译，需母语者复核 -->
+    <string name="dynamic_color_confirm_msg">Yog qhib xim hloov tau, xim ntawm lub app yuav hloov raws li xim ntawm phab ntsa (wallpaper). Koj puas xav qhib xim hloov tau?</string>
+    <string name="dynamic_color_confirm_title">Xim Hloov Tau</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="dynamic_color_hint">Yog qhib, xim ntawm lub app yuav hloov raws li xim ntawm phab ntsa</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="dynamic_color_on_note">Thaum xim hloov tau qhib lawm, xim app tsis siv tau</string>
+    <string name="edit_text">Kho Ntawv</string>
+    <string name="editor_search">Nrhiav</string>
+    <string name="empty_trash">Khoob Thoob Khib Nyiab</string>
+    <!-- UNCERTAIN_HMN：加密无现成词，用“隐藏”意译，需母语者复核 -->
+    <string name="encrypt_failed">Zais Tsis Tau</string>
+    <!-- UNCERTAIN_HMN：加密无现成词，用“隐藏”意译，需母语者复核 -->
+    <string name="encrypt_file">Zais Ntaub Ntawv</string>
+    <!-- UNCERTAIN_HMN：加密无现成词，用“隐藏”意译，需母语者复核 -->
+    <string name="encrypted">Twb Zais Lawm</string>
+    <string name="endangered_language_sub">Tam sim no tsuas muaj 5 yam lus xwb, yav tom ntej yuav ntxiv</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="endangered_language_switch">Hloov Lus Uas Yuav Plam</string>
+    <string name="error">Yuam Kev</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="experimental_features">Cov Yam Sim</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="experimental_features_hint">Cov yam ntawm no tseem sim, yuav hloov tau</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="experimental_warning_msg">Cov yam sim tseem nyob rau theem sim. Siv lawv yuav ua rau:\n\n• Lub app yuav tshwm tsis raug, tsis sib haum, txawm ua rau lub app kaw;\n• Qee yam yuav siv tsis tau, lossis yuav raug hloov lossis tshem tawm rau yav tom ntej;\n• Hloov cav UI yuav rov pib lub app tam sim;\n• Cov yam no yuav hloov txhua lub sij hawm, tsis lees tias yuav zoo li yam ruaj khov.</string>
+    <string name="experimental_warning_title">Ceeb Toom Txog Cov Yam Sim</string>
+    <!-- UNCERTAIN_HMN：与删除同词，改用“从 ZIP 取出”区分，需母语者复核 -->
+    <string name="extract">Rho Tawm Hauv ZIP</string>
+    <!-- UNCERTAIN_HMN：与删除同词，改用“从 ZIP 取出”区分，需母语者复核 -->
+    <string name="extracted">Twb Rho Tawm Hauv ZIP Lawm</string>
+    <string name="file">Ntaub Ntawv</string>
+    <string name="file_count">Cov Ntaub Ntawv</string>
+    <string name="file_name_hint">Npe Ntaub Ntawv</string>
+    <string name="file_too_large">Cov ntaub ntawv loj dhau (tshaj 2 MB), qhib yuav qeeb. Qhib los?</string>
+    <!-- UNCERTAIN_HMN：Nplaub Ntawv 为“信封/文件夹”意译，需母语者复核 -->
+    <string name="folder">Nplaub Ntawv</string>
+    <string name="folder_count">Cov Nplaub Ntawv</string>
+    <string name="folder_name_hint">Npe Nplaub Ntawv</string>
+    <string name="follow_system_language">Raws Li Lub Tshuab</string>
+    <string name="follow_system_theme">Raws Li Qauv Ntawm Lub Tshuab</string>
+    <string name="font_color">Xim Ntawv</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="font_color_group_base">Cov Xim Pib</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="font_color_group_dark">Cov Xim Tsaus</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="font_color_group_light">Cov Xim Ci</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="font_color_hint">Xaiv xim ntawm cov ntawv hauv lub app. Cov ntawv ntawm txhua qhov chaw yuav hloov raws li nws</string>
+    <string name="font_size">Qhov Loj Ntawv</string>
+    <string name="forward">Mus Tom Ntej</string>
+    <string name="free_space">Dawb</string>
+    <string name="go_to_line">Mus Rau Kab</string>
+    <string name="go_to_line_hint">Sau Tus Lej Kab</string>
+    <string name="go_up">Mus Saum</string>
+    <string name="grant_access">Muab Kev Tso Cai</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="grid">Saib Ua Daim Phiaj</string>
+    <string name="hidden_done">Twb Zais Lawm</string>
+    <string name="hidden_storages">Cov Chaw Cia Zais</string>
+    <string name="hide">Zais</string>
+    <string name="invalid_name">Npe Tsis Raug</string>
+    <string name="items_count">%1$d Yam</string>
+    <string name="language">Lus</string>
+    <string name="language_settings">Teeb Tsa Lus</string>
+    <string name="left_pane">Sab Laj</string>
+    <string name="line_numbers">Lej Kab</string>
+    <string name="list_view">Saib Ua Npe</string>
+    <string name="manage_tool_groups">Tswj Pab Pawg Cuab Yeej</string>
+    <string name="modified">Hloov</string>
+    <string name="more_actions">Lwm Yam Ua</string>
+    <string name="more_options">Lwm Yam Xaiv</string>
+    <string name="move_down">Txav Nqis</string>
+    <string name="move_failed">Txav Tsis Tau</string>
+    <string name="move_item">Txav</string>
+    <string name="move_not_supported">Chaw Cia No Txhawb Tsis Tau Kev Txav</string>
+    <string name="move_to_other">Txav -&gt;</string>
+    <string name="move_to_trash">Muab Mus Rau Hauv Thoob Khib Nyiab</string>
+    <string name="move_up">Txav Nce</string>
+    <string name="moved">Twb Txav Lawm</string>
+    <string name="moved_to_trash">Twb Muab Mus Rau Hauv Thoob Khib Nyiab Lawm</string>
+    <string name="name">Npe</string>
+    <string name="name_exists">Twb Muaj Ib Yam Npe Zoo Li No Lawm</string>
+    <string name="nav_bookmarks">Cov Cim</string>
+    <string name="nav_files">Cov Ntaub Ntawv</string>
+    <string name="nav_recent">Tsis Ntev Los No</string>
+    <string name="nav_tools">Cuab Yeej</string>
+    <string name="new_file">Ntaub Ntawv Tshiab</string>
+    <string name="new_file_short">Ntaub Ntawv</string>
+    <string name="new_folder">Nplaub Ntawv Tshiab</string>
+    <string name="new_folder_short">Nplaub Ntawv</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="new_text_file">Ntawv Tshiab</string>
+    <string name="new_title">Tshiab</string>
+    <string name="next_position">Qhov Chaw Tom Ntej</string>
+    <string name="no_files">Ntawm No Khoob</string>
+    <string name="no_match">Tsis Muaj Qhov Sib Phim</string>
+    <string name="not_supported">Tsis Txhawb</string>
+    <string name="ok">Yog</string>
+    <string name="open">Qhib</string>
+    <string name="open_source_license">Daim Ntawv Tso Cai Qhib</string>
+    <string name="open_with">Qhib Nrog</string>
+    <string name="original_path">Txoj Kev Qub</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="oss_components">Cov Yam Qhib</string>
+    <string name="other_pane_no_folder">Lwm Sab Tsis Muaj Nplaub Ntawv Qhib</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="palette_color_group_base">Cov Xim Pib</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="palette_color_group_dark">Cov Xim Tsaus</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="palette_color_group_light">Cov Xim Ci</string>
+    <string name="pane_stats">Nplaub Ntawv: %1$d  Ntaub Ntawv: %2$d  Chaw Cia: %3$s/%4$s</string>
+    <string name="password_confirm_hint">Sau Lo Lus Zais Dua</string>
+    <string name="password_hint">Sau Lo Lus Zais</string>
+    <string name="password_mismatch">Ob Lo Lus Zais Tsis Sib Haum</string>
+    <!-- UNCERTAIN_HMN：Lo 为“粘贴”意译，需母语者复核 -->
+    <string name="paste">Lo</string>
+    <string name="paste_to_other_pane">Lo Rau Lwm Sab</string>
+    <string name="pasted">Twb Lo Lawm</string>
+    <string name="path">Txoj Kev</string>
+    <string name="path_copied">Twb Luam Txoj Kev Lawm</string>
+    <string name="permanently_deleted">Twb Rho Tawm Mus Ib Txhis Lawm</string>
+    <string name="permission_needed">Yuav tsum muaj kev tso cai saib txhua cov ntaub ntawv thiaj tswj tau cov ntaub ntawv</string>
+    <!-- UNCERTAIN_HMN：置顶无现成词，用“放上面”意译，需母语者复核 -->
+    <string name="pin_folder">Tso Nplaub Ntawv Rau Saum</string>
+    <string name="pinned">Twb Tso Rau Saum Lawm</string>
+    <string name="prev_position">Qhov Chaw Dhau Los</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="privacy_policy">Txoj Cai Tiv Thaiv Tus Kheej</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="properties">Cov Ntsiab Lus</string>
+    <string name="read_only">Nyeem Xwb</string>
+    <string name="recent_empty">Tsis Tau Muaj Ntaub Ntawv Qhib Tsis Ntev Los No</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="redo">Ua Dua</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="refresh">Rov Kho Dua</string>
+    <string name="rename">Hloov Npe</string>
+    <string name="rename_hint">Npe Tshiab</string>
+    <string name="renamed">Twb Hloov Npe Lawm</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="reset_defaults">Rov Qab Mus Rau Qhov Pib</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="reset_defaults_msg">Qhov no yuav rov qab lus, qauv, xim hloov tau, xim app, xim ntawv, cav UI, duab pib, kev txheeb, ob sab, thiab kev qhia cov ntaub ntawv zais mus rau qhov pib. Cov cim, cov nplaub ntawv tso rau saum, cov chaw cia tshwj xeeb, thiab thoob khib nyiab tsis raug hloov. Rov qab tam sim no?</string>
+    <string name="restore">Rov Qab</string>
+    <string name="restore_confirm_msg">Rov qab cov ntaub ntawv %1$s mus rau nws qhov chaw qub?</string>
+    <string name="restore_confirm_multi_msg">Rov qab %1$d yam mus rau lawv qhov chaw qub?</string>
+    <string name="restore_failed">Rov Qab Tsis Tau</string>
+    <string name="restored">Twb Rov Qab Lawm</string>
+    <string name="right_pane">Sab Xis</string>
+    <!-- UNCERTAIN_HMN：根目录无现成词，意译，需母语者复核 -->
+    <string name="root_browse_only">Qhov Chaw Paus Saib Tau Xwb</string>
+    <!-- UNCERTAIN_HMN：根目录无现成词，意译，需母语者复核 -->
+    <string name="root_directory">Qhov Chaw Paus</string>
+    <string name="saf_browse_only">Chaw Cia No Saib Tau Xwb</string>
+    <string name="save">Khaws Cia</string>
+    <string name="save_as">Khaws Ua</string>
+    <string name="save_failed">Khaws Tsis Tau</string>
+    <string name="saved">Twb Khaws Lawm</string>
+    <string name="search_hint">Nrhiav Ntaub Ntawv…</string>
+    <string name="search_keyword_hint">Sau Lo Lus Nrhiav</string>
+    <string name="search_match_count">%1$d / %2$d</string>
+    <string name="select_all">Xaiv Tag Nrho</string>
+    <string name="selected_count">Xaiv Lawm %1$d</string>
+    <string name="settings">Chaw Teeb Tsa</string>
+    <string name="settings_group_app">App</string>
+    <string name="settings_group_language_appearance">Lus Thiab Tsos</string>
+    <string name="share">Qhia</string>
+    <string name="share_zip">Qhia ZIP</string>
+    <string name="shizuku_denied">Tsis Tau Txais Kev Tso Cai Ntawm Shizuku, Nkag Tsis Tau Rau Hauv Qhov Chaw Paus</string>
+    <!-- UNCERTAIN_HMN：下载无现成词，用“拉取”意译，需母语者复核 -->
+    <string name="shizuku_download">Rub Shizuku</string>
+    <string name="shizuku_failed">Nyeem Qhov Chaw Paus Tsis Tau</string>
+    <string name="shizuku_failed_detail">Nyeem Qhov Chaw Paus Tsis Tau: %1$s</string>
+    <string name="shizuku_needed_msg">Nkag rau hauv qhov chaw paus yuav tsum muaj Shizuku. Thov nruab thiab qhib Shizuku ua ntej, mam li sim dua.</string>
+    <string name="shizuku_needed_title">Yuav Tsum Muaj Shizuku</string>
+    <string name="shizuku_request_msg">Thov tso cai rau qhov no rau hauv lub qhov rais Shizuku.</string>
+    <string name="shortcut_action">Yam Ua</string>
+    <string name="shortcut_action_locate">Nrhiav Qhov Chaw</string>
+    <string name="shortcut_action_locate_click">Nrhiav Qhov Chaw Thiab Qhib</string>
+    <string name="shortcut_action_open_editor">Qhib Nrog Tus Kho Ntawv</string>
+    <string name="shortcut_action_preview_html">Saib Ua Ntej Cov Ntaub Ntawv HTML</string>
+    <string name="shortcut_created">Twb Tsim Txoj Kev Luv Lawm</string>
+    <string name="shortcut_icon">Duab</string>
+    <string name="shortcut_name">Npe</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="shortcut_not_supported">Lub cuab yeej no txhawb tsis tau txoj kev luv hauv tsev</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="shortcut_not_text">Tsis yog ntaub ntawv ntawv, twb qhib nrog lub cuab yeej saib ntawm lub tshuab lawm</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="shortcut_target_missing">Cov ntaub ntawv uas txoj kev luv taw qhia tsis muaj lossis nkag tsis tau</string>
+    <string name="shortcut_type">Hom</string>
+    <!-- UNCERTAIN_HMN：桌面无现成词，用“家/主屏”意译，需母语者复核 -->
+    <string name="shortcut_type_desktop">Txoj Kev Luv Ntawm Lub Tsev</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="shortcut_type_desktop_desc">Hauv lub tsev yuav muaj ib daim duab cais</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="shortcut_type_icon">Txoj Kev Luv Duab</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="shortcut_type_icon_desc">Siv duab hom ntaub ntawv ua daim duab hauv tsev</string>
+    <string name="show_hidden">Qhia Cov Ntaub Ntawv Zais</string>
+    <string name="size">Qhov Loj</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="smooth_mode">Qauv Mos</string>
+    <string name="sort">Txheeb</string>
+    <string name="sort_date">Raws Li Hnub</string>
+    <string name="sort_name">Raws Li Npe</string>
+    <string name="sort_size">Raws Li Qhov Loj</string>
+    <string name="sort_type">Raws Li Hom</string>
+    <string name="sort_by_type">Raws Li Hom</string>
+    <!-- UNCERTAIN_HMN：新词直译，需母语者复核 -->
+    <string name="sort_reverse">Txheeb Rov Qab</string>
+    <!-- UNCERTAIN_HMN：新词直译，需母语者复核 -->
+    <string name="sort_type_folders_only">Tsuas Nplaub Ntawv</string>
+    <!-- UNCERTAIN_HMN：背景切换尽力翻译，需母语者复核 -->
+    <string name="viewer_background">Hloov Qab</string>
+    <string name="viewer_bg_black">Dub</string>
+    <string name="viewer_bg_white">Dawb</string>
+    <!-- UNCERTAIN_HMN：灰色未核实，需母语者复核 -->
+    <string name="viewer_bg_gray">Tshauv</string>
+    <!-- UNCERTAIN_HMN：横向翻页尽力翻译，需母语者复核 -->
+    <string name="viewer_view_horizontal">Nplooj Tav</string>
+    <!-- UNCERTAIN_HMN：纵向排序尽力翻译，需母语者复核 -->
+    <string name="viewer_view_vertical">Daim Npe Sawv</string>
+    <string name="viewer_dimensions">Qhov Loj</string>
+    <!-- UNCERTAIN_HMN：格式尽力翻译，需母语者复核 -->
+    <string name="viewer_format">Hom</string>
+    <!-- UNCERTAIN_HMN：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_images">Cov duab</string>
+    <!-- UNCERTAIN_HMN：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_videos">Cov video</string>
+    <!-- UNCERTAIN_HMN：媒体页音频分类新词尽力翻译，需母语者复核 -->
+    <string name="media_audios">Suab</string>
+    <!-- UNCERTAIN_HMN：跳转 / 创建HTML 新词尽力翻译，需母语者复核 -->
+    <string name="jump_title">Mus</string>
+    <string name="create_html">Tsim HTML</string>
+    <string name="jump_invalid_path">Txoj kev tsis muaj los sis tsis yog lub nplaub tshev</string>
+    <!-- UNCERTAIN_HMN：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_gifs">GIF</string>
+    <!-- UNCERTAIN_HMN：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_today">Hnub no</string>
+    <!-- UNCERTAIN_HMN：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_yesterday">Nag</string>
+    <!-- UNCERTAIN_HMN：抽屉合并新词尽力翻译，需母语者复核 -->
+    <string name="media_images_videos">Cov duab thiab cov video</string>
+    <!-- UNCERTAIN_HMN：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="play_video">Tso video</string>
+    <!-- UNCERTAIN_HMN：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="view_image">Saib daim duab</string>
+    <!-- UNCERTAIN_HMN：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="browse_archive">Tshawb cov ntaub ntawv</string>
+    <!-- UNCERTAIN_HMN：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_speed">Ceev</string>
+    <!-- UNCERTAIN_HMN：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_cannot_play">Tsis tuaj yeem tso video no</string>
+    <!-- UNCERTAIN_HMN：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="play_music">Tso suab paj nruag</string>
+    <!-- UNCERTAIN_HMN：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="music_cannot_play">Tsis tuaj yeem tso lub suab no</string>
+    <!-- UNCERTAIN_HMN：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_play">Tso</string>
+    <!-- UNCERTAIN_HMN：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_pause">Ncua</string>
+    <!-- UNCERTAIN_HMN：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_fill_screen">Sau lub vijtsam</string>
+    <!-- UNCERTAIN_HMN：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_loop">Rov qab</string>
+    <!-- UNCERTAIN_HMN：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_landscape">Hom kab</string>
+    <!-- UNCERTAIN_HMN：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_duration">Ntev</string>
+    <string name="special_thanks">Ua Tsaug Tshwj Xeeb</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="splash_animation">Duab Pib</string>
+    <!-- UNCERTAIN_HMN：home screen 暂留英文，意译，需母语者复核 -->
+    <string name="splash_animation_hint">Yog qhib, txhua zaus qhib lub app los ntawm lub tsev (home screen) yuav pom duab pib ua ntej</string>
+    <string name="storage_already_added">Chaw Cia No Twb Ntxiv Lawm</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="storage_internal">Chaw Cia Hauv</string>
+    <string name="storage_name_hint">Npe</string>
+    <string name="storage_not_supported">Qhov Chaw No Ntxiv Tsis Tau</string>
+    <string name="storage_path_hint">Txoj Kev, piv txwv li /storage/emulated/0/Download</string>
+    <string name="storage_path_invalid">Txoj Kev Tsis Muaj lossis Tsis Yog Nplaub Ntawv</string>
+    <string name="storage_usage">Chaw Cia Siv</string>
+    <string name="swap_panes">Hloov Ob Sab</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="syntax">Qauv Sau</string>
+    <!-- UNCERTAIN_HMN：自动无现成词，意译，需母语者复核 -->
+    <string name="syntax_auto">Tsis Siv Neeg (Raws Li Hom Ntaub Ntawv)</string>
+    <string name="syntax_c">C/C++</string>
+    <string name="syntax_java">Java</string>
+    <string name="syntax_json">JSON</string>
+    <string name="syntax_kotlin">Kotlin</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="syntax_plain">Ntawv Dawb</string>
+    <string name="syntax_python">Python</string>
+    <string name="syntax_shell">Shell</string>
+    <string name="syntax_xml">XML</string>
+    <string name="text_editor">Tus Kho Ntawv</string>
+    <!-- UNCERTAIN_HMN：意译浓缩，需母语者复核 -->
+    <string name="thanks_mp_desc">Lub app no tau txais kev tshoov siab los ntawm MP-Manager: ob sab saib ib sab thiab ua hauj lwm hla sab (luam, txav, lo rau lwm sab); cov kab ntaub ntawv — duab me me, npe thiab \'hnub + qhov loj\'; lub ⋮ zaub mov thiab \'Lwm Yam Ua\' cuaj daim; thoob khib nyiab nrog rov qab thiab rho tawm mus ib txhis; lub qhov rais tsim; tus kho ntawv nrog lej kab; thoob khib nyiab, cov cim thiab cov nplaub ntawv tso rau saum; Shizuku/root; nyem thiab rho tawm, zais thiab qhib zais; thiab cov chaw cia tshwj xeeb. Ua tsaug rau MP-Manager uas qhib raws li GPL-3.0 rau hauv GitHub (https://github.com/AbdurazaaqMohammed/MP-Manager), thiab ua tsaug rau nws tus sau AbdurazaaqMohammed.</string>
+    <!-- UNCERTAIN_HMN：意译浓缩，需母语者复核 -->
+    <string name="thanks_mt_desc">Lub app no tau txais kev tshoov siab los ntawm MT Manager: ob sab, zaub mov ntaub ntawv, \'Lwm Yam Ua\' cuaj daim, thiab lub qhov rais rho tawm thiab rov qab. Ua tsaug rau MT Manager uas muab kev tshoov siab thiab qauv.</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="thanks_muse_desc">Ua tsaug rau Muse uas pab tsim thiab txhawb kev tsim: cov code, cov yam thiab kev daws teeb meem ntawm lub app no tau ua nrog kev pab los ntawm Muse.</string>
+    <!-- UNCERTAIN_HMN：Qauv 为“样式”意译，需母语者复核 -->
+    <string name="theme">Qauv</string>
+    <string name="theme_dark">Tsaus</string>
+    <string name="theme_light">Ci</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="theme_mode">Qauv Tsos</string>
+    <string name="theme_system">Raws Li Lub Tshuab</string>
+    <string name="tools_title">Lub Thawv Cuab Yeej</string>
+    <string name="trash">Thoob Khib Nyiab</string>
+    <string name="trash_emptied">Thoob Khib Nyiab Twb Khoob Lawm</string>
+    <string name="trash_empty">Thoob Khib Nyiab Khoob</string>
+    <string name="trash_move_failed">Muab Mus Rau Hauv Thoob Khib Nyiab Tsis Tau, Tsis Muaj Ntaub Ntawv Raug Rho Tawm</string>
+    <!-- UNCERTAIN_HMN：UI 引擎无苗语对应词，UI 暂留英文，需母语者复核 -->
+    <string name="ui_engine">Cav UI</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="ui_engine_desc_expressive">Sib Hloov, Ci Dua</string>
+    <string name="ui_engine_desc_md3">Qauv qub, zoo li tam sim no</string>
+    <string name="ui_engine_desc_miuix">Qauv Xiaomi MIUI</string>
+    <!-- UNCERTAIN_HMN：UI 暂留英文，意译，需母语者复核 -->
+    <string name="ui_engine_switch_msg">Tom qab hloov, tag nrho lub app yuav hloov mus rau “%1$s” thiab rov pib tam sim.</string>
+    <!-- UNCERTAIN_HMN：UI 暂留英文，意译，需母语者复核 -->
+    <string name="ui_engine_switch_title">Hloov Cav UI</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="undo">Thim</string>
+    <string name="unhidden_done">Twb Tshem Zais Lawm</string>
+    <string name="unhide">Tshem Zais</string>
+    <string name="unknown">Tsis Paub</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="unpin_folder">Tshem Nplaub Ntawv Tawm Saum</string>
+    <string name="unpinned">Twb Tshem Tawm Saum Lawm</string>
+    <string name="unsaved_message">Cov ntaub ntawv no muaj kev hloov tsis tau khaws. Koj puas xav khaws?</string>
+    <string name="unsaved_title">Kev Hloov Tsis Tau Khaws</string>
+    <string name="used_space">Siv Lawm</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="user_agreement">Daim Ntawv Pom Zoo Siv</string>
+    <!-- UNCERTAIN_HMN：Qib 为“级别”意译，需母语者复核 -->
+    <string name="version">Qib</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="version_number">Tus Lej Qib</string>
+    <!-- UNCERTAIN_HMN：意译，需母语者复核 -->
+    <string name="word_wrap">Qhwv Lo Lus</string>
+    <string name="wrong_password">Lo Lus Zais Tsis Raug</string>
+    <string name="zip_failed">Nyem Tsis Tau</string>
+</resources>

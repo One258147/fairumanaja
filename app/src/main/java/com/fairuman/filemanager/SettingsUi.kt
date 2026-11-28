@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.material3.AlertDialog
@@ -42,7 +43,13 @@ import top.yukonga.miuix.kmp.theme.MiuixTheme
 // 大号粗黑标题、灰色小字分区标签、白色大圆角卡片、粗黑行标题、灰色副标题、
 // 蓝色 iOS 式开关、浅灰页面背景）；MD3 / M3 Expressive 用下面的默认实现。
 
-/** 顶栏：MD3 是主色底 + 白字标题；Miuix 是浅灰底 + 大号粗黑标题（参考图）。 */
+/** 当前引擎是不是 M3 Expressive（v1.9.7.4：共享组件按引擎放大/加粗/变圆）。 */
+@Composable
+fun isExpressiveEngine(): Boolean =
+    LocalFairuTheme.current.engine == MainActivity.UI_ENGINE_EXPRESSIVE
+
+/** 顶栏：MD3 是主色底 + 白字标题；Miuix 是浅灰底 + 大号粗黑标题（参考图）。
+ * M3 Expressive：主色底 + 更大更粗的标题（24sp）。 */
 @Composable
 fun FairuPageTopBar(title: String, onBack: () -> Unit, actions: @Composable () -> Unit = {}) {
     if (isMiuixEngine()) {
@@ -88,7 +95,7 @@ fun FairuPageTopBar(title: String, onBack: () -> Unit, actions: @Composable () -
         Text(
             title,
             color = MaterialTheme.colorScheme.onPrimary,
-            fontSize = 20.sp,
+            fontSize = if (isExpressiveEngine()) 24.sp else 20.sp,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.weight(1f),
             maxLines = 1,
@@ -98,7 +105,8 @@ fun FairuPageTopBar(title: String, onBack: () -> Unit, actions: @Composable () -
     }
 }
 
-/** 白色大圆角卡片（设置/外观/实验性功能页的分组容器）。 */
+/** 白色大圆角卡片（设置/外观/实验性功能页的分组容器）。
+ * M3 Expressive：圆角 28dp（MD3 是 16dp），一眼能看出区别。 */
 @Composable
 fun FairuCard(content: @Composable () -> Unit) {
     if (isMiuixEngine()) {
@@ -125,7 +133,7 @@ fun FairuCard(content: @Composable () -> Unit) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp, vertical = 8.dp)
-            .clip(RoundedCornerShape(16.dp))
+            .clip(RoundedCornerShape(if (isExpressiveEngine()) 28.dp else 16.dp))
             .background(MaterialTheme.colorScheme.surface)
             .padding(vertical = 4.dp)
     ) {
@@ -143,6 +151,8 @@ fun FairuRow(
     hint: String? = null,
     showChevron: Boolean = true,
     iconTint: Color? = null,
+    // v1.9.7.8：图标放浅色圆圈里（设置页参考图样式）；默认不开，其他页不受影响。
+    iconCircle: Boolean = false,
     trailing: (@Composable () -> Unit)? = null,
     onClick: (() -> Unit)? = null
 ) {
@@ -163,15 +173,34 @@ fun FairuRow(
             .padding(horizontal = 16.dp, vertical = 12.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Icon(
-            painterResource(iconRes),
-            contentDescription = null,
-            tint = iconTint ?: MaterialTheme.colorScheme.primary,
-            modifier = Modifier.size(24.dp)
-        )
+        // v1.9.7.8：设置页图标放浅色圆圈里（圆圈色跟应用配色走，不照抄参考图的绿）。
+        val iconTintColor = iconTint ?: MaterialTheme.colorScheme.primary
+        if (iconCircle) {
+            Box(
+                modifier = Modifier
+                    .size(40.dp)
+                    .clip(CircleShape)
+                    .background(iconTintColor.copy(alpha = 0.12f)),
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(
+                    painterResource(iconRes),
+                    contentDescription = null,
+                    tint = iconTintColor,
+                    modifier = Modifier.size(24.dp)
+                )
+            }
+        } else {
+            Icon(
+                painterResource(iconRes),
+                contentDescription = null,
+                tint = iconTintColor,
+                modifier = Modifier.size(24.dp)
+            )
+        }
         Spacer(Modifier.width(16.dp))
         Column(Modifier.weight(1f)) {
-            Text(title, fontSize = 16.sp, fontWeight = FontWeight.Bold, color = titleColor)
+            Text(title, fontSize = if (isExpressiveEngine()) 18.sp else 16.sp, fontWeight = FontWeight.Bold, color = titleColor)
             if (sub != null) {
                 Spacer(Modifier.height(2.dp))
                 Text(sub, fontSize = 13.sp, color = subColor)
@@ -194,7 +223,9 @@ fun FairuRow(
     }
 }
 
-/** 开关行（整行和开关都能点，点一下翻转偏好；状态永远以偏好为准）。 */
+/** 开关行（整行和开关都能点，点一下翻转偏好；状态永远以偏好为准）。
+ * enabled=false 时整行不可点、开关变灰（主题设置页 Miuix 下 M3 Expressive
+ * 开关用）；M3 Expressive 时开关 thumb 里带 ✓/✗（参考图的大开关造型）。 */
 @Composable
 fun FairuSwitchRow(
     iconRes: Int,
@@ -203,6 +234,9 @@ fun FairuSwitchRow(
     // v1.9.7.2：标准解释小字（显示在 sub 下面一行）。
     hint: String? = null,
     checked: Boolean,
+    enabled: Boolean = true,
+    // v1.9.7.8：图标放浅色圆圈里（设置页参考图样式）；默认不开。
+    iconCircle: Boolean = false,
     onToggle: () -> Unit
 ) {
     if (isMiuixEngine()) {
@@ -212,14 +246,15 @@ fun FairuSwitchRow(
             sub = sub,
             hint = hint,
             showChevron = false,
+            iconCircle = iconCircle,
             trailing = {
                 top.yukonga.miuix.kmp.basic.Switch(
                     checked = checked,
-                    onCheckedChange = { onToggle() },
+                    onCheckedChange = { if (enabled) onToggle() },
                     colors = SwitchDefaults.switchColors()
                 )
             },
-            onClick = onToggle
+            onClick = if (enabled) onToggle else null
         )
         return
     }
@@ -229,24 +264,35 @@ fun FairuSwitchRow(
         sub = sub,
         hint = hint,
         showChevron = false,
+        iconCircle = iconCircle,
         trailing = {
-            Switch(checked = checked, onCheckedChange = { onToggle() })
+            Switch(
+                checked = checked,
+                onCheckedChange = { if (enabled) onToggle() },
+                enabled = enabled,
+                // M3 Expressive：thumb 里带 ✓/✗（参考图）。
+                thumbContent = if (isExpressiveEngine()) {
+                    {
+                        Icon(
+                            painterResource(if (checked) R.drawable.ic_check else R.drawable.ic_close),
+                            contentDescription = null,
+                            tint = if (checked) MaterialTheme.colorScheme.onPrimary
+                            else MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier.size(16.dp)
+                        )
+                    }
+                } else null
+            )
         },
-        onClick = onToggle
+        onClick = if (enabled) onToggle else null
     )
 }
 
 /** 灰色小字分区标签（Miuix 用真 SmallTitle；MD3 下也是同一灰色小字）。
- * 玻璃开着时标签也给一整条不透明底——否则标签直接浮在半透明/全透明面板上，
- * 后面内容透出来压字（抽屉“工具”标签被文件列表压了一半就是这么来的）。
- * 跟抽屉头一个做法；玻璃关着时不变。 */
+ * color：传了就用该色（主题设置页的分区标签用主色，像参考图的绿色小字）。 */
 @Composable
-fun FairuSectionLabel(text: String) {
-    // 玻璃开着时标签也给一整条不透明底（同抽屉头做法），否则标签浮在半透明
-    // 面板上，后面内容透出来压字（抽屉“工具”标签被文件列表压了一半）。
-    val labelBg = if (LocalFairuTheme.current.glass) MaterialTheme.colorScheme.surface
-    else Color.Transparent
-    Box(Modifier.fillMaxWidth().background(labelBg)) {
+fun FairuSectionLabel(text: String, color: Color? = null) {
+    Box(Modifier.fillMaxWidth()) {
         if (isMiuixEngine()) {
             SmallTitle(text = text)
             return@Box
@@ -254,7 +300,7 @@ fun FairuSectionLabel(text: String) {
         Text(
             text,
             fontSize = 13.sp,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            color = color ?: MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
         )
     }
@@ -306,6 +352,7 @@ fun fairuPageBackground(): Color = if (isMiuixEngine()) {
 // Miuix 引擎时：对话框白色 20dp 大圆角 + 粗黑标题 + 深灰正文（参考图
 // 46200 的白色卡片造型；按钮仍是主色，跟应用配色/动态颜色走）；
 // MD3 / M3 Expressive 时直接用默认 AlertDialog，一字不改。
+// v1.9.7.5：多彩对话框已删——对话框一律用主题色，不再有中性色包裹。
 
 /** 对话框壳：参数与 AlertDialog 一致，直接替换调用处即可。 */
 @Composable

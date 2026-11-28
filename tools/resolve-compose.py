@@ -153,10 +153,7 @@ ROOTS = [
     ("androidx.navigationevent", "navigationevent-compose-android", "1.1.2"),
     ("com.materialkolor", "material-color-utilities-android", "5.0.1"),
     ("org.jetbrains.compose.material3", "material3-window-size-class-android", "1.12.0-alpha03"),
-    # HAZE (liquid glass, Compose) — replaces QWEA0 Liquid-Glass-Android
-    ("dev.chrisbanes.haze", "haze-android", "2.1.0"),
-    ("dev.chrisbanes.haze", "haze-utils-android", "2.1.0"),
-    ("dev.chrisbanes.haze", "haze-blur-android", "2.1.0"),
+    # HAZE removed in v1.9.7.5 (liquid glass deleted).
     # AppCompat (kept: BaseActivity stays AppCompatActivity so
     # AppCompatDelegate.setApplicationLocales keeps working)
     ("androidx.appcompat", "appcompat", "1.7.0"),

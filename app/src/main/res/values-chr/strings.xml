@@ -2,7 +2,11 @@
 <!-- v1.9.7 濒危多语言切换：尽力翻译，建议母语者复核；未列出的字符串回退到默认中文。 -->
 <resources>
     <string name="about">ᏧᏓᎴᏅᏓ</string>
+    <!-- UNCERTAIN_CHR：add 用“创建”ᎦᎵᎡᏘ 暂代，切罗基语“添加”未核实，需母语者复核 -->
+    <string name="add_local_storage">ᎦᎵᎡᏘ ᏧᏓᎴᏅᏓ ᎠᏓᏍᏓᏴᏗ</string>
     <string name="app_color">ᎤᏬᏪᎳᏅᎯ ᎠᏓᏅᏖᏍᎬ</string>
+    <!-- UNCERTAIN_CHR：外观解释为尽力翻译（仅用本文件已有词拼合），需母语者复核 -->
+    <string name="app_color_hint">ᎤᏬᏪᎳᏅᎯ ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ, ᎠᏓᏅᏖᏍᎬ ᎤᏬᏪᎳᏅᎯ ᎢᏤ</string>
     <string name="app_name">Fairumanējā</string>
     <string name="appearance">ᎤᏬᏪᎳᏅᎯ</string>
     <string name="bookmark">ᎠᏓᏅᏖᏍᎬ ᎪᏪᎵ</string>
@@ -31,14 +35,16 @@
     <string name="drawer_tools">ᎠᏓᏅᏖᏍᎬ</string>
     <string name="dual_pane">ᏔᎵ ᎠᏓᏍᏓᏴᏗ</string>
     <string name="dynamic_color">ᎠᏓᏅᏖᏍᎬ ᎤᏬᏪᎳᏅᎯ</string>
+    <!-- UNCERTAIN_CHR：外观解释为尽力翻译（仅用本文件已有词拼合），需母语者复核 -->
+    <string name="dynamic_color_hint">ᎠᏓᏅᏖᏍᎬ ᎤᏬᏪᎳᏅᎯ ᎢᏤ, ᎤᏬᏪᎳᏅᎯ ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ</string>
     <string name="empty_trash">ᎤᏍᏗ ᎠᏓᏍᏓᏴᏗ ᏗᎵᏘ</string>
     <string name="encrypt_file">ᎪᏪᎵ ᎠᏓᏅᏖᏍᎬ</string>
     <string name="endangered_language_switch">ᎦᏬᏂᎯᏍᏗ ᎠᏓᏅᏖᏍᎬ</string>
     <string name="error">ᎠᏎᏍᏗ</string>
     <string name="experimental_features">ᎠᏓᏅᏖᏍᎬ ᎤᏬᏪᎳᏅᎯ</string>
-    <string name="experimental_features_hint">ᎠᏓᏅᏖᏍᎬ ᎤᏬᏪᎳᏅᎯ ᎠᏓᏍᏓᏴᏗ ᎢᏤ.</string>
+    <string name="experimental_features_hint">ᎠᏓᏅᏖᏍᎬ ᎤᏬᏪᎳᏅᎯ ᎠᏓᏍᏓᏴᏗ ᎢᏤ</string>
     <!-- UNCERTAIN_CHR：警告框切罗基语翻译为尽力翻译（沿用本文件已有词），需母语者复核 -->
-    <string name="experimental_warning_msg">ᎠᏓᏅᏖᏍᎬ ᎤᏬᏪᎳᏅᎯ ᎠᏓᏍᏓᏴᏗ ᎢᏤ:\n\n• ᎤᏬᏪᎳᏅᎯ ᎠᏓᏍᏓᏴᏗ ᎥᏝ, ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ ᎥᏝ;\n• ᎤᏬᏪᎳᏅᎯ ᏂᎦᏛ ᎥᏝ, ᏫᏥᏂ ᎢᏤ ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ ᎥᏝ;\n• UI ᎠᏓᏅᏖᏍᎬ ᎢᏤ, ᎤᏬᏪᎳᏅᎯ ᏂᎦᏛ ᎢᏤ;\n• ᎠᎹ ᎤᎦᏔᏅᎯ ᎠᏓᏍᏓᏴᏗ ᎥᏝ;\n• ᎤᏬᏪᎳᏅᎯ ᏂᎦᏛ ᎢᏤ, ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ ᎥᏝ.</string>
+    <string name="experimental_warning_msg">ᎠᏓᏅᏖᏍᎬ ᎤᏬᏪᎳᏅᎯ ᎠᏓᏍᏓᏴᏗ ᎢᏤ:\n\n• ᎤᏬᏪᎳᏅᎯ ᎠᏓᏍᏓᏴᏗ ᎥᏝ, ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ ᎥᏝ;\n• ᎤᏬᏪᎳᏅᎯ ᏂᎦᏛ ᎥᏝ, ᏫᏥᏂ ᎢᏤ ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ ᎥᏝ;\n• UI ᎠᏓᏅᏖᏍᎬ ᎢᏤ, ᎤᏬᏪᎳᏅᎯ ᏂᎦᏛ ᎢᏤ;\n• ᎤᏬᏪᎳᏅᎯ ᏂᎦᏛ ᎢᏤ, ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ ᎥᏝ.</string>
     <string name="experimental_warning_title">ᎠᏓᏅᏖᏍᎬ ᎤᏬᏪᎳᏅᎯ ᏩᏂᏂ</string>
     <string name="extract">ᎡᏍᏘᎳᎩᏘ</string>
     <string name="extracted">ᎡᏍᏘᎳᎩᏘᎢ</string>
@@ -48,16 +54,16 @@
     <string name="font_color_group_base">ᎤᏬᏪᎳᏅᎯ</string>
     <string name="font_color_group_dark">ᏒᏅᏱ ᎤᏬᏪᎳᏅᎯ</string>
     <string name="font_color_group_light">ᎢᎦ ᎤᏬᏪᎳᏅᎯ</string>
+    <!-- UNCERTAIN_CHR：外观解释为尽力翻译（仅用本文件已有词拼合），需母语者复核 -->
+    <string name="font_color_hint">ᎪᏪᎵ ᎤᏬᏪᎳᏅᎯ ᎠᏓᏅᏖᏍᎬ; ᎪᏪᎵ ᏂᎦᏛ ᎤᏬᏪᎳᏅᎯ</string>
     <string name="free_space">ᏫᎵ</string>
     <string name="hidden_done">ᎠᏓᏅᏖᏍᎬᎢ</string>
     <string name="hide">ᎠᏓᏅᏖᏍᎬ</string>
     <string name="language">ᎦᏬᏂᎯᏍᏗ</string>
     <string name="language_settings">ᎦᏬᏂᎯᏍᏗ ᎠᏓᏅᏖᏍᎬ</string>
-    <string name="liquid_glass">ᎠᎹ ᎤᎦᏔᏅᎯ</string>
-    <string name="liquid_glass_hint">ᎠᏓᏍᏓᏴᏗ ᏂᎦᏛ, ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ.</string>
-    <string name="liquid_glass_mode_blur">ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ</string>
-    <string name="liquid_glass_mode_clear">ᏂᎦᏛ ᎤᏬᏪᎳᏅᎯ</string>
-    <string name="liquid_glass_mode_translucent">ᎤᏬᏪᎳᏅᎯ ᎠᏓᏅᏖᏍᎬ</string>
+    <!-- v1.9.7.8: UNCERTAIN_CHR：分组名尽力翻译，需母语者复核 -->
+    <string name="settings_group_language_appearance">ᎦᏬᏂᎯᏍᏗ ᎠᎴ ᎤᏬᏪᎳᏅᎯ</string>
+    <string name="settings_group_app">ᎠᏓᏍᏓᏴᏗ</string>
     <string name="modified">ᎠᏓᏅᏖᏍᎬ ᎢᎦ</string>
     <string name="more_actions">ᎤᏬᏪᎳᏅᎯ ᎠᏓᏅᏖᏍᎬ</string>
     <string name="more_options">ᎤᏬᏪᎳᏅᎯ ᎠᏓᏅᏖᏍᎬ</string>
@@ -85,7 +91,8 @@
     <string name="path">ᎤᎦᏔᏅᎯ</string>
     <string name="path_copied">ᎤᎦᏔᏅᎯ ᎧᏈᎢ</string>
     <string name="permanently_deleted">ᏗᎵᏘ ᎤᏬᏪᎳᏅᎯᎢ</string>
-    <string name="pin_folder">ᎪᏪᎵ ᎠᏓᏍᏓᏴᏗ ᎠᏓᏅᏖᏍᎬ</string>
+    <!-- UNCERTAIN_CHR：顶置新译法，需母语者复核 -->
+    <string name="pin_folder">ᎦᎸᎳᏗ ᎠᏓᏍᏓᏴᏗ</string>
     <string name="pinned">ᎠᏓᏅᏖᏍᎬᎢ</string>
     <string name="properties">ᏆᎳᎻᏘ</string>
     <string name="redo">ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗᎢ</string>
@@ -106,12 +113,77 @@
     <string name="share_zip">ᏑᎡᎵ ZIP</string>
     <string name="show_hidden">ᎠᏓᏅᏖᏍᎬ ᎤᏬᏪᎳᏅᎯ</string>
     <string name="size">ᎤᏍᏗ</string>
+    <!-- UNCERTAIN_CHR：ᏐᎳᏘ 由本文件 sort_name/date/size/type（X ᏐᎳᏘ）反推为“排序”，未核实 -->
+    <string name="sort">ᏐᎳᏘ</string>
     <string name="sort_date">ᎢᎦ ᏐᎳᏘ</string>
     <string name="sort_name">ᏙᏳ ᏐᎳᏘ</string>
     <string name="sort_size">ᎤᏍᏗ ᏐᎳᏘ</string>
     <string name="sort_type">ᎠᏓᏅᏖᏍᎬ ᏐᎳᏘ</string>
+    <string name="sort_by_type">ᎠᏓᏅᏖᏍᎬ ᏐᎳᏘ</string>
+    <!-- UNCERTAIN_CHR：新词直译，需母语者复核 -->
+    <string name="sort_reverse">ᏐᎳᏘ ᎠᏓᏅᏖᏍᎬ</string>
+    <!-- UNCERTAIN_CHR：新词直译，需母语者复核 -->
+    <string name="sort_type_folders_only">ᎪᏪᎵ ᎠᏓᏍᏓᏴᏗ ᎤᏩᏒ</string>
+    <!-- UNCERTAIN_CHR：背景切换未核实，用“外观”暂代，需母语者复核 -->
+    <string name="viewer_background">ᎤᏬᏪᎳᏅᎯ</string>
+    <string name="viewer_bg_black">ᎬᏁᎦ</string>
+    <string name="viewer_bg_white">ᎤᏁᎦ</string>
+    <!-- UNCERTAIN_CHR：灰色未核实，需母语者复核 -->
+    <string name="viewer_bg_gray">ᎤᏍᎪᎸ</string>
+    <!-- UNCERTAIN_CHR：横向翻页未核实，暂用“浅色”词区分，需母语者复核 -->
+    <string name="viewer_view_horizontal">ᎢᎦ</string>
+    <!-- UNCERTAIN_CHR：纵向排序未核实，暂用“深色”词区分，需母语者复核 -->
+    <string name="viewer_view_vertical">ᏒᏅᏱ</string>
+    <string name="viewer_dimensions">ᎤᏍᏗ</string>
+    <!-- UNCERTAIN_CHR：格式未核实，用“外观”暂代，需母语者复核 -->
+    <string name="viewer_format">ᎤᏬᏪᎳᏅᎯ</string>
+    <!-- UNCERTAIN_CHR：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_images">ᎠᏓᏅᏓ</string>
+    <!-- UNCERTAIN_CHR：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_videos">ᏗᎦᏘᏯ</string>
+    <!-- UNCERTAIN_CHR：媒体页音频分类新词尽力翻译，需母语者复核 -->
+    <string name="media_audios">ᎠᏓᏅᏓ</string>
+    <!-- UNCERTAIN_CHR：跳转 / 创建HTML 新词尽力翻译，需母语者复核 -->
+    <string name="jump_title">ᎤᎦᏔᏅ</string>
+    <string name="create_html">HTML ᎠᏕᎳᏗᏍᏗ</string>
+    <string name="jump_invalid_path">ᎠᏍᏆᏂᎪᏗ ᎥᏝ ᏱᎩ ᎠᏓᏅᏓ ᏱᎩ</string>
+    <!-- UNCERTAIN_CHR：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_gifs">GIF</string>
+    <!-- UNCERTAIN_CHR：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_today">ᎪᎯ ᎢᎦ</string>
+    <!-- UNCERTAIN_CHR：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_yesterday">ᏒᏅᏔᏂ</string>
+    <!-- UNCERTAIN_CHR：抽屉合并新词尽力翻译，需母语者复核 -->
+    <string name="media_images_videos">ᎠᏓᏅᏓ ᎠᎴ ᏗᎦᏘᏯ</string>
+    <!-- UNCERTAIN_CHR：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="play_video">ᏗᎦᏘᏯ ᎠᏓᏅᏓ</string>
+    <!-- UNCERTAIN_CHR：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="view_image">ᎠᏓᏅᏓ ᎠᏍᏓᏴᏗ</string>
+    <!-- UNCERTAIN_CHR：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="browse_archive">ᏗᎦᏘᏯ ᎪᏪᎵ</string>
+    <!-- UNCERTAIN_CHR：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_speed">ᎠᎦᏔᎲᎢ</string>
+    <!-- UNCERTAIN_CHR：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_cannot_play">ᎠᏴᏍᏗ ᎥᏝ ᏱᎠᏓᏅᏓ</string>
+    <!-- UNCERTAIN_CHR：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="play_music">ᎠᏓᏅᏓ ᏗᏓᏅᏓ</string>
+    <!-- UNCERTAIN_CHR：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="music_cannot_play">ᎠᏴᏍᏗ ᎥᏝ ᏱᎠᏓᏅᏓ</string>
+    <!-- UNCERTAIN_CHR：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_play">ᎠᏓᏅᏓ</string>
+    <!-- UNCERTAIN_CHR：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_pause">ᎠᏍᏓᏴᏗ</string>
+    <!-- UNCERTAIN_CHR：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_fill_screen">ᎠᏓᏅᏙ ᎤᏬᏪᎳᏅᎢ</string>
+    <!-- UNCERTAIN_CHR：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_loop">ᎠᏓᏅᏓ ᏥᏄᎪᏫᏍᏗ</string>
+    <!-- UNCERTAIN_CHR：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_landscape">ᎠᎦᏔᎲ ᎤᏬᏪᎳᏅᎢ</string>
+    <!-- UNCERTAIN_CHR：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_duration">ᎠᏴᏫ ᎤᏬᏪᎳᏅᎢ</string>
     <string name="splash_animation">ᎢᏤ ᎤᏬᏪᎳᏅᎯ</string>
-    <string name="splash_animation_hint">ᎢᏤ ᎤᏬᏪᎳᏅᎯ ᎠᏓᏅᏖᏍᎬ, ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ ᎥᏝ.</string>
+    <!-- UNCERTAIN_CHR：短版重翻，仅用本文件已有词拼合，需母语者复核 -->
+    <string name="splash_animation_hint">ᎢᏤ ᎤᏬᏪᎳᏅᎯ ᎠᏓᏅᏖᏍᎬ ᎢᏤ, ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ</string>
     <string name="storage_internal">ᏧᏓᎴᏅᏓ ᎠᏓᏍᏓᏴᏗ</string>
     <string name="text_editor">ᎪᏪᎵ ᎠᏓᏅᏖᏍᎬ</string>
     <string name="theme">ᏖᎻ</string>
@@ -130,4 +202,299 @@
     <string name="unpinned">ᎠᏎᏍᏗᎢ</string>
     <string name="used_space">ᏳᏍᏘ</string>
     <string name="version">ᏫᏥᏂ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="about_intro_title">ᏧᏓᎴᏅᏓ ᎤᏬᏪᎳᏅᎯ</string>
+    <!-- UNCERTAIN_CHR：长段仅用已有词拼合，需母语者复核 -->
+    <string name="about_text">Fairumanējā ᎠᏓᏅᏖᏍᎬ ᎪᏪᎵ ᎠᏓᏍᏓᏴᏗ, MT Manager ᎠᏓᏅᏖᏍᎬ ᎢᏤ; Android, Linux ᎠᎴ Windows (ᎠᏓᏅᏖᏍᎬ ᎢᏤ), MIT License ᎠᏓᏅᏖᏍᎬ.</string>
+    <!-- UNCERTAIN_CHR：沿用本文件 add_local_storage 的暂代译法，需母语者复核 -->
+    <string name="add">ᎦᎵᎡᏘ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="add_network_group">ᎦᎵᎡᏘ ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="add_network_storage">ᎦᎵᎡᏘ ᎠᏓᏅᏖᏍᎬ ᏧᏓᎴᏅᏓ ᎠᏓᏍᏓᏴᏗ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="already_here">ᎠᏓᏍᏓᏴᏗ ᎢᏤ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="apk_package">ᎠᏓᏅᏖᏍᎬ ᎪᏪᎵ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="app_color_disabled_hint">ᎠᏓᏅᏖᏍᎬ ᎤᏬᏪᎳᏅᎯ ᎠᏓᏍᏓᏴᏗ, ᎠᏓᏅᏖᏍᎬ ᎤᏬᏪᎳᏅᎯ ᎥᏝ ᎢᏤ</string>
+    <!-- UNCERTAIN_CHR：返回的切罗基语说法未核实，仅用通用词，需母语者复核 -->
+    <string name="back">ᎠᏓᏅᏖᏍᎬ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="bookmarks_empty">ᎠᏓᏅᏖᏍᎬ ᎪᏪᎵ ᎥᏝ — ᎪᏪᎵ ᎠᏓᏍᏓᏴᏗ ᎠᏓᏅᏖᏍᎬ ᎪᏪᎵ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="chinese_version_note">ᎠᏓᏅᏖᏍᎬ ᎦᏬᏂᎯᏍᏗ ᎢᏤ.</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="clipboard_empty">ᎪᏪᎵ ᎥᏝ, ᎠᏓᏅᏖᏍᎬ ᎥᏝ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="close_file">ᎪᏪᎵ ᎠᏎᏍᏗ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="code_completion">ᎪᏪᎵ ᎠᏓᏅᏖᏍᎬ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="confirm_delete">ᏗᎵᏘ ᎧᏂᏌᎻ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="confirm_empty_trash">ᎤᏍᏗ ᎠᏓᏍᏓᏴᏗ ᏗᎵᏘ? ᎠᏓᏅᏖᏍᎬ ᎥᏝ ᎢᏤ.</string>
+    <string name="copy_to_other">ᎧᏈ -&gt;</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="decrypt_failed">ᎪᏪᎵ ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ ᎥᏝ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="decrypted">ᎪᏪᎵ ᎠᏓᏅᏖᏍᎬᎢ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="delete_direct_message">ᎪᏪᎵ ᏗᎵᏘ? ᎤᏍᏗ ᎠᏓᏍᏓᏴᏗ ᎥᏝ, ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ ᎥᏝ.</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="delete_failed">ᏗᎵᏘᎢ ᎥᏝ, ᎠᏓᏅᏖᏍᎬ ᎢᏤ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="delete_message">ᎪᏪᎵ ᏗᎵᏘ?</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="delete_permanent_msg">ᎪᏪᎵ %1$s ᏗᎵᏘ ᎤᏬᏪᎳᏅᎯ?</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="delete_permanent_multi_msg">ᎪᏪᎵ %1$d ᏗᎵᏘ ᎤᏬᏪᎳᏅᎯ?</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="delete_to_trash_msg">ᎪᏪᎵ %1$s ᎤᏍᏗ ᎠᏓᏍᏓᏴᏗ ᎠᏓᏅᏖᏍᎬ?</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="delete_to_trash_multi_msg">ᎪᏪᎵ %1$d ᎤᏍᏗ ᎠᏓᏍᏓᏴᏗ ᎠᏓᏅᏖᏍᎬ?</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="disclaimer">ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="dont_save">ᎠᏓᏍᏓᏴᏗ ᎥᏝ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="dynamic_color_confirm_msg">ᎠᏓᏅᏖᏍᎬ ᎤᏬᏪᎳᏅᎯ ᎢᏤ, ᎤᏬᏪᎳᏅᎯ ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ; ᎠᏓᏅᏖᏍᎬ ᎤᏬᏪᎳᏅᎯ ᎢᏤ?</string>
+    <string name="dynamic_color_confirm_title">ᎠᏓᏅᏖᏍᎬ ᎤᏬᏪᎳᏅᎯ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="dynamic_color_on_note">ᎠᏓᏅᏖᏍᎬ ᎤᏬᏪᎳᏅᎯ ᎢᏤ, ᎤᏬᏪᎳᏅᎯ ᎠᏓᏅᏖᏍᎬ ᎥᏝ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="edit_text">ᎪᏪᎵ ᎠᏓᏅᏖᏍᎬ</string>
+    <string name="editor_search">ᎠᏰᏍᏗ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="encrypt_failed">ᎪᏪᎵ ᎠᏓᏅᏖᏍᎬ ᎥᏝ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="encrypted">ᎪᏪᎵ ᎠᏓᏅᏖᏍᎬᎢ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="endangered_language_sub">ᎦᏬᏂᎯᏍᏗ ᎯᏍᎩ ᎠᏓᏅᏖᏍᎬ ᎢᏤ.</string>
+    <string name="file_count">ᏗᎪᏪᎵ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="file_name_hint">ᏙᏳ ᎪᏪᎵ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="file_too_large">ᎪᏪᎵ ᎡᏆ (2 MB ᎢᏤ), ᎣᏈᏂ ᎠᏓᏅᏖᏍᎬ ᎥᏝ; ᎣᏈᏂ ᎢᏤ?</string>
+    <string name="folder_count">ᎪᏪᎵ ᎠᏓᏍᏓᏴᏗ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="folder_name_hint">ᏙᏳ ᎪᏪᎵ ᎠᏓᏍᏓᏴᏗ</string>
+    <string name="follow_system_theme">ᏗᎦᎵᏍᏗ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="font_size">ᎪᏪᎵ ᎤᏍᏗ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="forward">ᎠᏓᏅᏖᏍᎬ ᎢᏤ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="go_to_line">ᎪᏪᎵ ᎠᏓᏅᏖᏍᎬ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="go_to_line_hint">ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="go_up">ᎠᏓᏍᏓᏴᏗ ᎢᏤ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="grant_access">ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="grid">ᎠᏓᏅᏖᏍᎬ ᎤᏬᏪᎳᏅᎯ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="hidden_storages">ᏧᏓᎴᏅᏓ ᎠᏓᏍᏓᏴᏗ ᎠᏓᏅᏖᏍᎬ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="invalid_name">ᏙᏳ ᎥᏝ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="items_count">%1$d ᎪᏪᎵ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="left_pane">ᎠᏓᏍᏓᏴᏗ ᎢᏤ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="line_numbers">ᎪᏪᎵ ᎠᏓᏅᏖᏍᎬ ᎢᏤ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="list_view">ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="manage_tool_groups">ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ ᎢᏤ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="move_down">ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="move_failed">ᎠᏓᏅᏖᏍᎬᎢ ᎥᏝ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="move_not_supported">ᏧᏓᎴᏅᏓ ᎠᏓᏍᏓᏴᏗ ᎠᏓᏅᏖᏍᎬ ᎥᏝ</string>
+    <string name="move_to_other">ᎠᏓᏅᏖᏍᎬ -&gt;</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="move_up">ᎠᏓᏅᏖᏍᎬ ᎢᏤ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="name_exists">ᏙᏳ ᎠᏓᏅᏖᏍᎬ ᎢᏤ</string>
+    <string name="new_text_file">ᎢᏤ ᎪᏪᎵ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="next_position">ᎠᏓᏅᏖᏍᎬ ᎢᏤ</string>
+    <string name="no_match">ᎪᏪᎵ ᎥᏝ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="not_supported">ᎠᏓᏅᏖᏍᎬ ᎥᏝ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="open_source_license">ᎪᏪᎵ ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="original_path">ᎤᎦᏔᏅᎯ ᎠᏓᏅᏖᏍᎬ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="oss_components">ᎠᏓᏅᏖᏍᎬ ᎪᏪᎵ ᎠᏓᏍᏓᏴᏗ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="other_pane_no_folder">ᎠᏓᏍᏓᏴᏗ ᎪᏪᎵ ᎠᏓᏍᏓᏴᏗ ᎥᏝ</string>
+    <!-- UNCERTAIN_CHR：密码说法未核实，仅用通用词，需母语者复核 -->
+    <string name="password_confirm_hint">ᎠᏓᏅᏖᏍᎬ ᎢᏤ</string>
+    <!-- UNCERTAIN_CHR：密码说法未核实，仅用通用词，需母语者复核 -->
+    <string name="password_hint">ᎠᏓᏅᏖᏍᎬ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="password_mismatch">ᎠᏓᏅᏖᏍᎬ ᎥᏝ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="paste_to_other_pane">ᏇᏍᏘ ᎠᏓᏍᏓᏴᏗ ᎠᏓᏅᏖᏍᎬ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="permission_needed">ᎪᏪᎵ ᎠᏓᏅᏖᏍᎬ ᎢᏤ, ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="prev_position">ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="privacy_policy">ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="read_only">ᎪᏪᎵ ᎠᏓᏅᏖᏍᎬ</string>
+    <string name="recent_empty">ᎢᏤ ᎪᏪᎵ ᎥᏝ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="rename_hint">ᏙᏳ ᎢᏤ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="restore_confirm_msg">ᎪᏪᎵ %1$s ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ?</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="restore_confirm_multi_msg">ᎪᏪᎵ %1$d ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ?</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="right_pane">ᎠᏓᏍᏓᏴᏗ ᎠᏓᏅᏖᏍᎬ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="root_browse_only">ᎠᏍᏓᏴᏗ ᎠᏓᏅᏖᏍᎬ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="saf_browse_only">ᏧᏓᎴᏅᏓ ᎠᏓᏍᏓᏴᏗ ᎠᏓᏅᏖᏍᎬ ᎥᏝ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="save_as">ᎠᏓᏍᏓᏴᏗ ᎢᏤ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="search_keyword_hint">ᎠᏰᏍᏗ ᎪᏪᎵ</string>
+    <string name="search_match_count">%1$d / %2$d</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="selected_count">%1$d ᎠᏓᏅᏖᏍᎬ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="shizuku_denied">Shizuku ᎠᏓᏅᏖᏍᎬ ᎥᏝ, ᎠᏍᏓᏴᏗ ᎠᏓᏅᏖᏍᎬ ᎥᏝ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="shizuku_download">Shizuku ᎠᏓᏅᏖᏍᎬ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="shizuku_failed">ᎠᏍᏓᏴᏗ ᎠᏓᏅᏖᏍᎬ ᎥᏝ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="shizuku_failed_detail">ᎠᏍᏓᏴᏗ ᎠᏓᏅᏖᏍᎬ ᎥᏝ: %1$s</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="shizuku_needed_msg">ᎠᏍᏓᏴᏗ ᎠᏓᏅᏖᏍᎬ Shizuku ᎢᏤ. Shizuku ᎠᏓᏅᏖᏍᎬ ᎢᏤ, ᎠᏓᏅᏖᏍᎬ ᎢᏤ.</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="shizuku_needed_title">Shizuku ᎢᏤ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="shizuku_request_msg">Shizuku ᎠᏓᏅᏖᏍᎬ ᎢᏤ.</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="shortcut_action">ᎠᏓᏅᏖᏍᎬ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="shortcut_action_locate">ᎪᏪᎵ ᎠᏓᏅᏖᏍᎬ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="shortcut_action_locate_click">ᎪᏪᎵ ᎠᏓᏅᏖᏍᎬ ᎣᏈᏂ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="shortcut_action_open_editor">ᎪᏪᎵ ᎠᏓᏅᏖᏍᎬ ᎢᏤ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="shortcut_action_preview_html">HTML ᎪᏪᎵ ᎠᏓᏅᏖᏍᎬ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="shortcut_created">ᎠᏓᏅᏖᏍᎬ ᎦᎵᎡᏘᎢ</string>
+    <!-- UNCERTAIN_CHR：图标说法未核实，仅用已有词，需母语者复核 -->
+    <string name="shortcut_icon">ᎤᏬᏪᎳᏅᎯ</string>
+    <string name="shortcut_name">ᏙᏳ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="shortcut_not_supported">ᎠᏓᏅᏖᏍᎬ ᎥᏝ, ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ ᎥᏝ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="shortcut_not_text">ᎪᏪᎵ ᎥᏝ, ᎣᏈᏂ ᎠᏓᏅᏖᏍᎬ ᎢᏤ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="shortcut_target_missing">ᎠᏓᏅᏖᏍᎬ ᎪᏪᎵ ᎥᏝ, ᎠᏓᏅᏖᏍᎬ ᎥᏝ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="shortcut_type">ᎠᏓᏅᏖᏍᎬ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="shortcut_type_desktop">ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="shortcut_type_desktop_desc">ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ ᎢᏤ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="shortcut_type_icon">ᎤᏬᏪᎳᏅᎯ ᎠᏓᏅᏖᏍᎬ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="shortcut_type_icon_desc">ᎪᏪᎵ ᎤᏬᏪᎳᏅᎯ ᎠᏓᏅᏖᏍᎬ ᎢᏤ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="smooth_mode">ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="special_thanks">ᏩᏙ ᎢᏤ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="storage_already_added">ᏧᏓᎴᏅᏓ ᎠᏓᏍᏓᏴᏗ ᎠᏓᏅᏖᏍᎬᎢ</string>
+    <string name="storage_name_hint">ᏙᏳ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="storage_not_supported">ᏧᏓᎴᏅᏓ ᎠᏓᏍᏓᏴᏗ ᎠᏓᏅᏖᏍᎬ ᎥᏝ</string>
+    <string name="storage_path_hint">ᎤᎦᏔᏅᎯ, /storage/emulated/0/Download</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="storage_path_invalid">ᎤᎦᏔᏅᎯ ᎥᏝ, ᎪᏪᎵ ᎠᏓᏍᏓᏴᏗ ᎥᏝ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="storage_usage">ᏧᏓᎴᏅᏓ ᎠᏓᏍᏓᏴᏗ ᏳᏍᏘ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="swap_panes">ᎠᏓᏍᏓᏴᏗ ᎠᏓᏅᏖᏍᎬ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="syntax">ᎪᏪᎵ ᎠᏓᏅᏖᏍᎬ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="syntax_auto">ᎠᏓᏅᏖᏍᎬ (ᎪᏪᎵ ᎢᏤ)</string>
+    <string name="syntax_c">C/C++</string>
+    <string name="syntax_java">Java</string>
+    <string name="syntax_json">JSON</string>
+    <string name="syntax_kotlin">Kotlin</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="syntax_plain">ᎪᏪᎵ</string>
+    <string name="syntax_python">Python</string>
+    <string name="syntax_shell">Shell</string>
+    <string name="syntax_xml">XML</string>
+    <!-- UNCERTAIN_CHR：长段仅用已有词拼合，需母语者复核 -->
+    <string name="thanks_mp_desc">ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ MP-Manager ᎢᏤ: ᏔᎵ ᎠᏓᏍᏓᏴᏗ, ᎧᏈ, ᎠᏓᏅᏖᏍᎬ, ᏇᏍᏘ; ᎪᏪᎵ ᎠᏓᏍᏓᏴᏗ ᎤᏬᏪᎳᏅᎯ; ᎤᏍᏗ ᎠᏓᏍᏓᏴᏗ ᎠᏓᏅᏖᏍᎬ; ᎪᏪᎵ ᎠᏓᏅᏖᏍᎬ; Shizuku ᎠᏍᏓᏴᏗ; ᎧᎻᏇᎵᏍ, ᎡᏍᏘᎳᎩᏘ, ᎪᏪᎵ ᎠᏓᏅᏖᏍᎬ. ᏩᏙ MP-Manager GPL-3.0 GitHub (https://github.com/AbdurazaaqMohammed/MP-Manager), ᎠᏓᏅᏖᏍᎬ ᎢᏤ; ᏩᏙ AbdurazaaqMohammed ᎠᏓᏅᏖᏍᎬ ᎢᏤ, MT Manager ᎠᏓᏅᏖᏍᎬ ᎢᏤ.</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="thanks_mt_desc">ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ MT Manager ᎢᏤ: ᏔᎵ ᎠᏓᏍᏓᏴᏗ, ᎪᏪᎵ ᎠᏓᏅᏖᏍᎬ, ᎤᏍᏗ ᎠᏓᏍᏓᏴᏗ ᎠᏓᏅᏖᏍᎬ. ᏩᏙ MT Manager ᎠᏓᏅᏖᏍᎬ ᎢᏤ.</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="thanks_muse_desc">ᏩᏙ Muse ᎠᏓᏅᏖᏍᎬ ᎢᏤ: ᎪᏪᎵ ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ ᎢᏤ.</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="tools_title">ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="trash_move_failed">ᎤᏍᏗ ᎠᏓᏍᏓᏴᏗ ᎠᏓᏅᏖᏍᎬ ᎥᏝ; ᎪᏪᎵ ᏗᎵᏘᎢ ᎥᏝ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="ui_engine_desc_expressive">ᎤᏬᏪᎳᏅᎯ ᎠᏓᏅᏖᏍᎬ ᎢᏤ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="ui_engine_desc_md3">ᎠᏓᏅᏖᏍᎬ ᎢᏤ, ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="ui_engine_desc_miuix">Xiaomi MIUI ᎠᏓᏅᏖᏍᎬ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="ui_engine_switch_msg">UI ᎠᏓᏅᏖᏍᎬ ᎢᏤ, “%1$s” ᎠᏓᏅᏖᏍᎬ ᎢᏤ.</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="ui_engine_switch_title">UI ᎠᏓᏅᏖᏍᎬ ᎢᏤ</string>
+    <string name="unhide">ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="unsaved_message">ᎪᏪᎵ ᎠᏓᏅᏖᏍᎬ ᎢᏤ, ᎠᏓᏍᏓᏴᏗ ᎥᏝ? ᎠᏓᏍᏓᏴᏗ ᎢᏤ?</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="unsaved_title">ᎪᏪᎵ ᎠᏓᏅᏖᏍᎬ ᎢᏤ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="user_agreement">ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ</string>
+    <string name="version_number">ᏫᏥᏂ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="word_wrap">ᎪᏪᎵ ᎠᏓᏅᏖᏍᎬ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="wrong_password">ᎠᏓᏅᏖᏍᎬ ᎥᏝ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="zip_failed">ᎧᎻᏇᎵᏍ ᎥᏝ</string>
+    <!-- Theme settings (v1.9.7.4) -->
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 --><!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 --><!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 --><!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 --><!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 --><!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 --><!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <!-- UNCERTAIN_CHR：ᏐᎳᏘ 借自 sort（排序），调色板说法未核实，需母语者复核 --><!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+
+    <string name="palette_color_group_base">ᎤᏬᏪᎳᏅᎯ</string>
+    <string name="palette_color_group_light">ᎢᎦ ᎤᏬᏪᎳᏅᎯ</string>
+    <string name="palette_color_group_dark">ᏒᏅᏱ ᎤᏬᏪᎳᏅᎯ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，“默认设置”无确切对应词，需母语者复核 -->
+    <string name="reset_defaults">ᎢᎬᏱ ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ</string>
+    <!-- UNCERTAIN_CHR：仅用本文件已有词拼合，需母语者复核 -->
+    <string name="reset_defaults_msg">ᎦᏬᏂᎯᏍᏗ, ᏖᎻ ᎠᏓᏅᏖᏍᎬ, ᎤᏬᏪᎳᏅᎯ ᎠᏓᏅᏖᏍᎬ, ᎪᏪᎵ ᎤᏬᏪᎳᏅᎯ, UI ᎠᏓᏅᏖᏍᎬ, ᎢᏤ ᎤᏬᏪᎳᏅᎯ, ᏐᎳᏘ, ᏔᎵ ᎠᏓᏍᏓᏴᏗ, ᎠᏓᏅᏖᏍᎬ ᎤᏬᏪᎳᏅᎯ ᎢᎬᏱ ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗᎢ. ᎠᏓᏅᏖᏍᎬ ᎪᏪᎵ, ᎪᏪᎵ ᎠᏓᏍᏓᏴᏗ ᎠᏓᏅᏖᏍᎬ, ᏧᏓᎴᏅᏓ ᎠᏓᏍᏓᏴᏗ, ᎤᏍᏗ ᎠᏓᏍᏓᏴᏗ ᎥᏝ ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ. ᎠᏓᏅᏖᏍᎬ ᎠᏓᏍᏓᏴᏗ?</string>
+    <string name="follow_system_language">ᏗᎦᎵᏍᏗ</string>
 </resources>

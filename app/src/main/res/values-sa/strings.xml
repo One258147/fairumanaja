@@ -1,0 +1,362 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Fairumanējā</string>
+    <string name="nav_files">संचिकाः</string>
+    <!-- UNCERTAIN_SA：书签译作“चिह्नानि”（标记）是意译，古典梵语无“书签”一词，需母语者复核 -->
+    <string name="nav_bookmarks">चिह्नानि</string>
+    <!-- UNCERTAIN_SA：最近译作“सद्यतानि”是用词不确定，备选“अधुनातनानि”，需母语者复核 -->
+    <string name="nav_recent">सद्यतानि</string>
+    <string name="nav_tools">साधनानि</string>
+    <string name="search_hint">संचिकाः अन्विष्यताम्…</string>
+    <string name="sort_name">नाम्ना</string>
+    <string name="sort_date">दिनाङ्केन</string>
+    <string name="sort_size">आकारेण</string>
+    <string name="sort_type">प्रकारेण</string>
+    <string name="sort_by_type">प्रकारेण</string>
+    <!-- UNCERTAIN_SA：新词直译，需母语者复核 -->
+    <string name="sort_reverse">विपरीतक्रमः</string>
+    <!-- UNCERTAIN_SA：新词直译，需母语者复核 -->
+    <string name="sort_type_folders_only">केवल सञ्चयाः</string>
+    <!-- UNCERTAIN_SA：背景切换尽力翻译，需母语者复核 -->
+    <string name="viewer_background">पृष्ठभूमिं परिवर्तयतु</string>
+    <string name="viewer_bg_black">कृष्णः</string>
+    <string name="viewer_bg_white">श्वेतः</string>
+    <string name="viewer_bg_gray">धूसरः</string>
+    <!-- UNCERTAIN_SA：横向翻页尽力翻译，需母语者复核 -->
+    <string name="viewer_view_horizontal">क्षैतिजं पृष्ठपरिवर्तनम्</string>
+    <!-- UNCERTAIN_SA：纵向排序尽力翻译，需母语者复核 -->
+    <string name="viewer_view_vertical">ऊर्ध्वाधरः सूची</string>
+    <string name="viewer_dimensions">आयामाः</string>
+    <string name="viewer_format">प्रारूपः</string>
+    <!-- UNCERTAIN_SA：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_images">चित्राणि</string>
+    <!-- UNCERTAIN_SA：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_videos">चलच्चित्राणि</string>
+    <!-- UNCERTAIN_SA：媒体页音频分类新词尽力翻译，需母语者复核 -->
+    <string name="media_audios">ध्वनिः</string>
+    <!-- UNCERTAIN_SA：跳转 / 创建HTML 新词尽力翻译，需母语者复核 -->
+    <string name="jump_title">गच्छतु</string>
+    <string name="create_html">HTML रचयतु</string>
+    <string name="jump_invalid_path">पन्था नास्ति वा सञ्चिका नास्ति</string>
+    <!-- UNCERTAIN_SA：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_gifs">GIF</string>
+    <!-- UNCERTAIN_SA：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_today">अद्य</string>
+    <!-- UNCERTAIN_SA：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_yesterday">श्वः</string>
+    <!-- UNCERTAIN_SA：抽屉合并新词尽力翻译，需母语者复核 -->
+    <string name="media_images_videos">चित्राणि च चलच्चित्राणि</string>
+    <!-- UNCERTAIN_SA：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="play_video">चलच्चित्रं चालय</string>
+    <!-- UNCERTAIN_SA：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="view_image">चित्रं पश्य</string>
+    <!-- UNCERTAIN_SA：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="browse_archive">सङ्ग्रहं पश्य</string>
+    <!-- UNCERTAIN_SA：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_speed">वेगः</string>
+    <!-- UNCERTAIN_SA：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_cannot_play">अस्य चलच्चित्रस्य प्रदर्शनं न शक्यम्</string>
+    <!-- UNCERTAIN_SA：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="play_music">सङ्गीतं चालय</string>
+    <!-- UNCERTAIN_SA：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="music_cannot_play">अस्य ध्वनेः प्रदर्शनं न शक्यम्</string>
+    <!-- UNCERTAIN_SA：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_play">चालय</string>
+    <!-- UNCERTAIN_SA：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_pause">विरम</string>
+    <!-- UNCERTAIN_SA：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_fill_screen">पूर्णपटलम्</string>
+    <!-- UNCERTAIN_SA：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_loop">पुनः चालय</string>
+    <!-- UNCERTAIN_SA：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_landscape">तिर्यक् विधा</string>
+    <!-- UNCERTAIN_SA：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_duration">अवधिः</string>
+    <string name="show_hidden">गुप्ताः संचिकाः दर्शयतु</string>
+    <string name="copy">प्रतिलिपिः</string>
+    <string name="cut">छेदनम्</string>
+    <string name="paste">निवेशनम्</string>
+    <string name="delete">विलोपयतु</string>
+    <string name="rename">नाम परिवर्तयतु</string>
+    <string name="new_folder">नूतनः सञ्चयः</string>
+    <string name="new_file">नूतना संचिका</string>
+    <string name="share">साझा कुरुत</string>
+    <string name="open_with">अनेन उद्घाटयतु</string>
+    <string name="properties">गुणधर्माः</string>
+    <string name="select_all">सर्वाणि चिनुत</string>
+    <string name="cancel">निरस्यतु</string>
+    <string name="ok">अस्तु</string>
+    <string name="create">सृजतु</string>
+    <string name="confirm_delete">विलोपं दृढीकुरुत</string>
+    <string name="delete_message">चयनितानि वस्तूनि विलोपयितुम् इच्छसि वा?</string>
+    <string name="delete_direct_message">विलोपयितुम् इच्छसि वा? तानि साक्षात् विलोपिष्यन्ते, अपशिष्टपात्रं न गमिष्यन्ति, पुनः प्राप्तुं न शक्यन्ते।</string>
+    <string name="rename_hint">नूतनं नाम</string>
+    <string name="folder_name_hint">सञ्चयस्य नाम</string>
+    <string name="file_name_hint">संचिकायाः नाम</string>
+    <string name="storage_internal">आन्तरं भण्डारणम्</string>
+    <string name="no_files">अत्र शून्यम् अस्ति</string>
+    <string name="tools_title">साधनपेटिका</string>
+    <string name="storage_usage">भण्डारणोपयोगः</string>
+    <string name="free_space">रिक्तम्</string>
+    <string name="used_space">प्रयुक्तम्</string>
+    <string name="settings">विन्यासः</string>
+    <string name="language">भाषा</string>
+    <!-- UNCERTAIN_SA：主题译作“रूपम्”（外观）是意译，备选“प्रसङ्गः”，需母语者复核 -->
+    <string name="theme">रूपम्</string>
+    <string name="theme_system">तन्त्रानुसारम्</string>
+    <string name="theme_light">उज्ज्वला</string>
+    <string name="theme_dark">कृष्णा</string>
+    <string name="about">अस्य विषये</string>
+    <string name="version">संस्करणम्</string>
+    <string name="save">रक्षतु</string>
+    <string name="saved">रक्षितम्</string>
+    <string name="save_failed">रक्षणं विफलम्</string>
+    <string name="extract">निष्कर्षयतु</string>
+    <string name="compress">ZIP-रूपेण सङ्कोचयतु</string>
+    <string name="permission_needed">संचिकाः प्रबन्धयितुं सर्वसंचिकाप्रवेशः आवश्यकः</string>
+    <string name="grant_access">प्रवेशं ददातु</string>
+    <string name="bookmarks_empty">अद्यापि चिह्नं नास्ति; सञ्चयं चिरं स्पृशतु चिह्नार्थम्</string>
+    <string name="recent_empty">अद्यापि किमपि न उद्घाटितम्</string>
+    <string name="error">दोषः</string>
+    <string name="modified">परिवर्तितम्</string>
+    <string name="path">मार्गः</string>
+    <string name="size">आकारः</string>
+    <!-- UNCERTAIN_SA：文件夹译作“सञ्चयः”（集合）是意译，备选“सञ्चयिका”，需母语者复核 -->
+    <string name="folder">सञ्चयः</string>
+    <!-- UNCERTAIN_SA：文件译作“संचिका”、文件夹译作“सञ्चयः”是现代梵语借义约定，古典梵语无对应词，需母语者复核 -->
+    <string name="file">संचिका</string>
+    <string name="grid">जालदृश्यम्</string>
+    <string name="list_view">सूचिदृश्यम्</string>
+    <string name="refresh">नवीकरोतु</string>
+    <string name="bookmark">चिह्नम्</string>
+    <string name="open">उद्घाटयतु</string>
+    <string name="apk_package">सङ्कुलनाम</string>
+    <string name="copied">प्रतिलिपिकृतम्</string>
+    <string name="pasted">निवेशितम्</string>
+    <string name="deleted">विलोपितम्</string>
+    <string name="delete_failed">विलोपनं विफलम्, पुनः प्रयत्नं कुरुत</string>
+    <string name="renamed">पुनर्नामकृतम्</string>
+    <string name="created">सृष्टम्</string>
+    <string name="extracted">निष्कर्षितम्</string>
+    <string name="compressed">सङ्कोचितम्</string>
+    <!-- UNCERTAIN_SA：“संचिकाप्रबन्धकः”（文件管理器）是意译组合，古典梵语无此词，需母语者复核 -->
+    <string name="about_text">Fairumanējā इति मुक्तस्रोतसंचिकाप्रबन्धकः, MT Manager इत्यस्य अनुभवानुसारम्। सः Android, Linux, Windows इत्येतानि समर्थयति (सङ्गणकसंस्करणं योज्यते), MIT-अनुज्ञप्त्या मुक्तः।</string>
+    <string name="name">नाम</string>
+    <string name="dual_pane">द्विपटलम्</string>
+    <string name="swap_panes">पटलानि परिवर्तयतु</string>
+    <string name="paste_to_other_pane">अन्यपटले निवेशयतु</string>
+    <string name="back">पश्चात्</string>
+    <string name="forward">अग्रे</string>
+    <string name="go_up">उपरि</string>
+    <string name="pane_stats">सञ्चयाः: %1$d  संचिकाः: %2$d  भण्डारणम्: %3$s/%4$s</string>
+    <string name="selected_count">%1$d चयितानि</string>
+    <string name="left_pane">वामपटलम्</string>
+    <string name="right_pane">दक्षिणपटलम्</string>
+    <string name="items_count">%1$d वस्तूनि</string>
+    <string name="drawer_local">स्थानीयम्</string>
+    <string name="drawer_tools">साधनानि</string>
+    <string name="root_directory">मूलनिर्देशिका</string>
+    <!-- UNCERTAIN_SA：回收站译作“अपशिष्टपात्रम्”（废物容器）是意译新造组合，需母语者复核 -->
+    <string name="trash">अपशिष्टपात्रम्</string>
+    <string name="text_editor">पाठसम्पादकः</string>
+    <string name="cannot_access">अस्यां निर्देशिकायां प्रवेशः न शक्यते</string>
+    <string name="trash_empty">अपशिष्टपात्रं रिक्तम् अस्ति</string>
+    <string name="restore">प्रत्यानीयताम्</string>
+    <string name="delete_permanently">नित्यं विलोपयतु</string>
+    <string name="empty_trash">अपशिष्टपात्रं रिक्तं कुरुत</string>
+    <string name="moved_to_trash">अपशिष्टपात्रे स्थापितम्</string>
+    <string name="restored">प्रत्यानीतम्</string>
+    <string name="permanently_deleted">नित्यं विलोपितम्</string>
+    <string name="trash_emptied">अपशिष्टपात्रं रिक्तीकृतम्</string>
+    <string name="restore_failed">प्रत्याहरणं विफलम्</string>
+    <string name="file_too_large">संचिका अतिविशाला अस्ति (2 MB-तः अधिका), उद्घाटनं मन्दं भवेत्। उद्घाटयितुम् इच्छसि वा?</string>
+    <string name="edit_text">पाठं सम्पादयतु</string>
+    <string name="new_text_file">नूतना पाठसंचिका</string>
+    <string name="original_path">मूलमार्गः</string>
+    <string name="confirm_empty_trash">अपशिष्टपात्रं रिक्तीकर्तुम् इच्छसि वा? एतत् अनिवर्त्यम्।</string>
+    <string name="language_settings">भाषाविन्यासः</string>
+    <string name="follow_system_language">तन्त्रभाषां अनुसीदतु</string>
+    <string name="reset_defaults">पूर्वनिर्धारितं पुनः स्थापयतु</string>
+    <string name="reset_defaults_msg">भाषा, रूपविधिः, गतिशीलवर्णः, अनुप्रयोगवर्णः, अक्षरवर्णः, अन्तरफलकयन्त्रम्, प्रवेशचलचित्रम्, क्रमः, द्विपटलम्, गुप्तसंचिकादर्शनं च पूर्वनिर्धारितं पुनः स्थापयिष्यन्ते। चिह्नानि, उपरिस्थापितसञ्चयाः, स्वकीयभण्डारणानि, अपशिष्टपात्रं च न प्रभाविष्यन्ते। पुनः स्थापयितुम् इच्छसि वा?</string>
+    <string name="settings_group_language_appearance">भाषा च रूपम्</string>
+    <string name="settings_group_app">अनुप्रयोगः</string>
+    <string name="confirm">दृढीकुरुत</string>
+    <string name="theme_mode">रूपविधिः</string>
+    <string name="more_options">अधिकाः विकल्पाः</string>
+    <string name="follow_system_theme">तन्त्ररूपं अनुसीदतु</string>
+    <string name="add_network_storage">जालभण्डारणं योजयतु</string>
+    <string name="add_local_storage">स्थानीयभण्डारणं योजयतु</string>
+    <string name="add_network_group">जालसमूहं योजयतु</string>
+    <string name="manage_tool_groups">साधनसमूहान् प्रबन्धयतु</string>
+    <string name="not_supported">अद्यापि न समर्थितम्</string>
+    <string name="add">योजयतु</string>
+    <string name="storage_name_hint">नाम</string>
+    <string name="storage_path_hint">मार्गः, यथा /storage/emulated/0/Download</string>
+    <string name="storage_path_invalid">मार्गः नास्ति वा सञ्चयः नास्ति</string>
+    <string name="hide">गोपयतु</string>
+    <string name="sort">क्रमयतु</string>
+    <string name="unhide">प्रकटयतु</string>
+    <string name="hidden_storages">गुप्तभण्डारणानि</string>
+    <string name="move_up">उपरि चालयतु</string>
+    <string name="move_down">अधः चालयतु</string>
+    <string name="root_browse_only">मूलनिर्देशिका केवलं द्रष्टुं शक्यते</string>
+    <string name="saf_browse_only">एतत् भण्डारणं केवलं द्रष्टुं शक्यते</string>
+    <string name="shizuku_needed_title">Shizuku आवश्यकम्</string>
+    <string name="shizuku_needed_msg">मूलनिर्देशिकां प्राप्तुं Shizuku आवश्यकम्। प्रथमं Shizuku संस्थाप्य आरभताम्, ततः पुनः प्रयत्नं कुरुत।</string>
+    <string name="shizuku_download">Shizuku अधिगृह्णातु</string>
+    <string name="shizuku_request_msg">Shizuku-सूचनायां एताम् अनुमतिं ददातु</string>
+    <string name="shizuku_denied">Shizuku-अनुमतिः न दत्ता, मूलनिर्देशिकां प्राप्तुं न शक्यते</string>
+    <string name="shizuku_failed">मूलनिर्देशिकायाः पठनं विफलम्</string>
+    <string name="storage_already_added">एतत् भण्डारणं पूर्वमेव योजितम्</string>
+    <string name="storage_not_supported">अयं स्थानः अद्यापि योजयितुं न शक्यते</string>
+    <string name="shizuku_failed_detail">मूलनिर्देशिकायाः पठनं विफलम्: %1$s</string>
+    <string name="version_number">संस्करणसङ्ख्या</string>
+    <string name="open_source_license">मुक्तस्रोतानुज्ञप्तिः</string>
+    <string name="user_agreement">उपयोक्तृसम्मतिः</string>
+    <string name="privacy_policy">गोपनीयतानीतिः</string>
+    <string name="special_thanks">विशेषधन्यवादाः</string>
+    <string name="chinese_version_note">अधोलिखितं चीनभाषासंस्करणम् अस्ति</string>
+    <string name="undo">प्रत्याहरतु</string>
+    <string name="redo">पुनः कुरुत</string>
+    <string name="save_as">अन्यथा रक्षतु</string>
+    <string name="editor_search">अन्विष्यताम्</string>
+    <string name="syntax">वाक्यरचना</string>
+    <string name="syntax_auto">स्वयमेव (विस्तारेण)</string>
+    <string name="syntax_plain">शुद्धपाठः</string>
+    <string name="prev_position">पूर्वस्थानम्</string>
+    <string name="next_position">परस्थानम्</string>
+    <string name="go_to_line">पङ्क्तिं गच्छतु</string>
+    <string name="go_to_line_hint">पङ्क्तिसङ्ख्यां लिखतु</string>
+    <string name="word_wrap">शब्दान् वेष्टयतु</string>
+    <string name="read_only">केवलपठनविधिः</string>
+    <string name="smooth_mode">स्निग्धविधिः</string>
+    <string name="code_completion">सङ्केतपूर्तिः</string>
+    <string name="close_file">संचिकां पिधाय</string>
+    <string name="font_size">अक्षराकारः</string>
+    <string name="line_numbers">पङ्क्तिसङ्ख्याः</string>
+    <string name="unsaved_title">अरक्षितानि परिवर्तनानि</string>
+    <string name="unsaved_message">अस्यां संचिकायां अरक्षितानि परिवर्तनानि सन्ति। रक्षितुम् इच्छसि वा?</string>
+    <string name="dont_save">मा रक्षतु</string>
+    <string name="search_keyword_hint">कीलशब्दं लिखतु</string>
+    <string name="search_match_count">%1$d / %2$d</string>
+    <string name="no_match">न किमपि मेलनम्</string>
+    <string name="syntax_java">Java</string>
+    <string name="syntax_kotlin">Kotlin</string>
+    <string name="syntax_xml">XML</string>
+    <string name="syntax_json">JSON</string>
+    <string name="syntax_python">Python</string>
+    <string name="syntax_shell">Shell</string>
+    <string name="syntax_c">C/C++</string>
+    <string name="deselect_all">चयनं निरस्यतु</string>
+    <string name="unknown">अज्ञातम्</string>
+    <string name="oss_components">मुक्तस्रोतघटकाः</string>
+    <string name="disclaimer">अस्वीकरणम्</string>
+    <string name="thanks_muse_desc">Muse इत्यस्मै विकाससाहाय्यार्थं तकनीकसहायतायै च धन्यवादाः: अस्य अनुप्रयोगस्य सङ्केतः, कार्याणि, दोषनिवारणं च Muse-साहाय्येन सम्पन्नानि।</string>
+    <string name="thanks_mp_desc">अयं अनुप्रयोगः MP-Manager इत्यस्य आदर्शं गृह्णाति: द्विपटलं पार्श्ववर्ती दर्शनं च पटलान्तरकार्याणि (प्रतिलेखनं, चालनं, अन्यपटले निवेशः); संचिकासूचीपङ्क्तिशैली — लघूनि गोलचतुरस्रप्रतीकानि, नामानि “दिनाङ्कः + आकारः” इत्युपशीर्षकेण सह; पङ्क्त्यन्ते ⋮-सूची नवकोष्ठक “अधिकाः मार्गाः” इति फलकं च; अपशिष्टपात्रप्रवाहः प्रत्याहरण-नित्यविलोप-संवादैः सह; सृजनसंवादः; पङ्क्तिसङ्ख्याभिः चिह्नपट्टिकया च सह पाठसम्पादकः; अपशिष्टपात्रम्, चिह्नानि, उपरिस्थापितसञ्चयाः; Shizuku/मूलप्रवेशः; सङ्कोचनं निष्कर्षणं च, संचिकागोपनं प्रकटनं च; स्वकीयस्थानीयभण्डारणानि। MP-Manager इत्यस्मै धन्यवादाः, यत् GPL-3.0-अनुज्ञप्त्या GitHub-मध्ये मुक्तम् अस्ति (https://github.com/AbdurazaaqMohammed/MP-Manager), यतः अस्य अनुप्रयोगस्य कृते साक्षात् अधिगन्तुं अनुसर्तुं च शक्यम् आदर्शं दत्तम्; तस्य लेखकाय AbdurazaaqMohammed इत्यस्मै धन्यवादाः यः तत् निरन्तरं पालयति नवीकरोति च; तस्मै धन्यवादाः यत् सः अदर्शयत् सामान्यजनोऽपि मुक्तरीत्या MT Manager इत्यस्य उत्तमं विकल्पं निर्मातुं शक्नोति, येन अस्य अनुप्रयोगस्य स्पष्टं शिक्षणलक्ष्यं जातम्।</string>
+    <!-- UNCERTAIN_SA：开屏动画译作“प्रवेशचलचित्रम्”（进入动图）是意译新造词，需母语者复核 -->
+    <string name="splash_animation">प्रवेशचलचित्रम्</string>
+    <string name="splash_animation_hint">यदि सक्रियं तर्हि यदा अनुप्रयोगः गृहपृष्ठात् आरभ्यते तदा प्रवेशचलचित्रम् प्रथमं क्रीडति</string>
+    <string name="experimental_features">प्रयोगात्मककार्याणि</string>
+    <string name="experimental_features_hint">अत्र कार्याणि अद्यापि प्रयोगात्मकानि सन्ति, परिवर्तनं शक्यते</string>
+    <string name="experimental_warning_title">प्रयोगात्मककार्यचेतावनी</string>
+    <string name="experimental_warning_msg">प्रयोगात्मककार्याणि अद्यापि परीक्ष्यन्ते। तेषाम् उपयोगः एतानि कर्तुं शक्नोति:\n\n• अन्तरफलकं दोषेण दर्शयितुं शक्यते, अनुप्रयोगश्च पतितुं शक्नोति;\n• कानिचित् कार्याणि अनुपलब्धानि भवेयुः, अथवा उत्तरसंस्करणेषु परिवर्तयिष्यन्ते निरसिष्यन्ते वा;\n• अन्तरफलकयन्त्रस्य परिवर्तनं सम्पूर्णम् अन्तरफलकं तत्क्षणं पुनः भारयति;\n• एतानि कार्याणि कदापि परिवर्तयितुं शक्यन्ते, स्थिरकार्यैः सह साम्यं न प्रत्याभूयते।</string>
+    <!-- UNCERTAIN_SA：UI 引擎译作“अन्तरफलकयन्त्रम्”（界面机器）是直译意译，现代术语无古典对应词，需母语者复核 -->
+    <string name="ui_engine">अन्तरफलकयन्त्रम्</string>
+    <string name="ui_engine_desc_md3">पूर्वनिर्धारितरूपम्, यथा अधुना अस्ति</string>
+    <string name="ui_engine_desc_expressive">अधिकगोलाः उज्ज्वलतराः आकाराः</string>
+    <string name="ui_engine_desc_miuix">Xiaomi MIUI-शैली</string>
+    <string name="ui_engine_switch_title">अन्तरफलकयन्त्रं परिवर्तयतु</string>
+    <string name="ui_engine_switch_msg">परिवर्तनानन्तरं सम्पूर्णम् अन्तरफलकं “%1$s” इति परिवर्तिष्यते तत्क्षणं च पुनः भारिष्यते</string>
+    <!-- UNCERTAIN_SA：“सङ्कटापन्नभाषा”（濒危语言）是现代概念的意译，需母语者复核 -->
+    <string name="endangered_language_switch">सङ्कटापन्नभाषापरिवर्तनम्</string>
+    <string name="endangered_language_sub">सम्प्रति केवलं 5 भाषाः समर्थिताः सन्ति; पश्चात् अधिकाः योजयितुं शक्यन्ते</string>
+    <string name="thanks_mt_desc">अयं अनुप्रयोगः MT Manager इत्यस्य द्विपटलविन्यासं, संचिकासूचीं, नवकोष्ठक “अधिकाः मार्गाः” इति फलकं, विलोप-प्रत्याहरण-संवादान् च आदर्शीकृत्य निर्मितः। MT Manager इत्यस्मै आदर्शार्थं प्रेरणायै च धन्यवादाः।</string>
+    <string name="about_intro_title">अस्य अनुप्रयोगस्य विषये</string>
+    <string name="appearance">रूपम्</string>
+    <!-- UNCERTAIN_SA：动态颜色译作“गतिशीलवर्णः”是直译，古典梵语无此概念，需母语者复核 -->
+    <string name="dynamic_color">गतिशीलवर्णः</string>
+    <string name="dynamic_color_hint">यदि सक्रियं तर्हि अनुप्रयोगवर्णाः तन्त्रभित्तिचित्रवर्णान् अनुसरन्ति</string>
+    <string name="dynamic_color_confirm_title">गतिशीलवर्णः</string>
+    <string name="dynamic_color_confirm_msg">गतिशीलवर्णे सक्रिये अनुप्रयोगवर्णाः तन्त्रभित्तिचित्रवर्णान् अनुसरिष्यन्ति भित्तिचित्रेण सह च परिवर्तिष्यन्ते। गतिशीलवर्णः सक्रियः क्रियताम् वा?</string>
+    <string name="app_color">अनुप्रयोगवर्णः</string>
+    <string name="app_color_hint">अनुप्रयोगस्य विषयवर्णं चिनुत। अन्तरफलकस्य मुख्यवर्णः तेन सह परिवर्तते</string>
+    <string name="app_color_disabled_hint">अस्य कार्यस्य उपयोगार्थं प्रथमं गतिशीलवर्णं निष्क्रियं कुरुत</string>
+    <string name="font_color">अक्षरवर्णः</string>
+    <string name="font_color_hint">अनुप्रयोगे पाठवर्णं चिनुत। सर्वपृष्ठेषु पाठः तेन सह परिवर्तते</string>
+    <string name="font_color_group_base">मूलवर्णाः</string>
+    <string name="font_color_group_light">उज्ज्वलवर्णाः</string>
+    <string name="font_color_group_dark">कृष्णवर्णाः</string>
+    <string name="palette_color_group_base">मूलवर्णाः</string>
+    <string name="palette_color_group_light">उज्ज्वलवर्णाः</string>
+    <string name="palette_color_group_dark">कृष्णवर्णाः</string>
+    <string name="compress_item">सङ्कोचयतु</string>
+    <string name="copy_path">मार्गं प्रतिलिखतु</string>
+    <string name="move_item">चालयतु</string>
+    <string name="more_actions">अधिकाः मार्गाः</string>
+    <string name="copy_to_other">प्रतिलिखतु -&gt;</string>
+    <string name="move_to_other">चालयतु -&gt;</string>
+    <string name="share_zip">ZIP प्रेषयतु</string>
+    <!-- UNCERTAIN_SA：置顶译作“उपरि स्थापयतु”（放到上面）是意译，现代界面术语无古典对应词，需母语者复核 -->
+    <string name="pin_folder">सञ्चयं उपरि स्थापयतु</string>
+    <string name="unpin_folder">सञ्चयं उपरितः निरस्यतु</string>
+    <string name="encrypt_file">संचिकां गोपयतु</string>
+    <string name="decrypt_file">संचिकां प्रकटयतु</string>
+    <string name="bookmarks_title">चिह्नानि</string>
+    <string name="move_to_trash">अपशिष्टपात्रे स्थापयतु</string>
+    <string name="delete_to_trash_msg">संचिकां %1$s अपशिष्टपात्रे स्थापयितुम् इच्छसि वा?</string>
+    <string name="delete_to_trash_multi_msg">%1$d वस्तूनि अपशिष्टपात्रे स्थापयितुम् इच्छसि वा?</string>
+    <string name="file_count">संचिकाः</string>
+    <string name="folder_count">सञ्चयाः</string>
+    <string name="restore_confirm_msg">संचिकां %1$s मूलस्थाने प्रत्यानेतुम् इच्छसि वा?</string>
+    <string name="restore_confirm_multi_msg">%1$d वस्तूनि मूलस्थाने प्रत्यानेतुम् इच्छसि वा?</string>
+    <string name="delete_permanent_msg">संचिकां %1$s नित्यं विलोपयितुम् इच्छसि वा?</string>
+    <string name="delete_permanent_multi_msg">%1$d वस्तूनि नित्यं विलोपयितुम् इच्छसि वा?</string>
+    <string name="path_copied">मार्गः प्रतिलिखितः</string>
+    <string name="moved">चालितम्</string>
+    <string name="move_failed">चालनं विफलम्</string>
+    <string name="move_not_supported">एतत् भण्डारणं चालनं न समर्थयति</string>
+    <string name="other_pane_no_folder">अन्यपटले सञ्चयः न उद्घाटितः</string>
+    <string name="already_here">अस्मिन् सञ्चये एव अस्ति</string>
+    <string name="new_title">नूतनम्</string>
+    <string name="new_file_short">संचिका</string>
+    <string name="new_folder_short">सञ्चयः</string>
+    <!-- UNCERTAIN_SA：剪贴板译作“स्मृतिपटलम्”（记忆板）是意译新造词，需母语者复核 -->
+    <string name="clipboard_empty">स्मृतिपटलं रिक्तम् अस्ति वा पाठः नास्ति</string>
+    <string name="name_exists">समाननाम्ना वस्तु पूर्वमेव अस्ति</string>
+    <string name="invalid_name">अमान्यं नाम</string>
+    <string name="trash_move_failed">अपशिष्टपात्रे स्थापनं विफलम्; किमपि न विलोपितम्</string>
+    <string name="bookmark_added">चिह्नं योजितम्</string>
+    <string name="bookmark_removed">चिह्नं निरस्तम्</string>
+    <string name="pinned">उपरि स्थापितम्</string>
+    <string name="unpinned">उपरितः निरस्तम्</string>
+    <string name="hidden_done">गुप्तम्</string>
+    <string name="unhidden_done">प्रकटितम्</string>
+    <string name="password_hint">गुप्तशब्दं लिखतु</string>
+    <string name="password_confirm_hint">गुप्तशब्दं पुनः लिखतु</string>
+    <string name="password_mismatch">गुप्तशब्दाः न मेलन्ति</string>
+    <string name="wrong_password">अशुद्धः गुप्तशब्दः</string>
+    <string name="encrypt_failed">गोपनं विफलम्</string>
+    <string name="decrypt_failed">प्रकटनं विफलम्</string>
+    <string name="encrypted">गुप्तीकृतम्</string>
+    <string name="decrypted">प्रकटितम्</string>
+    <string name="zip_failed">सङ्कोचनं विफलम्</string>
+    <string name="dynamic_color_on_note">गतिशीलवर्णे सक्रिये अनुप्रयोगवर्णः न प्रभवति</string>
+    <!-- UNCERTAIN_SA：快捷方式译作“लघुमार्गः”（小路）是意译，需母语者复核 -->
+    <string name="create_shortcut">लघुमार्गं सृजतु</string>
+    <string name="shortcut_icon">प्रतीकम्</string>
+    <string name="shortcut_name">नाम</string>
+    <string name="shortcut_type">प्रकारः</string>
+    <string name="shortcut_type_desktop">गृहपृष्ठलघुमार्गः</string>
+    <string name="shortcut_type_desktop_desc">गृहपृष्ठे स्वतन्त्रं प्रतीकं स्रक्ष्यते</string>
+    <string name="shortcut_type_icon">प्रतीकलघुमार्गः</string>
+    <string name="shortcut_type_icon_desc">संचिकाप्रकारप्रतीकं गृहपृष्ठप्रतीकरूपेण उपयुज्यते</string>
+    <string name="shortcut_action">क्रिया</string>
+    <string name="shortcut_action_locate">स्थानं दर्शयतु</string>
+    <string name="shortcut_action_locate_click">स्थानं दर्शयित्वा उद्घाटयतु</string>
+    <string name="shortcut_action_open_editor">पाठसम्पादके उद्घाटयतु</string>
+    <string name="shortcut_action_preview_html">HTML-संचिकां पूर्वदृश्यताम्</string>
+    <string name="shortcut_created">लघुमार्गः सृष्टः</string>
+    <string name="shortcut_not_supported">एतत् यन्त्रं गृहपृष्ठलघुमार्गान् न समर्थयति</string>
+    <string name="shortcut_not_text">पाठसंचिका नास्ति, तन्त्रदर्शकेन उद्घाटिता</string>
+    <string name="shortcut_target_missing">लघुमार्गलक्ष्यं नास्ति वा प्राप्तुं न शक्यते</string>
+</resources>

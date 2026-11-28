@@ -1,0 +1,358 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <!-- UNCERTAIN_KK-ARAB：本文件阿拉伯字母哈萨克文采用逐字母对应写法：ә→ٵ、ө→ٶ、ү→ٷ、і→ٸ、е→ە、ғ→ع、х→ح；中国哈萨克文（托忒文）传统写法是在词首加 ٴ 并用后元音字母表示前元音（如 және→ٴجانە），两种写法并存，本文件未采用词首 hamza 写法，需母语者复核；ғ→ع/х→ح 的对应亦有 ғ→غ、х→خ 的写法，需母语者复核 -->
+    <string name="app_name">Fairumanējā</string>
+    <string name="nav_files">فايلدار</string>
+    <string name="nav_bookmarks">بەتبەلگٸلەر</string>
+    <string name="nav_recent">سوڭعى</string>
+    <string name="nav_tools">قۇرالدار</string>
+    <string name="search_hint">فايلداردى ٸزدەۋ…</string>
+    <string name="sort_name">اتاۋى بويىنشا</string>
+    <string name="sort_date">كٷنٸ بويىنشا</string>
+    <string name="sort_size">ٶلشەمٸ بويىنشا</string>
+    <string name="sort_type">تٷرٸ بويىنشا</string>
+    <string name="sort_by_type">تٷرٸ بويىنشا</string>
+    <!-- UNCERTAIN_KK-ARAB：新词直译，需母语者复核 -->
+    <string name="sort_reverse">كەرٸ تٵرتٸپ</string>
+    <!-- UNCERTAIN_KK-ARAB：新词直译，需母语者复核 -->
+    <string name="sort_type_folders_only">تەك قالتالار</string>
+    <string name="viewer_background">فون اۋىستىرۋ</string>
+    <string name="viewer_bg_black">قارا</string>
+    <string name="viewer_bg_white">اق</string>
+    <string name="viewer_bg_gray">سۇر</string>
+    <string name="viewer_view_horizontal">كولدەنەڭ پاراق اۋدارۋ</string>
+    <string name="viewer_view_vertical">تىك ءتىزىم</string>
+    <string name="viewer_dimensions">ولشەم</string>
+    <string name="viewer_format">فورمات</string>
+    <!-- UNCERTAIN_KK：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_images">سۋرەتتەر</string>
+    <!-- UNCERTAIN_KK：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_videos">بەينەلەر</string>
+    <!-- UNCERTAIN_KK：媒体页音频分类新词尽力翻译，需母语者复核 -->
+    <string name="media_audios">اۋديو</string>
+    <!-- UNCERTAIN_KK：跳转 / 创建HTML 新词尽力翻译，需母语者复核 -->
+    <string name="jump_title">ءوتۋ</string>
+    <string name="create_html">HTML جاساۋ</string>
+    <string name="jump_invalid_path">جول جوق نەمەسە قالتا ەمەس</string>
+    <!-- UNCERTAIN_KK：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_gifs">GIF</string>
+    <!-- UNCERTAIN_KK：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_today">بۇگٸن</string>
+    <!-- UNCERTAIN_KK：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_yesterday">كەشە</string>
+    <!-- UNCERTAIN_KK：抽屉合并新词尽力翻译，需母语者复核 -->
+    <string name="media_images_videos">سۋرەتتەر جەنە بەينەلەر</string>
+    <!-- UNCERTAIN_KK：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="play_video">بەينە ويناتۋ</string>
+    <!-- UNCERTAIN_KK：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="view_image">سۋرەت كۆرۋ</string>
+    <!-- UNCERTAIN_KK：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="browse_archive">قىسىلعان مۇراعاتتى قاراۋ</string>
+    <!-- UNCERTAIN_KK：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_speed">جىلدامدىق</string>
+    <!-- UNCERTAIN_KK：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_cannot_play">بۇل بەينەنى ويناتۋ مۇمكىن ەمەس</string>
+    <!-- UNCERTAIN_KK：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="play_music">مۋزىكا ويناتۋ</string>
+    <!-- UNCERTAIN_KK：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="music_cannot_play">بۇل اۋديونى ويناتۋ مۇمكىن ەمەس</string>
+    <!-- UNCERTAIN_KK：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_play">ويناتۋ</string>
+    <!-- UNCERTAIN_KK：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_pause">توقتاتۋ</string>
+    <!-- UNCERTAIN_KK：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_fill_screen">ەكراندى تولتىرۋ</string>
+    <!-- UNCERTAIN_KK：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_loop">قايتا ويناتۋ</string>
+    <!-- UNCERTAIN_KK：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_landscape">كولدەنەڭ رەجىم</string>
+    <!-- UNCERTAIN_KK：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_duration">ۇزاقتىعى</string>
+    <string name="show_hidden">جاسىرىن فايلداردى كٶرسەتۋ</string>
+    <string name="copy">كٶشٸرۋ</string>
+    <string name="cut">قييۋ</string>
+    <!-- UNCERTAIN_KK-ARAB：«قويۋ»译法不确定，备选 «كٸرٸستٸرۋ»，需母语者复核 -->
+    <string name="paste">قويۋ</string>
+    <string name="delete">جويۋ</string>
+    <string name="rename">اتىن ٶزگەرتۋ</string>
+    <string name="new_folder">جاڭا قالتا</string>
+    <string name="new_file">جاڭا فايل</string>
+    <string name="share">بٶلٸسۋ</string>
+    <!-- UNCERTAIN_KK-ARAB：«كٶمەگٸمەن اشۋ»译法不确定，备选 «ارقىلى اشۋ»，需母语者复核 -->
+    <string name="open_with">كٶمەگٸمەن اشۋ</string>
+    <!-- UNCERTAIN_KK-ARAB：«سيپاتتار»译法不确定，备选 «قاسيەتتەر»，需母语者复核 -->
+    <string name="properties">سيپاتتار</string>
+    <string name="select_all">بارلىعىن تاڭداۋ</string>
+    <string name="cancel">بولدىرماۋ</string>
+    <string name="ok">OK</string>
+    <string name="create">جاساۋ</string>
+    <string name="confirm_delete">جويۋدى راستاۋ</string>
+    <string name="delete_message">تاڭدالعان ەلەمەنتتەردٸ جويعىڭىز كەلە مە؟</string>
+    <string name="delete_direct_message">تاڭدالعان ەلەمەنتتەردٸ جويعىڭىز كەلە مە؟ ولار بٸردەن جويىلادى، سەبەتكە تٷسپەيدٸ جٵنە قايتارۋ مٷمكٸن ەمەس.</string>
+    <string name="rename_hint">جاڭا اتاۋ</string>
+    <string name="folder_name_hint">قالتا اتاۋى</string>
+    <string name="file_name_hint">فايل اتاۋى</string>
+    <string name="storage_internal">ٸشكٸ جاد</string>
+    <string name="no_files">مۇندا ەشتەڭە جوق</string>
+    <string name="tools_title">قۇرالدار</string>
+    <string name="storage_usage">جادتى پايدالانۋ</string>
+    <string name="free_space">بوس</string>
+    <string name="used_space">پايدالانىلدى</string>
+    <string name="settings">پارامەترلەر</string>
+    <string name="language">تٸل</string>
+    <string name="theme">تاقىرىپ</string>
+    <string name="theme_system">جٷيەنٸ قاداعالاۋ</string>
+    <string name="theme_light">اشىق</string>
+    <string name="theme_dark">قاراڭعى</string>
+    <string name="about">تۋرالى</string>
+    <string name="version">نۇسقا</string>
+    <string name="save">ساقتاۋ</string>
+    <string name="saved">ساقتالدى</string>
+    <string name="save_failed">ساقتاۋ سٵتسٸز اياقتالدى</string>
+    <!-- UNCERTAIN_KK-ARAB：«شىعارۋ»译法不确定，备选 «شىعارىپ الۋ»，需母语者复核 -->
+    <string name="extract">شىعارۋ</string>
+    <string name="compress">ZIP ٸشٸنە سىعۋ</string>
+    <string name="permission_needed">فايلداردى باسقارۋ ٷشٸن «بارلىق فايلدارعا قول جەتكٸزۋ» رۇقساتى قاجەت</string>
+    <string name="grant_access">رۇقسات بەرۋ</string>
+    <string name="bookmarks_empty">ٵزٸرشە بەتبەلگٸ جوق، قالتانى ۇزاق باسىپ تۇرىپ بەتبەلگٸگە قوسۋعا بولادى</string>
+    <string name="recent_empty">ٵزٸرشە جاقىندا اشىلعان فايل جوق</string>
+    <string name="error">قاتە پايدا بولدى</string>
+    <string name="modified">ٶزگەرتٸلگەن ۋاقىتى</string>
+    <string name="path">جول</string>
+    <string name="size">ٶلشەم</string>
+    <string name="folder">قالتا</string>
+    <string name="file">فايل</string>
+    <string name="grid">تور كٶرٸنٸسٸ</string>
+    <string name="list_view">تٸزٸم كٶرٸنٸسٸ</string>
+    <string name="refresh">جاڭارتۋ</string>
+    <string name="bookmark">بەتبەلگٸ</string>
+    <string name="open">اشۋ</string>
+    <!-- UNCERTAIN_KK-ARAB：«بۋما اتاۋى»中 بۋما 为 package 的哈萨克语借译，不确定，需母语者复核 -->
+    <string name="apk_package">بۋما اتاۋى</string>
+    <string name="copied">كٶشٸرٸلدٸ</string>
+    <string name="pasted">قويىلدى</string>
+    <string name="deleted">جويىلدى</string>
+    <string name="delete_failed">جويۋ سٵتسٸز اياقتالدى، قايتالاپ كٶرٸڭٸز</string>
+    <string name="renamed">اتى ٶزگەرتٸلدٸ</string>
+    <string name="created">جاسالدى</string>
+    <string name="extracted">شىعارىلدى</string>
+    <string name="compressed">سىعىلدى</string>
+    <string name="about_text">Fairumanējā — MT Manager تٵجٸريبەسٸنەن شابىت العان، اشىق باستاپقى كودى بار فايل باسقارۋشىسى. ول Android، Linux جٵنە Windows جٷيەلەرٸن قولدايدى (جۇمىس ٷستەلٸ نۇسقاسى جوسپاردا) جٵنە MIT ليتسەنزيياسى بويىنشا تاراتىلادى.</string>
+    <string name="name">اتاۋى</string>
+    <string name="dual_pane">قوس پانەل</string>
+    <string name="swap_panes">پانەلدەردٸ اۋىستىرۋ</string>
+    <string name="paste_to_other_pane">باسقا پانەلگە قويۋ</string>
+    <string name="back">ارتقا</string>
+    <string name="forward">العا</string>
+    <string name="go_up">جوعارى</string>
+    <string name="pane_stats">قالتالار: %1$d  فايلدار: %2$d  جاد: %3$s/%4$s</string>
+    <string name="selected_count">%1$d ەلەمەنت تاڭدالدى</string>
+    <string name="left_pane">سول جاق پانەل</string>
+    <string name="right_pane">وڭ جاق پانەل</string>
+    <string name="items_count">%1$d ەلەمەنت</string>
+    <string name="drawer_local">جەرگٸلٸكتٸ</string>
+    <string name="drawer_tools">قۇرالدار</string>
+    <string name="root_directory">تٷبٸرلٸك كاتالوگ</string>
+    <string name="trash">سەبەت</string>
+    <string name="text_editor">مٵتٸن ٶڭدەگٸشٸ</string>
+    <string name="cannot_access">بۇل كاتالوگقا كٸرۋ مٷمكٸن ەمەس</string>
+    <string name="trash_empty">سەبەت بوس</string>
+    <string name="restore">قالپىنا كەلتٸرۋ</string>
+    <string name="delete_permanently">بٸرجولا جويۋ</string>
+    <string name="empty_trash">سەبەتتٸ بوساتۋ</string>
+    <string name="moved_to_trash">سەبەتكە جىلجىتىلدى</string>
+    <string name="restored">قالپىنا كەلتٸرٸلدٸ</string>
+    <string name="permanently_deleted">بٸرجولا جويىلدى</string>
+    <string name="trash_emptied">سەبەت بوساتىلدى</string>
+    <string name="restore_failed">قالپىنا كەلتٸرۋ سٵتسٸز اياقتالدى</string>
+    <string name="file_too_large">فايل تىم ٷلكەن (2 MB-تان اسادى)، اشۋ باياۋ بولۋى مٷمكٸن. اشقىڭىز كەلە مە؟</string>
+    <string name="edit_text">مٵتٸندٸ ٶڭدەۋ</string>
+    <string name="new_text_file">جاڭا مٵتٸندٸك فايل</string>
+    <string name="original_path">باستاپقى جول</string>
+    <string name="confirm_empty_trash">سەبەتتٸ بوساتقىڭىز كەلە مە؟ بۇل ٵرەكەتتٸ قايتارۋ مٷمكٸن ەمەس.</string>
+    <string name="language_settings">تٸل پارامەترلەرٸ</string>
+    <!-- UNCERTAIN_KK-ARAB：«جٷيەنٸ قاداعالاۋ»译法不确定，备选 «جٷيە تٸلٸ»，需母语者复核 -->
+    <string name="follow_system_language">جٷيەنٸ قاداعالاۋ</string>
+    <string name="reset_defaults">ٵدەپكٸ پارامەترلەردٸ قالپىنا كەلتٸرۋ</string>
+    <string name="reset_defaults_msg">تٸل، تاقىرىپ رەجيمٸ، ديناميكالىق تٷس، قولدانبا تٷسٸ، قارٸپ تٷسٸ، UI قوزعالتقىشى، اشىلۋ انيماتسيياسى، سۇرىپتاۋ، قوس پانەل جٵنە جاسىرىن فايلداردى كٶرسەتۋ ٵدەپكٸ پارامەترلەرگە قايتارىلادى. بەتبەلگٸلەر، بەكٸتٸلگەن قالتالار، ارنايى جادتار جٵنە سەبەت ٶزگەرمەيدٸ. قالپىنا كەلتٸرگٸڭٸز كەلە مە؟</string>
+    <string name="settings_group_language_appearance">تٸل جٵنە سىرتقى كٶرٸنٸس</string>
+    <string name="settings_group_app">قولدانبا</string>
+    <string name="confirm">راستاۋ</string>
+    <string name="theme_mode">تاقىرىپ رەجيمٸ</string>
+    <string name="more_options">قوسىمشا پارامەترلەر</string>
+    <string name="follow_system_theme">تاقىرىپ جٷيەنٸ قاداعالايدى</string>
+    <string name="add_network_storage">جەلٸلٸك جاد قوسۋ</string>
+    <string name="add_local_storage">جەرگٸلٸكتٸ جاد قوسۋ</string>
+    <string name="add_network_group">جەلٸلٸك توپ قوسۋ</string>
+    <string name="manage_tool_groups">قۇرال توپتارىن باسقارۋ</string>
+    <string name="not_supported">ٵزٸرشە قولداۋ تاپپاعان</string>
+    <string name="add">قوسۋ</string>
+    <string name="storage_name_hint">اتاۋى</string>
+    <string name="storage_path_hint">جول، مىسالى /storage/emulated/0/Download</string>
+    <string name="storage_path_invalid">جول جوق نەمەسە قالتا ەمەس</string>
+    <string name="hide">جاسىرۋ</string>
+    <string name="sort">سۇرىپتاۋ</string>
+    <!-- UNCERTAIN_KK-ARAB：«جاسىرىننان الۋ»译法不确定，需母语者复核 -->
+    <string name="unhide">جاسىرىننان الۋ</string>
+    <string name="hidden_storages">جاسىرىن جادتار</string>
+    <string name="move_up">جوعارى جىلجىتۋ</string>
+    <string name="move_down">تٶمەن جىلجىتۋ</string>
+    <string name="root_browse_only">تٷبٸرلٸك كاتالوگ تەك شولۋ ٷشٸن</string>
+    <string name="saf_browse_only">بۇل جاد تەك شولۋ ٷشٸن</string>
+    <string name="shizuku_needed_title">Shizuku قاجەت</string>
+    <string name="shizuku_needed_msg">تٷبٸرلٸك كاتالوگقا كٸرۋ ٷشٸن Shizuku رۇقساتى قاجەت. الدىمەن Shizuku ورناتىپ، ٸسكە قوسىڭىز، سودان كەيٸن قايتالاپ كٶرٸڭٸز.</string>
+    <string name="shizuku_download">Shizuku جٷكتەپ الۋ</string>
+    <string name="shizuku_request_msg">Shizuku تەرەزەسٸندە وسى رۇقساتتى بەرٸڭٸز.</string>
+    <string name="shizuku_denied">Shizuku رۇقساتى الىنباعاندىقتان تٷبٸرلٸك كاتالوگقا كٸرۋ مٷمكٸن ەمەس</string>
+    <string name="shizuku_failed">تٷبٸرلٸك كاتالوگتى وقۋ سٵتسٸز اياقتالدى</string>
+    <string name="storage_already_added">بۇل جاد قوسىلعان</string>
+    <string name="storage_not_supported">بۇل ورىندى قوسۋ ٵزٸرشە قولداۋ تاپپاعان</string>
+    <string name="shizuku_failed_detail">تٷبٸرلٸك كاتالوگتى وقۋ سٵتسٸز اياقتالدى: %1$s</string>
+    <string name="version_number">نۇسقا نٶمٸرٸ</string>
+    <string name="open_source_license">اشىق باستاپقى كود ليتسەنزيياسى</string>
+    <string name="user_agreement">پايدالانۋشى كەلٸسٸمٸ</string>
+    <string name="privacy_policy">قۇپييالىلىق ساياساتى</string>
+    <string name="special_thanks">ەرەكشە العىس</string>
+    <string name="chinese_version_note">تٶمەندە قىتايشا نۇسقاسى بەرٸلگەن</string>
+    <string name="undo">كەرٸ قايتارۋ</string>
+    <string name="redo">قايتا ورىنداۋ</string>
+    <string name="save_as">باسقاشا ساقتاۋ</string>
+    <string name="editor_search">ٸزدەۋ</string>
+    <string name="syntax">سينتاكسيس</string>
+    <string name="syntax_auto">اۆتو (كەڭەيتٸم بويىنشا)</string>
+    <string name="syntax_plain">جاي مٵتٸن</string>
+    <string name="prev_position">الدىڭعى ورىن</string>
+    <string name="next_position">كەلەسٸ ورىن</string>
+    <string name="go_to_line">جولعا ٶتۋ</string>
+    <string name="go_to_line_hint">جول نٶمٸرٸن ەنگٸزٸڭٸز</string>
+    <!-- UNCERTAIN_KK-ARAB：«سٶزدٸ تاسىمالداۋ»为编辑器术语直译，不确定，需母语者复核 -->
+    <string name="word_wrap">سٶزدٸ تاسىمالداۋ</string>
+    <string name="read_only">تەك وقۋ رەجيمٸ</string>
+    <!-- UNCERTAIN_KK-ARAB：smooth_mode 的功能含义不确定，«تەگٸس رەجيم»为直译，需母语者复核 -->
+    <string name="smooth_mode">تەگٸس رەجيم</string>
+    <string name="code_completion">كودتى تولىقتىرۋ</string>
+    <string name="close_file">فايلدى جابۋ</string>
+    <string name="font_size">قارٸپ ٶلشەمٸ</string>
+    <string name="line_numbers">جول نٶمٸرلەرٸ</string>
+    <string name="unsaved_title">ساقتالماعان ٶزگەرٸستەر</string>
+    <string name="unsaved_message">اعىمداعى فايلدا ساقتالماعان ٶزگەرٸستەر بار. ساقتايسىز با؟</string>
+    <string name="dont_save">ساقتاماۋ</string>
+    <string name="search_keyword_hint">كٸلت سٶز ەنگٸزٸڭٸز</string>
+    <string name="search_match_count">%1$d / %2$d</string>
+    <string name="no_match">سٵيكەستٸك جوق</string>
+    <string name="syntax_java">Java</string>
+    <string name="syntax_kotlin">Kotlin</string>
+    <string name="syntax_xml">XML</string>
+    <string name="syntax_json">JSON</string>
+    <string name="syntax_python">Python</string>
+    <string name="syntax_shell">Shell</string>
+    <string name="syntax_c">C/C++</string>
+    <string name="deselect_all">تاڭداۋدى الىپ تاستاۋ</string>
+    <string name="unknown">بەلگٸسٸز</string>
+    <string name="oss_components">اشىق باستاپقى كود كومپونەنتتەرٸ</string>
+    <string name="disclaimer">جاۋاپكەرشٸلٸكتەن باس تارتۋ</string>
+    <string name="thanks_muse_desc">Muse باعدارلاماسىنا ٵزٸرلەۋگە كٶمەكتەسكەنٸ جٵنە تەحنيكالىق قولداۋ كٶرسەتكەنٸ ٷشٸن العىس: بۇل قولدانبانىڭ كودىن جازۋدى، مٷمكٸندٸكتەرٸن ٸسكە اسىرۋدى جٵنە مٵسەلەلەرٸن شەشۋدٸ Muse كٶمەگٸمەن ورىندادىق.</string>
+    <!-- UNCERTAIN_KK-ARAB：长文直译，需母语者复核 -->
+    <string name="thanks_mp_desc">بۇل قولدانبا MP-Manager باعدارلاماسىنان مىنالاردى الدى: قوس پانەلدە قاتار شولۋ جٵنە پانەلدەر اراسىندا كٶشٸرۋ، جىلجىتۋ، باسقا پانەلگە قويۋ؛ فايل تٸزٸمٸ جولدارىنىڭ ستيلٸ — كٸشٸ دٶڭگەلەك بەلگٸشەلەر، اتاۋلار جٵنە «كٷنٸ + ٶلشەمٸ» قوسىمشا جولى؛ جول سوڭىنداعى ⋮ مٵزٸرٸ مەن توعىز ۇيالى «قوسىمشا ٵرەكەتتەر» تاقتاسى؛ سەبەتكە جويۋ، قالپىنا كەلتٸرۋ جٵنە بٸرجولا جويۋدى راستاۋ ديالوگتارى؛ جاساۋ ديالوگى؛ جول نٶمٸرلەرٸ مەن تاڭبالار تاقتاسى بار مٵتٸن ٶڭدەگٸش؛ سەبەت، بەتبەلگٸلەر جٵنە بەكٸتٸلگەن قالتالار؛ Shizuku/Root قولجەتٸمدٸلٸگٸ؛ سىعۋ جٵنە شىعارۋ، فايلدى شيفرلاۋ جٵنە شيفرىن شەشۋ؛ پايدالانۋشىنىڭ جەرگٸلٸكتٸ جادتارى. MP-Manager باعدارلاماسىنا GitHub سايتىندا GPL-3.0 ليتسەنزيياسى بويىنشا اشىق باستاپقى كودپەن جارييالانعانى ٷشٸن العىس (https://github.com/AbdurazaaqMohammed/MP-Manager) — ول بۇل قولدانباعا تٸكەلەي ٷيرەنۋگە جٵنە سالىستىرۋعا بولاتىن ديزاين ٷلگٸسٸن بەردٸ؛ ونىڭ اۆتورى AbdurazaaqMohammed قولداۋىن جالعاستىرعانى ٷشٸن العىس؛ ول قاراپايىم ادامنىڭ دا MT Manager باعدارلاماسىنا اشىق بالاما جاساۋعا بولاتىنىن دٵلەلدەپ، بۇل قولدانباعا ايقىن ٷيرەنۋ ماقساتىن بەرگەنٸ ٷشٸن العىس.</string>
+    <string name="splash_animation">اشىلۋ انيماتسيياسى</string>
+    <string name="splash_animation_hint">قوسىلعاندا قولدانبانى جۇمىس ٷستەلٸنەن ٵر ٸسكە قوسقاندا اشىلۋ انيماتسيياسى ويناتىلادى</string>
+    <string name="experimental_features">ەكسپەريمەنتتٸك مٷمكٸندٸكتەر</string>
+    <string name="experimental_features_hint">مۇنداعى مٷمكٸندٸكتەر ٵلٸ سىناق كەزەڭٸندە، ٶزگەرۋٸ مٷمكٸن</string>
+    <string name="experimental_warning_title">ەكسپەريمەنتتٸك مٷمكٸندٸكتەر تۋرالى ەسكەرتۋ</string>
+    <string name="experimental_warning_msg">ەكسپەريمەنتتٸك مٷمكٸندٸكتەر ٵلٸ سىناق كەزەڭٸندە. ولاردى قوسۋ جٵنە پايدالانۋ مىناداي سالدارعا ٵكەلۋٸ مٷمكٸن:\n\n• ينتەرفەيس دۇرىس كٶرسەتٸلمەۋٸ، بۇزىلۋى نەمەسە قولدانبا جابىلىپ قالۋى مٷمكٸن؛\n• كەيبٸر مٷمكٸندٸكتەر قولجەتٸمسٸز بولۋى نەمەسە كەيٸنگٸ نۇسقالاردا ٶزگەرتٸلۋٸ، الىنىپ تاستالۋى مٷمكٸن؛\n• UI قوزعالتقىشىن اۋىستىرعاندا بٷكٸل قولدانبا ينتەرفەيسٸ بٸردەن قايتا جٷكتەلەدٸ؛\n• بۇل مٷمكٸندٸكتەر كەز كەلگەن ۋاقىتتا ٶزگەرۋٸ مٷمكٸن، ولاردىڭ رەسمي مٷمكٸندٸكتەرمەن بٸردەي بولاتىنىنا كەپٸلدٸك بەرٸلمەيدٸ.</string>
+    <string name="ui_engine">UI قوزعالتقىشى</string>
+    <string name="ui_engine_desc_md3">ٵدەپكٸ ستيل، قازٸرگٸ كٶرٸنٸس</string>
+    <string name="ui_engine_desc_expressive">نەعۇرلىم دٶڭگەلەك جٵنە اشىق پٸشٸندەر</string>
+    <string name="ui_engine_desc_miuix">Xiaomi MIUI ستيلٸ</string>
+    <string name="ui_engine_switch_title">UI قوزعالتقىشىن اۋىستىرۋ</string>
+    <string name="ui_engine_switch_msg">اۋىستىرعاننان كەيٸن بٷكٸل قولدانبا ينتەرفەيسٸ “%1$s” تٷرٸنە اۋىسىپ، بٸردەن قايتا جٷكتەلەدٸ.</string>
+    <!-- UNCERTAIN_KK-ARAB：«جويىلۋ قاۋپٸ بار تٸلدەردٸ اۋىستىرۋ»措辞不确定，需母语者复核 -->
+    <string name="endangered_language_switch">جويىلۋ قاۋپٸ بار تٸلدەردٸ اۋىستىرۋ</string>
+    <string name="endangered_language_sub">ٵزٸرشە تەك 5 تٸل قولداۋ تابادى، كەيٸن قوسىلۋى مٷمكٸن</string>
+    <string name="thanks_mt_desc">بۇل قولدانبا MT Manager باعدارلاماسىنىڭ قوس پانەلدٸ ورنالاسۋىن، فايل مٵزٸرلەرٸن، توعىز ۇيالى «قوسىمشا ٵرەكەتتەر» تاقتاسىن، جويۋ جٵنە قالپىنا كەلتٸرۋ ديالوگتارىن قوسا العاندا، ينتەرفەيس ديزاينىن نەگٸزگە الدى. ديزاين ٷلگٸسٸ مەن شابىت بەرگەنٸ ٷشٸن MT Manager باعدارلاماسىنا العىس ايتامىز.</string>
+    <string name="about_intro_title">باعدارلاما تۋرالى</string>
+    <string name="appearance">سىرتقى كٶرٸنٸس</string>
+    <string name="dynamic_color">ديناميكالىق تٷس</string>
+    <string name="dynamic_color_hint">قوسىلعاندا قولدانبا تٷسٸ جٷيە تۇسقاعازىنىڭ تٷسٸنە قاراي ٶزگەرەدٸ</string>
+    <string name="dynamic_color_confirm_title">ديناميكالىق تٷس</string>
+    <string name="dynamic_color_confirm_msg">ديناميكالىق تٷستٸ قوسقاننان كەيٸن قولدانبا تٷسٸ جٷيە تۇسقاعازىنىڭ تٷسٸنە قاراي ٶزگەرەدٸ. ديناميكالىق تٷستٸ قوسقىڭىز كەلە مە؟</string>
+    <string name="app_color">قولدانبا تٷسٸ</string>
+    <string name="app_color_hint">قولدانبانىڭ تاقىرىپ تٷسٸن تاڭداڭىز، ينتەرفەيس تٷسٸ سوعان قاراي ٶزگەرەدٸ</string>
+    <string name="app_color_disabled_hint">بۇل مٷمكٸندٸكتٸ پايدالانۋ ٷشٸن الدىمەن ديناميكالىق تٷستٸ ٶشٸرٸڭٸز</string>
+    <string name="font_color">قارٸپ تٷسٸ</string>
+    <string name="font_color_hint">قولدانباداعى مٵتٸن تٷسٸن تاڭداڭىز، بارلىق بەتتەردەگٸ مٵتٸن سوعان قاراي ٶزگەرەدٸ</string>
+    <string name="font_color_group_base">نەگٸزگٸ تٷستەر</string>
+    <string name="font_color_group_light">اشىق تٷستەر</string>
+    <string name="font_color_group_dark">قويۋ تٷستەر</string>
+    <string name="palette_color_group_base">نەگٸزگٸ تٷستەر</string>
+    <string name="palette_color_group_light">اشىق تٷستەر</string>
+    <string name="palette_color_group_dark">قويۋ تٷستەر</string>
+    <string name="compress_item">سىعۋ</string>
+    <string name="copy_path">جولدى كٶشٸرۋ</string>
+    <string name="move_item">جىلجىتۋ</string>
+    <string name="more_actions">قوسىمشا ٵرەكەتتەر</string>
+    <string name="copy_to_other">كٶشٸرۋ -&gt;</string>
+    <string name="move_to_other">جىلجىتۋ -&gt;</string>
+    <string name="share_zip">ZIP بٶلٸسۋ</string>
+    <!-- UNCERTAIN_KK：顶置新译法，需母语者复核 -->
+    <string name="pin_folder">جوعارىعا بەكىتۋ</string>
+    <string name="unpin_folder">بەكٸتۋدەن الۋ</string>
+    <string name="encrypt_file">فايلدى شيفرلاۋ</string>
+    <string name="decrypt_file">فايل شيفرىن شەشۋ</string>
+    <string name="bookmarks_title">بەتبەلگٸلەر</string>
+    <string name="move_to_trash">سەبەتكە جىلجىتۋ</string>
+    <string name="delete_to_trash_msg">%1$s فايلىن سەبەتكە جىلجىتقىڭىز كەلە مە؟</string>
+    <string name="delete_to_trash_multi_msg">%1$d ەلەمەنتتٸ سەبەتكە جىلجىتقىڭىز كەلە مە؟</string>
+    <string name="file_count">فايلدار سانى</string>
+    <string name="folder_count">قالتالار سانى</string>
+    <string name="restore_confirm_msg">%1$s فايلىن بۇرىنعى ورنىنا قالپىنا كەلتٸرگٸڭٸز كەلە مە؟</string>
+    <string name="restore_confirm_multi_msg">%1$d ەلەمەنتتٸ بۇرىنعى ورنىنا قالپىنا كەلتٸرگٸڭٸز كەلە مە؟</string>
+    <string name="delete_permanent_msg">%1$s فايلىن بٸرجولا جويعىڭىز كەلە مە؟</string>
+    <string name="delete_permanent_multi_msg">%1$d ەلەمەنتتٸ بٸرجولا جويعىڭىز كەلە مە؟</string>
+    <string name="path_copied">جول كٶشٸرٸلدٸ</string>
+    <string name="moved">جىلجىتىلدى</string>
+    <string name="move_failed">جىلجىتۋ سٵتسٸز اياقتالدى</string>
+    <string name="move_not_supported">بۇل جاد جىلجىتۋدى قولدامايدى</string>
+    <string name="other_pane_no_folder">باسقا پانەلدە قالتا اشىق ەمەس</string>
+    <string name="already_here">وسى قالتادا</string>
+    <string name="new_title">جاڭا</string>
+    <string name="new_file_short">فايل</string>
+    <string name="new_folder_short">قالتا</string>
+    <string name="clipboard_empty">الماسۋ بۋفەرٸ بوس نەمەسە وندا مٵتٸن جوق</string>
+    <string name="name_exists">وسىنداي اتاۋى بار فايل نەمەسە قالتا بار</string>
+    <string name="invalid_name">اتاۋ جارامسىز</string>
+    <string name="trash_move_failed">سەبەتكە جىلجىتۋ سٵتسٸز اياقتالدى، ەشتەڭە جويىلعان جوق</string>
+    <string name="bookmark_added">بەتبەلگٸگە قوسىلدى</string>
+    <string name="bookmark_removed">بەتبەلگٸدەن الىندى</string>
+    <string name="pinned">بەكٸتٸلدٸ</string>
+    <string name="unpinned">بەكٸتۋدەن الىندى</string>
+    <string name="hidden_done">جاسىرىلدى</string>
+    <string name="unhidden_done">جاسىرىننان الىندى</string>
+    <string name="password_hint">قۇپييا سٶزدٸ ەنگٸزٸڭٸز</string>
+    <string name="password_confirm_hint">قۇپييا سٶزدٸ قايتا ەنگٸزٸڭٸز</string>
+    <string name="password_mismatch">ەنگٸزٸلگەن قۇپييا سٶزدەر سٵيكەس كەلمەيدٸ</string>
+    <string name="wrong_password">قۇپييا سٶز قاتە</string>
+    <string name="encrypt_failed">شيفرلاۋ سٵتسٸز اياقتالدى</string>
+    <string name="decrypt_failed">شيفردى شەشۋ سٵتسٸز اياقتالدى</string>
+    <string name="encrypted">شيفرلاندى</string>
+    <string name="decrypted">شيفرى شەشٸلدٸ</string>
+    <string name="zip_failed">سىعۋ سٵتسٸز اياقتالدى</string>
+    <string name="dynamic_color_on_note">ديناميكالىق تٷس قوسۋلى كەزدە قولدانبا تٷسٸ قولدانىلمايدى</string>
+    <string name="create_shortcut">جارلىق جاساۋ</string>
+    <string name="shortcut_icon">بەلگٸشە</string>
+    <string name="shortcut_name">اتاۋى</string>
+    <string name="shortcut_type">تٷرٸ</string>
+    <string name="shortcut_type_desktop">جۇمىس ٷستەلٸ جارلىعى</string>
+    <string name="shortcut_type_desktop_desc">جۇمىس ٷستەلٸندە جەكە بەلگٸشە جاسالادى</string>
+    <string name="shortcut_type_icon">بەلگٸشە جارلىعى</string>
+    <string name="shortcut_type_icon_desc">فايل تٷرٸنٸڭ بەلگٸشەسٸ جۇمىس ٷستەلٸ بەلگٸشەسٸ رەتٸندە پايدالانىلادى</string>
+    <string name="shortcut_action">ٵرەكەتتٸ ورىنداۋ</string>
+    <string name="shortcut_action_locate">ورنالاسقان جەرٸن كٶرسەتۋ</string>
+    <string name="shortcut_action_locate_click">ورنالاسقان جەرٸن كٶرسەتٸپ، اشۋ</string>
+    <string name="shortcut_action_open_editor">مٵتٸن ٶڭدەگٸشپەن اشۋ</string>
+    <string name="shortcut_action_preview_html">HTML فايلدى الدىن الا قاراۋ</string>
+    <string name="shortcut_created">جارلىق جاسالدى</string>
+    <string name="shortcut_not_supported">بۇل قۇرىلعى جۇمىس ٷستەلٸ جارلىقتارىن قولدامايدى</string>
+    <string name="shortcut_not_text">مٵتٸندٸك فايل ەمەس، جٷيەلٸك قاراۋىشپەن اشىلدى</string>
+    <string name="shortcut_target_missing">جارلىق كٶرسەتكەن فايل جوق نەمەسە قولجەتٸمسٸز</string>
+</resources>

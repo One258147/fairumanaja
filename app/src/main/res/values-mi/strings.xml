@@ -2,7 +2,10 @@
 <!-- v1.9.7 濒危多语言切换：尽力翻译，建议母语者复核；未列出的字符串回退到默认中文。 -->
 <resources>
     <string name="about">Mō</string>
+    <string name="add_local_storage">Tāpiri Rokiroki ā-Roto</string>
     <string name="app_color">Tae o te taupānga</string>
+    <!-- UNCERTAIN_MI：外观解释为尽力翻译（沿用本文件已有词），需母语者复核 -->
+    <string name="app_color_hint">Kōwhiria te tae kaupapa o te taupānga, ka huri te tae matua o te atanga me taua tae</string>
     <string name="app_name">Fairumanējā</string>
     <string name="appearance">Āhua</string>
     <string name="bookmark">Tohuwāhi</string>
@@ -31,13 +34,15 @@
     <string name="drawer_tools">Ngā Taputapu</string>
     <string name="dual_pane">Paparua</string>
     <string name="dynamic_color">Tae hihiri</string>
+    <!-- UNCERTAIN_MI：外观解释为尽力翻译（沿用本文件已有词），需母语者复核 -->
+    <string name="dynamic_color_hint">Ka whakakāia, ka whai ngā tae o te taupānga i ngā tae o te pepapātū o te pūnaha</string>
     <string name="empty_trash">Whakawātea i te ipu para</string>
     <string name="encrypt_file">Whakamuna i te kōnae</string>
     <string name="endangered_language_switch">Whakawhiti Reo Morearea</string>
     <string name="error">Hapa</string>
     <string name="experimental_features">Ngā Āhuatanga Whakamātau</string>
-    <string name="experimental_features_hint">Kei te whakamātauria tonu ēnei āhuatanga, ā, tērā pea ka huri.</string>
-    <string name="experimental_warning_msg">Kei te whakamātauria tonutia ēnei āhuatanga, ā, mā te whakamahi i a rātou, tērā pea ka puta ēnei hua:\n\n• Ka hē pea te whakaatu o te atanga, ka raru, ka tūohu rānei te taupānga;\n• Kāore pea e wātea ana ētahi āhuatanga, ka whakarerekētia, ka tangohia rānei i ngā putanga o muri;\n• Mā te whakawhiti i te Pūkaha UI, ka utaina anōtia te atanga katoa o te taupānga;\n• Ka hē pea te whakaatu o te Karāhe Wai i ētahi tauira waea, putanga pūnaha rānei, ka nui ake hoki te pau o te pūhiko;\n• Ka huri pea ēnei āhuatanga i ngā wā katoa, kāore e taurangi ana ka ōrite ki ngā āhuatanga ōkawa.</string>
+    <string name="experimental_features_hint">Kei te whakamātauria tonu ēnei āhuatanga, ā, tērā pea ka huri</string>
+    <string name="experimental_warning_msg">Kei te whakamātauria tonutia ēnei āhuatanga, ā, mā te whakamahi i a rātou, tērā pea ka puta ēnei hua:\n\n• Ka hē pea te whakaatu o te atanga, ka raru, ka tūohu rānei te taupānga;\n• Kāore pea e wātea ana ētahi āhuatanga, ka whakarerekētia, ka tangohia rānei i ngā putanga o muri;\n• Mā te whakawhiti i te Pūkaha UI, ka utaina anōtia te atanga katoa o te taupānga;\n• Ka huri pea ēnei āhuatanga i ngā wā katoa, kāore e taurangi ana ka ōrite ki ngā āhuatanga ōkawa.</string>
     <string name="experimental_warning_title">Whakatūpato mō ngā Āhuatanga Whakamātau</string>
     <string name="extract">Tango</string>
     <string name="extracted">Kua tangohia</string>
@@ -47,16 +52,16 @@
     <string name="font_color_group_base">Ngā tae taketake</string>
     <string name="font_color_group_dark">Ngā tae pōuri</string>
     <string name="font_color_group_light">Ngā tae mārama</string>
+    <!-- UNCERTAIN_MI：外观解释为尽力翻译（沿用本文件已有词），需母语者复核 -->
+    <string name="font_color_hint">Kōwhiria te tae o te momotuhi o te taupānga; ka huri ngā momotuhi katoa o ngā whārangi katoa me taua tae</string>
     <string name="free_space">Wātea</string>
     <string name="hidden_done">Kua hunatia</string>
     <string name="hide">Huna</string>
     <string name="language">Reo</string>
     <string name="language_settings">Tautuhinga Reo</string>
-    <string name="liquid_glass">Karāhe Wai</string>
-    <string name="liquid_glass_hint">Patohia te rārangi hei kōwhiri i te aratau, patohia te whakakā hei whakakā.</string>
-    <string name="liquid_glass_mode_blur">Puataata pōrearea</string>
-    <string name="liquid_glass_mode_clear">Puataata katoa</string>
-    <string name="liquid_glass_mode_translucent">Puataata</string>
+    <!-- v1.9.7.8: UNCERTAIN_MI：分组名尽力翻译，需母语者复核 -->
+    <string name="settings_group_language_appearance">Reo me te āhua</string>
+    <string name="settings_group_app">Taupānga</string>
     <string name="modified">Rā i whakarerekētia</string>
     <string name="more_actions">Ētahi atu kōwhiringa</string>
     <string name="more_options">Ētahi atu kōwhiringa</string>
@@ -84,7 +89,8 @@
     <string name="path">Ara</string>
     <string name="path_copied">Kua tāruatia te ara</string>
     <string name="permanently_deleted">Kua mukua tūturu</string>
-    <string name="pin_folder">Titi ki te kōpaki</string>
+    <!-- UNCERTAIN_MI：顶置新译法，需母语者复核 -->
+    <string name="pin_folder">Titi ki runga</string>
     <string name="pinned">Kua titia</string>
     <string name="properties">Taipitopito</string>
     <string name="redo">Mahia anō</string>
@@ -105,12 +111,73 @@
     <string name="share_zip">Tiri ZIP</string>
     <string name="show_hidden">Whakaatu i ngā mea huna</string>
     <string name="size">Rahi</string>
+    <string name="sort">Whakarite</string>
     <string name="sort_date">Mā te rā</string>
     <string name="sort_name">Mā te ingoa</string>
     <string name="sort_size">Mā te rahi</string>
     <string name="sort_type">Mā te momo</string>
+    <string name="sort_by_type">Mā te momo</string>
+    <!-- UNCERTAIN_MI：新词直译，需母语者复核 -->
+    <string name="sort_reverse">Whakarite whakamuri</string>
+    <!-- UNCERTAIN_MI：新词直译，需母语者复核 -->
+    <string name="sort_type_folders_only">Ngā kōpaki anake</string>
+    <!-- UNCERTAIN_MI：背景切换尽力翻译，需母语者复核 -->
+    <string name="viewer_background">Whakawhiti Papamuri</string>
+    <string name="viewer_bg_black">Mangu</string>
+    <string name="viewer_bg_white">Mā</string>
+    <string name="viewer_bg_gray">Kiwikiwi</string>
+    <!-- UNCERTAIN_MI：横向翻页尽力翻译，需母语者复核 -->
+    <string name="viewer_view_horizontal">Huri Pae</string>
+    <!-- UNCERTAIN_MI：纵向排序尽力翻译，需母语者复核 -->
+    <string name="viewer_view_vertical">Rārangi Tū</string>
+    <string name="viewer_dimensions">Rahi</string>
+    <string name="viewer_format">Hōputu</string>
+    <!-- UNCERTAIN_MI：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_images">Ngā whakaahua</string>
+    <!-- UNCERTAIN_MI：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_videos">Ngā ataata</string>
+    <!-- UNCERTAIN_MI：媒体页音频分类新词尽力翻译，需母语者复核 -->
+    <string name="media_audios">Ngā oro</string>
+    <!-- UNCERTAIN_MI：跳转 / 创建HTML 新词尽力翻译，需母语者复核 -->
+    <string name="jump_title">Haere ki</string>
+    <string name="create_html">Hangaia HTML</string>
+    <string name="jump_invalid_path">Kāore te ara i te noho, kāore rānei he kōpaki</string>
+    <!-- UNCERTAIN_MI：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_gifs">GIF</string>
+    <!-- UNCERTAIN_MI：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_today">I tēnei rā</string>
+    <!-- UNCERTAIN_MI：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_yesterday">Inanahi</string>
+    <!-- UNCERTAIN_MI：抽屉合并新词尽力翻译，需母语者复核 -->
+    <string name="media_images_videos">Ngā whakaahua me ngā ataata</string>
+    <!-- UNCERTAIN_MI：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="play_video">Purei ataata</string>
+    <!-- UNCERTAIN_MI：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="view_image">Tiro whakaahua</string>
+    <!-- UNCERTAIN_MI：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="browse_archive">Tirotiro pūranga</string>
+    <!-- UNCERTAIN_MI：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_speed">Tere</string>
+    <!-- UNCERTAIN_MI：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_cannot_play">Kāore e taea te purei i tēnei ataata</string>
+    <!-- UNCERTAIN_MI：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="play_music">Purei waiata</string>
+    <!-- UNCERTAIN_MI：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="music_cannot_play">Kāore e taea te purei i tēnei oro</string>
+    <!-- UNCERTAIN_MI：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_play">Purei</string>
+    <!-- UNCERTAIN_MI：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_pause">Whakatā</string>
+    <!-- UNCERTAIN_MI：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_fill_screen">Whakakī i te mata</string>
+    <!-- UNCERTAIN_MI：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_loop">Purei anō</string>
+    <!-- UNCERTAIN_MI：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_landscape">Aratau whakapae</string>
+    <!-- UNCERTAIN_MI：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_duration">Roa</string>
     <string name="splash_animation">Waitohu Whakaatu</string>
-    <string name="splash_animation_hint">Ka whakakāia, ka purei tuatahi te waitohu whakaatu i ngā wā katoa ka whakatuwheratia mai i te papamahi; ka whakawetohia, ka uru tōtika ki te whārangi matua.</string>
+    <string name="splash_animation_hint">Ka whakakāia, ka purei tuatahi te waitohu whakaatu i ngā wā katoa ka whakatuwheratia te taupānga mai i te papamahi</string>
     <string name="storage_internal">Rokiroki ā-roto</string>
     <string name="text_editor">Ētita Kuputuhi</string>
     <string name="theme">Kaupapa</string>
@@ -129,4 +196,175 @@
     <string name="unpinned">Kua wetekina</string>
     <string name="used_space">Kua whakamahia</string>
     <string name="version">Putanga</string>
+    <string name="about_intro_title">Mō tēnei taupānga</string>
+    <string name="about_text">He kaiwhakahaere kōnae pūmanawa tuwhera a Fairumanējā, i whakaaweawetia e te wheako o MT Manager. Ka tautoko i te Android, Linux me Windows (kei te whakamaheretia te putanga papamahi), ā, kua tukuna i raro i te Raihana MIT.</string>
+    <string name="add">Tāpiri</string>
+    <string name="add_network_group">Tāpiri i te Rōpū Whatunga</string>
+    <string name="add_network_storage">Tāpiri i te Rokiroki Whatunga</string>
+    <string name="already_here">Kei tēnei kōpaki kē</string>
+    <!-- UNCERTAIN_MI：package 作应用包名未核实，需母语者复核 -->
+    <string name="apk_package">Mōkī</string>
+    <string name="app_color_disabled_hint">Hei whakamahi i tēnei āhuatanga, whakawetohia tuatahi te Tae hihiri</string>
+    <string name="back">Hoki</string>
+    <!-- UNCERTAIN_MI：长按说法未核实，需母语者复核 -->
+    <string name="bookmarks_empty">Kāore anō he tohuwāhi — pēhia roa te kōpaki hei tohuwāhi</string>
+    <string name="chinese_version_note">Ko te putanga Hainamana tēnei e whai ake nei.</string>
+    <!-- UNCERTAIN_MI：papatohu 为拼合译法，需母语者复核 -->
+    <string name="clipboard_empty">Kau kau te papatohu, kāore rānei he kuputuhi</string>
+    <string name="close_file">Kati i te kōnae</string>
+    <!-- UNCERTAIN_MI：代码补全说法未核实，需母语者复核 -->
+    <string name="code_completion">Whakaoti Waehere Aunoa</string>
+    <string name="confirm_delete">Whakaū i te mukunga</string>
+    <string name="confirm_empty_trash">Whakawātea i te ipu para? Kāore e taea te whakahoki.</string>
+    <string name="copy_to_other">Tārua -&gt;</string>
+    <string name="decrypt_failed">Kāore i wetekina te kōnae</string>
+    <string name="decrypted">Kua wetekina</string>
+    <string name="delete_direct_message">Mukua ngā mea kua tīpakohia? Ka mukua tōtika, kāore e haere ki te ipu para, ā, kāore e taea te whakaora.</string>
+    <string name="delete_failed">Kāore i mukua, ngana anō</string>
+    <string name="delete_message">Mukua ngā mea kua tīpakohia?</string>
+    <string name="delete_permanent_msg">Mukua tūturu te kōnae %1$s?</string>
+    <string name="delete_permanent_multi_msg">Mukua tūturu ngā mea %1$d?</string>
+    <string name="delete_to_trash_msg">Nukuhia te kōnae %1$s ki te ipu para?</string>
+    <string name="delete_to_trash_multi_msg">Nukuhia ngā mea %1$d ki te ipu para?</string>
+    <string name="disclaimer">Whakakāhoretanga</string>
+    <string name="dont_save">Kaua e tiaki</string>
+    <string name="dynamic_color_confirm_msg">Ka whakakāia te Tae hihiri, ka whai ngā tae o te taupānga i ngā tae o te pepapātū o te pūnaha, ka huri me taua pepapātū. Whakakāia te Tae hihiri?</string>
+    <string name="dynamic_color_confirm_title">Tae hihiri</string>
+    <string name="dynamic_color_on_note">Kāore e whai mana te tae o te taupānga ina whakakāia te Tae hihiri</string>
+    <string name="edit_text">Whakatika i te kuputuhi</string>
+    <string name="editor_search">Rapu</string>
+    <string name="encrypt_failed">Kāore i whakamunatia te kōnae</string>
+    <string name="encrypted">Kua whakamunatia</string>
+    <string name="endangered_language_sub">E 5 noa iho ngā reo e tautokona ana i tēnei wā; tērā pea ka tāpirihia ētahi atu ā muri ake nei.</string>
+    <string name="file_count">Ngā Kōnae</string>
+    <string name="file_name_hint">Ingoa kōnae</string>
+    <string name="file_too_large">He nui rawa te kōnae (neke atu i te 2 MB), ā, tērā pea ka pōturi te whakatuwheratanga. Whakatuwheratia tonu?</string>
+    <string name="folder_count">Ngā Kōpaki</string>
+    <string name="folder_name_hint">Ingoa kōpaki</string>
+    <string name="follow_system_theme">Whai i te pūnaha</string>
+    <string name="font_size">Rahi o te momotuhi</string>
+    <string name="forward">Whakamua</string>
+    <string name="go_to_line">Haere ki te rārangi</string>
+    <string name="go_to_line_hint">Tāuruhia te tau rārangi</string>
+    <string name="go_up">Ki runga</string>
+    <!-- UNCERTAIN_MI：授予权限说法未核实，需母语者复核 -->
+    <string name="grant_access">Tukuna te urunga</string>
+    <string name="grid">Tirohanga Mātiti</string>
+    <string name="hidden_storages">Ngā Rokiroki Huna</string>
+    <string name="invalid_name">He ingoa hē</string>
+    <string name="items_count">%1$d ngā mea</string>
+    <string name="left_pane">Papa Mauī</string>
+    <string name="line_numbers">Ngā Tau Rārangi</string>
+    <string name="list_view">Tirohanga Rārangi</string>
+    <string name="manage_tool_groups">Whakahaere i ngā Rōpū Taputapu</string>
+    <string name="move_down">Nuku ki raro</string>
+    <string name="move_failed">Kāore i nukuhia</string>
+    <string name="move_not_supported">Kāore tēnei rokiroki e tautoko ana i te nukutanga</string>
+    <string name="move_to_other">Nuku -&gt;</string>
+    <string name="move_up">Nuku ki runga</string>
+    <string name="name_exists">Kei reira kē tētahi mea me tēnei ingoa</string>
+    <string name="new_text_file">Kōnae kuputuhi hōu</string>
+    <string name="next_position">Tūnga whai muri</string>
+    <string name="no_match">Kāore he mea i ōrite</string>
+    <string name="not_supported">Kāore anō e tautokona</string>
+    <string name="open_source_license">Raihana Pūmanawa Tuwhera</string>
+    <string name="original_path">Ara taketake</string>
+    <string name="oss_components">Ngā Wae Pūmanawa Tuwhera</string>
+    <string name="other_pane_no_folder">Kāore he kōpaki e tuwhera ana i tērā atu papa</string>
+    <string name="password_confirm_hint">Tāuruhia anō te kupuhipa</string>
+    <string name="password_hint">Tāuruhia te kupuhipa</string>
+    <string name="password_mismatch">Kāore e ōrite ngā kupuhipa</string>
+    <string name="paste_to_other_pane">Whakapiri ki tērā atu papa</string>
+    <string name="permission_needed">Me whai whakaaetanga uru ki ngā kōnae katoa hei whakahaere i ngā kōnae</string>
+    <string name="prev_position">Tūnga o mua</string>
+    <string name="privacy_policy">Kaupapa here tūmataiti</string>
+    <string name="read_only">Aratau Pānui Anake</string>
+    <string name="recent_empty">Kāore anō he kōnae i whakatuwheratia inātata nei</string>
+    <string name="rename_hint">Ingoa hōu</string>
+    <string name="restore_confirm_msg">Whakaorangia te kōnae %1$s ki tōna wāhi taketake?</string>
+    <string name="restore_confirm_multi_msg">Whakaorangia ngā mea %1$d ki ō rātou wāhi taketake?</string>
+    <string name="right_pane">Papa Matau</string>
+    <string name="root_browse_only">Tirotiro anake te pakiaka</string>
+    <string name="saf_browse_only">Tirotiro anake tēnei rokiroki</string>
+    <!-- UNCERTAIN_MI：另存为说法未核实，需母语者复核 -->
+    <string name="save_as">Tiaki hei</string>
+    <string name="search_keyword_hint">Tāuruhia te kupu matua</string>
+    <string name="search_match_count">%1$d / %2$d</string>
+    <string name="selected_count">%1$d kua tīpakohia</string>
+    <string name="shizuku_denied">Kāore i tukuna te whakaaetanga Shizuku, kāore e taea te uru ki te pakiaka</string>
+    <string name="shizuku_download">Tikiake i a Shizuku</string>
+    <string name="shizuku_failed">Kāore i taea te pānui i te pakiaka</string>
+    <string name="shizuku_failed_detail">Kāore i taea te pānui i te pakiaka: %1$s</string>
+    <string name="shizuku_needed_msg">Me whai whakaaetanga Shizuku hei uru ki te pakiaka. Tāutahia ka whakakā tuatahitia a Shizuku, kātahi ka ngana anō.</string>
+    <string name="shizuku_needed_title">Me whai a Shizuku</string>
+    <string name="shizuku_request_msg">Whakaaetia tēnei tono i te matapihi o Shizuku.</string>
+    <string name="shortcut_action">Mahi</string>
+    <!-- UNCERTAIN_MI：定位说法未核实，需母语者复核 -->
+    <string name="shortcut_action_locate">Kimihia te wāhi o te kōnae</string>
+    <string name="shortcut_action_locate_click">Kimihia ka whakatuwhera</string>
+    <string name="shortcut_action_open_editor">Whakatuwhera ki te Ētita Kuputuhi</string>
+    <string name="shortcut_action_preview_html">Arokite i te kōnae HTML</string>
+    <string name="shortcut_created">Kua hangaia te pokatata</string>
+    <string name="shortcut_icon">Ata</string>
+    <string name="shortcut_name">Ingoa</string>
+    <string name="shortcut_not_supported">Kāore tēnei pūrere e tautoko ana i ngā pokatata kua titiia</string>
+    <string name="shortcut_not_text">Ehara i te kōnae kuputuhi, kua whakatuwheratia ki te kaitirotiro o te pūnaha</string>
+    <string name="shortcut_target_missing">Kāore i te noho te kōnae e tohua ana e te pokatata, kāore rānei e taea te uru atu</string>
+    <string name="shortcut_type">Momo</string>
+    <string name="shortcut_type_desktop">Pokatata papamahi</string>
+    <string name="shortcut_type_desktop_desc">Ka hangaia he ata motuhake ki te papamahi</string>
+    <string name="shortcut_type_icon">Pokatata ata</string>
+    <string name="shortcut_type_icon_desc">Ka whakamahi i te ata momo kōnae hei ata papamahi</string>
+    <string name="smooth_mode">Aratau Maeneene</string>
+    <string name="special_thanks">Ngā Mihi Motuhake</string>
+    <string name="storage_already_added">Kua tāpirihia kētia tēnei rokiroki</string>
+    <string name="storage_name_hint">Ingoa</string>
+    <string name="storage_not_supported">Kāore e taea te tāpiri i tēnei wāhi ināianei</string>
+    <string name="storage_path_hint">Ara, hei tauira /storage/emulated/0/Download</string>
+    <string name="storage_path_invalid">Kāore i te noho te ara, ehara rānei i te kōpaki</string>
+    <string name="storage_usage">Whakamahinga Rokiroki</string>
+    <string name="swap_panes">Whakawhiti i ngā papa</string>
+    <string name="syntax">Wetereo</string>
+    <string name="syntax_auto">Aunoa (mā te toronga)</string>
+    <string name="syntax_c">C/C++</string>
+    <string name="syntax_java">Java</string>
+    <string name="syntax_json">JSON</string>
+    <string name="syntax_kotlin">Kotlin</string>
+    <string name="syntax_plain">Kuputuhi Noa</string>
+    <string name="syntax_python">Python</string>
+    <string name="syntax_shell">Shell</string>
+    <string name="syntax_xml">XML</string>
+    <!-- UNCERTAIN_MI：长段尽力翻译，需母语者复核 -->
+    <string name="thanks_mp_desc">E whakamahi ana tēnei taupānga i a MP-Manager hei tauira: te tirotiro papa-rua me ngā mahi whakawhiti-papa (tārua, nuku, whakapiri ki tērā atu papa); te āhua o ngā rārangi kōnae — ngā ata tapawhā porotaka iti, ngā ingoa me te tapanga \'rā + rahi\'; te tahua ⋮ o ia rārangi me te paewhiri \'Ētahi atu kōwhiringa\' e iwa; te tukanga ipu para me ngā pouaka whakaū whakaora me te muku tūturu; te pouaka hanga; te ētita kuputuhi me ngā tau rārangi me te pae tohu; te ipu para, ngā tohuwāhi me ngā kōpaki kua titiia; te urunga Shizuku/pakiaka; te kōpeketanga me te tangohanga, te whakamunatanga me te wetekinatanga o ngā kōnae; me ngā rokiroki ā-roto kua whakaritea. Ngā mihi ki a MP-Manager mō te noho hei pūmanawa tuwhera i raro i te GPL-3.0 i GitHub (https://github.com/AbdurazaaqMohammed/MP-Manager), mō te hoatu i tētahi tauira hoahoa i taea e tēnei taupānga te ako me te whai tōtika, ā, ngā mihi ki tōna kaituhi a AbdurazaaqMohammed mō te tiaki tonu i a ia, me te whakaatu ka taea e te tangata noa te hanga i tētahi kōwhiringa tuwhera pai mō MT Manager.</string>
+    <!-- UNCERTAIN_MI：长段尽力翻译，需母语者复核 -->
+    <string name="thanks_mt_desc">E whakamahi ana tēnei taupānga i te tahora papa-rua, ngā tahua kōnae, te paewhiri \'Ētahi atu kōwhiringa\' e iwa, me ngā pouaka mukunga/whakaora o MT Manager hei tauira hoahoa. Ngā mihi ki a MT Manager mō te tauira hoahoa me te whakaaweawe.</string>
+    <!-- UNCERTAIN_MI：长段尽力翻译，需母语者复核 -->
+    <string name="thanks_muse_desc">Ngā mihi ki a Muse mō te āwhina whanaketanga me te tautoko hangarau: nā Muse i āwhina te tuhi waehere, te whakatinanatanga o ngā āhuatanga, me te rapurongoā o tēnei taupānga.</string>
+    <string name="tools_title">Pouaka Taputapu</string>
+    <string name="trash_move_failed">Kāore i taea te nuku ki te ipu para; kāore he kōnae i mukua</string>
+    <string name="ui_engine_desc_expressive">He porotaka ake, he kanapa ake ngā āhua me ngā tae</string>
+    <string name="ui_engine_desc_md3">Te āhua taunoa, pēnei i nāianei</string>
+    <string name="ui_engine_desc_miuix">Te āhua MIUI o Xiaomi</string>
+    <string name="ui_engine_switch_msg">Ka oti te whakawhiti, ka huri te atanga katoa o te taupānga ki te “%1$s”, ka utaina anōtia tonutia.</string>
+    <string name="ui_engine_switch_title">Whakawhiti i te Pūkaha UI</string>
+    <string name="unhide">Whakaatu</string>
+    <string name="unsaved_message">Kei tēnei kōnae ētahi huringa kāore anō kia tiakina. Tiakina?</string>
+    <string name="unsaved_title">Ngā Huringa Kāore i Tiakina</string>
+    <string name="user_agreement">Whakaaetanga Kaiwhakamahi</string>
+    <string name="version_number">Putanga</string>
+    <!-- UNCERTAIN_MI：自动换行说法未核实，需母语者复核 -->
+    <string name="word_wrap">Taka Kupu</string>
+    <string name="wrong_password">He kupuhipa hē</string>
+    <string name="zip_failed">Kāore i kōpeketia</string>
+    <!-- Theme settings (v1.9.7.4) --><!-- UNCERTAIN_MI：paerewa（标准）未核实，需母语者复核 --><!-- UNCERTAIN_MI：“类…风格”意译未核实，需母语者复核 --><!-- UNCERTAIN_MI：句式为拼合译法，需母语者复核 --><!-- UNCERTAIN_MI：hoahoa（设计）未核实，需母语者复核 --><!-- UNCERTAIN_MI：pae tae（调色板）为拼合译法，需母语者复核 --><!-- UNCERTAIN_MI：pouaka kōrero（对话框）未核实，需母语者复核 -->
+    <!-- UNCERTAIN_MI：pātene（按钮）、taitara（标题）未核实，需母语者复核 -->
+
+    <string name="palette_color_group_base">Ngā tae taketake</string>
+    <string name="palette_color_group_light">Ngā tae mārama</string>
+    <string name="palette_color_group_dark">Ngā tae pōuri</string>
+    <!-- UNCERTAIN_MI：tautuhinga taunoa（默认设置）未核实，需母语者复核 -->
+    <string name="reset_defaults">Whakaora i ngā tautuhinga taunoa</string>
+    <!-- UNCERTAIN_MI：句式为拼合译法，“自定义储存”译法未核实，需母语者复核 -->
+    <string name="reset_defaults_msg">Mā tēnei e whakaora te reo, te kaupapa, te tae hihiri, te tae o te taupānga, te tae o te momotuhi, te pūkaha UI, te waitohu whakaatu, te whakarite, te paparua, me te whakaatu i ngā mea huna ki ō rātou tautuhinga taunoa. E kore ngā tohuwāhi, ngā kōpaki kua titia, ngā rokiroki ritenga, me te ipu para e pāngia. Whakaora ināianei?</string>
+    <string name="follow_system_language">Whai i te pūnaha</string>
 </resources>

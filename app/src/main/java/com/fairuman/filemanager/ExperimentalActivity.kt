@@ -16,7 +16,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Icon
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
@@ -35,10 +34,11 @@ import androidx.core.os.LocaleListCompat
 import java.util.Locale
 
 /**
- * 实验性功能页（v1.9.8.1 Compose）：大标题“实验性功能”+ 一张卡片，三行：
- * UI引擎（点弹菜单列三个选项，点一个跟当前不同的先弹确认框，确认才切换）、
- * 液态玻璃（点行弹模式选择，点开关才是开关；关着先弹确认框，确认才开）、
+ * 实验性功能页（v1.9.8.1 Compose，v1.9.7.5 改）：大标题“实验性功能”+ 一张卡片，两行：
+ * UI引擎（点行弹菜单：Material Design 3 / M3 Expressive / Miuix，选别的先弹确认框，
+ * 确认才切换；跟主题设置页的主题风格是同一份 PREF_UI_ENGINE，两边同步）、
  * 濒危多语言切换（点弹 5 选 1 对话框，选好点确认才切换）。
+ * 液态玻璃已删（v1.9.7.5）。
  * 卡片底部只留第二行提示“这里的功能还在试验中，可能会有变化。”
  * （第一行“点行选模式，点开关开启。”已删，Max：明显多余）。
  * 濒危多语言行副标题：当前是 5 种之一时显示该语种原语名，否则显示
@@ -63,13 +63,10 @@ class ExperimentalActivity : BaseActivity() {
     }
 
     private var engine by mutableStateOf(MainActivity.UI_ENGINE_MD3)
-    private var glassOn by mutableStateOf(false)
-    private var glassMode by mutableStateOf(MainActivity.GLASS_MODE_TRANSLUCENT)
     private var showEngineDialog by mutableStateOf(false)
-    private var showGlassModeDialog by mutableStateOf(false)
-    private var showGlassConfirm by mutableStateOf(false)
-    private var showEndangeredDialog by mutableStateOf(false)
+    /** 待确认的引擎切换：（目标引擎，显示名）。 */
     private var engineConfirm by mutableStateOf<Pair<Int, String>?>(null)
+    private var showEndangeredDialog by mutableStateOf(false)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         CrashHandler.install(this)
@@ -77,8 +74,6 @@ class ExperimentalActivity : BaseActivity() {
         try {
             prefs = getSharedPreferences("fairu_prefs", MODE_PRIVATE)
             engine = prefs.getInt(MainActivity.PREF_UI_ENGINE, MainActivity.UI_ENGINE_MD3)
-            glassOn = prefs.getBoolean(MainActivity.PREF_LIQUID_GLASS, false)
-            glassMode = prefs.getInt(MainActivity.PREF_LIQUID_GLASS_MODE, MainActivity.GLASS_MODE_TRANSLUCENT)
             setContent {
                 FairuTheme { ExperimentalScreen() }
             }
@@ -100,48 +95,13 @@ class ExperimentalActivity : BaseActivity() {
             FairuPageTopBar(title = stringResource(R.string.experimental_features), onBack = { finish() })
             Column(Modifier.verticalScroll(scrollState)) {
                 FairuCard {
+                    // UI引擎：点行弹菜单，选别的先弹确认框，确认才切换。
                     FairuRow(
                         iconRes = R.drawable.ic_theme,
                         title = stringResource(R.string.ui_engine),
                         sub = MainActivity.engineDisplayName(this@ExperimentalActivity, engine),
                         onClick = { showEngineDialog = true }
                     )
-                    // 液态玻璃：点行弹模式选择（不是开关），点开关才是开关。
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .clickable { showGlassModeDialog = true }
-                            .padding(horizontal = 16.dp, vertical = 12.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Icon(
-                            painterResource(R.drawable.ic_droplet),
-                            contentDescription = null,
-                            tint = androidx.compose.material3.MaterialTheme.colorScheme.primary,
-                            modifier = Modifier.size(24.dp)
-                        )
-                        Spacer(Modifier.width(16.dp))
-                        Column(Modifier.weight(1f)) {
-                            Text(stringResource(R.string.liquid_glass), fontSize = 16.sp, fontWeight = androidx.compose.ui.text.font.FontWeight.Bold)
-                            Text(
-                                MainActivity.glassModeDisplayName(this@ExperimentalActivity, glassMode),
-                                fontSize = 13.sp,
-                                color = androidx.compose.material3.MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                        }
-                        androidx.compose.material3.Switch(
-                            checked = glassOn,
-                            onCheckedChange = {
-                                if (!glassOn) {
-                                    showGlassConfirm = true
-                                } else {
-                                    glassOn = false
-                                    prefs.edit().putBoolean(MainActivity.PREF_LIQUID_GLASS, false).apply()
-                                    recreate()
-                                }
-                            }
-                        )
-                    }
                     FairuRow(
                         iconRes = R.drawable.ic_language,
                         title = stringResource(R.string.endangered_language_switch),
@@ -154,28 +114,9 @@ class ExperimentalActivity : BaseActivity() {
             }
         }
         if (showEngineDialog) EngineDialog()
-        if (showGlassModeDialog) GlassModeDialog()
-        if (showGlassConfirm) {
-            AlertDialog(
-                onDismissRequest = { showGlassConfirm = false },
-                icon = { Icon(painterResource(R.drawable.ic_droplet), contentDescription = null) },
-                title = { Text(stringResource(R.string.liquid_glass_confirm_title)) },
-                text = { Text(stringResource(R.string.liquid_glass_confirm_msg)) },
-                confirmButton = {
-                    TextButton(onClick = {
-                        showGlassConfirm = false
-                        glassOn = true
-                        prefs.edit().putBoolean(MainActivity.PREF_LIQUID_GLASS, true).apply()
-                        recreate()
-                    }) { Text(stringResource(R.string.confirm)) }
-                },
-                dismissButton = {
-                    TextButton(onClick = { showGlassConfirm = false }) { Text(stringResource(R.string.cancel)) }
-                }
-            )
-        }
+        // 引擎切换确认框：选了别的引擎才弹，确认才切换。
         engineConfirm?.let { (eng, name) ->
-            AlertDialog(
+            FairuAlertDialog(
                 onDismissRequest = { engineConfirm = null },
                 icon = { Icon(painterResource(R.drawable.ic_theme), contentDescription = null) },
                 title = { Text(stringResource(R.string.ui_engine_switch_title)) },
@@ -183,9 +124,7 @@ class ExperimentalActivity : BaseActivity() {
                 confirmButton = {
                     TextButton(onClick = {
                         engineConfirm = null
-                        engine = eng
-                        prefs.edit().putInt(MainActivity.PREF_UI_ENGINE, eng).apply()
-                        recreate()
+                        applyEngine(eng)
                     }) { Text(stringResource(R.string.confirm)) }
                 },
                 dismissButton = {
@@ -196,7 +135,15 @@ class ExperimentalActivity : BaseActivity() {
         if (showEndangeredDialog) EndangeredDialog()
     }
 
-    /** UI 引擎菜单：三行（标题 + 一句话说明 + 圆圈选中态），点一行处理。 */
+    /** 引擎切换（确认后）：只写同一份 PREF_UI_ENGINE，主题设置页的主题风格
+     *  单选卡片从同一份偏好读，两边同步。 */
+    private fun applyEngine(newEngine: Int) {
+        engine = newEngine
+        prefs.edit().putInt(MainActivity.PREF_UI_ENGINE, newEngine).apply()
+        recreate()
+    }
+
+    /** UI引擎菜单：三行（标题 + 一句话说明 + 圆圈选中态），点别的行先弹确认框。 */
     @Composable
     private fun EngineDialog() {
         val options = listOf(
@@ -204,7 +151,7 @@ class ExperimentalActivity : BaseActivity() {
             Triple(MainActivity.UI_ENGINE_EXPRESSIVE, "M3 Expressive", stringResource(R.string.ui_engine_desc_expressive)),
             Triple(MainActivity.UI_ENGINE_MIUIX, "Miuix", stringResource(R.string.ui_engine_desc_miuix))
         )
-        AlertDialog(
+        FairuAlertDialog(
             onDismissRequest = { showEngineDialog = false },
             title = { Text(stringResource(R.string.ui_engine)) },
             text = {
@@ -236,54 +183,6 @@ class ExperimentalActivity : BaseActivity() {
         )
     }
 
-    /** 液态玻璃模式菜单：三行（标题 + 一句话说明 + 圆圈选中态），点一行即选即保存。 */
-    @Composable
-    private fun GlassModeDialog() {
-        val options = listOf(
-            Triple(MainActivity.GLASS_MODE_TRANSLUCENT, stringResource(R.string.liquid_glass_mode_translucent), stringResource(R.string.liquid_glass_mode_desc_translucent)),
-            Triple(MainActivity.GLASS_MODE_BLUR, stringResource(R.string.liquid_glass_mode_blur), stringResource(R.string.liquid_glass_mode_desc_blur)),
-            Triple(MainActivity.GLASS_MODE_CLEAR, stringResource(R.string.liquid_glass_mode_clear), stringResource(R.string.liquid_glass_mode_desc_clear))
-        )
-        AlertDialog(
-            onDismissRequest = { showGlassModeDialog = false },
-            title = { Text(stringResource(R.string.liquid_glass_mode)) },
-            text = {
-                Column {
-                    options.forEach { (mode, name, desc) ->
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .clickable {
-                                    showGlassModeDialog = false
-                                    if (mode != glassMode) {
-                                        glassMode = mode
-                                        prefs.edit().putInt(MainActivity.PREF_LIQUID_GLASS_MODE, mode).apply()
-                                        if (glassOn) recreate()
-                                    }
-                                }
-                                .padding(vertical = 8.dp),
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            RadioButton(selected = mode == glassMode, onClick = {
-                                showGlassModeDialog = false
-                                if (mode != glassMode) {
-                                    glassMode = mode
-                                    prefs.edit().putInt(MainActivity.PREF_LIQUID_GLASS_MODE, mode).apply()
-                                    if (glassOn) recreate()
-                                }
-                            })
-                            Column(Modifier.padding(start = 8.dp)) {
-                                Text(name, fontSize = 16.sp)
-                                Text(desc, fontSize = 13.sp, color = androidx.compose.material3.MaterialTheme.colorScheme.onSurfaceVariant)
-                            }
-                        }
-                    }
-                }
-            },
-            confirmButton = { }
-        )
-    }
-
     /** 濒危多语言切换：5 个单选（圆圈 + 原语名 + 中文名），点确认才切换。 */
     @Composable
     private fun EndangeredDialog() {
@@ -291,7 +190,7 @@ class ExperimentalActivity : BaseActivity() {
         var pendingTag by androidx.compose.runtime.remember {
             mutableStateOf(ENDANGERED_LANGS.firstOrNull { it.first == current }?.first)
         }
-        AlertDialog(
+        FairuAlertDialog(
             onDismissRequest = { showEndangeredDialog = false },
             icon = { Icon(painterResource(R.drawable.ic_language), contentDescription = null) },
             title = { Text(stringResource(R.string.endangered_language_switch)) },

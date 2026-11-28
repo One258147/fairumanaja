@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- v1.9.8：彝语（ꆈꌠ꒿）；尽力翻译，多为意译，需母语者复核；6 篇长文未列出，回落中文。 -->
+<resources>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="about">ꈜꐚꄏꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="about_intro_title">ꀘꂷ ꈜꐚꄏꂷ</string>
+    <!-- UNCERTAIN_II：长句意译浓缩，需母语者复核 -->
+    <string name="about_text">Fairumanējā ꀘꂷꃄꅉꄏꂷ ꉘꁮꂷ MT ꀘꂷꂓ MIT ꀘꂷꂓ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="add">ꄏꋍ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="add_local_storage">ꉢꃄꅉ ꃄꅉ ꄏ</string>
+    <!-- UNCERTAIN_II：Network 无彝语对应词，暂留英文，需母语者复核 -->
+    <string name="add_network_group">Network ꌠꂷ ꄏ</string>
+    <!-- UNCERTAIN_II：Network 无彝语对应词，暂留英文，需母语者复核 -->
+    <string name="add_network_storage">Network ꃄꅉ ꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="already_here">ꃄꅉ ꄏꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="apk_package">ꀘꂷꂓ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="app_color">ꀘꂷꃅꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="app_color_disabled_hint">ꃅꂷꄏ ꀋꄏꋍ ꀘꂷꃅꂷ ꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="app_color_hint">ꀘꂷꃅꂷ ꑞꄏ ꀘꂷ ꃅꂷ ꋍꂷꄏ</string>
+    <string name="app_name">Fairumanējā</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="appearance">ꉘꁮꃅ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="back">ꃄꅉꋍ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="bookmark">ꂓꀘ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="bookmark_added">ꂓꀘ ꄏꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="bookmark_removed">ꂓꀘ ꀖꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="bookmarks_empty">ꂓꀘ ꀋꂷ ꀘꂷꃄꅉ ꑞꄏ ꂓꀘ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="bookmarks_title">ꂓꀘ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="cancel">ꀋꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="cannot_access">ꃄꅉ ꀘ ꀋꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="chinese_version_note">ꃄꅉꋍ ꉙ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="clipboard_empty">ꀘꂓꃄꅉ ꀋꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="close_file">ꀘꂷ ꀀ</string>
+    <!-- UNCERTAIN_II：Code 无彝语对应词，暂留英文，需母语者复核 -->
+    <string name="code_completion">Code ꀘꂓꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="compress">ꐻꀘꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="compress_item">ꐻꀘꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="compressed">ꐻꀘꂷꀐ</string>
+    <string name="confirm">ꉬꑴꇆ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="confirm_delete">ꀖ ꉬꑴꇆ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="confirm_empty_trash">ꀖꃄꅉ ꀋꂷꄏ ꑞ ꋍꃄꅉꀋꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="copied">ꋍꀘꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="copy">ꋍꀘ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="copy_path">ꋍꀘ ꇿꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="copy_to_other">ꋍꀘ -&gt;</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="create">ꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="create_shortcut">ꇿꋍ ꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="created">ꄏꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="cut">ꀖꀘ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="decrypt_failed">ꉘꁮꎿ ꀋꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="decrypt_file">ꉘꁮꎿ ꀘꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="decrypted">ꉘꁮꎿꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="delete">ꀖ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="delete_direct_message">ꀖ ꑞ ꀖꃄꅉ ꀋꄏ ꋍꃄꅉꀋꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="delete_failed">ꀖ ꀋꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="delete_message">ꑞꄏꀐ ꀘꂷ ꀖ ꑞ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="delete_permanent_msg">ꀘꂷ %1$s ꀖ ꀋꋍ ꑞ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="delete_permanent_multi_msg">%1$d ꂷ ꀖ ꀋꋍ ꑞ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="delete_permanently">ꀖ ꀋꋍ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="delete_to_trash_msg">ꀘꂷ %1$s ꀖꃄꅉ ꄏ ꑞ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="delete_to_trash_multi_msg">%1$d ꂷ ꀖꃄꅉ ꄏ ꑞ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="deleted">ꀖꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="deselect_all">ꊰꂷ ꑞꄏ ꀋꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="disclaimer">ꈜꐚꄏꀋꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="dont_save">ꀘꂷꃄꅉꄏ ꀋꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="drawer_local">ꉢꃄꅉ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="drawer_tools">ꄏꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="dual_pane">ꑍꃄꅉ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="dynamic_color">ꃅꂷꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="dynamic_color_confirm_msg">ꃅꂷꄏ ꄏꋍ ꀘꂷꃅꂷ ꋍꂷꄏꑞ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="dynamic_color_confirm_title">ꃅꂷꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="dynamic_color_hint">ꃅꂷꄏ ꄏꋍ ꀘꂷꃅꂷ ꋍꂷꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="dynamic_color_on_note">ꃅꂷꄏ ꄏꋍ ꀘꂷꃅꂷ ꀋꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="edit_text">ꀘꂓꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="editor_search">ꑞꀘ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="empty_trash">ꀖꃄꅉ ꀋꂷ ꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="encrypt_failed">ꎿꄏ ꀋꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="encrypt_file">ꎿꄏ ꀘꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="encrypted">ꎿꄏꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="endangered_language_sub">ꏜꂷ ꉙ ꉬ ꏜꂷ ꄏꋍ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="endangered_language_switch">ꉙ ꀋꂷ ꋍꂷꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="error">ꀋꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="experimental_features">ꑞꄏꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="experimental_features_hint">ꑞꄏꂷ ꏜꂷ ꄏ ꋍꂷꄏ</string>
+    <!-- UNCERTAIN_II：长句意译浓缩，需母语者复核 -->
+    <string name="experimental_warning_msg">ꑞꄏꂷ ꏜꂷ ꄏꀐ\n\n• ꃅꂷ ꀋꂷ ꀘꂷ ꀋꄏ\n• ꂷ ꀋꄏ UI ꄏꂷ ꋍꀘ\n• UI ꄏꂷ ꋍꂷꄏ\n• ꑞꄏꂷ ꋍꂷꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="experimental_warning_title">ꑞꄏꂷ ꈜꐚꄏꀋꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="extract">ꀖꀘꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="extracted">ꀖꀘꂷꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="file">ꀘꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="file_count">ꀘꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="file_name_hint">ꀘꂷꂓ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="file_too_large">ꀘꂷ ꑞꂷꃅꂷ 2 MB ꀘꐻꂷ ꀘꑞ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="folder">ꀘꂷꃄꅉ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="folder_count">ꀘꂷꃄꅉ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="folder_name_hint">ꀘꂷꃄꅉꂓ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="follow_system_language">ꃄꅉꄏ ꉙ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="follow_system_theme">ꃅꂷ ꃄꅉꄏꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="font_color">ꀘꂓꃅꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="font_color_group_base">ꃅꂷ ꏜꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="font_color_group_dark">ꃅꂷ ꎿꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="font_color_group_light">ꃅꂷ ꉘꁮꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="font_color_hint">ꀘꂓꃅꂷ ꑞꄏ ꀘꂓ ꋍꂷꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="font_size">ꀘꂓ ꑞꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="forward">ꄏꋍꃄꅉ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="free_space">ꃄꅉ ꀋꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="go_to_line">ꇿꃄꅉꋍ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="go_to_line_hint">ꃄꅉꋍꂓ ꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="go_up">ꀖꃄꅉꃅ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="grant_access">ꃄꅉꄏꂷ ꉬꑴꇆ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="grid">ꊰꃄꅉ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="hidden_done">ꎿꂷ ꄏꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="hidden_storages">ꎿꂷꃄꅉ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="hide">ꎿꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="invalid_name">ꂓ ꀋꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="items_count">%1$d ꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="language">ꉙ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="language_settings">ꉙ ꄏꃄꅉ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="left_pane">ꏜꃄꅉ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="line_numbers">ꃄꅉꋍꂓ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="list_view">ꂓꀘ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="manage_tool_groups">ꄏꂷ ꌠꂷ ꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="modified">ꄏꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="more_actions">ꂷ ꋍꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="more_options">ꂷ ꋍꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="move_down">ꀖꃄꅉꃄꅉ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="move_failed">ꀖꃄꅉ ꀋꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="move_item">ꀖꃄꅉ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="move_not_supported">ꃄꅉ ꀖꃄꅉ ꀋꄏꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="move_to_other">ꀖꃄꅉ -&gt;</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="move_to_trash">ꀘꂷ ꀖꃄꅉ ꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="move_up">ꀖꃄꅉꃅ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="moved">ꀖꃄꅉꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="moved_to_trash">ꀖꃄꅉꀐ</string>
+    <string name="name">ꂓ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="name_exists">ꂓ ꄏꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="nav_bookmarks">ꂓꀘ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="nav_files">ꀘꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="nav_recent">ꏜꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="nav_tools">ꄏꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="new_file">ꀘꂷ ꋍꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="new_file_short">ꀘꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="new_folder">ꀘꂷꃄꅉ ꋍꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="new_folder_short">ꀘꂷꃄꅉ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="new_text_file">ꀘꂓ ꋍꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="new_title">ꋍꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="next_position">ꋍꃄꅉꋍ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="no_files">ꀘꂷꃄꅉ ꀋꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="no_match">ꑞꀘ ꀋꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="not_supported">ꀋꄏꂷ</string>
+    <string name="ok">ꉬꑴꇆ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="open">ꀘ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="open_source_license">ꉘꁮꈜꐚꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="open_with">ꀘ ꑞꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="original_path">ꇿꂷꏜ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="oss_components">ꉘꁮꂷꀘꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="other_pane_no_folder">ꃄꅉꋍ ꀘꂷꃄꅉ ꀋꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="palette_color_group_base">ꃅꂷ ꏜꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="palette_color_group_dark">ꃅꂷ ꎿꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="palette_color_group_light">ꃅꂷ ꉘꁮꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="pane_stats">ꀘꂷꃄꅉ: %1$d  ꀘꂷ: %2$d  ꃄꅉ: %3$s/%4$s</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="password_confirm_hint">ꎿꉙ ꋍꀘ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="password_hint">ꎿꉙ ꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="password_mismatch">ꎿꉙ ꀋꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="paste">ꄏꀘ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="paste_to_other_pane">ꄏꀘ ꃄꅉꋍ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="pasted">ꄏꀘꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="path">ꇿꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="path_copied">ꇿꂷ ꋍꀘꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="permanently_deleted">ꀖꀐꀋ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="permission_needed">ꀘꂷꃄꅉꄏ ꃄꅉꄏꂷ ꀋꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="pin_folder">ꀘꂷꃄꅉꋍ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="pinned">ꀘꂷꃄꅉꋍ ꄏꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="prev_position">ꏜꃄꅉꋍ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="privacy_policy">ꎿꉙꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="properties">ꂓꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="read_only">ꀘꀋꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="recent_empty">ꏜꂷ ꀘꂷ ꀋꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="redo">ꄏꋍ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="refresh">ꋍꀘꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="rename">ꂓꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="rename_hint">ꋍꂓ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="renamed">ꂓꄏꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="reset_defaults">ꋍꂷ ꃄꅉꄏ</string>
+    <!-- UNCERTAIN_II：长句意译浓缩，需母语者复核 -->
+    <string name="reset_defaults_msg">ꉙ ꃅꂷ ꃅꂷꄏ ꀘꂷꃅꂷ ꀘꂓꃅꂷ UI ꄏꂷ ꏜꉘꁮ ꃄꅉꄏ ꑍꃄꅉ ꉘꁮ ꎿꂷꀘꂷ ꋍꂷꃄꅉꄏꑞ ꂓꀘ ꀘꂷꃄꅉꋍ ꃄꅉ ꀖꃄꅉ ꀋꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="restore">ꋍꃄꅉ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="restore_confirm_msg">ꀘꂷ %1$s ꋍꃄꅉ ꄏ ꑞ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="restore_confirm_multi_msg">%1$d ꂷ ꋍꃄꅉ ꄏ ꑞ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="restore_failed">ꋍꃄꅉ ꀋꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="restored">ꋍꃄꅉꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="right_pane">ꉘꁮꃄꅉ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="root_browse_only">ꃄꅉꏜ ꀘꀋꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="root_directory">ꃄꅉꏜ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="saf_browse_only">ꃄꅉ ꀘꀋꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="save">ꀘꂷꃄꅉꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="save_as">ꀘꂷꃄꅉꄏ ꂓꋍ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="save_failed">ꀘꂷꃄꅉꄏ ꀋꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="saved">ꀘꂷꃄꅉꄏꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="search_hint">ꑞꀘ ꀘꂷ…</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="search_keyword_hint">ꑞꀘꂓ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="search_match_count">%1$d / %2$d</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="select_all">ꊰꂷ ꑞꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="selected_count">%1$d ꑞꄏꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="settings">ꄏꃄꅉ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="settings_group_app">ꀘꂷꂓ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="settings_group_language_appearance">ꉙ ꉘꁮꃅ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="share">ꈜꐚꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="share_zip">ꈜꐚꄏ ZIP</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="shizuku_denied">Shizuku ꀋꉬꑴꇆ ꃄꅉꏜ ꀘ ꀋꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="shizuku_download">Shizuku ꀖꀘ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="shizuku_failed">ꃄꅉꏜ ꀘ ꀋꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="shizuku_failed_detail">ꃄꅉꏜ ꀘ ꀋꄏ: %1$s</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="shizuku_needed_msg">ꃄꅉꏜ ꀘ Shizuku ꑞ Shizuku ꄏ ꏜꉘꁮ ꋍꀘ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="shizuku_needed_title">Shizuku ꑞ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="shizuku_request_msg">Shizuku ꃄꅉ ꉬꑴꇆ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="shortcut_action">ꇿꋍ ꄏꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="shortcut_action_locate">ꇿꂷ ꑞꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="shortcut_action_locate_click">ꇿꂷ ꑞꄏ ꀘ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="shortcut_action_open_editor">ꀘꂓꄏ ꀘ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="shortcut_action_preview_html">HTML ꀘꂷ ꉘꁮꀘ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="shortcut_created">ꇿꋍ ꄏꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="shortcut_icon">ꉘꁮꃅ</string>
+    <string name="shortcut_name">ꂓ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="shortcut_not_supported">ꃄꅉꄏꂷ ꇿꋍ ꀋꄏꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="shortcut_not_text">ꀘꂓ ꀋꂷ ꃄꅉꄏꂷ ꀘ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="shortcut_target_missing">ꇿꋍ ꀘꂷ ꀋꂷ ꀘ ꀋꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="shortcut_type">ꂓꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="shortcut_type_desktop">ꇿꋍ ꃄꅉꏜ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="shortcut_type_desktop_desc">ꃄꅉꏜ ꉘꁮꃅ ꄏꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="shortcut_type_icon">ꇿꋍ ꉘꁮꃅ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="shortcut_type_icon_desc">ꀘꂷ ꉘꁮꃅ ꇿꋍ ꉘꁮꃅ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="show_hidden">ꉘꁮ ꎿꂷ ꀘꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="size">ꑞꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="smooth_mode">ꒉꂷꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="sort">ꃄꅉꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="sort_date">ꉘꁮ ꃄꅉꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="sort_name">ꂓ ꃄꅉꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="sort_size">ꑞꂷ ꃄꅉꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="sort_type">ꂓꂷ ꃄꅉꄏ</string>
+    <string name="sort_by_type">ꂓꂷ ꃄꅉꄏ</string>
+    <!-- UNCERTAIN_II：新词直译，需母语者复核 -->
+    <string name="sort_reverse">ꃄꅉꄏ ꀖꋍ</string>
+    <!-- UNCERTAIN_II：新词直译，需母语者复核 -->
+    <string name="sort_type_folders_only">ꀘꂷꃄꅉ ꊰꂷ</string>
+    <!-- UNCERTAIN_II：背景切换未核实，用“外观”暂代，需母语者复核 -->
+    <string name="viewer_background">ꉘꁮꃅ</string>
+    <string name="viewer_bg_black">ꆀ</string>
+    <string name="viewer_bg_white">ꀧ</string>
+    <!-- UNCERTAIN_II：灰色未核实，用黑白拼合暂代，需母语者复核 -->
+    <string name="viewer_bg_gray">ꆀꀧ</string>
+    <!-- UNCERTAIN_II：横向翻页未核实，暂用“浅色”词区分，需母语者复核 -->
+    <string name="viewer_view_horizontal">ꉘꁮꂷ</string>
+    <!-- UNCERTAIN_II：纵向排序未核实，暂用“深色”词区分，需母语者复核 -->
+    <string name="viewer_view_vertical">ꎿꂷ</string>
+    <string name="viewer_dimensions">ꑞꂷ</string>
+    <!-- UNCERTAIN_II：格式未核实，用“属性”暂代，需母语者复核 -->
+    <string name="viewer_format">ꂓꂷ</string>
+    <!-- UNCERTAIN_II：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_images">ꀋꅉ</string>
+    <!-- UNCERTAIN_II：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_videos">ꀋꃅ</string>
+    <!-- UNCERTAIN_II：媒体页音频分类新词尽力翻译，需母语者复核 -->
+    <string name="media_audios">ꉈꀋ</string>
+    <!-- UNCERTAIN_II：跳转 / 创建HTML 新词尽力翻译，需母语者复核 -->
+    <string name="jump_title">ꂷ</string>
+    <string name="create_html">HTML ꀋꉙ</string>
+    <string name="jump_invalid_path">ꌠꃀ ꀋꊿꀋꉆꁱꂷ</string>
+    <!-- UNCERTAIN_II：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_gifs">GIF</string>
+    <!-- UNCERTAIN_II：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_today">ꋍꆏ</string>
+    <!-- UNCERTAIN_II：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_yesterday">ꀉꎭ</string>
+    <!-- UNCERTAIN_II：抽屉合并新词尽力翻译，需母语者复核 -->
+    <string name="media_images_videos">ꀋꅉꌠꀋꃅ</string>
+    <!-- UNCERTAIN_II：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="play_video">ꉈꀋꇬ</string>
+    <!-- UNCERTAIN_II：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="view_image">ꀋꅉꌦ</string>
+    <!-- UNCERTAIN_II：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="browse_archive">ꀋꅉꇭꄉ</string>
+    <!-- UNCERTAIN_II：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_speed">ꃅꇬ</string>
+    <!-- UNCERTAIN_II：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_cannot_play">ꉈꀋꌠꃅꀋꃅ</string>
+    <!-- UNCERTAIN_II：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="play_music">ꀋꄣ</string>
+    <!-- UNCERTAIN_II：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="music_cannot_play">ꉈꀋꌠꀋꃅꀋꃅ</string>
+    <!-- UNCERTAIN_II：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_play">ꀋꇬ</string>
+    <!-- UNCERTAIN_II：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_pause">ꀋꄸ</string>
+    <!-- UNCERTAIN_II：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_fill_screen">ꀋꆏꁮꀋꇬ</string>
+    <!-- UNCERTAIN_II：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_loop">ꀋꇬꁧꀋꇬ</string>
+    <!-- UNCERTAIN_II：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_landscape">ꀋꆏꁮꀋꇬ</string>
+    <!-- UNCERTAIN_II：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_duration">ꀋꀋꇬ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="special_thanks">ꈀꎭꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="splash_animation">ꏜꉘꁮ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="splash_animation_hint">ꏜꉘꁮ ꄏꋍ ꀘꂷ ꏜꉘꁮ ꀘ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="storage_already_added">ꃄꅉ ꄏꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="storage_internal">ꀀꃄꅉ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="storage_name_hint">ꃄꅉꂓ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="storage_not_supported">ꃄꅉ ꀋꄏꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="storage_path_hint">ꇿꂷ /storage/emulated/0/Download</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="storage_path_invalid">ꇿꂷ ꀋꂷ ꀘꂷꃄꅉ ꀋꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="storage_usage">ꃄꅉ ꑞꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="swap_panes">ꏜꉘꁮꃄꅉꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="syntax">ꀘꂓꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="syntax_auto">ꀘꂓꂷ ꀘꂷꂓꂷ</string>
+    <string name="syntax_c">C/C++</string>
+    <string name="syntax_java">Java</string>
+    <string name="syntax_json">JSON</string>
+    <string name="syntax_kotlin">Kotlin</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="syntax_plain">ꀘꂓ ꉘꁮ</string>
+    <string name="syntax_python">Python</string>
+    <string name="syntax_shell">Shell</string>
+    <string name="syntax_xml">XML</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="text_editor">ꀘꂓꄏ</string>
+    <!-- UNCERTAIN_II：长句意译浓缩，含 URL 与人名，需母语者复核 -->
+    <string name="thanks_mp_desc">ꈀꎭ MP-Manager ꑍꃄꅉ ꀘꂷꂓ ꀘꂷꃄꅉꄏ https://github.com/AbdurazaaqMohammed/MP-Manager</string>
+    <!-- UNCERTAIN_II：意译浓缩，需母语者复核 -->
+    <string name="thanks_mt_desc">ꈀꎭ MT ꑍꃄꅉ ꀘꂷꂓ ꈜꐚꄏꂷ</string>
+    <!-- UNCERTAIN_II：意译浓缩，需母语者复核 -->
+    <string name="thanks_muse_desc">ꈀꎭ Muse ꀘꂷꃄꅉꄏ ꈜꐚꄏ Muse ꄏꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="theme">ꃅꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="theme_dark">ꎿꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="theme_light">ꉘꁮꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="theme_mode">ꃅꂷꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="theme_system">ꃄꅉꄏ ꃅꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="tools_title">ꄏꂷꃄꅉ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="trash">ꀖꃄꅉ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="trash_emptied">ꀖꃄꅉ ꀋꂷꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="trash_empty">ꀖꃄꅉ ꀋꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="trash_move_failed">ꀖꃄꅉ ꄏꀋꄏ ꀘꂷ ꀖꀋꄏ</string>
+    <!-- UNCERTAIN_II：UI 引擎无彝语对应词，UI 暂留英文，需母语者复核 -->
+    <string name="ui_engine">UI ꄏꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="ui_engine_desc_expressive">ꃅꂷ ꉘꁮꂷ ꑞꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="ui_engine_desc_md3">ꃅꂷ ꏜꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="ui_engine_desc_miuix">Xiaomi MIUI ꃅꂷ</string>
+    <!-- UNCERTAIN_II：UI 引擎无彝语对应词，UI 暂留英文，需母语者复核 -->
+    <string name="ui_engine_switch_msg">UI ꄏꂷ ꋍꂷꄏꀐ “%1$s” ꋍꀘ</string>
+    <!-- UNCERTAIN_II：UI 引擎无彝语对应词，UI 暂留英文，需母语者复核 -->
+    <string name="ui_engine_switch_title">UI ꄏꂷ ꋍꂷꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="undo">ꀖꋍ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="unhidden_done">ꉘꁮꎿꂷ ꄏꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="unhide">ꉘꁮꎿꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="unknown">ꀋꂓ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="unpin_folder">ꀘꂷꃄꅉꋍ ꀖ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="unpinned">ꀘꂷꃄꅉꋍ ꀖꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="unsaved_message">ꀘꂷ ꄏꀐ ꀘꂷꃄꅉꄏꀋꄏ ꀘꂷꃄꅉꄏ ꑞ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="unsaved_title">ꄏꀐ ꀘꂷꃄꅉꄏꀋꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="used_space">ꃄꅉ ꄏꀐ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="user_agreement">ꌠꈜꐚꄏ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="version">ꋍꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="version_number">ꋍꂷꂓ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="word_wrap">ꀘꂓꀖ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="wrong_password">ꎿꉙ ꀋꄏꂷ</string>
+    <!-- UNCERTAIN_II：意译，需母语者复核 -->
+    <string name="zip_failed">ꐻꀘꂷ ꀋꄏ</string>
+</resources>

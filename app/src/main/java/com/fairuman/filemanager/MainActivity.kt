@@ -147,28 +147,6 @@ class MainActivity : BaseActivity() {
         const val UI_ENGINE_MD3 = 0
         const val UI_ENGINE_EXPRESSIVE = 1
         const val UI_ENGINE_MIUIX = 2
-        // v1.9.6 液态玻璃：面板半透明（默认关）；背景模糊只在 API 31+ 生效。
-        const val PREF_LIQUID_GLASS = "liquid_glass"
-        // v1.9.6 液态玻璃跟随主题：玻璃的色调从当前主题主色取（种子色、动态颜色、
-        // 引擎主色都会反映到 colorPrimary 上），低透明度叠加。强度 0.25
-        // （库文档：0.2–0.4 接近 iOS 彩色玻璃）。透明模糊模式色调淡一些（0.10），
-        // 让模糊透出来。
-        const val GLASS_TINT_ALPHA = 64 // 25%
-        const val GLASS_TINT_ALPHA_BLUR = 26 // 10%
-        // v1.9.6 液态玻璃模式：0 半透明（默认）/ 1 全透明模糊 / 2 全透明。
-        // v1.9.8.1：模式 2 由“透明模糊”改名“全透明模糊”（面板全透明、
-        // 背景真实模糊）；模式 1 半透明改为半透明 + 实时毛玻璃模糊
-        // （20dp 强模糊，HAZE）。
-        const val PREF_LIQUID_GLASS_MODE = "liquid_glass_mode"
-        const val GLASS_MODE_TRANSLUCENT = 0
-        const val GLASS_MODE_BLUR = 1
-        const val GLASS_MODE_CLEAR = 2
-
-        fun glassModeDisplayName(ctx: android.content.Context, mode: Int): String = when (mode) {
-            GLASS_MODE_BLUR -> ctx.getString(R.string.liquid_glass_mode_blur)
-            GLASS_MODE_CLEAR -> ctx.getString(R.string.liquid_glass_mode_clear)
-            else -> ctx.getString(R.string.liquid_glass_mode_translucent)
-        }
 
         /** 当前主题主色（不带 alpha 的 RGB）。 */
         fun themePrimaryColor(ctx: android.content.Context): Int {
@@ -178,21 +156,6 @@ class MainActivity : BaseActivity() {
             } catch (_: Exception) { Color.BLUE }
         }
 
-        /** 液态玻璃的染色：主题主色 + 指定透明度（库的 glassTint 直接吃 ARGB）。 */
-        fun glassTintColor(ctx: android.content.Context, alpha: Int = GLASS_TINT_ALPHA): Int {
-            val p = themePrimaryColor(ctx)
-            return Color.argb(alpha, Color.red(p), Color.green(p), Color.blue(p))
-        }
-
-        /** 把带 alpha 的染色盖到一个底色上，返回同 alpha 的染色底色
-         *  （抽屉 fallback / 卡片用——只改色相，不改透明度）。 */
-        fun tintSurfaceColor(base: Int, tintArgb: Int): Int {
-            val a = Color.alpha(tintArgb) / 255f
-            return Color.argb(Color.alpha(base),
-                (Color.red(tintArgb) * a + Color.red(base) * (1f - a)).toInt(),
-                (Color.green(tintArgb) * a + Color.green(base) * (1f - a)).toInt(),
-                (Color.blue(tintArgb) * a + Color.blue(base) * (1f - a)).toInt())
-        }
         // v1.9.1 桌面快捷方式 Intent：action + extras（目标绝对路径、动作、是否文件夹）。
         const val ACTION_SHORTCUT = "com.fairuman.filemanager.ACTION_SHORTCUT"
         const val EXTRA_SHORTCUT_PATH = "shortcut_path"
@@ -235,7 +198,7 @@ class MainActivity : BaseActivity() {
             -13070788, -9920712, -5262293, -415707, -28928,
             -689152, -1684967, -10665929, -8825528, -11243910,
             -9823334, -5434281, -16742021, -8604862, -13407970,
-            -16728876, -16738680, -1, -16777216, -6381922,
+            -16728876, -16738680, -6750312, -32944, -6381922,
             -476208, -1499549, -10395295, -7288071, -5908825,
             -2659, -3238952, -26624, -15064194, -14983648,
             -11652050, -16121, -769226, -1294214, -6543440,
@@ -323,7 +286,11 @@ class MainActivity : BaseActivity() {
             try {
                 val sp = ctx.getSharedPreferences("fairu_prefs", MODE_PRIVATE)
                 val tag = sp.getString(PREF_LOCALE, null)
-                if (!tag.isNullOrBlank()) {
+                if (tag.isNullOrBlank() || tag == LanguageActivity.TAG_FOLLOW_SYSTEM) {
+                    // v1.9.8：没保存语言 = 跟随系统，必须清掉 AppCompat 存的旧覆盖，
+                    // 否则以前选过的具体语言会一直生效。
+                    AppCompatDelegate.setApplicationLocales(LocaleListCompat.getEmptyLocaleList())
+                } else {
                     AppCompatDelegate.setApplicationLocales(
                         LocaleListCompat.create(Locale.forLanguageTag(tag))
                     )
@@ -352,6 +319,9 @@ class MainActivity : BaseActivity() {
     var deleteDialog by mutableStateOf<DeleteRequest?>(null)
     var renameDialog by mutableStateOf<RenameRequest?>(null)
     var showNewDialog by mutableStateOf(false)
+    // v1.9.8：路径跳转对话框（点顶栏路径 / 窗格路径条弹出）与创建 HTML 对话框。
+    var showJumpDialog by mutableStateOf(false)
+    var showCreateHtmlDialog by mutableStateOf(false)
 
     var fileMenu by mutableStateOf<FileMenuRequest?>(null)
     var showSelectionMenu by mutableStateOf(false)
@@ -418,14 +388,6 @@ class MainActivity : BaseActivity() {
     private var clipboard: List<ClipEntry> = emptyList()
     private var clipboardCut = false
 
-    // v1.9.6 液态玻璃（QWEA0/Liquid-Glass-Android v2.0.11）：库的原生 .so 只有
-    // arm64-v8a/armeabi-v7a；x86 设备（比如 32 位 x86 模拟器）上 loadLibrary
-    // 会失败。在这里先探一次：成功走库默认（SMART + 色差 AUTO，API 33+ 再
-    // 走 AGSL 透镜管线）；失败走纯 Kotlin 管线（BOX_BLUR + 色差 KOTLIN），
-    // 绝不碰任何 native 方法——否则库的 SMART 默认会在第一帧抛
-    // ExceptionInInitializerError 闪退（loadLibrary 的 UnsatisfiedLinkError
-    // 是 Error，库里的 catch (e: Exception) 接不住）。
-
     /** v1.8.0：根目录文本文件用内置编辑器打开时，先经 Shizuku cp 到缓存里
      *  暂存，编辑器改的是暂存文件；编辑器退出后暂存文件变了就 cp 回原路径。
      *  （编辑器只认普通 File 路径，根目录文件 App 自己写不进去。） */
@@ -449,6 +411,210 @@ class MainActivity : BaseActivity() {
             // 暂存文件是 shell 建的、放在 shell 的目录里，App 自己删不掉，走 shell rm。
             try { ShizukuRoot.exec("rm", "-rf", staged.absolutePath) } catch (_: Exception) { }
         }.start()
+    }
+
+    /** v1.9.8：内置图像查看器从哪个窗格点开的（返回时选择要勾回这个窗格；
+     *  进程重建丢了就退回 activePane()）。 */
+    private var pendingViewerPane: Pane? = null
+
+    /** v1.9.8：内置图像查看器返回后的处理（照 rootEditorLauncher 的样子）。 */
+    private val imageViewerLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode != RESULT_OK) { pendingViewerPane = null; return@registerForActivityResult }
+        val data = result.data
+        val pane = pendingViewerPane ?: activePane()
+        pendingViewerPane = null
+        if (data == null) return@registerForActivityResult
+        // 1. 请主列表代删的（SAF / 根目录来源）：按标识找回条目再调现成的 confirmDelete。
+        val requestDelete = data.getStringArrayListExtra(ImageViewerActivity.EXTRA_REQUEST_DELETE_PATHS).orEmpty()
+        if (requestDelete.isNotEmpty()) {
+            val targets = requestDelete.mapNotNull { key ->
+                when {
+                    // SAF：查看器返回的是文档 URI 字符串，按 URI 找回 SafEntry，用合成路径。
+                    pane.safMode -> pane.safEntries.firstOrNull { it.uri.toString() == key }
+                        ?.let { File(it.keyPath) }
+                    // 根目录：返回的是真实路径。
+                    pane.shizukuMode -> File(key).takeIf { f ->
+                        pane.shizukuEntries.any { it.path == f.absolutePath }
+                    }
+                    else -> null
+                }
+            }
+            if (targets.isNotEmpty()) confirmDelete(targets)
+        }
+        // 2. 本页已删的普通文件：主列表刷新掉。
+        if (data.getStringArrayListExtra(ImageViewerActivity.EXTRA_DELETED_PATHS).orEmpty().isNotEmpty()) {
+            refreshPane(pane)
+        }
+        // 3. 带选择退出：把其中在当前文件夹里的勾进主列表选中态，进选择模式；
+        // 跨文件夹的、没有真实路径的带不回去（见汇报）。
+        val selectedPaths = data.getStringArrayListExtra(ImageViewerActivity.EXTRA_SELECTED_PATHS).orEmpty()
+        if (selectedPaths.isNotEmpty()) {
+            val dir = pane.currentDir
+            selectedPaths.forEach { path ->
+                val f = File(path)
+                if (f.parentFile?.absolutePath == dir.absolutePath) pane.selected.add(f)
+            }
+            updateSelectionTopBar()
+        }
+    }
+
+    /** v1.9.8：点图片进内置查看器（普通文件传路径，SAF 传 URI，
+     *  根目录传暂存副本路径 + 真实路径）。 */
+    private fun openImageViewer(pane: Pane, path: String? = null, uri: String? = null, originalPath: String? = null) {
+        pendingViewerPane = pane
+        imageViewerLauncher.launch(Intent(this, ImageViewerActivity::class.java).apply {
+            path?.let { putExtra(ImageViewerActivity.EXTRA_PATH, it) }
+            uri?.let { putExtra(ImageViewerActivity.EXTRA_URI, it) }
+            originalPath?.let { putExtra(ImageViewerActivity.EXTRA_ORIGINAL_PATH, it) }
+        })
+    }
+
+    /** v1.9.8：点视频进内置播放器（入口与查看器同款三处；播放器不返回
+     *  结果，直接 startActivity，不用 launcher）。同时传同文件夹视频列表
+     *  + 当前下标（按主列表当前排序），供底栏上一个/下一个切换；
+     *  SAF 传 URI 列表，根目录拿不到列表（传空，按钮置灰）。 */
+    private fun openVideoPlayer(pane: Pane, path: String? = null, uri: String? = null, originalPath: String? = null) {
+        startActivity(Intent(this, VideoPlayerActivity::class.java).apply {
+            path?.let { putExtra(VideoPlayerActivity.EXTRA_PATH, it) }
+            uri?.let { putExtra(VideoPlayerActivity.EXTRA_URI, it) }
+            originalPath?.let { putExtra(VideoPlayerActivity.EXTRA_ORIGINAL_PATH, it) }
+            val (list, index, isUri) = videoPlaylist(pane, path, uri)
+            putStringArrayListExtra(VideoPlayerActivity.EXTRA_VIDEO_LIST, ArrayList(list))
+            putExtra(VideoPlayerActivity.EXTRA_VIDEO_INDEX, index)
+            putExtra(VideoPlayerActivity.EXTRA_VIDEO_IS_URI, isUri)
+        })
+    }
+
+    /** v1.9.8：九宫格里点“浏览压缩包”进浏览页（入口与查看器/播放器同款
+     *  三处；不解压，只列目录）。 */
+    private fun openArchiveBrowser(pane: Pane, path: String? = null, uri: String? = null, originalPath: String? = null) {
+        startActivity(Intent(this, ArchiveBrowserActivity::class.java).apply {
+            path?.let { putExtra(ArchiveBrowserActivity.EXTRA_PATH, it) }
+            uri?.let { putExtra(ArchiveBrowserActivity.EXTRA_URI, it) }
+            originalPath?.let { putExtra(ArchiveBrowserActivity.EXTRA_ORIGINAL_PATH, it) }
+        })
+    }
+
+    /** v1.9.8：点音频进内置音乐播放器（入口与视频播放器同款三处；
+     *  直接 startActivity，不用 launcher）。同时传同文件夹音频列表
+     *  + 当前下标（按主列表当前排序），供底栏上一个/下一个切换；
+     *  SAF 传 URI 列表，根目录拿不到列表（传空，按钮置灰）。 */
+    private fun openMusicPlayer(pane: Pane, path: String? = null, uri: String? = null, originalPath: String? = null) {
+        startActivity(Intent(this, MusicPlayerActivity::class.java).apply {
+            path?.let { putExtra(MusicPlayerActivity.EXTRA_PATH, it) }
+            uri?.let { putExtra(MusicPlayerActivity.EXTRA_URI, it) }
+            originalPath?.let { putExtra(MusicPlayerActivity.EXTRA_ORIGINAL_PATH, it) }
+            val (list, index, isUri) = audioPlaylist(pane, path, uri)
+            putStringArrayListExtra(MusicPlayerActivity.EXTRA_AUDIO_LIST, ArrayList(list))
+            putExtra(MusicPlayerActivity.EXTRA_AUDIO_INDEX, index)
+            putExtra(MusicPlayerActivity.EXTRA_AUDIO_IS_URI, isUri)
+        })
+    }
+
+    /** v1.9.8：九宫格里播放视频 / 查看图片 / 浏览压缩包的三路传参
+     *  （与 onFileClick 同款：普通文件传路径，SAF 传 URI，根目录先
+     *  stageRootFile 暂存再传暂存路径 + 真实路径）。 */
+    internal fun openGridVideo(pane: Pane, f: File) = openGridTarget(pane, f, GridTarget.VIDEO)
+    internal fun openGridImage(pane: Pane, f: File) = openGridTarget(pane, f, GridTarget.IMAGE)
+    internal fun openGridArchive(pane: Pane, f: File) = openGridTarget(pane, f, GridTarget.ARCHIVE)
+    internal fun openGridText(pane: Pane, f: File) = openGridTarget(pane, f, GridTarget.TEXT)
+    /** v1.9.8：九宫格里点“播放音乐”——音频和视频都能点（点视频只放
+     *  视频里的声音，不显示画面，见 MusicPlayerActivity）。 */
+    internal fun openGridMusic(pane: Pane, f: File) = openGridTarget(pane, f, GridTarget.MUSIC)
+
+    private enum class GridTarget { VIDEO, IMAGE, ARCHIVE, TEXT, MUSIC }
+
+    private fun openGridTarget(pane: Pane, f: File, target: GridTarget) {
+        val open: (path: String?, uri: String?, originalPath: String?) -> Unit = { path, uri, originalPath ->
+            when (target) {
+                GridTarget.VIDEO -> openVideoPlayer(pane, path = path, uri = uri, originalPath = originalPath)
+                GridTarget.IMAGE -> openImageViewer(pane, path = path, uri = uri, originalPath = originalPath)
+                GridTarget.ARCHIVE -> openArchiveBrowser(pane, path = path, uri = uri, originalPath = originalPath)
+                GridTarget.MUSIC -> openMusicPlayer(pane, path = path, uri = uri, originalPath = originalPath)
+                // 文本：照 onFileClick 的文本分支（普通文件 EXTRA_PATH，
+                // SAF 传 EXTRA_URI；根目录不在这里走，见下面的 shizukuMode 分支）。
+                GridTarget.TEXT -> startActivity(Intent(this, TextEditorActivity::class.java).apply {
+                    path?.let { putExtra(TextEditorActivity.EXTRA_PATH, it) }
+                    uri?.let { putExtra(TextEditorActivity.EXTRA_URI, it) }
+                })
+            }
+        }
+        when {
+            pane.safMode -> {
+                val entry = pane.safEntries.firstOrNull { it.keyPath == f.absolutePath }
+                if (entry == null) {
+                    Toast.makeText(this, R.string.error, Toast.LENGTH_SHORT).show()
+                    return
+                }
+                open(null, entry.uri.toString(), null)
+            }
+            pane.shizukuMode -> {
+                val entry = pane.shizukuEntries.firstOrNull { it.path == f.absolutePath }
+                if (entry == null) {
+                    Toast.makeText(this, R.string.error, Toast.LENGTH_SHORT).show()
+                    return
+                }
+                Thread {
+                    val staged = stageRootFile(entry.path)
+                    runOnUiThread {
+                        if (isFinishing || isDestroyed) return@runOnUiThread
+                        if (staged == null) {
+                            Toast.makeText(this, R.string.error, Toast.LENGTH_SHORT).show()
+                            return@runOnUiThread
+                        }
+                        // 文本：照 openRootFile 的暂存+写回路子（pendingRootEdit +
+                        // rootEditorLauncher，退出时 shell cp 写回真实路径）。
+                        if (target == GridTarget.TEXT) {
+                            pendingRootEdit = RootEdit(entry.path, staged, staged.lastModified(), staged.length())
+                            rootEditorLauncher.launch(Intent(this, TextEditorActivity::class.java).apply {
+                                putExtra(TextEditorActivity.EXTRA_PATH, staged.absolutePath)
+                            })
+                            return@runOnUiThread
+                        }
+                        open(staged.absolutePath, null, entry.path)
+                    }
+                }.start()
+            }
+            else -> open(f.absolutePath, null, null)
+        }
+    }
+
+    /** 同文件夹视频播放列表（按主列表当前排序）：普通文件是路径列表，
+     *  SAF 是 URI 列表，根目录返回空列表（上一个/下一个置灰）。 */
+    private fun videoPlaylist(pane: Pane, path: String?, uri: String?): Triple<List<String>, Int, Boolean> {
+        if (uri != null) {
+            val videos = pane.safEntries.filter { !it.isDir && FileUtils.isVideo(File(it.name)) }
+            val list = videos.map { it.uri.toString() }
+            return Triple(list, videos.indexOfFirst { it.uri.toString() == uri }, true)
+        }
+        if (path != null) {
+            // 根目录（Shizuku 暂存副本）不在 pane.files 里：拿不到列表。
+            if (pane.shizukuMode) return Triple(emptyList(), -1, false)
+            val videos = pane.files.filter { !it.isDirectory && FileUtils.isVideo(it) }
+            val list = videos.map { it.absolutePath }
+            return Triple(list, videos.indexOfFirst { it.absolutePath == path }, false)
+        }
+        return Triple(emptyList(), -1, false)
+    }
+
+    /** 同文件夹音频播放列表（按主列表当前排序）：普通文件是路径列表，
+     *  SAF 是 URI 列表，根目录返回空列表（上一个/下一个置灰）。
+     *  九宫格“播放音乐”点视频文件进来时：当前文件不在音频列表里，
+     *  下标 -1，两个按钮都置灰（只放这一段视频的声音）。 */
+    private fun audioPlaylist(pane: Pane, path: String?, uri: String?): Triple<List<String>, Int, Boolean> {
+        if (uri != null) {
+            val audios = pane.safEntries.filter { !it.isDir && FileUtils.isAudio(File(it.name)) }
+            val list = audios.map { it.uri.toString() }
+            return Triple(list, audios.indexOfFirst { it.uri.toString() == uri }, true)
+        }
+        if (path != null) {
+            // 根目录（Shizuku 暂存副本）不在 pane.files 里：拿不到列表。
+            if (pane.shizukuMode) return Triple(emptyList(), -1, false)
+            val audios = pane.files.filter { !it.isDirectory && FileUtils.isAudio(it) }
+            val list = audios.map { it.absolutePath }
+            return Triple(list, audios.indexOfFirst { it.absolutePath == path }, false)
+        }
+        return Triple(emptyList(), -1, false)
     }
 
     inner class Pane(val index: Int) {
@@ -711,17 +877,15 @@ class MainActivity : BaseActivity() {
         pane.dirShowsFolderLabel = false
         val showHidden = prefs.getBoolean("show_hidden", false)
         val sort = prefs.getInt("sort", 0)
+        val reverse = prefs.getBoolean("sort_reverse", false)
+        val typeFoldersOnly = prefs.getBoolean("sort_type_folders_only", false)
         var list: List<File> = pane.currentDir.listFiles()?.toList() ?: emptyList()
         if (!showHidden) list = list.filter { !it.name.startsWith(".") }
         if (pane.searchQuery.isNotBlank()) {
             val q = pane.searchQuery.lowercase()
             list = searchRecursive(pane.currentDir, q)
         }
-        list = when (sort) {
-            1 -> list.sortedByDescending { it.lastModified() }
-            2 -> list.sortedByDescending { if (it.isDirectory) 0L else it.length() }
-            else -> list.sortedWith(compareBy({ !it.isDirectory }, { it.name.lowercase() }))
-        }
+        list = sortFileList(list, sort, reverse, typeFoldersOnly)
         list = applyPins(list)
         pane.files = list
         pane.showParent = pane.currentDir.parentFile != null
@@ -739,16 +903,63 @@ class MainActivity : BaseActivity() {
         return pinned + rest
     }
 
-    private fun searchRecursive(dir: File, q: String): List<File> {
+    private fun searchRecursive(dir: File, q: String, isCancelled: () -> Boolean = { false }): List<File> {
         val out = mutableListOf<File>()
         val children = dir.listFiles() ?: return out
         for (c in children) {
+            if (isCancelled()) return out
             if (c.name.lowercase().contains(q)) out.add(c)
             if (c.isDirectory && !c.name.startsWith(".")) {
-                if (out.size < 500) out.addAll(searchRecursive(c, q))
+                if (out.size < 500) out.addAll(searchRecursive(c, q, isCancelled))
             }
         }
         return out
+    }
+
+    // v1.9.7.8：搜索防抖 + 后台线程。之前每次敲键都在 onValueChange 里
+    // 同步调 loadPane，主线程上递归扫整棵树（Max 手机上 /storage/emulated/0
+    // 又大又深），每敲一个字母就冻住一阵；主线程一卡，输入法连接就丢，
+    // 查询被清空、列表跳回完整目录、大小缓存也被清掉、副标题跟着闪。
+    // 现在敲键只改 searchQuery（立即返回、不扫盘），250ms 后在后台线程
+    // 扫，算完只有查询没变才上屏；旧查询的线程算完直接丢弃。
+    @Volatile
+    private var searchToken = 0
+
+    internal fun onSearchQueryChanged(pane: Pane, q: String) {
+        pane.searchQuery = q
+        val token = ++searchToken
+        val dir = pane.currentDir
+        if (q.isBlank()) { loadPane(pane); return }
+        // SAF / Shizuku：只是在内存里过滤已有条目，不扫盘，走原来同步路。
+        if (pane.safMode || pane.shizukuMode) { loadPane(pane); return }
+        Thread {
+            try { Thread.sleep(250) } catch (_: InterruptedException) { }
+            if (token != searchToken) return@Thread
+            val results = searchRecursive(dir, q.lowercase()) { token != searchToken }
+            if (token != searchToken) return@Thread
+            val sort = prefs.getInt("sort", 0)
+            val reverse = prefs.getBoolean("sort_reverse", false)
+            val typeFoldersOnly = prefs.getBoolean("sort_type_folders_only", false)
+            val pinned = applyPins(sortFileList(results, sort, reverse, typeFoldersOnly))
+            runOnUiThread {
+                if (token != searchToken) return@runOnUiThread
+                if (pane.searchQuery != q) return@runOnUiThread
+                if (isFinishing || isDestroyed) return@runOnUiThread
+                pane.files = pinned
+                pane.showParent = dir.parentFile != null
+                // 注意：不像 loadPane 那样清 dirSizeCache——已算好的大小
+                // 留着，副标题不闪；只 +loadSeq 让缺大小的行去算。
+                pane.loadSeq++
+                pane.emptyText = getString(R.string.no_files)
+                pane.showEmpty = pinned.isEmpty() && !pane.showParent
+            }
+        }.start()
+    }
+
+    /** 列表排序（loadPane 和后台搜索共用；规则见 FileUtils.sortNamed）。 */
+    private fun sortFileList(list: List<File>, sort: Int, reverse: Boolean, typeFoldersOnly: Boolean): List<File> {
+        return FileUtils.sortNamed(list, sort, reverse, typeFoldersOnly,
+            { it.isDirectory }, { it.name }, { it.length() }, { it.lastModified() })
     }
 
     // v1.9.8.1：顶栏是 Compose，标题/副标题/隐藏开关直接读窗格状态，
@@ -875,10 +1086,27 @@ class MainActivity : BaseActivity() {
             // 别的用 ACTION_VIEW + content URI 打开。
             val entry = pane.safEntries.firstOrNull { it.keyPath == f.absolutePath } ?: return
             if (entry.isDir) { enterSafDir(pane, entry); return }
+            // v1.9.8：.html/.htm 点了直接进内置文本编辑器看代码，不弹浏览器/打开方式。
+            if (FileUtils.isHtml(File(entry.name))) { openTextEditor(pane, f); return }
             if (FileUtils.isText(File(entry.name))) {
                 startActivity(Intent(this, TextEditorActivity::class.java).apply {
                     putExtra(TextEditorActivity.EXTRA_URI, entry.uri.toString())
                 })
+                return
+            }
+            if (FileUtils.isImage(File(entry.name))) {
+                // v1.9.8：SAF 里的图片进内置查看器（传文档 URI）。
+                openImageViewer(pane, uri = entry.uri.toString())
+                return
+            }
+            if (FileUtils.isVideo(File(entry.name))) {
+                // v1.9.8：SAF 里的视频进内置播放器（传文档 URI）。
+                openVideoPlayer(pane, uri = entry.uri.toString())
+                return
+            }
+            if (FileUtils.isAudio(File(entry.name))) {
+                // v1.9.8：SAF 里的音频进内置音乐播放器（传文档 URI）。
+                openMusicPlayer(pane, uri = entry.uri.toString())
                 return
             }
             openSafFile(entry)
@@ -895,11 +1123,28 @@ class MainActivity : BaseActivity() {
             return
         }
         if (f.isDirectory) { navigateTo(pane, f); return }
+        // v1.9.8：.html/.htm 点了直接进内置文本编辑器看代码，不弹浏览器/打开方式。
+        if (FileUtils.isHtml(f)) { openTextEditor(pane, f); return }
         if (FileUtils.isText(f)) {
             // 文本文件用内置编辑器打开。
             startActivity(Intent(this, TextEditorActivity::class.java).apply {
                 putExtra(TextEditorActivity.EXTRA_PATH, f.absolutePath)
             })
+            return
+        }
+        if (FileUtils.isImage(f)) {
+            // v1.9.8：图片进内置查看器（不走 openWith）。
+            openImageViewer(pane, path = f.absolutePath)
+            return
+        }
+        if (FileUtils.isVideo(f)) {
+            // v1.9.8：视频进内置播放器（不走 openWith）。
+            openVideoPlayer(pane, path = f.absolutePath)
+            return
+        }
+        if (FileUtils.isAudio(f)) {
+            // v1.9.8：音频进内置音乐播放器（不走 openWith）。
+            openMusicPlayer(pane, path = f.absolutePath)
             return
         }
         openWith(f)
@@ -1284,12 +1529,6 @@ class MainActivity : BaseActivity() {
         return files to dirs
     }
 
-    /** v1.9.8.1：对话框是 Compose；旧的玻璃对话框 builder 只留给尚未迁移的
-     *  零星 AlertDialog 用，统一走 MaterialAlertDialogBuilder。 */
-    internal fun glassDialogBuilder(): MaterialAlertDialogBuilder {
-        return MaterialAlertDialogBuilder(this)
-    }
-
     internal fun showDeleteDialog(pane: Pane, targets: List<File>, stats: DeleteStats) {
         deleteDialog = DeleteRequest(pane, targets, stats)
     }
@@ -1483,9 +1722,122 @@ class MainActivity : BaseActivity() {
         return true
     }
 
-    /** 在当前目录新建空文件（普通 / 根目录 / SAF 三态）。 */
-    internal fun createFile(pane: Pane, name: String) {
+    /** v1.9.8 路径跳转：当前窗格跳到输入的路径。
+     *  自己能列出来的普通目录直接进（走 loadPane）；自己列不出来时，
+     *  Shizuku 可用就用 `test -d` 验一下，是文件夹就进 Shizuku 模式；
+     *  路径不存在 / 不是文件夹 / Shizuku 不可用都只弹提示，不跳转、不崩溃。
+     *  相对路径按当前目录算。SAF 窗格跳到普通路径时先退出 SAF 模式。 */
+    internal fun jumpToPath(pane: Pane, rawPath: String) {
+        val path = rawPath.trim()
+        if (path.isEmpty()) {
+            Toast.makeText(this, R.string.jump_invalid_path, Toast.LENGTH_SHORT).show()
+            return
+        }
+        val dir = if (path.startsWith("/")) File(path) else File(pane.currentDir, path)
+        val absPath = dir.absolutePath
+        if (absPath == pane.currentDir.absolutePath) return // 已经在这儿了
+        if (dir.isDirectory && dir.listFiles() != null) {
+            exitSafMode(pane)
+            exitShizukuMode(pane)
+            pane.backStack.add(pane.currentDir)
+            pane.forwardStack.clear()
+            pane.currentDir = dir
+            pane.searchQuery = ""
+            pane.selected.clear()
+            loadPane(pane)
+            return
+        }
+        if (ShizukuRoot.isRunning() && ShizukuRoot.isAuthorized()) {
+            Thread {
+                val isDir = try {
+                    ShizukuRoot.exec("test", "-d", absPath, timeoutMs = 10000L).exit == 0
+                } catch (_: Throwable) { false }
+                runOnUiThread {
+                    if (isFinishing || isDestroyed) return@runOnUiThread
+                    if (!isDir) {
+                        Toast.makeText(this, R.string.jump_invalid_path, Toast.LENGTH_SHORT).show()
+                        return@runOnUiThread
+                    }
+                    exitSafMode(pane)
+                    pane.backStack.add(pane.currentDir)
+                    pane.forwardStack.clear()
+                    pane.shizukuMode = true
+                    pane.currentDir = File(absPath)
+                    pane.searchQuery = ""
+                    pane.selected.clear()
+                    refreshShizukuList(pane)
+                }
+            }.start()
+            return
+        }
+        Toast.makeText(this, R.string.jump_invalid_path, Toast.LENGTH_SHORT).show()
+    }
+
+    /** v1.9.8 创建 HTML：在当前窗格文件夹里新建一个 .html 文件。
+     *  名字已带 .html 不再重复加；空名 / 含 "/" / 已存在都弹提示、不创建
+     *  （复用 checkNewName）。建好直接自动打开内置文本编辑器（新建的空文件，
+     *  进编辑器就能写）；列表刷新照常走。
+     *  创建本身按窗格模式分三路（普通 / 根目录 / SAF），不复用 createFile：
+     *  建好那一刻就要开编辑器——普通路文件已在磁盘上、SAF 路建文档直接拿到
+     *  URI、根目录路用刚建的路径暂存打开，都不用等列表刷新回来再找条目。 */
+    internal fun createHtmlFile(pane: Pane, rawName: String) {
+        var name = rawName.trim()
+        if (name.isEmpty()) {
+            Toast.makeText(this, R.string.invalid_name, Toast.LENGTH_SHORT).show()
+            return
+        }
+        if (!name.endsWith(".html", ignoreCase = true)) name += ".html"
+        if (!checkNewName(pane, name)) return
         when {
+            pane.shizukuMode -> {
+                val dir = pane.currentDir.absolutePath
+                val path = if (dir == "/") "/$name" else "$dir/$name"
+                Thread {
+                    val r = ShizukuRoot.exec("touch", path)
+                    runOnUiThread {
+                        if (isFinishing || isDestroyed) return@runOnUiThread
+                        if (r.exit == 0) {
+                            snackbar(R.string.created)
+                            refreshShizukuList(pane)
+                            // 根目录文件 App 自己读不了，走暂存打开编辑器。
+                            openRootFile(pane, ShizukuRoot.Entry(name, path, false, 0L, System.currentTimeMillis()))
+                        } else snackbar(R.string.error)
+                    }
+                }.start()
+            }
+            pane.safMode -> {
+                val treeUri = pane.safStorage?.let { try { Uri.parse(it.uri) } catch (_: Exception) { null } }
+                val parentDocId = pane.safStack.lastOrNull()?.docId
+                if (treeUri == null || parentDocId == null) return
+                Thread {
+                    val uri = safCreateFile(treeUri, parentDocId, name, safMimeFor(name))
+                    runOnUiThread {
+                        if (isFinishing || isDestroyed) return@runOnUiThread
+                        if (uri != null) {
+                            snackbar(R.string.created)
+                            refreshSafList(pane)
+                            // SAF 文档按 URI 进编辑器，保存写回原处。
+                            startActivity(Intent(this, TextEditorActivity::class.java).apply {
+                                putExtra(TextEditorActivity.EXTRA_URI, uri.toString())
+                            })
+                        } else snackbar(R.string.error)
+                    }
+                }.start()
+            }
+            else -> runBg {
+                val ok = try { File(pane.currentDir, name).createNewFile() } catch (_: Exception) { false }
+                runOnUiThread {
+                    if (ok) {
+                        snackbar(R.string.created)
+                        openTextEditor(pane, File(pane.currentDir, name))
+                    } else snackbar(R.string.error)
+                }
+            }
+        }
+    }
+
+    /** 在当前目录新建空文件（普通 / 根目录 / SAF 三态）。 */
+    internal fun createFile(pane: Pane, name: String) {        when {
             pane.shizukuMode -> {
                 val dir = pane.currentDir.absolutePath
                 val path = if (dir == "/") "/$name" else "$dir/$name"
@@ -2735,7 +3087,12 @@ class MainActivity : BaseActivity() {
      *  空列表上直接显示错误原因——以前失败时不刷新列表，窗格里还留着
      *  上个目录的旧条目，路径栏却是新目录，会误导人。 */
     internal fun refreshShizukuList(pane: Pane) {
-        ShizukuRoot.listDir(pane.currentDir.absolutePath) { entries, error ->
+        ShizukuRoot.listDir(
+            pane.currentDir.absolutePath,
+            prefs.getInt("sort", 0),
+            prefs.getBoolean("sort_reverse", false),
+            prefs.getBoolean("sort_type_folders_only", false)
+        ) { entries, error ->
             if (isFinishing || isDestroyed) return@listDir
             if (!::left.isInitialized || !::right.isInitialized) return@listDir
             if (entries == null) {
@@ -2780,11 +3137,28 @@ class MainActivity : BaseActivity() {
                     Toast.makeText(this, R.string.error, Toast.LENGTH_SHORT).show()
                     return@runOnUiThread
                 }
+                // v1.9.8：文本（含 .html/.htm）进内置编辑器看代码，不走浏览器。
                 if (FileUtils.isText(File(entry.name))) {
                     pendingRootEdit = RootEdit(entry.path, staged, staged.lastModified(), staged.length())
                     rootEditorLauncher.launch(Intent(this, TextEditorActivity::class.java).apply {
                         putExtra(TextEditorActivity.EXTRA_PATH, staged.absolutePath)
                     })
+                    return@runOnUiThread
+                }
+                if (FileUtils.isImage(File(entry.name))) {
+                    // v1.9.8：根目录里的图片进内置查看器（看暂存副本，
+                    // 删的时候按真实路径带回主列表代删）。
+                    openImageViewer(pane, path = staged.absolutePath, originalPath = entry.path)
+                    return@runOnUiThread
+                }
+                if (FileUtils.isVideo(File(entry.name))) {
+                    // v1.9.8：根目录里的视频进内置播放器（看暂存副本）。
+                    openVideoPlayer(pane, path = staged.absolutePath, originalPath = entry.path)
+                    return@runOnUiThread
+                }
+                if (FileUtils.isAudio(File(entry.name))) {
+                    // v1.9.8：根目录里的音频进内置音乐播放器（看暂存副本）。
+                    openMusicPlayer(pane, path = staged.absolutePath, originalPath = entry.path)
                     return@runOnUiThread
                 }
                 try {
@@ -2934,9 +3308,15 @@ class MainActivity : BaseActivity() {
                 }
             }
         } catch (e: Exception) { Log.w(TAG, "listSafChildren failed dirDocId=$dirDocId: $e"); return null }
-        out.sortWith(compareBy({ !it.isDir }, { it.name.lowercase(Locale.US) }))
-        Log.d(TAG, "listSafChildren: dirDocId=$dirDocId -> ${out.size} item(s)")
-        return out
+        // v1.9.8.1：SAF 也走同一套排序（读偏好；其他调用点只查名字/找
+        // 某一项，顺序无所谓，排好序返回没有副作用）。
+        val sorted = FileUtils.sortNamed(out,
+            prefs.getInt("sort", 0),
+            prefs.getBoolean("sort_reverse", false),
+            prefs.getBoolean("sort_type_folders_only", false),
+            { it.isDir }, { it.name }, { it.size }, { it.modified })
+        Log.d(TAG, "listSafChildren: dirDocId=$dirDocId -> ${sorted.size} item(s)")
+        return sorted
     }
 
     /** SAF 模式里点一个文件：用 ACTION_VIEW + content URI 打开（带读授权）。 */
@@ -3449,6 +3829,15 @@ class MainActivity : BaseActivity() {
             // v1.9.2：配色变化由 BaseActivity.onResume 统一处理（按本页面创建时
             // 应用的值比，不再用静态 lastApplied*——它会被外观页自己的
             // recreate 更新掉，导致这里永远比不出变化）。
+        } catch (_: Exception) { }
+        // v1.9.8：一键重置可能在设置页改了双窗格偏好，回来时同步一下，否则
+        // 主界面还停留在旧的单/双窗格（其他偏好由 BaseActivity.onResume 比出重建）。
+        try {
+            val dp = prefs.getBoolean("dual_pane", true)
+            if (dp != dualPane) {
+                dualPane = dp
+                applyDualPane()
+            }
         } catch (_: Exception) { }
         refreshDrawerTexts()
         refreshCustomStorages()

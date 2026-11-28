@@ -23,8 +23,8 @@ import androidx.compose.foundation.lazy.grid.itemsIndexed
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -42,12 +42,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 /**
- * 外观页（v1.9.8.1 Compose）：大标题“外观”+ 一张卡片，四行：
- * 主题模式（点行弹对话框菜单，三个单选：跟随系统/浅色/深色，
- * 选后点确认才切换，取消不切换；默认跟随系统）、动态颜色（开关，
- * 打开先弹确认框，确认才开；任何版本都能开）、应用配色（点开 52 色网格，
- * 点确认才保存；动态颜色开着时这一行变灰、点不了，副标题提示先关动态颜色）、
- * 字体颜色（52 色按基础/浅/深三组，点确认才保存）。
+ * 外观页（v1.9.7.6：恢复成 1.9.7.3 时代原来的四行布局）。
+ * 只有四行，按顺序：主题模式、动态颜色、应用配色、字体颜色。
+ * 主题模式：标题 + 当前值，点后弹菜单（跟随系统/浅色/深色，默认跟随系统），
+ * 选好点确认才切换，不要提示行；动态颜色：开关，打开先弹确认框，提示只留
+ * 短版、末尾无句号；应用配色：点开 52 色四组（基础/变体/浅/深）网格，点确认才
+ * 保存，动态颜色开着时变灰、点不了；字体颜色：52 色三组，点确认才保存。
+ * 主题风格单选卡片和 M3 Expressive 开关不在这里——引擎切换只走实验性
+ * 功能页的 UI引擎行（同一份 PREF_UI_ENGINE）。
  */
 class AppearanceActivity : BaseActivity() {
 
@@ -56,7 +58,11 @@ class AppearanceActivity : BaseActivity() {
         const val PREF_SEED_COLOR = "seed_color"
         const val DEFAULT_SEED_COLOR = 0xFF0D47A1.toInt()
 
-        /** 52 个种子色（顺序固定，与任务约定一致）：前 25 不动，后面补到 52。 */
+        /** 52 个种子色（v1.9.8.1：白/黑已删，27/28 号位补薄荷色/珊瑚色；其余
+         *  50 个色值与下标都不动，默认种子色 #0D47A1 仍是下标 0）。
+         *  新补的 2 个常用色：27 薄荷色 #98FF98（绿的衍生）、28 珊瑚色
+         *  #FF7F50（橙红的衍生）。分组见 ColorPickerDialog：基础 27 /
+         *  变体 11 / 浅 4 / 深 10。 */
         val SEED_COLORS = listOf(
             0xFF0D47A1.toInt(), 0xFFB3261E.toInt(), 0xFFC2185B.toInt(), 0xFF7B1FA2.toInt(),
             0xFF512DA8.toInt(), 0xFF303F9F.toInt(), 0xFF1976D2.toInt(), 0xFF0288D1.toInt(),
@@ -64,8 +70,8 @@ class AppearanceActivity : BaseActivity() {
             0xFFAFB42B.toInt(), 0xFFF9A825.toInt(), 0xFFFF8F00.toInt(), 0xFFF57C00.toInt(),
             0xFFE64A19.toInt(), 0xFF5D4037.toInt(), 0xFF795548.toInt(), 0xFF546E7A.toInt(),
             0xFF6A1B9A.toInt(), 0xFFAD1457.toInt(), 0xFF00897B.toInt(), 0xFF7CB342.toInt(),
-            0xFF33691E.toInt(), 0xFF00BCD4.toInt(), 0xFF009688.toInt(), 0xFFFFFFFF.toInt(),
-            0xFF000000.toInt(), 0xFF9E9E9E.toInt(), 0xFFF8BBD0.toInt(), 0xFFE91E63.toInt(),
+            0xFF33691E.toInt(), 0xFF00BCD4.toInt(), 0xFF009688.toInt(), 0xFF98FF98.toInt(),
+            0xFFFF7F50.toInt(), 0xFF9E9E9E.toInt(), 0xFFF8BBD0.toInt(), 0xFFE91E63.toInt(),
             0xFF616161.toInt(), 0xFF90CAF9.toInt(), 0xFFA5D6A7.toInt(), 0xFFFFF59D.toInt(),
             0xFFCE93D8.toInt(), 0xFFFF9800.toInt(), 0xFF1A237E.toInt(), 0xFF1B5E20.toInt(),
             0xFF4E342E.toInt(), 0xFFFFC107.toInt(), 0xFFF44336.toInt(), 0xFFEC407A.toInt(),
@@ -123,7 +129,7 @@ class AppearanceActivity : BaseActivity() {
             FairuPageTopBar(title = stringResource(R.string.appearance), onBack = { finish() })
             Column(Modifier.verticalScroll(scrollState)) {
                 FairuCard {
-                    // 主题模式：点行弹对话框菜单，选后点确认才切换。
+                    // 主题模式：点行弹对话框菜单，选后点确认才切换；不要提示行。
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -134,12 +140,12 @@ class AppearanceActivity : BaseActivity() {
                         Icon(
                             painterResource(R.drawable.ic_theme),
                             contentDescription = null,
-                            tint = androidx.compose.material3.MaterialTheme.colorScheme.primary,
+                            tint = MaterialTheme.colorScheme.primary,
                             modifier = Modifier.size(24.dp)
                         )
                         Spacer(Modifier.width(16.dp))
                         Column(Modifier.weight(1f)) {
-                            Text(stringResource(R.string.theme_mode), fontSize = 16.sp, fontWeight = androidx.compose.ui.text.font.FontWeight.Bold)
+                            Text(stringResource(R.string.theme_mode), fontSize = if (isExpressiveEngine()) 18.sp else 16.sp, fontWeight = androidx.compose.ui.text.font.FontWeight.Bold)
                             Text(
                                 when (themeMode) {
                                     1 -> stringResource(R.string.theme_light)
@@ -147,19 +153,13 @@ class AppearanceActivity : BaseActivity() {
                                     else -> stringResource(R.string.theme_system)
                                 },
                                 fontSize = 13.sp,
-                                color = androidx.compose.material3.MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                            // v1.9.7.2：标准解释小字。
-                            Text(
-                                stringResource(R.string.theme_mode_hint),
-                                fontSize = 12.sp,
-                                color = androidx.compose.material3.MaterialTheme.colorScheme.onSurfaceVariant
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
                         }
                         Icon(
                             painterResource(R.drawable.ic_arrow_forward),
                             contentDescription = null,
-                            tint = androidx.compose.material3.MaterialTheme.colorScheme.onSurfaceVariant,
+                            tint = MaterialTheme.colorScheme.onSurfaceVariant,
                             modifier = Modifier.size(20.dp)
                         )
                     }
@@ -167,7 +167,6 @@ class AppearanceActivity : BaseActivity() {
                     FairuSwitchRow(
                         iconRes = R.drawable.ic_image,
                         title = stringResource(R.string.dynamic_color),
-                        // v1.9.7.2：标准解释小字。
                         sub = stringResource(R.string.dynamic_color_hint),
                         checked = dynamicOn,
                         onToggle = {
@@ -180,7 +179,7 @@ class AppearanceActivity : BaseActivity() {
                             }
                         }
                     )
-                    // 应用配色：动态颜色开着时变灰、点不了。
+                    // 应用配色：点开 52 色网格，点确认才保存；动态颜色开着时变灰、点不了。
                     val colorRowEnabled = !dynamicOn
                     Row(
                         modifier = Modifier
@@ -192,30 +191,29 @@ class AppearanceActivity : BaseActivity() {
                         Icon(
                             painterResource(R.drawable.ic_palette),
                             contentDescription = null,
-                            tint = androidx.compose.material3.MaterialTheme.colorScheme.primary,
+                            tint = MaterialTheme.colorScheme.primary,
                             modifier = Modifier.size(24.dp)
                         )
                         Spacer(Modifier.width(16.dp))
                         Column(Modifier.weight(1f)) {
-                            Text(stringResource(R.string.app_color), fontSize = 16.sp, fontWeight = androidx.compose.ui.text.font.FontWeight.Bold)
+                            Text(stringResource(R.string.app_color), fontSize = if (isExpressiveEngine()) 18.sp else 16.sp, fontWeight = androidx.compose.ui.text.font.FontWeight.Bold)
                             Text(
                                 if (dynamicOn) stringResource(R.string.app_color_disabled_hint)
                                 else "#%06X".format(0xFFFFFF and seedColor),
                                 fontSize = 13.sp,
-                                color = androidx.compose.material3.MaterialTheme.colorScheme.onSurfaceVariant
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
-                            // v1.9.7.2：标准解释小字。
                             Text(
                                 stringResource(R.string.app_color_hint),
                                 fontSize = 12.sp,
-                                color = androidx.compose.material3.MaterialTheme.colorScheme.onSurfaceVariant
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
                         }
                         if (colorRowEnabled) {
                             Icon(
                                 painterResource(R.drawable.ic_arrow_forward),
                                 contentDescription = null,
-                                tint = androidx.compose.material3.MaterialTheme.colorScheme.onSurfaceVariant,
+                                tint = MaterialTheme.colorScheme.onSurfaceVariant,
                                 modifier = Modifier.size(20.dp)
                             )
                         }
@@ -225,7 +223,6 @@ class AppearanceActivity : BaseActivity() {
                         iconRes = R.drawable.ic_font_color,
                         title = stringResource(R.string.font_color),
                         sub = "#%06X".format(0xFFFFFF and fontColor),
-                        // v1.9.7.2：标准解释小字。
                         hint = stringResource(R.string.font_color_hint),
                         onClick = { showFontDialog = true }
                     )
@@ -314,7 +311,14 @@ class AppearanceActivity : BaseActivity() {
         )
     }
 
-    /** 应用配色对话框：5 列网格 52 个色块，当前选中的叠加白色对勾；点确认才保存。 */
+    /** 应用配色对话框：52 色按基础/变体/浅/深四组列出；点确认才保存。
+     *  顺序固定：基础、变体、浅、深。变体组全是基础色的衍生色：黄绿色
+     *  （12，绿+黄）、草绿色（23，绿）、青色（25，蓝+绿）、薄荷色
+     *  （27，绿）、珊瑚色（28，橙红）、桃粉色（30，粉）、亮橙色
+     *  （37，深橙）、玫瑰红（43，品红/粉）、天蓝色（46，蓝）、青柠色
+     *  （47，黄绿）、薰衣草紫（36，紫）。浅组 4 个里 29 号是浅灰（白已删）；深组 10 个里
+     *  32 号是深灰（黑已删）。已存的白/黑种子色不在新表里时，selected
+     *  的 indexOf 回落到 0（下面那行 takeIf ?: 0），不崩。 */
     @Composable
     private fun ColorPickerDialog(
         title: String,
@@ -326,37 +330,56 @@ class AppearanceActivity : BaseActivity() {
         var selected by androidx.compose.runtime.remember {
             mutableStateOf(colors.indexOf(current).takeIf { it >= 0 } ?: 0)
         }
+        // 基础 27 / 变体 11 / 浅 4 / 深 10（下标是 SEED_COLORS 里的位置，52 个全在，
+        // 无重复、无遗漏）。
+        val groups = listOf(
+            listOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 13, 14, 15, 16, 18, 19, 20, 21, 31, 41, 42, 44, 45, 48, 49, 50) to stringResource(R.string.palette_color_group_base),
+            listOf(12, 23, 25, 27, 28, 30, 36, 37, 43, 46, 47) to stringResource(R.string.palette_color_group_variant),
+            listOf(29, 33, 34, 35) to stringResource(R.string.palette_color_group_light),
+            listOf(9, 17, 22, 24, 26, 32, 38, 39, 40, 51) to stringResource(R.string.palette_color_group_dark)
+        )
         FairuAlertDialog(
             onDismissRequest = onDismiss,
             icon = { Icon(painterResource(R.drawable.ic_palette), contentDescription = null) },
             title = { Text(title) },
             text = {
-                LazyVerticalGrid(
-                    columns = GridCells.Fixed(5),
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    itemsIndexed(colors) { index, color ->
-                        Box(
+                Column(Modifier.verticalScroll(rememberScrollState())) {
+                    groups.forEach { (indices, label) ->
+                        Text(
+                            label,
+                            fontSize = 14.sp,
+                            modifier = Modifier.padding(vertical = 8.dp)
+                        )
+                        LazyVerticalGrid(
+                            columns = GridCells.Fixed(5),
                             modifier = Modifier
-                                .padding(4.dp)
-                                .size(44.dp)
-                                .clip(CircleShape)
-                                .background(Color(color))
-                                .clickable { selected = index }
-                                .border(
-                                    width = if (index == selected) 2.dp else 0.dp,
-                                    color = if (index == selected) Color.White else Color.Transparent,
-                                    shape = CircleShape
-                                ),
-                            contentAlignment = Alignment.Center
+                                .fillMaxWidth()
+                                .height(((indices.size + 4) / 5 * 52).dp)
                         ) {
-                            if (index == selected) {
-                                Icon(
-                                    painterResource(R.drawable.ic_check),
-                                    contentDescription = null,
-                                    tint = Color.White,
-                                    modifier = Modifier.size(24.dp)
-                                )
+                            itemsIndexed(indices) { _, index ->
+                                Box(
+                                    modifier = Modifier
+                                        .padding(4.dp)
+                                        .size(44.dp)
+                                        .clip(CircleShape)
+                                        .background(Color(colors[index]))
+                                        .clickable { selected = index }
+                                        .border(
+                                            width = if (index == selected) 2.dp else 0.dp,
+                                            color = if (index == selected) Color.White else Color.Transparent,
+                                            shape = CircleShape
+                                        ),
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    if (index == selected) {
+                                        Icon(
+                                            painterResource(R.drawable.ic_check),
+                                            contentDescription = null,
+                                            tint = Color.White,
+                                            modifier = Modifier.size(24.dp)
+                                        )
+                                    }
+                                }
                             }
                         }
                     }

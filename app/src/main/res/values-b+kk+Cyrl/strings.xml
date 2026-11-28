@@ -1,0 +1,357 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Fairumanējā</string>
+    <string name="nav_files">Файлдар</string>
+    <string name="nav_bookmarks">Бетбелгілер</string>
+    <string name="nav_recent">Соңғы</string>
+    <string name="nav_tools">Құралдар</string>
+    <string name="search_hint">Файлдарды іздеу…</string>
+    <string name="sort_name">Атауы бойынша</string>
+    <string name="sort_date">Күні бойынша</string>
+    <string name="sort_size">Өлшемі бойынша</string>
+    <string name="sort_type">Түрі бойынша</string>
+    <string name="sort_by_type">Түрі бойынша</string>
+    <!-- UNCERTAIN_KK-CYRL：新词直译，需母语者复核 -->
+    <string name="sort_reverse">Кері тәртіп</string>
+    <!-- UNCERTAIN_KK-CYRL：新词直译，需母语者复核 -->
+    <string name="sort_type_folders_only">Тек қалталар</string>
+    <string name="viewer_background">Фон ауыстыру</string>
+    <string name="viewer_bg_black">Қара</string>
+    <string name="viewer_bg_white">Ақ</string>
+    <string name="viewer_bg_gray">Сұр</string>
+    <string name="viewer_view_horizontal">Көлденең парақ аудару</string>
+    <string name="viewer_view_vertical">Тік тізім</string>
+    <string name="viewer_dimensions">Өлшем</string>
+    <string name="viewer_format">Формат</string>
+    <!-- UNCERTAIN_KK：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_images">Суреттер</string>
+    <!-- UNCERTAIN_KK：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_videos">Бейнелер</string>
+    <!-- UNCERTAIN_KK：媒体页音频分类新词尽力翻译，需母语者复核 -->
+    <string name="media_audios">Аудио</string>
+    <!-- UNCERTAIN_KK：跳转 / 创建HTML 新词尽力翻译，需母语者复核 -->
+    <string name="jump_title">Өту</string>
+    <string name="create_html">HTML жасау</string>
+    <string name="jump_invalid_path">Жол жоқ немесе қалта емес</string>
+    <!-- UNCERTAIN_KK：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_gifs">GIF</string>
+    <!-- UNCERTAIN_KK：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_today">Бүгін</string>
+    <!-- UNCERTAIN_KK：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_yesterday">Кеше</string>
+    <!-- UNCERTAIN_KK：抽屉合并新词尽力翻译，需母语者复核 -->
+    <string name="media_images_videos">Суреттер және бейнелер</string>
+    <!-- UNCERTAIN_KK：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="play_video">Бейнені ойнату</string>
+    <!-- UNCERTAIN_KK：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="view_image">Суретті көру</string>
+    <!-- UNCERTAIN_KK：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="browse_archive">Мұрағатты қарау</string>
+    <!-- UNCERTAIN_KK：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_speed">Жылдамдық</string>
+    <!-- UNCERTAIN_KK：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_cannot_play">Бұл бейнені ойнату мүмкін емес</string>
+    <!-- UNCERTAIN_KK：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="play_music">Музыка ойнату</string>
+    <!-- UNCERTAIN_KK：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="music_cannot_play">Бұл аудионы ойнату мүмкін емес</string>
+    <!-- UNCERTAIN_KK：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_play">Ойнату</string>
+    <!-- UNCERTAIN_KK：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_pause">Кідірту</string>
+    <!-- UNCERTAIN_KK：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_fill_screen">Экранды толтыру</string>
+    <!-- UNCERTAIN_KK：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_loop">Қайта ойнату</string>
+    <!-- UNCERTAIN_KK：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_landscape">Көлденең режим</string>
+    <!-- UNCERTAIN_KK：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_duration">Ұзақтығы</string>
+    <string name="show_hidden">Жасырын файлдарды көрсету</string>
+    <string name="copy">Көшіру</string>
+    <string name="cut">Қию</string>
+    <!-- UNCERTAIN_KK-CYRL：«Қою»译法不确定，备选 «Кірістіру»，需母语者复核 -->
+    <string name="paste">Қою</string>
+    <string name="delete">Жою</string>
+    <string name="rename">Атын өзгерту</string>
+    <string name="new_folder">Жаңа қалта</string>
+    <string name="new_file">Жаңа файл</string>
+    <string name="share">Бөлісу</string>
+    <!-- UNCERTAIN_KK-CYRL：«Көмегімен ашу»译法不确定，备选 «Арқылы ашу»，需母语者复核 -->
+    <string name="open_with">Көмегімен ашу</string>
+    <!-- UNCERTAIN_KK-CYRL：«Сипаттар»译法不确定，备选 «Қасиеттер»，需母语者复核 -->
+    <string name="properties">Сипаттар</string>
+    <string name="select_all">Барлығын таңдау</string>
+    <string name="cancel">Болдырмау</string>
+    <string name="ok">OK</string>
+    <string name="create">Жасау</string>
+    <string name="confirm_delete">Жоюды растау</string>
+    <string name="delete_message">Таңдалған элементтерді жойғыңыз келе ме?</string>
+    <string name="delete_direct_message">Таңдалған элементтерді жойғыңыз келе ме? Олар бірден жойылады, себетке түспейді және қайтару мүмкін емес.</string>
+    <string name="rename_hint">Жаңа атау</string>
+    <string name="folder_name_hint">Қалта атауы</string>
+    <string name="file_name_hint">Файл атауы</string>
+    <string name="storage_internal">Ішкі жад</string>
+    <string name="no_files">Мұнда ештеңе жоқ</string>
+    <string name="tools_title">Құралдар</string>
+    <string name="storage_usage">Жадты пайдалану</string>
+    <string name="free_space">Бос</string>
+    <string name="used_space">Пайдаланылды</string>
+    <string name="settings">Параметрлер</string>
+    <string name="language">Тіл</string>
+    <string name="theme">Тақырып</string>
+    <string name="theme_system">Жүйені қадағалау</string>
+    <string name="theme_light">Ашық</string>
+    <string name="theme_dark">Қараңғы</string>
+    <string name="about">Туралы</string>
+    <string name="version">Нұсқа</string>
+    <string name="save">Сақтау</string>
+    <string name="saved">Сақталды</string>
+    <string name="save_failed">Сақтау сәтсіз аяқталды</string>
+    <!-- UNCERTAIN_KK-CYRL：«Шығару»译法不确定，备选 «Шығарып алу»，需母语者复核 -->
+    <string name="extract">Шығару</string>
+    <string name="compress">ZIP ішіне сығу</string>
+    <string name="permission_needed">Файлдарды басқару үшін «барлық файлдарға қол жеткізу» рұқсаты қажет</string>
+    <string name="grant_access">Рұқсат беру</string>
+    <string name="bookmarks_empty">Әзірше бетбелгі жоқ, қалтаны ұзақ басып тұрып бетбелгіге қосуға болады</string>
+    <string name="recent_empty">Әзірше жақында ашылған файл жоқ</string>
+    <string name="error">Қате пайда болды</string>
+    <string name="modified">Өзгертілген уақыты</string>
+    <string name="path">Жол</string>
+    <string name="size">Өлшем</string>
+    <string name="folder">Қалта</string>
+    <string name="file">Файл</string>
+    <string name="grid">Тор көрінісі</string>
+    <string name="list_view">Тізім көрінісі</string>
+    <string name="refresh">Жаңарту</string>
+    <string name="bookmark">Бетбелгі</string>
+    <string name="open">Ашу</string>
+    <!-- UNCERTAIN_KK-CYRL：«Бума атауы»中 Бума 为 package 的哈萨克语借译，不确定，需母语者复核 -->
+    <string name="apk_package">Бума атауы</string>
+    <string name="copied">Көшірілді</string>
+    <string name="pasted">Қойылды</string>
+    <string name="deleted">Жойылды</string>
+    <string name="delete_failed">Жою сәтсіз аяқталды, қайталап көріңіз</string>
+    <string name="renamed">Аты өзгертілді</string>
+    <string name="created">Жасалды</string>
+    <string name="extracted">Шығарылды</string>
+    <string name="compressed">Сығылды</string>
+    <string name="about_text">Fairumanējā — MT Manager тәжірибесінен шабыт алған, ашық бастапқы коды бар файл басқарушысы. Ол Android, Linux және Windows жүйелерін қолдайды (жұмыс үстелі нұсқасы жоспарда) және MIT лицензиясы бойынша таратылады.</string>
+    <string name="name">Атауы</string>
+    <string name="dual_pane">Қос панель</string>
+    <string name="swap_panes">Панельдерді ауыстыру</string>
+    <string name="paste_to_other_pane">Басқа панельге қою</string>
+    <string name="back">Артқа</string>
+    <string name="forward">Алға</string>
+    <string name="go_up">Жоғары</string>
+    <string name="pane_stats">Қалталар: %1$d  Файлдар: %2$d  Жад: %3$s/%4$s</string>
+    <string name="selected_count">%1$d элемент таңдалды</string>
+    <string name="left_pane">Сол жақ панель</string>
+    <string name="right_pane">Оң жақ панель</string>
+    <string name="items_count">%1$d элемент</string>
+    <string name="drawer_local">Жергілікті</string>
+    <string name="drawer_tools">Құралдар</string>
+    <string name="root_directory">Түбірлік каталог</string>
+    <string name="trash">Себет</string>
+    <string name="text_editor">Мәтін өңдегіші</string>
+    <string name="cannot_access">Бұл каталогқа кіру мүмкін емес</string>
+    <string name="trash_empty">Себет бос</string>
+    <string name="restore">Қалпына келтіру</string>
+    <string name="delete_permanently">Біржола жою</string>
+    <string name="empty_trash">Себетті босату</string>
+    <string name="moved_to_trash">Себетке жылжытылды</string>
+    <string name="restored">Қалпына келтірілді</string>
+    <string name="permanently_deleted">Біржола жойылды</string>
+    <string name="trash_emptied">Себет босатылды</string>
+    <string name="restore_failed">Қалпына келтіру сәтсіз аяқталды</string>
+    <string name="file_too_large">Файл тым үлкен (2 МБ-тан асады), ашу баяу болуы мүмкін. Ашқыңыз келе ме?</string>
+    <string name="edit_text">Мәтінді өңдеу</string>
+    <string name="new_text_file">Жаңа мәтіндік файл</string>
+    <string name="original_path">Бастапқы жол</string>
+    <string name="confirm_empty_trash">Себетті босатқыңыз келе ме? Бұл әрекетті қайтару мүмкін емес.</string>
+    <string name="language_settings">Тіл параметрлері</string>
+    <!-- UNCERTAIN_KK-CYRL：«Жүйені қадағалау»译法不确定，备选 «Жүйе тілі»，需母语者复核 -->
+    <string name="follow_system_language">Жүйені қадағалау</string>
+    <string name="reset_defaults">Әдепкі параметрлерді қалпына келтіру</string>
+    <string name="reset_defaults_msg">Тіл, тақырып режимі, динамикалық түс, қолданба түсі, қаріп түсі, UI қозғалтқышы, ашылу анимациясы, сұрыптау, қос панель және жасырын файлдарды көрсету әдепкі параметрлерге қайтарылады. Бетбелгілер, бекітілген қалталар, арнайы жадтар және себет өзгермейді. Қалпына келтіргіңіз келе ме?</string>
+    <string name="settings_group_language_appearance">Тіл және сыртқы көрініс</string>
+    <string name="settings_group_app">Қолданба</string>
+    <string name="confirm">Растау</string>
+    <string name="theme_mode">Тақырып режимі</string>
+    <string name="more_options">Қосымша параметрлер</string>
+    <string name="follow_system_theme">Тақырып жүйені қадағалайды</string>
+    <string name="add_network_storage">Желілік жад қосу</string>
+    <string name="add_local_storage">Жергілікті жад қосу</string>
+    <string name="add_network_group">Желілік топ қосу</string>
+    <string name="manage_tool_groups">Құрал топтарын басқару</string>
+    <string name="not_supported">Әзірше қолдау таппаған</string>
+    <string name="add">Қосу</string>
+    <string name="storage_name_hint">Атауы</string>
+    <string name="storage_path_hint">Жол, мысалы /storage/emulated/0/Download</string>
+    <string name="storage_path_invalid">Жол жоқ немесе қалта емес</string>
+    <string name="hide">Жасыру</string>
+    <string name="sort">Сұрыптау</string>
+    <!-- UNCERTAIN_KK-CYRL：«Жасырыннан алу»译法不确定，需母语者复核 -->
+    <string name="unhide">Жасырыннан алу</string>
+    <string name="hidden_storages">Жасырын жадтар</string>
+    <string name="move_up">Жоғары жылжыту</string>
+    <string name="move_down">Төмен жылжыту</string>
+    <string name="root_browse_only">Түбірлік каталог тек шолу үшін</string>
+    <string name="saf_browse_only">Бұл жад тек шолу үшін</string>
+    <string name="shizuku_needed_title">Shizuku қажет</string>
+    <string name="shizuku_needed_msg">Түбірлік каталогқа кіру үшін Shizuku рұқсаты қажет. Алдымен Shizuku орнатып, іске қосыңыз, содан кейін қайталап көріңіз.</string>
+    <string name="shizuku_download">Shizuku жүктеп алу</string>
+    <string name="shizuku_request_msg">Shizuku терезесінде осы рұқсатты беріңіз.</string>
+    <string name="shizuku_denied">Shizuku рұқсаты алынбағандықтан түбірлік каталогқа кіру мүмкін емес</string>
+    <string name="shizuku_failed">Түбірлік каталогты оқу сәтсіз аяқталды</string>
+    <string name="storage_already_added">Бұл жад қосылған</string>
+    <string name="storage_not_supported">Бұл орынды қосу әзірше қолдау таппаған</string>
+    <string name="shizuku_failed_detail">Түбірлік каталогты оқу сәтсіз аяқталды: %1$s</string>
+    <string name="version_number">Нұсқа нөмірі</string>
+    <string name="open_source_license">Ашық бастапқы код лицензиясы</string>
+    <string name="user_agreement">Пайдаланушы келісімі</string>
+    <string name="privacy_policy">Құпиялылық саясаты</string>
+    <string name="special_thanks">Ерекше алғыс</string>
+    <string name="chinese_version_note">Төменде қытайша нұсқасы берілген</string>
+    <string name="undo">Кері қайтару</string>
+    <string name="redo">Қайта орындау</string>
+    <string name="save_as">Басқаша сақтау</string>
+    <string name="editor_search">Іздеу</string>
+    <string name="syntax">Синтаксис</string>
+    <string name="syntax_auto">Авто (кеңейтім бойынша)</string>
+    <string name="syntax_plain">Жай мәтін</string>
+    <string name="prev_position">Алдыңғы орын</string>
+    <string name="next_position">Келесі орын</string>
+    <string name="go_to_line">Жолға өту</string>
+    <string name="go_to_line_hint">Жол нөмірін енгізіңіз</string>
+    <!-- UNCERTAIN_KK-CYRL：«Сөзді тасымалдау»为编辑器术语直译，不确定，需母语者复核 -->
+    <string name="word_wrap">Сөзді тасымалдау</string>
+    <string name="read_only">Тек оқу режимі</string>
+    <!-- UNCERTAIN_KK-CYRL：smooth_mode 的功能含义不确定，«Тегіс режим»为直译，需母语者复核 -->
+    <string name="smooth_mode">Тегіс режим</string>
+    <string name="code_completion">Кодты толықтыру</string>
+    <string name="close_file">Файлды жабу</string>
+    <string name="font_size">Қаріп өлшемі</string>
+    <string name="line_numbers">Жол нөмірлері</string>
+    <string name="unsaved_title">Сақталмаған өзгерістер</string>
+    <string name="unsaved_message">Ағымдағы файлда сақталмаған өзгерістер бар. Сақтайсыз ба?</string>
+    <string name="dont_save">Сақтамау</string>
+    <string name="search_keyword_hint">Кілт сөз енгізіңіз</string>
+    <string name="search_match_count">%1$d / %2$d</string>
+    <string name="no_match">Сәйкестік жоқ</string>
+    <string name="syntax_java">Java</string>
+    <string name="syntax_kotlin">Kotlin</string>
+    <string name="syntax_xml">XML</string>
+    <string name="syntax_json">JSON</string>
+    <string name="syntax_python">Python</string>
+    <string name="syntax_shell">Shell</string>
+    <string name="syntax_c">C/C++</string>
+    <string name="deselect_all">Таңдауды алып тастау</string>
+    <string name="unknown">Белгісіз</string>
+    <string name="oss_components">Ашық бастапқы код компоненттері</string>
+    <string name="disclaimer">Жауапкершіліктен бас тарту</string>
+    <string name="thanks_muse_desc">Muse бағдарламасына әзірлеуге көмектескені және техникалық қолдау көрсеткені үшін алғыс: бұл қолданбаның кодын жазуды, мүмкіндіктерін іске асыруды және мәселелерін шешуді Muse көмегімен орындадық.</string>
+    <!-- UNCERTAIN_KK-CYRL：长文直译，需母语者复核 -->
+    <string name="thanks_mp_desc">Бұл қолданба MP-Manager бағдарламасынан мыналарды алды: қос панельде қатар шолу және панельдер арасында көшіру, жылжыту, басқа панельге қою; файл тізімі жолдарының стилі — кіші дөңгелек белгішелер, атаулар және «күні + өлшемі» қосымша жолы; жол соңындағы ⋮ мәзірі мен тоғыз ұялы «Қосымша әрекеттер» тақтасы; себетке жою, қалпына келтіру және біржола жоюды растау диалогтары; жасау диалогы; жол нөмірлері мен таңбалар тақтасы бар мәтін өңдегіш; себет, бетбелгілер және бекітілген қалталар; Shizuku/Root қолжетімділігі; сығу және шығару, файлды шифрлау және шифрын шешу; пайдаланушының жергілікті жадтары. MP-Manager бағдарламасына GitHub сайтында GPL-3.0 лицензиясы бойынша ашық бастапқы кодпен жарияланғаны үшін алғыс (https://github.com/AbdurazaaqMohammed/MP-Manager) — ол бұл қолданбаға тікелей үйренуге және салыстыруға болатын дизайн үлгісін берді; оның авторы AbdurazaaqMohammed қолдауын жалғастырғаны үшін алғыс; ол қарапайым адамның да MT Manager бағдарламасына ашық балама жасауға болатынын дәлелдеп, бұл қолданбаға айқын үйрену мақсатын бергені үшін алғыс.</string>
+    <string name="splash_animation">Ашылу анимациясы</string>
+    <string name="splash_animation_hint">Қосылғанда қолданбаны жұмыс үстелінен әр іске қосқанда ашылу анимациясы ойнатылады</string>
+    <string name="experimental_features">Эксперименттік мүмкіндіктер</string>
+    <string name="experimental_features_hint">Мұндағы мүмкіндіктер әлі сынақ кезеңінде, өзгеруі мүмкін</string>
+    <string name="experimental_warning_title">Эксперименттік мүмкіндіктер туралы ескерту</string>
+    <string name="experimental_warning_msg">Эксперименттік мүмкіндіктер әлі сынақ кезеңінде. Оларды қосу және пайдалану мынадай салдарға әкелуі мүмкін:\n\n• Интерфейс дұрыс көрсетілмеуі, бұзылуы немесе қолданба жабылып қалуы мүмкін;\n• Кейбір мүмкіндіктер қолжетімсіз болуы немесе кейінгі нұсқаларда өзгертілуі, алынып тасталуы мүмкін;\n• UI қозғалтқышын ауыстырғанда бүкіл қолданба интерфейсі бірден қайта жүктеледі;\n• Бұл мүмкіндіктер кез келген уақытта өзгеруі мүмкін, олардың ресми мүмкіндіктермен бірдей болатынына кепілдік берілмейді.</string>
+    <string name="ui_engine">UI қозғалтқышы</string>
+    <string name="ui_engine_desc_md3">Әдепкі стиль, қазіргі көрініс</string>
+    <string name="ui_engine_desc_expressive">Неғұрлым дөңгелек және ашық пішіндер</string>
+    <string name="ui_engine_desc_miuix">Xiaomi MIUI стилі</string>
+    <string name="ui_engine_switch_title">UI қозғалтқышын ауыстыру</string>
+    <string name="ui_engine_switch_msg">Ауыстырғаннан кейін бүкіл қолданба интерфейсі “%1$s” түріне ауысып, бірден қайта жүктеледі.</string>
+    <!-- UNCERTAIN_KK-CYRL：«Жойылу қаупі бар тілдерді ауыстыру»措辞不确定，需母语者复核 -->
+    <string name="endangered_language_switch">Жойылу қаупі бар тілдерді ауыстыру</string>
+    <string name="endangered_language_sub">Әзірше тек 5 тіл қолдау табады, кейін қосылуы мүмкін</string>
+    <string name="thanks_mt_desc">Бұл қолданба MT Manager бағдарламасының қос панельді орналасуын, файл мәзірлерін, тоғыз ұялы «Қосымша әрекеттер» тақтасын, жою және қалпына келтіру диалогтарын қоса алғанда, интерфейс дизайнын негізге алды. Дизайн үлгісі мен шабыт бергені үшін MT Manager бағдарламасына алғыс айтамыз.</string>
+    <string name="about_intro_title">Бағдарлама туралы</string>
+    <string name="appearance">Сыртқы көрініс</string>
+    <string name="dynamic_color">Динамикалық түс</string>
+    <string name="dynamic_color_hint">Қосылғанда қолданба түсі жүйе тұсқағазының түсіне қарай өзгереді</string>
+    <string name="dynamic_color_confirm_title">Динамикалық түс</string>
+    <string name="dynamic_color_confirm_msg">Динамикалық түсті қосқаннан кейін қолданба түсі жүйе тұсқағазының түсіне қарай өзгереді. Динамикалық түсті қосқыңыз келе ме?</string>
+    <string name="app_color">Қолданба түсі</string>
+    <string name="app_color_hint">Қолданбаның тақырып түсін таңдаңыз, интерфейс түсі соған қарай өзгереді</string>
+    <string name="app_color_disabled_hint">Бұл мүмкіндікті пайдалану үшін алдымен динамикалық түсті өшіріңіз</string>
+    <string name="font_color">Қаріп түсі</string>
+    <string name="font_color_hint">Қолданбадағы мәтін түсін таңдаңыз, барлық беттердегі мәтін соған қарай өзгереді</string>
+    <string name="font_color_group_base">Негізгі түстер</string>
+    <string name="font_color_group_light">Ашық түстер</string>
+    <string name="font_color_group_dark">Қою түстер</string>
+    <string name="palette_color_group_base">Негізгі түстер</string>
+    <string name="palette_color_group_light">Ашық түстер</string>
+    <string name="palette_color_group_dark">Қою түстер</string>
+    <string name="compress_item">Сығу</string>
+    <string name="copy_path">Жолды көшіру</string>
+    <string name="move_item">Жылжыту</string>
+    <string name="more_actions">Қосымша әрекеттер</string>
+    <string name="copy_to_other">Көшіру -&gt;</string>
+    <string name="move_to_other">Жылжыту -&gt;</string>
+    <string name="share_zip">ZIP бөлісу</string>
+    <!-- UNCERTAIN_KK：顶置新译法，需母语者复核 -->
+    <string name="pin_folder">Жоғарыға бекіту</string>
+    <string name="unpin_folder">Бекітуден алу</string>
+    <string name="encrypt_file">Файлды шифрлау</string>
+    <string name="decrypt_file">Файл шифрын шешу</string>
+    <string name="bookmarks_title">Бетбелгілер</string>
+    <string name="move_to_trash">Себетке жылжыту</string>
+    <string name="delete_to_trash_msg">%1$s файлын себетке жылжытқыңыз келе ме?</string>
+    <string name="delete_to_trash_multi_msg">%1$d элементті себетке жылжытқыңыз келе ме?</string>
+    <string name="file_count">Файлдар саны</string>
+    <string name="folder_count">Қалталар саны</string>
+    <string name="restore_confirm_msg">%1$s файлын бұрынғы орнына қалпына келтіргіңіз келе ме?</string>
+    <string name="restore_confirm_multi_msg">%1$d элементті бұрынғы орнына қалпына келтіргіңіз келе ме?</string>
+    <string name="delete_permanent_msg">%1$s файлын біржола жойғыңыз келе ме?</string>
+    <string name="delete_permanent_multi_msg">%1$d элементті біржола жойғыңыз келе ме?</string>
+    <string name="path_copied">Жол көшірілді</string>
+    <string name="moved">Жылжытылды</string>
+    <string name="move_failed">Жылжыту сәтсіз аяқталды</string>
+    <string name="move_not_supported">Бұл жад жылжытуды қолдамайды</string>
+    <string name="other_pane_no_folder">Басқа панельде қалта ашық емес</string>
+    <string name="already_here">Осы қалтада</string>
+    <string name="new_title">Жаңа</string>
+    <string name="new_file_short">Файл</string>
+    <string name="new_folder_short">Қалта</string>
+    <string name="clipboard_empty">Алмасу буфері бос немесе онда мәтін жоқ</string>
+    <string name="name_exists">Осындай атауы бар файл немесе қалта бар</string>
+    <string name="invalid_name">Атау жарамсыз</string>
+    <string name="trash_move_failed">Себетке жылжыту сәтсіз аяқталды, ештеңе жойылған жоқ</string>
+    <string name="bookmark_added">Бетбелгіге қосылды</string>
+    <string name="bookmark_removed">Бетбелгіден алынды</string>
+    <string name="pinned">Бекітілді</string>
+    <string name="unpinned">Бекітуден алынды</string>
+    <string name="hidden_done">Жасырылды</string>
+    <string name="unhidden_done">Жасырыннан алынды</string>
+    <string name="password_hint">Құпия сөзді енгізіңіз</string>
+    <string name="password_confirm_hint">Құпия сөзді қайта енгізіңіз</string>
+    <string name="password_mismatch">Енгізілген құпия сөздер сәйкес келмейді</string>
+    <string name="wrong_password">Құпия сөз қате</string>
+    <string name="encrypt_failed">Шифрлау сәтсіз аяқталды</string>
+    <string name="decrypt_failed">Шифрды шешу сәтсіз аяқталды</string>
+    <string name="encrypted">Шифрланды</string>
+    <string name="decrypted">Шифры шешілді</string>
+    <string name="zip_failed">Сығу сәтсіз аяқталды</string>
+    <string name="dynamic_color_on_note">Динамикалық түс қосулы кезде қолданба түсі қолданылмайды</string>
+    <string name="create_shortcut">Жарлық жасау</string>
+    <string name="shortcut_icon">Белгіше</string>
+    <string name="shortcut_name">Атауы</string>
+    <string name="shortcut_type">Түрі</string>
+    <string name="shortcut_type_desktop">Жұмыс үстелі жарлығы</string>
+    <string name="shortcut_type_desktop_desc">Жұмыс үстелінде жеке белгіше жасалады</string>
+    <string name="shortcut_type_icon">Белгіше жарлығы</string>
+    <string name="shortcut_type_icon_desc">Файл түрінің белгішесі жұмыс үстелі белгішесі ретінде пайдаланылады</string>
+    <string name="shortcut_action">Әрекетті орындау</string>
+    <string name="shortcut_action_locate">Орналасқан жерін көрсету</string>
+    <string name="shortcut_action_locate_click">Орналасқан жерін көрсетіп, ашу</string>
+    <string name="shortcut_action_open_editor">Мәтін өңдегішпен ашу</string>
+    <string name="shortcut_action_preview_html">HTML файлды алдын ала қарау</string>
+    <string name="shortcut_created">Жарлық жасалды</string>
+    <string name="shortcut_not_supported">Бұл құрылғы жұмыс үстелі жарлықтарын қолдамайды</string>
+    <string name="shortcut_not_text">Мәтіндік файл емес, жүйелік қарауышпен ашылды</string>
+    <string name="shortcut_target_missing">Жарлық көрсеткен файл жоқ немесе қолжетімсіз</string>
+</resources>

@@ -53,11 +53,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.chrisbanes.haze.HazeInput
 import top.yukonga.miuix.kmp.theme.MiuixTheme
-import dev.chrisbanes.haze.blur.HazeBlurStyle
-import dev.chrisbanes.haze.blur.hazeBlur
-import dev.chrisbanes.haze.hazeSource
 import java.io.File
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -83,14 +79,7 @@ fun MainActivity.MainScreen() {
             snackbarMessage = null
         }
     }
-    val hazeState = LocalHazeState.current
-    val glassOn = prefs.getBoolean(MainActivity.PREF_LIQUID_GLASS, false)
-    val glassStyle = fairuGlassStyle()
-    val glassTint = glassTint()
-    // HAZE 只在玻璃开着且有源时才上模糊；否则面板只用 tint 底色。
-    val hazeBlurModifier: Modifier = if (glassOn && glassStyle != null && hazeState != null) {
-        Modifier.hazeBlur(input = HazeInput.Sources(hazeState), style = glassStyle)
-    } else Modifier
+    // v1.9.7.5：液态玻璃已删，面板用不透明底色，不再模糊。
 
     ModalNavigationDrawer(
         drawerState = drawerState,
@@ -98,12 +87,9 @@ fun MainActivity.MainScreen() {
         // surface；不改的话内层背景设成透明也没用（全透明模式下抽屉还是白的）。
         drawerContent = {
             ModalDrawerSheet(
-                drawerContainerColor = glassPanelBackground(
-                    // Miuix：抽屉底是浅灰，里面的分组是白色卡片。
-                    if (isMiuixEngine()) MaterialTheme.colorScheme.background
-                    else MaterialTheme.colorScheme.surface,
-                    glassTint
-                ),
+                // Miuix：抽屉底是浅灰，里面的分组是白色卡片。
+                drawerContainerColor = if (isMiuixEngine()) MaterialTheme.colorScheme.background
+                else MaterialTheme.colorScheme.surface,
                 // v1.9.8.1：抽屉里没写颜色的文字跟字体颜色走。默认
                 // contentColor 按容器底色算（浅底就是黑），抽屉标题
                 // Fairumanējā 就还是黑色；直接指到主题 onSurface。
@@ -113,7 +99,6 @@ fun MainActivity.MainScreen() {
                     modifier = Modifier
                         .fillMaxHeight()
                         .width(300.dp)
-                        .then(hazeBlurModifier)
                 ) {
                     FairuDrawer()
                 }
@@ -126,17 +111,15 @@ fun MainActivity.MainScreen() {
             // Scaffold 默认 contentColor 按容器底色算（浅底就是黑），
             // 行名就还是黑色；直接指到主题 onSurface（已是字体颜色）。
             contentColor = MaterialTheme.colorScheme.onSurface,
-            topBar = { FairuTopBar(glassOn, glassStyle, glassTint) },
-            bottomBar = { FairuBottomBar(glassOn, glassStyle, glassTint) },
+            topBar = { FairuTopBar() },
+            bottomBar = { FairuBottomBar() },
             snackbarHost = { SnackbarHost(snackbarHostState) }
         ) { padding ->
-            // 背后内容是玻璃的模糊源（HAZE：hazeSource 标在被模糊的内容上）。
             Row(
                 modifier = Modifier
                     .fillMaxSize()
                     .background(MaterialTheme.colorScheme.background)
                     .padding(padding)
-                    .then(if (hazeState != null) Modifier.hazeSource(hazeState) else Modifier)
             ) {
                 PaneColumn(left, Modifier.weight(1f))
                 if (dualPane) {
@@ -158,6 +141,8 @@ fun MainActivity.MainScreen() {
     deleteDialog?.let { DeleteDialog(it) }
     renameDialog?.let { RenameDialog(it) }
     if (showNewDialog) NewDialog()
+    if (showJumpDialog) JumpDialog()
+    if (showCreateHtmlDialog) CreateHtmlDialog()
     moreActionsDialog?.let { MoreActionsGridDialog(it) }
     shortcutDialog?.let { ShortcutDialog(it) }
     propertiesDialog?.let { PropertiesDialog(it) }
@@ -170,42 +155,18 @@ fun MainActivity.MainScreen() {
 
 // ---------- 顶栏（平时：标题+副标题+搜索+⋮；多选：✕ + 已选 N 项 + 分享/删除/⋮） ----------
 
-/**
- * 玻璃开着时各面板的底色（按模式）：
- * 半透明 = 主题 tint（25% 主色，不透）；全透明模糊 = 全透明（只留 HAZE
- * 样式里的 10% 淡 tint，靠真模糊看内容）；全透明 = 全透明（不模糊，
- * 后面的列表直接透出来，字会重叠——这是该模式的设计本意，v1.9.6 定过）。
- * 玻璃关着时用各面板原来的不透明底色。
- */
 @Composable
-fun MainActivity.glassPanelBackground(offColor: Color, glassTint: Color): Color {
-    val prefs = LocalFairuTheme.current
-    if (!prefs.glass) return offColor
-    return when (prefs.glassMode) {
-        MainActivity.GLASS_MODE_TRANSLUCENT -> glassTint
-        else -> Color.Transparent
-    }
-}
-
-@Composable
-fun MainActivity.FairuTopBar(glassOn: Boolean, glassStyle: HazeBlurStyle?, glassTint: Color) {
+fun MainActivity.FairuTopBar() {
     val pane = activePane()
     val inSelection = pane.selected.isNotEmpty()
     val miuix = isMiuixEngine()
     // Miuix：浅灰底 + 深色字（参考图）；MD3：主色底 + 白字。
-    val bg = if (miuix) glassPanelBackground(MaterialTheme.colorScheme.background, glassTint)
-    else glassPanelBackground(MaterialTheme.colorScheme.primary, glassTint)
+    val bg = if (miuix) MaterialTheme.colorScheme.background
+    else MaterialTheme.colorScheme.primary
     val fg = if (miuix) MaterialTheme.colorScheme.onSurface
-    else if (glassOn) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onPrimary
-    val hazeState = LocalHazeState.current
+    else MaterialTheme.colorScheme.onPrimary
     val barModifier = Modifier
         .fillMaxWidth()
-        .then(
-            if (glassOn && glassStyle != null && hazeState != null) Modifier.hazeBlur(
-                input = HazeInput.Sources(hazeState),
-                style = glassStyle
-            ) else Modifier
-        )
         .background(bg)
     if (inSelection) {
         Row(
@@ -251,14 +212,16 @@ fun MainActivity.FairuTopBar(glassOn: Boolean, glassStyle: HazeBlurStyle?, glass
         ) {
             IconButton(onClick = {
                 showSearch = false
-                pane.searchQuery = ""
-                loadPane(pane)
+                onSearchQueryChanged(pane, "")
             }) {
                 Icon(painterResource(R.drawable.ic_arrow_back), contentDescription = null, tint = fg)
             }
             TextField(
                 value = pane.searchQuery,
-                onValueChange = { pane.searchQuery = it; loadPane(pane) },
+                // v1.9.7.8：敲键只改查询、不扫盘（扫描在后台线程 + 250ms 防抖，
+                // 见 MainActivity.onSearchQueryChanged；之前这里同步调 loadPane，
+                // 主线程递归扫整棵树，每敲一个字母就冻住一阵、输入法还丢字）。
+                onValueChange = { onSearchQueryChanged(pane, it) },
                 placeholder = { Text(stringResource(R.string.search_hint), color = fg.copy(alpha = 0.7f)) },
                 singleLine = true,
                 colors = TextFieldDefaults.colors(
@@ -273,8 +236,7 @@ fun MainActivity.FairuTopBar(glassOn: Boolean, glassStyle: HazeBlurStyle?, glass
                 modifier = Modifier.weight(1f)
             )
             IconButton(onClick = {
-                pane.searchQuery = ""
-                loadPane(pane)
+                onSearchQueryChanged(pane, "")
             }) {
                 Icon(painterResource(R.drawable.ic_close), contentDescription = null, tint = fg)
             }
@@ -288,7 +250,8 @@ fun MainActivity.FairuTopBar(glassOn: Boolean, glassStyle: HazeBlurStyle?, glass
         IconButton(onClick = { drawerOpen = true }) {
             Icon(painterResource(R.drawable.ic_menu), contentDescription = null, tint = fg)
         }
-        Column(Modifier.weight(1f)) {
+        // v1.9.8：点顶栏这行当前路径弹出“跳转”对话框。
+        Column(Modifier.weight(1f).clickable { showJumpDialog = true }) {
             Text(
                 // Miuix：大号粗黑标题，显示当前文件夹名（完整路径在下面的路径条里）。
                 if (miuix) paneDisplayName(pane) else paneTitle(pane),
@@ -357,20 +320,13 @@ fun MainActivity.paneSubtitle(pane: MainActivity.Pane): String {
 // ---------- 底栏（← → + ⇄ ↑；v1.9.0：+ 在中间） ----------
 
 @Composable
-fun MainActivity.FairuBottomBar(glassOn: Boolean, glassStyle: HazeBlurStyle?, glassTint: Color) {
-    val bg = glassPanelBackground(MaterialTheme.colorScheme.surface, glassTint)
+fun MainActivity.FairuBottomBar() {
+    val bg = MaterialTheme.colorScheme.surface
     // Miuix：图标用主色（跟随应用配色）；MD3：用 onSurface。
     val fg = if (isMiuixEngine()) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface
-    val hazeState = LocalHazeState.current
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .then(
-                if (glassOn && glassStyle != null && hazeState != null) Modifier.hazeBlur(
-                    input = HazeInput.Sources(hazeState),
-                    style = glassStyle
-                ) else Modifier
-            )
             .background(bg)
             .padding(vertical = 4.dp),
         horizontalArrangement = Arrangement.SpaceEvenly,
@@ -405,10 +361,12 @@ fun MainActivity.PaneColumn(pane: MainActivity.Pane, modifier: Modifier = Modifi
         if (miuix) {
             // Miuix：路径条是灰色小字标签（参考图的“常规”分区标签），
             // 激活窗格用主色粗字。
+            // v1.9.8：点路径条弹出“跳转”对话框（先激活本窗格）。
             Text(
                 paneTitle(pane),
                 modifier = Modifier
                     .fillMaxWidth()
+                    .clickable { setActive(pane); showJumpDialog = true }
                     .padding(horizontal = 16.dp, vertical = 8.dp),
                 fontSize = 13.sp,
                 fontWeight = if (pane.isActive) FontWeight.Bold else FontWeight.Normal,
@@ -424,6 +382,8 @@ fun MainActivity.PaneColumn(pane: MainActivity.Pane, modifier: Modifier = Modifi
                 modifier = Modifier
                     .fillMaxWidth()
                     .background(pathBg)
+                    // v1.9.8：点路径条弹出“跳转”对话框（先激活本窗格）。
+                    .clickable { setActive(pane); showJumpDialog = true }
                     .padding(horizontal = 12.dp, vertical = 8.dp),
                 fontSize = 13.sp,
                 maxLines = 1,
@@ -469,31 +429,35 @@ fun MainActivity.PaneColumn(pane: MainActivity.Pane, modifier: Modifier = Modifi
     }
 }
 
-/** “..”父目录行。 */
+/** “..”父目录行（v1.9.7.7 紧凑版：图标 24dp、上下内边距 4dp、名字 12sp）。 */
 @Composable
 fun MainActivity.ParentRow(pane: MainActivity.Pane) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
             .clickable { setActive(pane); navigateUp(pane) }
-            .padding(horizontal = 12.dp, vertical = 10.dp),
+            .padding(horizontal = 12.dp, vertical = 4.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Box(
             modifier = Modifier
-                .size(if (isMiuixEngine()) 28.dp else 30.dp)
-                .clip(RoundedCornerShape(if (isMiuixEngine()) 8.dp else 6.dp))
+                .size(24.dp)
+                .clip(RoundedCornerShape(if (isMiuixEngine()) 6.dp else 5.dp))
                 .background(colorResource(R.color.tile_parent)),
             contentAlignment = Alignment.Center
         ) {
-            Icon(painterResource(R.drawable.ic_folder), contentDescription = null, tint = Color.White, modifier = Modifier.size(if (isMiuixEngine()) 16.dp else 18.dp))
+            Icon(painterResource(R.drawable.ic_folder), contentDescription = null, tint = Color.White, modifier = Modifier.size(14.dp))
         }
-        Spacer(Modifier.width(12.dp))
-        Text("..", fontSize = if (isMiuixEngine()) 16.sp else 13.sp, fontWeight = if (isMiuixEngine()) FontWeight.Bold else FontWeight.Normal)
+        Spacer(Modifier.width(8.dp))
+        Text("..", fontSize = if (isMiuixEngine()) 16.sp else 12.sp, lineHeight = if (isMiuixEngine()) 19.sp else 14.sp, fontWeight = if (isMiuixEngine()) FontWeight.Bold else FontWeight.Normal)
     }
 }
 
-/** 文件/文件夹行（v1.9.4 MP 样式：30dp 小圆角图标、13sp 名字最多 5 行、副标题“日期 + 大小”）。 */
+/** 文件/文件夹行（v1.9.4 MP 样式；v1.9.7.7 照 MT 密度改紧凑：图标 24dp、
+ * 上下内边距 MD3 4dp / Miuix 5dp、名字 MD3 12sp 行高 14sp、副标题 11sp 行高
+ * 13sp、名字和副标题之间无多余行距；名字仍最多 5 行完整显示、副标题仍
+ * 是“日期 + 大小”；⋮ 按钮缩到 32dp，否则 IconButton 的 48dp 最小触摸
+ * 尺寸会把行高撑回去）。 */
 @Composable
 fun MainActivity.PaneFileRow(pane: MainActivity.Pane, f: File) {
     val isDir = pane.isDirOverride[f.absolutePath] ?: f.isDirectory
@@ -538,24 +502,26 @@ fun MainActivity.PaneFileRow(pane: MainActivity.Pane, f: File) {
             )
             // v1.9.8.1：行内边距再收窄一点，给副标题留宽（Miuix 4dp→2dp、
             // MD3 12dp→8dp）；副标题本身另有 AutoFitSubtitle 兜底。
-            .padding(horizontal = if (miuix) 2.dp else 8.dp, vertical = if (miuix) 10.dp else 8.dp),
+            // v1.9.7.7：照 MT 密度再收窄（MD3 8dp→4dp、Miuix 10dp→5dp）。
+            .padding(horizontal = if (miuix) 2.dp else 8.dp, vertical = if (miuix) 5.dp else 4.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Box(
             modifier = Modifier
-                .size(if (miuix) 26.dp else 30.dp)
-                .clip(RoundedCornerShape(if (miuix) 8.dp else 6.dp))
+                .size(24.dp)
+                .clip(RoundedCornerShape(if (miuix) 6.dp else 5.dp))
                 .background(colorResource(tileRes)),
             contentAlignment = Alignment.Center
         ) {
-            Icon(painterResource(iconRes), contentDescription = null, tint = Color.White, modifier = Modifier.size(if (miuix) 16.dp else 18.dp))
+            Icon(painterResource(iconRes), contentDescription = null, tint = Color.White, modifier = Modifier.size(14.dp))
         }
-        Spacer(Modifier.width(if (miuix) 8.dp else 12.dp))
+        Spacer(Modifier.width(if (miuix) 8.dp else 8.dp))
         Column(Modifier.weight(1f)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(
                     f.name,
-                    fontSize = if (miuix) 16.sp else 13.sp,
+                    fontSize = if (miuix) 16.sp else 12.sp,
+                    lineHeight = if (miuix) 19.sp else 14.sp,
                     fontWeight = if (miuix) FontWeight.Bold else FontWeight.Normal,
                     maxLines = 5,
                     modifier = Modifier.weight(1f, fill = false)
@@ -608,9 +574,17 @@ fun MainActivity.PaneFileRow(pane: MainActivity.Pane, f: File) {
         } else {
             // v1.9.7.2：菜单包在触发按钮的 Box 里锚定，否则落到左下角。
             // 只画属于这一行的菜单（pane 是同一对象、file 按路径相等）。
+            // v1.9.7.7：不用 IconButton（48dp 最小触摸尺寸会把行高撑回
+            // 去），改 32dp 圆形可点 Box，图标 18dp，菜单行为不变。
             Box {
-                IconButton(onClick = { setActive(pane); fileMenu = FileMenuRequest(pane, f) }) {
-                    Icon(painterResource(R.drawable.ic_more_vert), contentDescription = null, modifier = Modifier.size(20.dp))
+                Box(
+                    modifier = Modifier
+                        .size(32.dp)
+                        .clip(CircleShape)
+                        .clickable { setActive(pane); fileMenu = FileMenuRequest(pane, f) },
+                    contentAlignment = Alignment.Center
+                ) {
+                    Icon(painterResource(R.drawable.ic_more_vert), contentDescription = null, modifier = Modifier.size(18.dp))
                 }
                 fileMenu?.takeIf { it.pane === pane && it.file == f }?.let { FileMenuDialog(it) }
             }
@@ -624,13 +598,16 @@ fun MainActivity.PaneFileRow(pane: MainActivity.Pane, f: File) {
  * 截断、也不是半个字）；“0B”约 267px 刚好放下所以能画；单窗格/选择模
  * 式栏宽够就正常。0B 能画、79B 画不出、单窗格能画、选择模式能画，
  * 五条证据都对得上。所以字号从 12sp 起按 0.5sp 下调直到放得下
- * （最低 7.5sp），保证大小一定可见；字号只在需要时变小。 */
+ * （最低 7.5sp），保证大小一定可见；字号只在需要时变小。
+ * v1.9.7.7：起始字号 12sp→11sp、行高固定 13sp，名字行（行高 14sp）和
+ * 副标题之间不留多余空隙。 */
 @Composable
 fun AutoFitSubtitle(text: String, color: Color) {
-    var fontSize by remember(text) { mutableStateOf(12.sp) }
+    var fontSize by remember(text) { mutableStateOf(11.sp) }
     Text(
         text,
         fontSize = fontSize,
+        lineHeight = 13.sp,
         color = color,
         maxLines = 1,
         onTextLayout = { result ->
@@ -641,13 +618,10 @@ fun AutoFitSubtitle(text: String, color: Color) {
     )
 }
 
-/** 分组卡片：Miuix 时用真 miuix 白色大圆角卡片；MD3 / M3 Expressive 时不包卡片（原样）。
- * 玻璃开着时 MD3 / M3E 也包一张不透明卡片：玻璃下抽屉底是 25% tint / 全透明，
- * 行直接浮在上面，后面文件列表透出来压字（深色+红字下最明显）；卡片给行一块
- * 不透明底（跟抽屉头一个做法），字就干净了。玻璃关着时 MD3 保持原样。 */
+/** 分组卡片：Miuix 时用真 miuix 白色大圆角卡片；MD3 / M3 Expressive 时不包卡片（原样）。 */
 @Composable
 fun MiuixGroupCard(content: @Composable () -> Unit) {
-    if (isMiuixEngine() || LocalFairuTheme.current.glass) {
+    if (isMiuixEngine()) {
         FairuCard { content() }
     } else {
         Column { content() }
@@ -660,11 +634,8 @@ fun MiuixGroupCard(content: @Composable () -> Unit) {
 fun MainActivity.FairuDrawer() {
     val act = this
     val miuix = isMiuixEngine()
-    // 内容层在玻璃开着时全透明，只留 ModalDrawerSheet 容器那一层底色，
-    // 否则半透明模式会双重 tint（容器 25% + 内容 25%）。
     // Miuix：抽屉底是浅灰，分组是白色卡片。
-    val contentBg = if (LocalFairuTheme.current.glass) Color.Transparent
-    else if (miuix) MaterialTheme.colorScheme.background
+    val contentBg = if (miuix) MaterialTheme.colorScheme.background
     else MaterialTheme.colorScheme.surface
     Column(
         Modifier
@@ -673,14 +644,7 @@ fun MainActivity.FairuDrawer() {
             .padding(vertical = 8.dp)
     ) {
         // 抽屉头：应用名 + 版本。
-        // v1.9.8.1：玻璃开着时抽屉头给不透明底色——否则主界面的大标题
-        // （内部存储）会从半透明/全透明的抽屉底透出来，和 Fairumanējā
-        // 压在一起；玻璃关着时本来就是不透明底，不用加。
-        val headerBg = if (LocalFairuTheme.current.glass) {
-            if (miuix) MaterialTheme.colorScheme.background
-            else MaterialTheme.colorScheme.surface
-        } else Color.Transparent
-        Column(Modifier.fillMaxWidth().background(headerBg).padding(horizontal = 16.dp, vertical = 12.dp)) {
+        Column(Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 12.dp)) {
             Text(
                 stringResource(R.string.app_name),
                 fontSize = if (miuix) 24.sp else 20.sp,
@@ -795,6 +759,17 @@ fun MainActivity.FairuDrawer() {
             onClick = {
                 drawerOpen = false
                 startActivity(android.content.Intent(act, TextEditorActivity::class.java))
+            }
+        )
+        DrawerRow(
+            iconRes = R.drawable.ic_image,
+            label = stringResource(R.string.media_images_videos),
+            modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp),
+            onClick = {
+                drawerOpen = false
+                startActivity(android.content.Intent(act, MediaActivity::class.java).apply {
+                    putExtra(MediaActivity.EXTRA_CATEGORY, MediaActivity.CATEGORY_IMAGES)
+                })
             }
         )
         DrawerRow(

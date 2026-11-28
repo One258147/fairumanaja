@@ -36,8 +36,8 @@
     <string name="endangered_language_switch">ᡫᠠᡱᡠ ᡤᡞᠰᡠᠨ ᡥᠠᠯᠠᠨᡪᠠᠪᡠ</string>
     <string name="error">ᡥᡡᠰᡠᠨ</string>
     <string name="experimental_features">ᠰᡞᠨᡩᠠᡰᠠ ᠸᡝᡞᠯᡝ</string>
-    <string name="experimental_features_hint">ᡝᡰᡝ ᠸᡝᡞᠯᡝ ᠰᡞᠨᡩᠠᡰᠠ ᡩᡝ ᠪᡞ, ᡥᠠᠯᠠᠨᡪᠠᠮᡝ ᠮᠠᠩᡤᡞ.</string>
-    <string name="experimental_warning_msg">ᠰᡞᠨᡩᠠᡰᠠ ᠸᡝᡞᠯᡝ ᠰᡞᠨᡩᠠᡰᠠ ᡩᡝ ᠪᡞ, ᡝᡰᡝ ᠸᡝᡞᠯᡝ ᠪᡝ ᡩᠠᡥᠠᠪᡠᡫᡞ ᠪᠠᡞᡨᠠᠯᠠᠪᡠᡫᡞ, ᡝᡰᡝ ᡥᠠᡱᡞᠨ ᡨᡠᡱᡞᠮᠪᡞ ᠮᠠᠩᡤᡞ:\n\n• ᡩᡠᡰᡠᠨ ᡪᠣᡰᡞᠪᡠ ᡥᡡᠰᡠᠨ, ᡩᡠᡰᡠᠨ ᠸᠠᡣᠠ ᠣᠮᠪᡞ, ᠸᡝᡞᠯᡝ ᠶᠠᠪᡠᡰᠠᡣᡡ ᠮᠠᠩᡤᡞ;\n• ᡝᠮᡠ ᠸᡝᡞᠯᡝ ᠪᠠᡞᡨᠠᠯᠠᠪᡠᡰᠠᡣᡡ ᠮᠠᠩᡤᡞ, ᠠᠮᠠᠯᠠ ᡨᡝᠮᡤᡝᡨᡠ ᡩᡝ ᡥᠠᠯᠠᠨᡪᠠᠪᡠ ᡫᡝᡨᡝᡰᡝ ᠮᠠᠩᡤᡞ;\n• UI ᡩᡠᡰᡠᠨ ᠪᡝ ᡥᠠᠯᠠᠨᡪᠠᠪᡠᡫᡞ, ᡤᡝᠮᡠᠨ ᡩᡠᡰᡠᠨ ᠪᡝ ᡠᡨᡥᠠᡞ ᡩᠠᡥᠠᠮᡝ ᡪᠣᡰᡞᠪᡠ;\n• ᠮᡠᡣᡝ ᡤᡠᡱᡠ ᡝᠮᡠ ᡥᠠᡱᡞᠨ ᡩᡝ, ᡩᠠᠰᠠᠨ ᡞ ᡨᡝᠮᡤᡝᡨᡠ ᡝᠮᡠ ᡩᡝ ᡪᠣᡰᡞᠪᡠ ᡥᡡᠰᡠᠨ ᠮᠠᠩᡤᡞ, ᡩᡝᠨ ᠪᡝ ᠠᠮᠪᠠ ᠪᠠᡞᡨᠠᠯᠠᠪᡠᠮᠪᡞ ᠮᠠᠩᡤᡞ;\n• ᡝᡰᡝ ᠸᡝᡞᠯᡝ ᠠᡞ ᡝᡰᡞᠨ ᡩᡝ ᡥᠠᠯᠠᠨᡪᠠᠮᡝ ᠮᠠᠩᡤᡞ, ᠶᠠᡰᡤᡞᠶᠠᠨ ᠸᡝᡞᠯᡝ ᡩᡝ ᠠᡩᠠᠯᡞ ᠣᠮᠪᡞ ᠰᡝᡰᡝᠩᡤᡝ ᠠᡣᡡ.</string>
+    <string name="experimental_features_hint">ᡝᡰᡝ ᠸᡝᡞᠯᡝ ᠰᡞᠨᡩᠠᡰᠠ ᡩᡝ ᠪᡞ, ᡥᠠᠯᠠᠨᡪᠠᠮᡝ ᠮᠠᠩᡤᡞ</string>
+    <string name="experimental_warning_msg">ᠰᡞᠨᡩᠠᡰᠠ ᠸᡝᡞᠯᡝ ᠰᡞᠨᡩᠠᡰᠠ ᡩᡝ ᠪᡞ, ᡝᡰᡝ ᠸᡝᡞᠯᡝ ᠪᡝ ᡩᠠᡥᠠᠪᡠᡫᡞ ᠪᠠᡞᡨᠠᠯᠠᠪᡠᡫᡞ, ᡝᡰᡝ ᡥᠠᡱᡞᠨ ᡨᡠᡱᡞᠮᠪᡞ ᠮᠠᠩᡤᡞ:\n\n• ᡩᡠᡰᡠᠨ ᡪᠣᡰᡞᠪᡠ ᡥᡡᠰᡠᠨ, ᡩᡠᡰᡠᠨ ᠸᠠᡣᠠ ᠣᠮᠪᡞ, ᠸᡝᡞᠯᡝ ᠶᠠᠪᡠᡰᠠᡣᡡ ᠮᠠᠩᡤᡞ;\n• ᡝᠮᡠ ᠸᡝᡞᠯᡝ ᠪᠠᡞᡨᠠᠯᠠᠪᡠᡰᠠᡣᡡ ᠮᠠᠩᡤᡞ, ᠠᠮᠠᠯᠠ ᡨᡝᠮᡤᡝᡨᡠ ᡩᡝ ᡥᠠᠯᠠᠨᡪᠠᠪᡠ ᡫᡝᡨᡝᡰᡝ ᠮᠠᠩᡤᡞ;\n• UI ᡩᡠᡰᡠᠨ ᠪᡝ ᡥᠠᠯᠠᠨᡪᠠᠪᡠᡫᡞ, ᡤᡝᠮᡠᠨ ᡩᡠᡰᡠᠨ ᠪᡝ ᡠᡨᡥᠠᡞ ᡩᠠᡥᠠᠮᡝ ᡪᠣᡰᡞᠪᡠ;\n• ᡝᡰᡝ ᠸᡝᡞᠯᡝ ᠠᡞ ᡝᡰᡞᠨ ᡩᡝ ᡥᠠᠯᠠᠨᡪᠠᠮᡝ ᠮᠠᠩᡤᡞ, ᠶᠠᡰᡤᡞᠶᠠᠨ ᠸᡝᡞᠯᡝ ᡩᡝ ᠠᡩᠠᠯᡞ ᠣᠮᠪᡞ ᠰᡝᡰᡝᠩᡤᡝ ᠠᡣᡡ.</string>
     <string name="experimental_warning_title">ᠰᡞᠨᡩᠠᡰᠠ ᠸᡝᡞᠯᡝ ᡞ ᠵᠠᡰᡞᠨ</string>
     <string name="extract">ᠠᠯᡥᠠᠪᡠ</string>
     <string name="extracted">ᠠᠯᡥᠠᠪᡠᡥᠠ</string>
@@ -52,11 +52,9 @@
     <string name="hide">ᠪᡝᡞᡩᡝᠮᠪᡠ</string>
     <string name="language">ᡤᡞᠰᡠᠨ</string>
     <string name="language_settings">ᡤᡞᠰᡠᠨ ᠠᡫᠠᠪᡠᡥᠠᠩᡤᡝ</string>
-    <string name="liquid_glass">ᠮᡠᡣᡝ ᡤᡠᡱᡠ</string>
-    <string name="liquid_glass_hint">ᡩᠣᡰᠣ ᠪᡝᡞᠯᡝᠪᡠ, ᡥᡡᠯᡥᡞᠪᡠ ᠪᡝᡞᠯᡝᠪᡠ.</string>
-    <string name="liquid_glass_mode_blur">ᡞᠯᡝᡨᡠ ᠪᡠᡰᡠᠯᠠᠮᡝ</string>
-    <string name="liquid_glass_mode_clear">ᡤᡝᠮᡠᠨ ᡞᠯᡝᡨᡠ</string>
-    <string name="liquid_glass_mode_translucent">ᠪᡠᡰᡠᠯᠠᠮᡝ</string>
+    <!-- v1.9.7.8: UNCERTAIN_SJO：分组名尽力翻译，需母语者复核 -->
+    <string name="settings_group_language_appearance">ᡤᡳᠰᡠᠨ ᡩᠠ ᡩᡠᡵᡠᠨ</string>
+    <string name="settings_group_app">ᠠᡦᡦ</string>
     <string name="modified">ᡥᠠᠯᠠᠨᡪᠠᡥᠠ ᡝᡰᡞᠨ</string>
     <string name="more_actions">ᠠᠮᠠᠯᠠ ᠸᡝᡞᠯᡝ</string>
     <string name="more_options">ᠠᠮᠠᠯᠠ ᠸᡝᡞᠯᡝ</string>
@@ -84,7 +82,8 @@
     <string name="path">ᡪᡠᡤᡡᠨ</string>
     <string name="path_copied">ᡪᡠᡤᡡᠨ ᡫᠣᠯᡥᠣᡥᡝ</string>
     <string name="permanently_deleted">ᡣᡝᠮᡠᠨᡞ ᡫᡝᡨᡝᡰᡝᡥᡝ</string>
-    <string name="pin_folder">ᡫᠠᠯᡤᠠ ᡣᡝᠮᡠᡥᡝ</string>
+    <!-- UNCERTAIN_SJO：顶置新译法，需母语者复核 -->
+    <string name="pin_folder">ᡩᡝᡵᡤᡳ ᡫᠠᠯᡤᠠ ᡥᡝᠮᡠᡥᡝ</string>
     <string name="pinned">ᡣᡝᠮᡠᡥᡝ</string>
     <string name="properties">ᡨᠠᡱᡞᡥᡞᠶᠠᠨ</string>
     <string name="redo">ᡩᠠᡥᡡᠮᡝ</string>
@@ -109,8 +108,71 @@
     <string name="sort_name">ᡤᡝᠪᡠ ᡞ ᡥᠠᠰᡞᡥᠠ</string>
     <string name="sort_size">ᠪᡝᠶᡝ ᡞ ᡥᠠᠰᡞᡥᠠ</string>
     <string name="sort_type">ᡥᠠᡱᡞᠨ ᡞ ᡥᠠᠰᡞᡥᠠ</string>
+    <string name="sort_by_type">ᡥᠠᡱᡞᠨ ᡞ ᡥᠠᠰᡞᡥᠠ</string>
+    <!-- UNCERTAIN_SJO：新词直译，需母语者复核 -->
+    <string name="sort_reverse">ᠠᠮᠠᠯᠠ ᡥᠠᠰᡞᡥᠠ</string>
+    <!-- UNCERTAIN_SJO：新词直译，需母语者复核 -->
+    <string name="sort_type_folders_only">ᠪᡞᡨᡥᡝ ᡫᠠᠯᡤᠠ ᡩᠠᠮᡠ</string>
+    <!-- UNCERTAIN_SJO：背景切换尽力翻译，需母语者复核 -->
+    <string name="viewer_background">ᡩᠣᡰᡤᡞ ᡥᡡᠯᠠᠮᠪᡞ</string>
+    <string name="viewer_bg_black">ᡣᠠᡰᠠ</string>
+    <string name="viewer_bg_white">ᡧᠠᠩᡤᡞᠶᠠᠨ</string>
+    <!-- UNCERTAIN_SJO：灰色未核实，需母语者复核 -->
+    <string name="viewer_bg_gray">ᡫᡠᠯᠠᡥᡡᠨ</string>
+    <!-- UNCERTAIN_SJO：横向翻页尽力翻译，需母语者复核 -->
+    <string name="viewer_view_horizontal">ᠠᡫᠠᡥᠠ ᡫᠠᡣᠰᠠᠮᠪᡞ</string>
+    <!-- UNCERTAIN_SJO：纵向排序尽力翻译，需母语者复核 -->
+    <string name="viewer_view_vertical">ᡞᠯᡞᡥᠠ ᡩᠠᠨ</string>
+    <string name="viewer_dimensions">ᠪᡝᠶᡝ</string>
+    <!-- UNCERTAIN_SJO：格式尽力翻译，需母语者复核 -->
+    <string name="viewer_format">ᡩᡠᡰᡠᠨ</string>
+    <!-- UNCERTAIN_SJO：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_images">ᠵᡠᠷᡠ</string>
+    <!-- UNCERTAIN_SJO：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_videos">ᡩᡝᡵᡞᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：媒体页音频分类新词尽力翻译，需母语者复核 -->
+    <string name="media_audios">ᡝᡤᡝᠨ</string>
+    <!-- UNCERTAIN_SJO：跳转 / 创建HTML 新词尽力翻译，需母语者复核 -->
+    <string name="jump_title">ᡤᡝᠨᡝᠮᠪᡳ</string>
+    <string name="create_html">HTML ᠪᠠᠨᠵᡳᠪᡠᠮᠪᡳ</string>
+    <string name="jump_invalid_path">ᠵᡠᡤᡡᠨ ᠠᡴᡡ ᠪᠠ ᡶᠣᠯᡩᡝᡵ ᠸᠠᡴᠠ</string>
+    <!-- UNCERTAIN_SJO：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_gifs">GIF</string>
+    <!-- UNCERTAIN_SJO：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_today">ᡝᡵᡝ ᠠᠨᡞᠶᠠ</string>
+    <!-- UNCERTAIN_SJO：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_yesterday">ᠰᡞᡴᠰᡝ ᠠᠨᡞᠶᠠ</string>
+    <!-- UNCERTAIN_SJO：抽屉合并新词尽力翻译，需母语者复核 -->
+    <string name="media_images_videos">ᠵᡠᠷᡠ ᡝᠮᡤᡞ ᡩᡝᡵᡞᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="play_video">ᡩᡝᡵᡞᠪᡠ ᡨᠠᠴᡞᡴᡡ</string>
+    <!-- UNCERTAIN_SJO：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="view_image">ᠵᡠᠷᡠ ᡨᡠᠸᠠᠮᠪᡞ</string>
+    <!-- UNCERTAIN_SJO：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="browse_archive">ᠨᡳᡵᡠᠮᠪᡠ ᡩᠠᠩᠰᡝ ᡨᡠᠸᠠᠮᠪᡞ</string>
+    <!-- UNCERTAIN_SJO：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_speed">ᡥᡡᡩᡠᠨ ᡥᠠᠰᡞᡥᠠ</string>
+    <!-- UNCERTAIN_SJO：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_cannot_play">ᡝᡵᡝ ᡩᡝᡵᡞᠪᡠ ᡨᠠᠴᡞᡴᡡ ᠣᠵᠣᡵᠠᡴᡡ</string>
+    <!-- UNCERTAIN_SJO：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="play_music">ᡝᡤᡝᠨ ᡨᠠᠴᡞᡴᡡ</string>
+    <!-- UNCERTAIN_SJO：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="music_cannot_play">ᡝᡵᡝ ᠠᡵᠠ ᡨᠠᠴᡞᡴᡡ ᠣᠵᠣᡵᠠᡴᡡ</string>
+    <!-- UNCERTAIN_SJO：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_play">ᡨᠠᠴᡞᡴᡡ</string>
+    <!-- UNCERTAIN_SJO：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_pause">ᠨᠠᡴᠠᠮᠪᡞ</string>
+    <!-- UNCERTAIN_SJO：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_fill_screen">ᡩᡝᡵᡤᡳ ᠪᡝ ᡶᡳᠯᠯᠠᠮᡝ ᠠᠴᠠᠪᡠᠮᠪᡞ</string>
+    <!-- UNCERTAIN_SJO：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_loop">ᡩᠠᡥᡡᠨ ᡨᠠᠴᡞᡴᡡ</string>
+    <!-- UNCERTAIN_SJO：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_landscape">ᡥᠠᡴᡧᠠᠨ ᠠᡵᠠᠮᠪᡞ</string>
+    <!-- UNCERTAIN_SJO：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_duration">ᡝᡵᡳᠨ ᡤᠣᠵᡞᠮᡝ</string>
     <string name="splash_animation">ᡩᡝᡰᡞᠪᡠ ᡨᠠᡱᡞᡣᡡ</string>
-    <string name="splash_animation_hint">ᡩᠠᡥᠠᠪᡠᡫᡞ, ᡩᡝᡰᡞᠪᡠ ᡨᠠᡱᡞᡣᡡ ᠪᡝ ᠶᠠᠪᡠᡱᡞ; ᠠᡱᠠᠪᡠᡫᡞ, ᡨᠣᠨᡩᠣ ᠶᠠᠪᡠᡱᡞ.</string>
+    <!-- UNCERTAIN_SJO：短版重翻，需母语者复核 -->
+    <string name="splash_animation_hint">ᡩᠠᡥᠠᠪᡠᡫᡞ, ᡝᠮᡠ ᡝᡰᡞᠨ ᡩᡝ ᡩᡝᡰᡞ ᡱᡞ ᡩᠠᡥᠠᠪᡠᡫᡞ, ᡩᡝᡰᡞᠪᡠ ᡨᠠᡱᡞᡣᡡ ᠪᡝ ᠶᠠᠪᡠᡱᡞ</string>
     <string name="storage_internal">ᡩᠣᠯᠣ ᠪᡞᡨᡥᡝ</string>
     <string name="text_editor">ᠪᡞᡨᡥᡝ ᡞᡰᡤᡝᡣᡠ</string>
     <string name="theme">ᡩᡠᡰᡠᠨ</string>
@@ -129,4 +191,292 @@
     <string name="unpinned">ᡣᡝᠮᡠᡥᡝ ᠨᠠᡣᠠᠪᡠ</string>
     <string name="used_space">ᠠᡱᠠᠪᡠᡥᠠ</string>
     <string name="version">ᡨᡝᠮᡤᡝᡨᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="about_intro_title">ᠸᡝᡞᠯᡝ ᡞ ᡨᠠᡱᡞᡥᡞᠶᠠᠨ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="about_text">Fairumanējā ᡝᠮᡠ ᡤᡝᠮᡠᠨ ᠪᡞᡨᡥᡝ ᡞ ᠸᡝᡞᠯᡝ ᠪᡞ, MT ᡞ ᡩᡠᡰᡠᠨ ᠪᡝ ᡨᠠᡱᡞᡥᡞᠶᠠᠨ ᠪᡞ. Android ᠪᠣᠯᠣᡰᡞ Linux, Windows ᡩᡝ ᡩᠠᡥᠠᠪᡠᠮᠪᡞ, MIT ᡩᡝ ᡨᡠᡱᡞᠪᡠᡥᡝ ᠪᡞ</string>
+    <string name="add">ᠨᠣᠩᡤᡞᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="add_local_storage">ᠪᠠᡩᡝ ᠪᡞᡨᡥᡝ ᠨᠣᠩᡤᡞᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；Network 无满语对应词，暂留英文，需母语者复核 -->
+    <string name="add_network_group">Network ᡫᠠᠯᡤᠠ ᠨᠣᠩᡤᡞᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；Network 无满语对应词，暂留英文，需母语者复核 -->
+    <string name="add_network_storage">Network ᠪᡞᡨᡥᡝ ᠨᠣᠩᡤᡞᠪᡠ</string>
+    <string name="already_here">ᡝᡰᡝ ᡫᠠᠯᡤᠠ ᡩᡝ ᠪᡞ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="apk_package">APK ᡤᡝᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="app_color_disabled_hint">ᡝᡰᡝ ᠸᡝᡞᠯᡝ ᠪᡝ ᠪᠠᡞᠨᠠᡰᠠ, ᠰᡞᠪᡝ ᡥᡡᠯᡥᡞ ᠪᠣᡱᠣ ᠪᡝ ᠨᠠᡣᠠᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；短版重翻，需母语者复核 -->
+    <string name="app_color_hint">ᡩᡠᡰᡠᠨ ᡞ ᠪᠣᡱᠣ ᠪᡝ ᠰᠣᡤᡞᠪᡠ, ᡩᡠᡰᡠᠨ ᡞ ᡩᠠ ᠪᠣᡱᠣ ᠠᡩᠠᠯᡞ ᡥᠠᠯᠠᠨᡪᠠᠮᠪᡞ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="back">ᠠᠮᠠᠯᠠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="bookmarks_empty">ᡣᡝᠮᡠᡥᡝ ᠸᡝᡞᠯᡝ ᠠᡣᡡ, ᡫᠠᠯᡤᠠ ᠪᡝ ᡩᠠᡰᠠᠮᡝ ᡣᡝᠮᡠᡥᡝ ᠸᡝᡞᠯᡝ ᡩᡝ ᠪᠠᠨᡪᡞᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="chinese_version_note">ᡝᡰᡝ ᠪᡞᡨᡥᡝ ᡩᡝ ᡥᡝᡰᡤᡝᠨ ᠨᡞᡣᠠᠨ ᡤᡞᠰᡠᠨ ᡩᡝ ᠪᡞ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；剪贴板无满语对应词，意译，需母语者复核 -->
+    <string name="clipboard_empty">ᡫᠣᠯᡥᠣᡥᡝ ᠪᠠ ᡩᡝ ᠪᡞᡨᡥᡝ ᠠᡣᡡ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="close_file">ᠪᡞᡨᡥᡝ ᠪᡝ ᠨᠠᡣᠠᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；代码补全为现代术语，意译，需母语者复核 -->
+    <string name="code_completion">ᡥᡝᡰᡤᡝᠨ ᠨᡝᠮᡝᠮᠪᡠ</string>
+    <string name="confirm_delete">ᡫᡝᡨᡝᡰᡝ ᠠᡣᡩᡠᠨ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="confirm_empty_trash">ᡥᠣᠯᠣᡥᠣᡨᠣ ᠪᡝ ᡫᡝᡨᡝᡰᡝᠮᡡ? ᡝᡰᡝ ᡩᠠᡥᠠᠮᡝ ᡫᡝᡨᡝᡰᡝᠮᠪᡞ, ᠪᡝᡩᡝᡰᡝᠮᠪᡠ ᠮᠠᠩᡤᡞ</string>
+    <string name="copy_to_other">ᡫᠣᠯᡥᠣ -&gt;</string>
+    <string name="decrypt_failed">ᠠᠯᡥᠠᠪᡠ ᠮᠠᠩᡤᡞ</string>
+    <string name="decrypted">ᠠᠯᡥᠠᠪᡠᡥᡝ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="delete_direct_message">ᡫᡝᡨᡝᡰᡝᠮᡡ? ᡠᡨᡥᠠᡞ ᡫᡝᡨᡝᡰᡝᠮᠪᡞ, ᡥᠣᠯᠣᡥᠣᡨᠣ ᡩᡝ ᡤᡝᠨᡝᡰᠠᡣᡡ, ᠪᡝᡩᡝᡰᡝᠮᠪᡠ ᠮᠠᠩᡤᡞ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="delete_failed">ᡫᡝᡨᡝᡰᡝ ᠮᠠᠩᡤᡞ, ᡩᡝᡥᡝ ᡩᠠᡥᠠᠮᡝ ᠪᠠᡞᡰᠠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="delete_message">ᠰᠣᡤᡞᡥᡝ ᠪᠠᡞᡨᠠ ᠪᡝ ᡫᡝᡨᡝᡰᡝᠮᡡ?</string>
+    <string name="delete_permanent_msg">ᠪᡞᡨᡥᡝ %1$s ᠪᡝ ᡥᡝᠮᡠᠨᡞ ᡫᡝᡨᡝᡰᡝᠮᡡ?</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；“项”译为 baita，需母语者复核 -->
+    <string name="delete_permanent_multi_msg">%1$d ᠪᠠᡞᡨᠠ ᠪᡝ ᡥᡝᠮᡠᠨᡞ ᡫᡝᡨᡝᡰᡝᠮᡡ?</string>
+    <string name="delete_to_trash_msg">ᠪᡞᡨᡥᡝ %1$s ᠪᡝ ᡥᠣᠯᠣᡥᠣᡨᠣ ᡩᡝ ᡥᡡᠯᡥᡞᠪᡠᠮᡡ?</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；“项”译为 baita，需母语者复核 -->
+    <string name="delete_to_trash_multi_msg">%1$d ᠪᠠᡞᡨᠠ ᠪᡝ ᡥᠣᠯᠣᡥᠣᡨᠣ ᡩᡝ ᡥᡡᠯᡥᡞᠪᡠᠮᡡ?</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；免责声明意译，需母语者复核 -->
+    <string name="disclaimer">ᡥᠠᡱᡞᠯᠠᡰᠠ ᠠᡣᡡ ᠪᡞᡨᡥᡝ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="dont_save">ᡥᡝᠮᡠᡰᠠᡣᡡ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；壁纸无满语对应词，借用 deribu，需母语者复核 -->
+    <string name="dynamic_color_confirm_msg">ᡥᡡᠯᡥᡞ ᠪᠣᡱᠣ ᠪᡝ ᡩᠠᡥᠠᠪᡠᡫᡞ, ᡩᡠᡰᡠᠨ ᡞ ᠪᠣᡱᠣ ᡩᠠᠰᠠᠨ ᡞ ᡩᡝᡰᡞᠪᡠ ᠪᠣᡱᠣ ᡩᡝ ᡥᠠᠯᠠᠨᡪᠠᠮᠪᡞ. ᡥᡡᠯᡥᡞ ᠪᠣᡱᠣ ᠪᡝ ᡩᠠᡥᠠᠪᡠᠮᡡ?</string>
+    <string name="dynamic_color_confirm_title">ᡥᡡᠯᡥᡞ ᠪᠣᡱᠣ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；短版重翻；壁纸借用 deribu，需母语者复核 -->
+    <string name="dynamic_color_hint">ᡩᠠᡥᠠᠪᡠᡫᡞ, ᡩᡠᡰᡠᠨ ᡞ ᠪᠣᡱᠣ ᡩᠠᠰᠠᠨ ᡞ ᡩᡝᡰᡞᠪᡠ ᠪᠣᡱᠣ ᡩᡝ ᡥᠠᠯᠠᠨᡪᠠᠮᠪᡞ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="dynamic_color_on_note">ᡥᡡᠯᡥᡞ ᠪᠣᡱᠣ ᡩᠠᡥᠠᠪᡠᡥᡝ ᡝᡰᡞᠨ ᡩᡝ, ᡩᡠᡰᡠᠨ ᡞ ᠪᠣᡱᠣ ᠪᠠᡞᡨᠠᠯᠠᠪᡠᡰᠠᡣᡡ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="edit_text">ᠪᡞᡨᡥᡝ ᠪᡝ ᡥᠠᠯᠠᠨᡪᠠᠪᡠ</string>
+    <string name="editor_search">ᠪᠠᡞᡰᡝ</string>
+    <string name="encrypt_failed">ᠪᡝᡞᡩᡝᠮᠪᡠ ᠮᠠᠩᡤᡞ</string>
+    <string name="encrypted">ᠪᡝᡞᡩᡝᠮᠪᡠᡥᡝ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="endangered_language_sub">ᡝᡰᡝ ᡝᡰᡞᠨ ᡩᡝ 5 ᡤᡞᠰᡠᠨ ᡩᠠᡥᠠᠪᡠᠮᠪᡞ, ᠠᠮᠠᠯᠠ ᡝᡰᡞᠨ ᡩᡝ ᡤᡝᠮᡠᠨ ᡩᡝ ᠨᠣᠩᡤᡞᠪᡠᠮᠪᡞ</string>
+    <string name="file_count">ᠪᡞᡨᡥᡝ ᡨᠣᠨ</string>
+    <string name="file_name_hint">ᠪᡞᡨᡥᡝ ᡤᡝᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="file_too_large">ᠪᡞᡨᡥᡝ ᠠᠮᠪᠠ, 2 MB ᡱᡞ ᠠᠮᠪᠠ, ᠨᡝᡞᠪᡠᡫᡞ ᠰᡞᠮᡥᡠᠨ ᠣᠮᠪᡞ ᠮᠠᠩᡤᡞ. ᠨᡝᡞᠪᡠᠮᡡ?</string>
+    <string name="folder_count">ᡫᠠᠯᡤᠠ ᡨᠣᠨ</string>
+    <string name="folder_name_hint">ᡫᠠᠯᡤᠠ ᡤᡝᠪᡠ</string>
+    <string name="follow_system_theme">ᡩᡠᡰᡠᠨ ᡩᠠᠰᠠᠨ ᡩᡝ ᡩᠠᡥᠠᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="font_color_hint">ᠪᡞᡨᡥᡝ ᡞ ᡥᡝᡰᡤᡝᠨ ᡞ ᠪᠣᡱᠣ ᠪᡝ ᠰᠣᡤᡞᠪᡠ, ᡤᡝᠮᡠᠨ ᡩᡠᡰᡠᠨ ᡞ ᡥᡝᡰᡤᡝᠨ ᡞ ᠪᠣᡱᠣ ᠠᡩᠠᠯᡞ ᡥᠠᠯᠠᠨᡪᠠᠮᠪᡞ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="font_size">ᡥᡝᡰᡤᡝᠨ ᡞ ᠪᡝᠶᡝ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="forward">ᡪᡠᠯᡝᡰᡞ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="go_to_line">ᡫᠠᡪᡞᠯᠠᠨ ᡩᡝ ᡤᡝᠨᡝᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="go_to_line_hint">ᡫᠠᡪᡞᠯᠠᠨ ᡞ ᡨᠣᠨ ᠪᡝ ᠪᠠᠨᡪᡞᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；上级文件夹意译为 ama falga，需母语者复核 -->
+    <string name="go_up">ᠠᠮᠠ ᡫᠠᠯᡤᠠ ᡩᡝ ᡤᡝᠨᡝᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="grant_access">ᡩᠠᡥᠠᠪᡠ ᠪᡠᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；网格视图意译，需母语者复核 -->
+    <string name="grid">ᡫᠠᡪᡞᠯᠠᠨ ᡩᡠᡰᡠᠨ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="hidden_storages">ᠪᡝᡞᡩᡝᠮᡝ ᠪᡞᡨᡥᡝ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="invalid_name">ᡤᡝᠪᡠ ᡥᡡᠰᡠᠨ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；“项”译为 baita，需母语者复核 -->
+    <string name="items_count">%1$d ᠪᠠᡞᡨᠠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；窗格沿用 dual_pane 的 boole，需母语者复核 -->
+    <string name="left_pane">ᡥᠠᠰᡡ ᠪᠣᠣᠯᡝ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="line_numbers">ᡫᠠᡪᡞᠯᠠᠨ ᡞ ᡨᠣᠨ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；列表视图意译，需母语者复核 -->
+    <string name="list_view">ᡩᠠᡤᡞᠯᠠᠨ ᡩᡠᡰᡠᠨ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="manage_tool_groups">ᠸᡝᡞᠯᡝ ᡞ ᡫᠠᠯᡤᠠ ᠪᡝ ᡩᠠᠰᠠᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="move_down">ᡫᡝᡪᡝᡰᡤᡞ ᡥᡡᠯᡥᡞᠪᡠ</string>
+    <string name="move_failed">ᡥᡡᠯᡥᡞᠪᡠ ᠮᠠᠩᡤᡞ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="move_not_supported">ᡝᡰᡝ ᠪᡞᡨᡥᡝ ᡩᡝ ᡥᡡᠯᡥᡞᠪᡠ ᠮᠠᠩᡤᡞ</string>
+    <string name="move_to_other">ᡥᡡᠯᡥᡞᠪᡠ -&gt;</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="move_up">ᡩᡝᡰᡞ ᡥᡡᠯᡥᡞᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="name_exists">ᡝᡰᡝ ᡤᡝᠪᡠ ᡞ ᠪᡞᡨᡥᡝ ᡠᡨᡥᠠᡞ ᡫᠠᠯᡤᠠ ᠪᡞ</string>
+    <string name="new_text_file">ᡞᡱᡝ ᠪᡞᡨᡥᡝ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="next_position">ᠠᠮᠠᠯᠠ ᠪᠠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="no_match">ᠠᡩᠠᠯᡞ ᠠᡣᡡ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="not_supported">ᡝᡰᡝ ᡝᡰᡞᠨ ᡩᡝ ᡩᠠᡥᠠᠪᡠᠮᠪᡞ ᠠᡣᡡ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；开源意译，需母语者复核 -->
+    <string name="open_source_license">ᡤᡝᠮᡠᠨ ᡨᡠᡱᡞᠪᡠᡥᡝ ᡥᡝᡰᡤᡝᠨ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="original_path">ᡩᠠ ᡪᡠᡤᡡᠨ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；开源组件意译，需母语者复核 -->
+    <string name="oss_components">ᡤᡝᠮᡠᠨ ᠪᠠᡞᡨᠠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="other_pane_no_folder">ᡤᡡᠸᠠ ᠪᠣᠣᠯᡝ ᡩᡝ ᡫᠠᠯᡤᠠ ᠨᡝᡞᠪᡠᡥᡝ ᠠᡣᡡ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；密码无满语对应词，意译为“隐藏的话”，需母语者复核 -->
+    <string name="password_confirm_hint">ᠪᡝᡞᡩᡝᠮᡝ ᡤᡞᠰᡠᠨ ᠪᡝ ᡪᠠᡞ ᡩᠠᡥᠠᠮᡝ ᠪᠠᠨᡪᡞᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；密码无满语对应词，意译为“隐藏的话”，需母语者复核 -->
+    <string name="password_hint">ᠪᡝᡞᡩᡝᠮᡝ ᡤᡞᠰᡠᠨ ᠪᡝ ᠪᠠᠨᡪᡞᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；密码无满语对应词，意译为“隐藏的话”，需母语者复核 -->
+    <string name="password_mismatch">ᡪᡠᠸᡝ ᠮᡠᡩᠠᠨ ᠪᠠᠨᡪᡞᠪᡠᡥᡝ ᠪᡝᡞᡩᡝᠮᡝ ᡤᡞᠰᡠᠨ ᠠᡩᠠᠯᡞ ᠠᡣᡡ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="paste_to_other_pane">ᡤᡡᠸᠠ ᠪᠣᠣᠯᡝ ᡩᡝ ᠨᠣᠩᡤᡞᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="permission_needed">ᠪᡞᡨᡥᡝ ᠪᡝ ᡩᠠᠰᠠᠮᡝ ᡤᡝᠮᡠᠨ ᠪᡞᡨᡥᡝ ᡞ ᡩᠠᡥᠠᠪᡠ ᠪᡝ ᠪᠠᡞᡰᡝ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="prev_position">ᡪᡠᠯᡝᡰᡞ ᠪᠠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；隐私权政策意译，需母语者复核 -->
+    <string name="privacy_policy">ᠪᡝᡞᡩᡝᠮᡝ ᡩᠣᡰᠣ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；只读模式意译，需母语者复核 -->
+    <string name="read_only">ᡨᠠᡱᡞᠮᠪᡞ ᡩᠣᡰᠣ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="recent_empty">ᠠᠮᠠᠯᠠ ᠨᡝᡞᠪᡠᡥᡝ ᠪᡞᡨᡥᡝ ᠠᡣᡡ</string>
+    <string name="rename_hint">ᡞᡱᡝ ᡤᡝᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；原处译为 da ba，需母语者复核 -->
+    <string name="restore_confirm_msg">ᠪᡞᡨᡥᡝ %1$s ᠪᡝ ᡩᠠ ᠪᠠ ᡩᡝ ᠪᡝᡩᡝᡰᡝᠮᠪᡠᠮᡡ?</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；“项”译为 baita，原处译为 da ba，需母语者复核 -->
+    <string name="restore_confirm_multi_msg">%1$d ᠪᠠᡞᡨᠠ ᠪᡝ ᡩᠠ ᠪᠠ ᡩᡝ ᠪᡝᡩᡝᡰᡝᠮᠪᡠᠮᡡ?</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；窗格沿用 dual_pane 的 boole，需母语者复核 -->
+    <string name="right_pane">ᡞᡱᡞ ᠪᠣᠣᠯᡝ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="root_browse_only">ᡫᡠᠯᡝᡥᡝ ᡩᡝ ᡨᠠᡱᡞᠮᠪᡞ ᡩᠠᠮᡠ ᠣᠮᠪᡞ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="saf_browse_only">ᡝᡰᡝ ᠪᡞᡨᡥᡝ ᡩᡝ ᡨᠠᡱᡞᠮᠪᡞ ᡩᠠᠮᡠ ᠣᠮᠪᡞ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="save_as">ᡤᡡᠸᠠ ᡥᡝᠮᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="search_keyword_hint">ᠪᠠᡞᡰᡝ ᡥᡝᡰᡤᡝᠨ ᠪᡝ ᠪᠠᠨᡪᡞᠪᡠ</string>
+    <string name="search_match_count">%1$d / %2$d</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；“项”译为 baita，需母语者复核 -->
+    <string name="selected_count">ᠰᠣᡤᡞᡥᡝ %1$d ᠪᠠᡞᡨᠠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="shizuku_denied">Shizuku ᡞ ᡩᠠᡥᠠᠪᡠ ᠪᡝ ᠪᠠᡥᠠᡥᡝ ᠠᡣᡡ, ᡫᡠᠯᡝᡥᡝ ᡩᡝ ᡩᠠᡥᠠᠮᡝ ᠮᠠᠩᡤᡞ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；下载意译为 wasihūn bahabu，需母语者复核 -->
+    <string name="shizuku_download">Shizuku ᠪᡝ ᠸᠠᠰᡞᡥᡡᠨ ᠪᠠᡥᠠᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="shizuku_failed">ᡫᡠᠯᡝᡥᡝ ᠪᡝ ᡨᠠᡱᡞᠮᠪᡞ ᠮᠠᠩᡤᡞ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="shizuku_failed_detail">ᡫᡠᠯᡝᡥᡝ ᠪᡝ ᡨᠠᡱᡞᠮᠪᡞ ᠮᠠᠩᡤᡞ: %1$s</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="shizuku_needed_msg">ᡫᡠᠯᡝᡥᡝ ᠪᡝ ᡩᠠᡥᠠᠪᡠᡫᡞ Shizuku ᡞ ᠠᡫᠠᠪᡠᡥᠠᠩᡤᡝ ᠪᡝ ᠪᠠᡞᡰᡝ. ᠰᡞᠪᡝ Shizuku ᠪᡝ ᠪᠠᠨᡪᡞᠪᡠᡫᡞ ᡩᠠᡥᠠᠪᡠᡫᡞ, ᡩᡝᡥᡝ ᡩᠠᡥᠠᠮᡝ ᠪᠠᡞᡰᠠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="shizuku_needed_title">Shizuku ᠪᡝ ᠪᠠᡞᡰᡝ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；弹窗意译为 deribu durun，需母语者复核 -->
+    <string name="shizuku_request_msg">Shizuku ᡞ ᡩᡝᡰᡞᠪᡠ ᡩᡠᡰᡠᠨ ᡩᡝ ᡝᡰᡝ ᡩᠠᡥᠠᠪᡠ ᠪᡝ ᡩᠠᡥᠠᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="shortcut_action">ᠸᡝᡞᠯᡝ ᠪᡝ ᠪᠠᡞᡨᠠᠯᠠᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="shortcut_action_locate">ᠪᡞᡨᡥᡝ ᡞ ᠪᠠ ᠪᡝ ᠪᠠᡞᡰᡝ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；点击意译为 darame，需母语者复核 -->
+    <string name="shortcut_action_locate_click">ᠪᡞᡨᡥᡝ ᡞ ᠪᠠ ᠪᡝ ᠪᠠᡞᠷᡝᠮᡝ ᡩᠠᡰᠠᠮᡝ ᠨᡝᡞᠪᡠ</string>
+    <string name="shortcut_action_open_editor">ᠪᡞᡨᡥᡝ ᡞᡰᡤᡝᡣᡠ ᡩᡝ ᠨᡝᡞᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；预览意译，需母语者复核 -->
+    <string name="shortcut_action_preview_html">HTML ᠪᡞᡨᡥᡝ ᠪᡝ ᡪᠣᡰᡞᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；沿用既有 create_shortcut 的 kemuhe weile 译法，需母语者复核 -->
+    <string name="shortcut_created">ᡣᡝᠮᡠᡥᡝ ᠸᡝᡞᠯᡝ ᠪᠠᠨᡪᡞᠪᡠᡥᡝ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；图标借用 durun，需母语者复核 -->
+    <string name="shortcut_icon">ᡩᡠᡰᡠᠨ</string>
+    <string name="shortcut_name">ᡤᡝᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；设备/桌面快捷方式意译，需母语者复核 -->
+    <string name="shortcut_not_supported">ᡝᡰᡝ ᠪᠠᡞᡨᠠᠯᠠᠪᡠ ᡩᡝ ᡣᡝᠮᡠᡥᡝ ᠸᡝᡞᠯᡝ ᡩᠠᡥᠠᠪᡠᠮᠪᡞ ᠠᡣᡡ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="shortcut_not_text">ᡝᡰᡝ ᠪᡞᡨᡥᡝ ᠠᡣᡡ, ᡩᠠᠰᠠᠨ ᡞ ᡪᠣᡰᡞᠪᡠ ᡩᡝ ᠨᡝᡞᠪᡠᡥᡝ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="shortcut_target_missing">ᡣᡝᠮᡠᡥᡝ ᠸᡝᡞᠯᡝ ᡞ ᠪᡞᡨᡥᡝ ᠠᡣᡡ, ᡠᡨᡥᠠᡞ ᠶᠠᠪᡠᡰᠠᡣᡡ</string>
+    <string name="shortcut_type">ᡥᠠᡱᡞᠨ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；桌面借用 deri，需母语者复核 -->
+    <string name="shortcut_type_desktop">ᡩᡝᡰᡞ ᡣᡝᠮᡠᡥᡝ ᠸᡝᡞᠯᡝ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="shortcut_type_desktop_desc">ᡩᡝᡰᡞ ᡩᡝ ᡝᠮᡠ ᡩᠠᠮᡠ ᡩᡠᡰᡠᠨ ᠪᠠᠨᡪᡞᠪᡠᠮᠪᡞ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；图标借用 durun，需母语者复核 -->
+    <string name="shortcut_type_icon">ᡩᡠᡰᡠᠨ ᡣᡝᠮᡠᡥᡝ ᠸᡝᡞᠯᡝ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="shortcut_type_icon_desc">ᠪᡞᡨᡥᡝ ᡞ ᡥᠠᡱᡞᠨ ᡞ ᡩᡠᡰᡠᠨ ᠪᡝ ᡩᡝᡰᡞ ᡞ ᡩᡠᡰᡠᠨ ᠣᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；流畅意译为 ulhin，需母语者复核 -->
+    <string name="smooth_mode">ᡠᠯᡥᡞᠨ ᡩᠣᡰᠣ</string>
+    <string name="sort">ᡥᠠᠰᡞᡥᠠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="special_thanks">ᠠᠮᠪᠠ ᠪᠠᠨᡞᡥᠠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="storage_already_added">ᡝᡰᡝ ᠪᡞᡨᡥᡝ ᠨᠣᠩᡤᡞᠪᡠᡥᡝ</string>
+    <string name="storage_name_hint">ᡤᡝᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="storage_not_supported">ᡝᡰᡝ ᠪᠠ ᠨᠣᠩᡤᡞᠪᡠᡰᠠᡣᡡ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="storage_path_hint">ᡪᡠᡤᡡᠨ: /storage/emulated/0/Download</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="storage_path_invalid">ᡪᡠᡤᡡᠨ ᠠᡣᡡ, ᡠᡨᡥᠠᡞ ᡫᠠᠯᡤᠠ ᠠᡣᡡ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="storage_usage">ᠪᡞᡨᡥᡝ ᠠᡱᠠᠪᡠᡥᠠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="swap_panes">ᠪᠣᠣᠯᡝ ᠪᡝ ᡥᡡᠯᡥᡞᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；语法意译，需母语者复核 -->
+    <string name="syntax">ᡤᡞᠰᡠᠨ ᡞ ᡩᠣᡰᠣ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；扩展名意译，需母语者复核 -->
+    <string name="syntax_auto">ᡩᠠᠰᠠᠨ (ᡥᡝᡰᡤᡝᠨ ᡞ ᡥᠠᡱᡞᠨ ᡩᡝ)</string>
+    <string name="syntax_c">C/C++</string>
+    <string name="syntax_java">Java</string>
+    <string name="syntax_json">JSON</string>
+    <string name="syntax_kotlin">Kotlin</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="syntax_plain">ᡤᡝᠮᡠᠨ ᠪᡞᡨᡥᡝ</string>
+    <string name="syntax_python">Python</string>
+    <string name="syntax_shell">Shell</string>
+    <string name="syntax_xml">XML</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；长句浓缩意译，需母语者复核 -->
+    <string name="thanks_mp_desc">ᡝᡰᡝ ᠪᡞᡨᡥᡝ ᡞ ᠸᡝᡞᠯᡝ, MP-Manager ᠪᡝ ᡨᠠᡱᡞᡥᡞᠶᠠᠨ ᠪᡞ: ᡪᡠᠸᡝ ᠪᠣᠣᠯᡝ ᡩᡠᡰᡠᠨ, ᠪᡞᡨᡥᡝ ᡫᠠᠯᡤᠠ ᡞ ᡩᠣᡰᠣ, ᡥᠣᠯᠣᡥᠣᡨᠣ ᠪᠣᠯᠣᡰᡞ ᡣᡝᠮᡠᡥᡝ ᠸᡝᡞᠯᡝ. MP-Manager GPL-3.0 ᡩᡝ GitHub ᡩᡝ ᡨᡠᡱᡞᠪᡠᡥᡝ ᠪᡞ (https://github.com/AbdurazaaqMohammed/MP-Manager), ᡝᡰᡝ ᡨᠠᡱᡞᡥᡞᠶᠠᠨ ᡩᡝ ᠪᠠᠨᡞᡥᠠ ᠪᡞ, AbdurazaaqMohammed ᡩᡝ ᠪᠠᠨᡞᡥᠠ ᠪᡞ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="thanks_mt_desc">ᡝᡰᡝ ᠪᡞᡨᡥᡝ, MT ᡞ ᡪᡠᠸᡝ ᠪᠣᠣᠯᡝ ᡩᡠᡰᡠᠨ, ᠪᡞᡨᡥᡝ ᡞ ᡩᠣᡰᠣ ᠪᠣᠯᠣᡰᡞ ᡥᠣᠯᠣᡥᠣᡨᠣ ᡞ ᡩᠣᡰᠣ ᠪᡝ ᡨᠠᡱᡞᡥᡞᠶᠠᠨ ᠪᡞ, MT ᡩᡝ ᠪᠠᠨᡞᡥᠠ ᠪᡞ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="thanks_muse_desc">Muse ᡩᡝ ᠪᠠᠨᡞᡥᠠ ᠪᡞ: ᡝᡰᡝ ᠪᡞᡨᡥᡝ ᡞ ᡥᡝᡰᡤᡝᠨ, ᠸᡝᡞᠯᡝ ᠪᠣᠯᠣᡰᡞ ᡥᡡᠰᡠᠨ ᠪᡝ ᡨᠠᡱᡞᡥᡞᠶᠠᠨ ᡩᡝ Muse ᡩᡝ ᠠᡞᠰᡞᠯᠠᡥᠠ ᠪᡞ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；工具箱意译，需母语者复核 -->
+    <string name="tools_title">ᠸᡝᡞᠯᡝ ᡞ ᡫᠠᠯᡤᠠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="trash_move_failed">ᡥᠣᠯᠣᡥᠣᡨᠣ ᡩᡝ ᡥᡡᠯᡥᡞᠪᡠ ᠮᠠᠩᡤᡞ, ᠪᡞᡨᡥᡝ ᡫᡝᡨᡝᡰᡝᡥᡝ ᠠᡣᡡ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；圆润/鲜明意译，需母语者复核 -->
+    <string name="ui_engine_desc_expressive">ᡤᡝᠮᡠᠨ ᡱᡞ ᡤᡠᠯᡠ, ᡤᡝᠮᡠᠨ ᡱᡞ ᡞᠯᡝᡨᡠ ᡩᡠᡰᡠᠨ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="ui_engine_desc_md3">ᡩᠠᡥᠠᠪᡠ ᡩᡠᡰᡠᠨ, ᡝᡰᡝ ᡩᠣᡰᠣ ᡞ ᡩᡠᡰᡠᠨ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="ui_engine_desc_miuix">MIUI ᡩᡠᡰᡠᠨ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="ui_engine_switch_msg">ᡥᠠᠯᠠᠨᡪᠠᠪᡠᡫᡞ, ᡤᡝᠮᡠᠨ ᡩᡠᡰᡠᠨ “%1$s” ᡩᡝ ᡥᠠᠯᠠᠨᡪᠠᠮᠪᡞ, ᡠᡨᡥᠠᡞ ᡩᡠᡰᡠᠨ ᠪᡝ ᡩᠠᡥᠠᠮᡝ ᡩᠠᡥᠠᠪᡠᠮᠪᡞ</string>
+    <string name="ui_engine_switch_title">UI ᡩᡠᡰᡠᠨ ᠪᡝ ᡥᠠᠯᠠᠨᡪᠠᠪᡠ</string>
+    <string name="unhide">ᠪᡝᡞᡩᡝᠮᡝ ᠨᠠᡣᠠᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="unsaved_message">ᡝᡰᡝ ᠪᡞᡨᡥᡝ ᡩᡝ ᡥᡝᠮᡠᡥᡝ ᠠᡣᡡ ᡥᠠᠯᠠᠨᡪᠠᠪᡠᡥᠠ ᠪᡞ, ᡥᡝᠮᡠᠮᡡ?</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="unsaved_title">ᡥᡝᠮᡠᡥᡝ ᠠᡣᡡ ᡥᠠᠯᠠᠨᡪᠠᠪᡠᡥᠠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；用户协议意译，需母语者复核 -->
+    <string name="user_agreement">ᠪᠠᡞᡨᠠᠯᠠᡰᠠ ᠨᡞᠶᠠᠯᠮᠠ ᡞ ᡩᠣᡰᠣ</string>
+    <string name="version_number">ᡨᡝᠮᡤᡝᡨᡠ ᡞ ᡨᠣᠨ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；自动换行意译，需母语者复核 -->
+    <string name="word_wrap">ᡩᠠᠰᠠᠨ ᡫᠠᡪᡞᠯᠠᠨ ᡥᠠᠯᠠᠨᡪᠠᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；密码无满语对应词，意译为“隐藏的话”，需母语者复核 -->
+    <string name="wrong_password">ᠪᡝᡞᡩᡝᠮᡝ ᡤᡞᠰᡠᠨ ᡥᡡᠰᡠᠨ</string>
+    <string name="zip_failed">ᡥᡡᠸᠠᠰᡝ ᠮᠠᠩᡤᡞ</string>
+    <!-- Theme settings (v1.9.7.4) --><!-- UNCERTAIN_SJO：hacin 作“风格”未核实，需母语者复核 --><!-- UNCERTAIN_SJO：标准意译为默认（dahabu），需母语者复核 --><!-- UNCERTAIN_SJO：“类…风格”意译，需母语者复核 --><!-- UNCERTAIN_SJO：新编词句，需母语者复核 --><!-- UNCERTAIN_SJO：新编词句，需母语者复核 --><!-- UNCERTAIN_SJO：新编词句，需母语者复核 -->
+    <!-- UNCERTAIN_SJO：调色板无锡伯语对应词，意译为颜色样式，需母语者复核 --><!-- UNCERTAIN_SJO：多彩对话框意译，需母语者复核 -->
+    <!-- UNCERTAIN_SJO：darame/gebu 作按钮/标题未核实，需母语者复核 -->
+
+    <string name="palette_color_group_base">ᠪᠣᡱᠣ</string>
+    <string name="palette_color_group_light">ᡝᠯᡩᡝᠨ ᠪᠣᡱᠣ</string>
+    <string name="palette_color_group_dark">ᠰᡞᠮᡥᡠᠨ ᠪᠣᡱᠣ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；ᡩᠠ ᠠᡫᠠᠪᡠᡥᠠᠩᡤᡝ（默认设置）为新编词句，需母语者复核 -->
+    <string name="reset_defaults">ᡩᠠ ᠠᡫᠠᠪᡠᡥᠠᠩᡤᡝ ᡩᡝ ᠪᡝᡩᡝᡰᡝᠮᠪᡠ</string>
+    <!-- UNCERTAIN_SJO：由满语按锡伯语字母对应转写；新编词句，需母语者复核 -->
+    <string name="reset_defaults_msg">ᡝᡰᡝ ᡤᡞᠰᡠᠨ, ᡩᡠᡰᡠᠨ ᡩᠣᡰᠣ, ᡥᡡᠯᡥᡞ ᠪᠣᡱᠣ, ᡩᡠᡰᡠᠨ ᠪᠣᡱᠣ, ᠪᡞᡨᡥᡝ ᠪᠣᡱᠣ, UI ᡩᡠᡰᡠᠨ, ᡩᡝᡰᡞᠪᡠ ᡨᠠᡱᡞᡣᡡ, ᡥᠠᠰᡞᡥᠠ, ᡪᡠᠸᡝ ᠪᠣᠯᡝ, ᠪᡝᡞᡩᡝᠮᡝ ᠪᡞᡨᡥᡝ ᡪᠣᡰᡞᠪᡠ ᠪᡝ ᡩᠠ ᠠᡫᠠᠪᡠᡥᠠᠩᡤᡝ ᡩᡝ ᠪᡝᡩᡝᡰᡝᠮᠪᡠᠮᠪᡞ. ᡣᡝᠮᡠᡥᡝ ᠸᡝᡞᠯᡝ, ᡫᠠᠯᡤᠠ ᡣᡝᠮᡠᡥᡝ, ᠴᡞ ᠪᡝᠶᡝ ᠨᠣᠩᡤᡞᠪᡠᡥᡝ ᠪᡞᡨᡥᡝ, ᡥᠣᠯᠣᡥᠣᡨᠣ ᡩᡝ ᠠᡞᠨᠠᡰᠠᡣᡡ. ᡝᡰᡝ ᠪᡝᡩᡝᡰᡝᠮᠪᡠᠮᡡ?</string>
+    <string name="follow_system_language">ᡩᠠᠰᠠᠨ ᡩᠠᡥᠠᠪᡠ</string>
 </resources>

@@ -133,14 +133,18 @@ object ShizukuRoot {
      * 成功：onDone(entries, null)；失败：onDone(null, errorDetail)，
      * errorDetail 是给用户看的真实原因（启动失败 / 退出码 / 解析失败）。
      */
-    fun listDir(dir: String, onDone: (List<Entry>?, String?) -> Unit) {
+    fun listDir(
+        dir: String,
+        sort: Int = 0, reverse: Boolean = false, typeFoldersOnly: Boolean = false,
+        onDone: (List<Entry>?, String?) -> Unit
+    ) {
         Thread {
-            val result = try { runLs(dir) } catch (e: Throwable) { null to (e.message ?: e.toString()) }
+            val result = try { runLs(dir, sort, reverse, typeFoldersOnly) } catch (e: Throwable) { null to (e.message ?: e.toString()) }
             Handler(Looper.getMainLooper()).post { onDone(result.first, result.second) }
         }.start()
     }
 
-    private fun runLs(dir: String): Pair<List<Entry>?, String?> {
+    private fun runLs(dir: String, sort: Int = 0, reverse: Boolean = false, typeFoldersOnly: Boolean = false): Pair<List<Entry>?, String?> {
         // toybox ls 对“软链接到目录”的参数（比如 /sdcard）只印链接本身
         // 那一行，不列目标里的内容；路径后加一个斜杠才列内容（`ls -la
         // /sdcard/` 就正常）。只改传给 ls 的参数，显示路径和条目路径
@@ -170,7 +174,12 @@ object ShizukuRoot {
             // toybox ls 碰到个别没权限的条目就会退 1，但 stdout 里的列表是
             // 完整的：只要解析出了条目就照单全收，不能因退出码丢掉整表。
             resolveSymlinks(dir, entries)
-            entries.sortWith(compareBy({ !it.isDir }, { it.name.lowercase(Locale.US) }))
+            // v1.9.8.1：Shizuku 也走同一套排序（FileUtils.sortNamed；
+            // 排序方式由调用方从偏好里读了传进来，见 MainActivity）。
+            val sorted = FileUtils.sortNamed(entries, sort, reverse, typeFoldersOnly,
+                { it.isDir }, { it.name }, { it.size }, { it.modified })
+            entries.clear()
+            entries.addAll(sorted)
             return entries to null
         }
         if (candidates > 0) {

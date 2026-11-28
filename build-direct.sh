@@ -168,7 +168,7 @@ done
   --manifest "$ROOT/app/src/main/AndroidManifest.xml" \
   --java "$OUT/gen" \
   --min-sdk-version 26 --target-sdk-version 34 \
-  --version-code 23 --version-name 1.9.7.2 \
+  --version-code 30 --version-name 1.9.8 \
   --auto-add-overlay \
   -A "$ROOT/app/src/main/assets" \
   $EXTRA_PKGS_FLAGS \

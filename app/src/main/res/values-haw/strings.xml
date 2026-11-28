@@ -2,7 +2,10 @@
 <!-- v1.9.7 濒危多语言切换：尽力翻译，建议母语者复核；未列出的字符串回退到默认中文。 -->
 <resources>
     <string name="about">E pili ana</string>
+    <string name="add_local_storage">Hoʻohui i ka Waihona Kūloko</string>
     <string name="app_color">Kala o ka Polokalamu</string>
+    <!-- UNCERTAIN_HAW：外观解释为尽力翻译（沿用本文件已有词），需母语者复核 -->
+    <string name="app_color_hint">E koho i ke kala kumuhana o ka polokalamu, a e loli ke kala nui o ka pale me ia</string>
     <string name="app_name">Fairumanējā</string>
     <string name="appearance">Helehelena</string>
     <string name="bookmark">Puke</string>
@@ -31,13 +34,15 @@
     <string name="drawer_tools">Nā Mea Hana</string>
     <string name="dual_pane">ʻAoʻao pālua</string>
     <string name="dynamic_color">Kala Hoʻololi</string>
+    <!-- UNCERTAIN_HAW：外观解释为尽力翻译（沿用本文件已有词），需母语者复核 -->
+    <string name="dynamic_color_hint">Ke hoʻā ʻia, e hahai ke kala o ka polokalamu i ke kala o ke kiʻi hope o ka ʻōnaehana</string>
     <string name="empty_trash">Hoʻokaʻawale i ka ʻōpala</string>
     <string name="encrypt_file">Hoʻopā i ka waihona</string>
     <string name="endangered_language_switch">Hoʻololi ʻŌlelo Hoʻoweliweli ʻia</string>
     <string name="error">Hewa</string>
     <string name="experimental_features">Nā Hana Hoʻāʻo</string>
-    <string name="experimental_features_hint">Ke hoʻāʻo ʻia nei kēia mau hana, hiki ke loli.</string>
-    <string name="experimental_warning_msg">Ke hoʻāʻo ʻia nei kēia mau hana, a ʻo ka hoʻohana ʻana iā lākou, hiki ke hana mai i kēia mau hopena:\n\n• Hiki ke hōʻike hewa a huikau paha ka pale, a hiki i ka pani koke ʻana o ka polokalamu;\n• Hiki ke loaʻa ʻole kekahi mau hana, a i ʻole e hoʻololi a wehe ʻia paha i nā mana hou;\n• ʻO ka hoʻololi ʻana i ka Mīkini UI, e hoʻouka hou koke ia ka pale holoʻokoʻa o ka polokalamu;\n• Hiki ke hōʻike hewa ka Aniani Wai ma kekahi mau kelepona a mana ʻōnaehana paha, a e hoʻonui paha i ka hoʻohana uila;\n• Hiki ke loli kēia mau hana i kēlā me kēia manawa, ʻaʻole e hōʻoiaʻiʻo like me nā hana kūhelu.</string>
+    <string name="experimental_features_hint">Ke hoʻāʻo ʻia nei kēia mau hana, hiki ke loli</string>
+    <string name="experimental_warning_msg">Ke hoʻāʻo ʻia nei kēia mau hana, a ʻo ka hoʻohana ʻana iā lākou, hiki ke hana mai i kēia mau hopena:\n\n• Hiki ke hōʻike hewa a huikau paha ka pale, a hiki i ka pani koke ʻana o ka polokalamu;\n• Hiki ke loaʻa ʻole kekahi mau hana, a i ʻole e hoʻololi a wehe ʻia paha i nā mana hou;\n• ʻO ka hoʻololi ʻana i ka Mīkini UI, e hoʻouka hou koke ia ka pale holoʻokoʻa o ka polokalamu;\n• Hiki ke loli kēia mau hana i kēlā me kēia manawa, ʻaʻole e hōʻoiaʻiʻo like me nā hana kūhelu.</string>
     <string name="experimental_warning_title">Hoʻolaha no nā Hana Hoʻāʻo</string>
     <string name="extract">Wehe</string>
     <string name="extracted">Ua wehe ʻia</string>
@@ -47,16 +52,16 @@
     <string name="font_color_group_base">Nā Kala Kumu</string>
     <string name="font_color_group_dark">Nā Kala Pōʻeleʻele</string>
     <string name="font_color_group_light">Nā Kala Mālamalama</string>
+    <!-- UNCERTAIN_HAW：外观解释为尽力翻译（沿用本文件已有词），需母语者复核 -->
+    <string name="font_color_hint">E koho i ke kala o ka hua o ka polokalamu; e loli nā hua a pau o nā pale a pau me ia</string>
     <string name="free_space">Waiho</string>
     <string name="hidden_done">Ua hūnā ʻia</string>
     <string name="hide">Hūnā</string>
     <string name="language">ʻŌlelo</string>
     <string name="language_settings">Hoʻonohonoho ʻŌlelo</string>
-    <string name="liquid_glass">Aniani Wai</string>
-    <string name="liquid_glass_hint">Kaomi i ka lālani e koho i ke ʻano, kaomi i ke kī e hoʻā.</string>
-    <string name="liquid_glass_mode_blur">Akaka Pohihihi</string>
-    <string name="liquid_glass_mode_clear">Akaka Loa</string>
-    <string name="liquid_glass_mode_translucent">Hapa Akaka</string>
+    <!-- v1.9.7.8: UNCERTAIN_HAW：分组名尽力翻译，需母语者复核 -->
+    <string name="settings_group_language_appearance">ʻŌlelo a me ke ʻano</string>
+    <string name="settings_group_app">Polokalamu</string>
     <string name="modified">Lā i hoʻololi ʻia</string>
     <string name="more_actions">Nā Koho Hou</string>
     <string name="more_options">Nā Koho Hou</string>
@@ -84,7 +89,8 @@
     <string name="path">Ala</string>
     <string name="path_copied">Ua kope ʻia ke ala</string>
     <string name="permanently_deleted">Ua holoi loa ʻia</string>
-    <string name="pin_folder">Hoʻopaʻa i ke kōpaki</string>
+    <!-- UNCERTAIN_HAW：顶置新译法，需母语者复核 -->
+    <string name="pin_folder">Hoʻopaʻa ma luna</string>
     <string name="pinned">Ua hoʻopaʻa ʻia</string>
     <string name="properties">Kikoʻī</string>
     <string name="redo">Hana hou</string>
@@ -105,12 +111,75 @@
     <string name="share_zip">Kaʻana ZIP</string>
     <string name="show_hidden">Hōʻike i nā mea huna</string>
     <string name="size">Nui</string>
+    <string name="sort">Hoʻonohonoho</string>
     <string name="sort_date">Ma ka lā</string>
     <string name="sort_name">Ma ka inoa</string>
     <string name="sort_size">Ma ka nui</string>
     <string name="sort_type">Ma ke ʻano</string>
+    <string name="sort_by_type">Ma ke ʻano</string>
+    <!-- UNCERTAIN_HAW：新词直译，需母语者复核 -->
+    <string name="sort_reverse">Hoʻonohonoho hope</string>
+    <!-- UNCERTAIN_HAW：新词直译，需母语者复核 -->
+    <string name="sort_type_folders_only">Nā kōpaki wale nō</string>
+    <!-- UNCERTAIN_HAW：背景切换尽力翻译，需母语者复核 -->
+    <string name="viewer_background">Hoʻololi Kua</string>
+    <string name="viewer_bg_black">ʻEleʻele</string>
+    <string name="viewer_bg_white">Keʻokeʻo</string>
+    <string name="viewer_bg_gray">Hinahina</string>
+    <!-- UNCERTAIN_HAW：横向翻页尽力翻译，需母语者复核 -->
+    <string name="viewer_view_horizontal">Huli Papa</string>
+    <!-- UNCERTAIN_HAW：纵向排序尽力翻译，需母语者复核 -->
+    <string name="viewer_view_vertical">Papa Kū</string>
+    <!-- UNCERTAIN_HAW：尺寸尽力翻译，需母语者复核 -->
+    <string name="viewer_dimensions">Ana</string>
+    <!-- UNCERTAIN_HAW：格式尽力翻译，需母语者复核 -->
+    <string name="viewer_format">ʻAno</string>
+    <!-- UNCERTAIN_HAW：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_images">Nā kiʻi</string>
+    <!-- UNCERTAIN_HAW：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_videos">Nā wikiō</string>
+    <!-- UNCERTAIN_HAW：媒体页音频分类新词尽力翻译，需母语者复核 -->
+    <string name="media_audios">Nā leo</string>
+    <!-- UNCERTAIN_HAW：跳转 / 创建HTML 新词尽力翻译，需母语者复核 -->
+    <string name="jump_title">Lele</string>
+    <string name="create_html">Hana i HTML</string>
+    <string name="jump_invalid_path">ʻAʻole e loaʻa ana ke ala a ʻaʻole ia he waihona</string>
+    <!-- UNCERTAIN_HAW：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_gifs">GIF</string>
+    <!-- UNCERTAIN_HAW：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_today">I kēia lā</string>
+    <!-- UNCERTAIN_HAW：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_yesterday">Inehinei</string>
+    <!-- UNCERTAIN_HAW：抽屉合并新词尽力翻译，需母语者复核 -->
+    <string name="media_images_videos">Nā kiʻi a me nā wikiō</string>
+    <!-- UNCERTAIN_HAW：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="play_video">Hoʻokani wikiō</string>
+    <!-- UNCERTAIN_HAW：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="view_image">Nānā kiʻi</string>
+    <!-- UNCERTAIN_HAW：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="browse_archive">Nānā waihona</string>
+    <!-- UNCERTAIN_HAW：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_speed">Māmā</string>
+    <!-- UNCERTAIN_HAW：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_cannot_play">ʻAʻole hiki ke hoʻokani i kēia wikiō</string>
+    <!-- UNCERTAIN_HAW：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="play_music">Hoʻokani mele</string>
+    <!-- UNCERTAIN_HAW：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="music_cannot_play">ʻAʻole hiki ke hoʻokani i kēia leo</string>
+    <!-- UNCERTAIN_HAW：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_play">Hoʻokani</string>
+    <!-- UNCERTAIN_HAW：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_pause">Hoʻomaha</string>
+    <!-- UNCERTAIN_HAW：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_fill_screen">Hoʻopiha i ka pale</string>
+    <!-- UNCERTAIN_HAW：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_loop">Hoʻokani hou</string>
+    <!-- UNCERTAIN_HAW：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_landscape">ʻAoʻao pae</string>
+    <!-- UNCERTAIN_HAW：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_duration">Ka lōʻihi</string>
     <string name="splash_animation">Kiʻi ʻOniʻoni</string>
-    <string name="splash_animation_hint">Ke hoʻā ʻia, e pāʻani mua ʻia ke kiʻi ʻoniʻoni i kēlā me kēia manawa e hoʻomaka ai mai ka pākaukau; ke pio, e komo pololei i ka ʻaoʻao nui.</string>
+    <string name="splash_animation_hint">Ke hoʻā ʻia, e pāʻani mua ʻia ke kiʻi ʻoniʻoni i kēlā me kēia manawa e hoʻomaka ai ka polokalamu mai ka pākaukau</string>
     <string name="storage_internal">Waihona Kūloko</string>
     <string name="text_editor">Mea Hoʻoponopono Kikokikona</string>
     <string name="theme">Kumuhana</string>
@@ -129,4 +198,197 @@
     <string name="unpinned">Ua wehe ʻia</string>
     <string name="used_space">Hoʻohana ʻia</string>
     <string name="version">Mana</string>
+    <string name="about_intro_title">E pili ana i kēia polokalamu</string>
+    <string name="about_text">He polokalamu hoʻokele waihona kumu hāmama ʻo Fairumanējā, i hoʻoikaika ʻia e ka ʻike o MT Manager. Kākoʻo ʻo ia iā Android, Linux a me Windows (e hoʻolālā ʻia ana ka mana pākaukau), a ua hoʻokuʻu ʻia ma lalo o ka Laikini MIT.</string>
+    <string name="add">Hoʻohui</string>
+    <!-- UNCERTAIN_HAW：Pūʻulu Pūnaewele 为拼合译法，需母语者复核 -->
+    <string name="add_network_group">Hoʻohui i ka Pūʻulu Pūnaewele</string>
+    <!-- UNCERTAIN_HAW：Waihona Pūnaewele 为拼合译法，需母语者复核 -->
+    <string name="add_network_storage">Hoʻohui i ka Waihona Pūnaewele</string>
+    <string name="already_here">Aia nō ma kēia kōpaki</string>
+    <!-- UNCERTAIN_HAW：package 作应用包名未核实，需母语者复核 -->
+    <string name="apk_package">Pūʻolo</string>
+    <string name="app_color_disabled_hint">I mea e hoʻohana ai i kēia hana, e hoʻopio mua i ke Kala Hoʻololi</string>
+    <string name="back">Hoʻi</string>
+    <!-- UNCERTAIN_HAW：长按说法未核实，需母语者复核 -->
+    <string name="bookmarks_empty">ʻAʻohe puke — e kaomi lōʻihi i ke kōpaki e hoʻohui ai i ka puke</string>
+    <string name="chinese_version_note">ʻO kēia ka mana ʻōlelo Kina.</string>
+    <!-- UNCERTAIN_HAW：papa kope 为拼合译法，需母语者复核 -->
+    <string name="clipboard_empty">ʻAʻohe mea ma ka papa kope, a ʻaʻole paha he kikokikona</string>
+    <string name="close_file">Pani i ka waihona</string>
+    <!-- UNCERTAIN_HAW：代码补全说法未核实，需母语者复核 -->
+    <string name="code_completion">Hoʻopau ʻakomi i ke code</string>
+    <string name="confirm_delete">Hōʻoia i ka holoi ʻana</string>
+    <string name="confirm_empty_trash">E hoʻokaʻawale i ka ʻōpala? ʻAʻole hiki ke hoʻihoʻi ʻia.</string>
+    <string name="copy_to_other">Kope -&gt;</string>
+    <!-- UNCERTAIN_HAW：与解压共用 wehe，易混淆，需母语者复核 -->
+    <string name="decrypt_failed">ʻAʻole i wehe ʻia ka waihona</string>
+    <string name="decrypted">Ua wehe ʻia</string>
+    <string name="delete_direct_message">E holoi i nā mea i koho ʻia? E holoi pololei ʻia lākou, ʻaʻole e hele i ka ʻōpala, a ʻaʻole hiki ke hoʻihoʻi ʻia.</string>
+    <string name="delete_failed">ʻAʻole i holoi ʻia, e hoʻāʻo hou</string>
+    <string name="delete_message">E holoi i nā mea i koho ʻia?</string>
+    <string name="delete_permanent_msg">E holoi loa i ka waihona %1$s?</string>
+    <string name="delete_permanent_multi_msg">E holoi loa i nā mea %1$d?</string>
+    <string name="delete_to_trash_msg">E hoʻoneʻe i ka waihona %1$s i ka ʻōpala?</string>
+    <string name="delete_to_trash_multi_msg">E hoʻoneʻe i nā mea %1$d i ka ʻōpala?</string>
+    <!-- UNCERTAIN_HAW：免责声明说法未核实，需母语者复核 -->
+    <string name="disclaimer">Hoʻolele Kuleana</string>
+    <string name="dont_save">Mai mālama</string>
+    <string name="dynamic_color_confirm_msg">Ke hoʻā ʻia ke Kala Hoʻololi, e hahai ke kala o ka polokalamu i ke kala o ke kiʻi hope o ka ʻōnaehana, a e loli pū me ia. E hoʻā i ke Kala Hoʻololi?</string>
+    <string name="dynamic_color_confirm_title">Kala Hoʻololi</string>
+    <string name="dynamic_color_on_note">ʻAʻole e hana ke kala o ka polokalamu ke hoʻā ʻia ke Kala Hoʻololi</string>
+    <string name="edit_text">Hoʻoponopono i ka kikokikona</string>
+    <string name="editor_search">ʻImi</string>
+    <string name="encrypt_failed">ʻAʻole i hoʻopā ʻia</string>
+    <string name="encrypted">Ua hoʻopā ʻia</string>
+    <string name="endangered_language_sub">ʻElima wale nō ʻōlelo i kākoʻo ʻia i kēia manawa; e hoʻohui paha ʻia nā mea hou ma hope.</string>
+    <string name="file_count">Nā Waihona</string>
+    <string name="file_name_hint">Inoa waihona</string>
+    <string name="file_too_large">Nui loa ka waihona (ʻoi aku ma mua o 2 MB), a hiki ke lohi ka wehe ʻana. E wehe nō naʻe?</string>
+    <string name="folder_count">Nā Kōpaki</string>
+    <string name="folder_name_hint">Inoa kōpaki</string>
+    <string name="follow_system_theme">Hahai i ka ʻōnaehana</string>
+    <string name="font_size">Nui o ka Hua</string>
+    <string name="forward">I mua</string>
+    <string name="go_to_line">Hele i ka lālani</string>
+    <string name="go_to_line_hint">E hoʻokomo i ka helu lālani</string>
+    <string name="go_up">I luna</string>
+    <!-- UNCERTAIN_HAW：授予权限说法未核实，需母语者复核 -->
+    <string name="grant_access">Hāʻawi i ke komo</string>
+    <!-- UNCERTAIN_HAW：网格视图说法未核实，需母语者复核 -->
+    <string name="grid">Nānaina Mānoa</string>
+    <string name="hidden_storages">Nā Waihona Huna</string>
+    <!-- UNCERTAIN_HAW：无效名称说法未核实，需母语者复核 -->
+    <string name="invalid_name">He inoa hewa</string>
+    <string name="items_count">%1$d mea</string>
+    <string name="left_pane">ʻAoʻao Hema</string>
+    <string name="line_numbers">Nā Helu Lālani</string>
+    <!-- UNCERTAIN_HAW：毛玻璃说法未核实，需母语者复核 -->
+    <!-- UNCERTAIN_HAW：列表视图说法未核实，需母语者复核 -->
+    <string name="list_view">Nānaina Papa</string>
+    <string name="manage_tool_groups">Hoʻokele i nā Pūʻulu Mea Hana</string>
+    <string name="move_down">Hoʻoneʻe i lalo</string>
+    <string name="move_failed">ʻAʻole i hoʻoneʻe ʻia</string>
+    <string name="move_not_supported">ʻAʻole kākoʻo kēia waihona i ka hoʻoneʻe ʻana</string>
+    <string name="move_to_other">Hoʻoneʻe -&gt;</string>
+    <string name="move_up">Hoʻoneʻe i luna</string>
+    <string name="name_exists">Aia kekahi mea me kēia inoa</string>
+    <string name="new_text_file">Waihona kikokikona hou</string>
+    <!-- UNCERTAIN_HAW：位置说法未核实，需母语者复核 -->
+    <string name="next_position">Kahi Aʻe</string>
+    <string name="no_match">ʻAʻohe mea i kūlike</string>
+    <string name="not_supported">ʻAʻole i kākoʻo ʻia i kēia manawa</string>
+    <!-- UNCERTAIN_HAW：开源许可证说法未核实，需母语者复核 -->
+    <string name="open_source_license">Laikini Kumu Hāmama</string>
+    <string name="original_path">Ke ala kumu</string>
+    <!-- UNCERTAIN_HAW：开源组件说法未核实，需母语者复核 -->
+    <string name="oss_components">Nā ʻĀpana Kumu Hāmama</string>
+    <string name="other_pane_no_folder">ʻAʻohe kōpaki i wehe ʻia ma ka ʻaoʻao ʻē aʻe</string>
+    <string name="password_confirm_hint">E hoʻokomo hou i ka hua huna</string>
+    <string name="password_hint">E hoʻokomo i ka hua huna</string>
+    <string name="password_mismatch">ʻAʻole kūlike nā hua huna</string>
+    <string name="paste_to_other_pane">Hoʻopili i ka ʻaoʻao ʻē aʻe</string>
+    <string name="permission_needed">Pono ka ʻae komo i nā waihona a pau e hoʻokele ai i nā waihona</string>
+    <!-- UNCERTAIN_HAW：位置说法未核实，需母语者复核 -->
+    <string name="prev_position">Kahi ma mua</string>
+    <string name="privacy_policy">Kulekele Pilikino</string>
+    <string name="read_only">Heluhelu Wale Nō</string>
+    <string name="recent_empty">ʻAʻohe waihona i wehe ʻia nei</string>
+    <string name="rename_hint">Inoa hou</string>
+    <string name="restore_confirm_msg">E hoʻihoʻi i ka waihona %1$s i kona wahi kumu?</string>
+    <string name="restore_confirm_multi_msg">E hoʻihoʻi i nā mea %1$d i ko lākou wahi kumu?</string>
+    <string name="right_pane">ʻAoʻao ʻĀkau</string>
+    <string name="root_browse_only">He heluhelu wale nō ke aʻa</string>
+    <string name="saf_browse_only">He heluhelu wale nō kēia waihona</string>
+    <!-- UNCERTAIN_HAW：另存为说法未核实，需母语者复核 -->
+    <string name="save_as">Mālama me ka inoa hou</string>
+    <string name="search_keyword_hint">E hoʻokomo i ka huaʻōlelo</string>
+    <string name="search_match_count">%1$d / %2$d</string>
+    <string name="selected_count">%1$d i koho ʻia</string>
+    <string name="shizuku_denied">ʻAʻole i hāʻawi ʻia ka ʻae Shizuku, ʻaʻole hiki ke komo i ke aʻa</string>
+    <string name="shizuku_download">Hoʻoiho iā Shizuku</string>
+    <string name="shizuku_failed">ʻAʻole i heluhelu ʻia ke aʻa</string>
+    <string name="shizuku_failed_detail">ʻAʻole i heluhelu ʻia ke aʻa: %1$s</string>
+    <string name="shizuku_needed_msg">Pono ka ʻae Shizuku e komo ai i ke aʻa. E hoʻouka a hoʻomaka mua iā Shizuku, a laila e hoʻāʻo hou.</string>
+    <string name="shizuku_needed_title">Pono iā Shizuku</string>
+    <string name="shizuku_request_msg">E ʻae i kēia ʻae ma ka puka aniani o Shizuku.</string>
+    <!-- UNCERTAIN_HAW：与创建共用 Hana，未核实，需母语者复核 -->
+    <string name="shortcut_action">Hana</string>
+    <!-- UNCERTAIN_HAW：定位说法未核实，需母语者复核 -->
+    <string name="shortcut_action_locate">Huli i ka waihona</string>
+    <!-- UNCERTAIN_HAW：定位说法未核实，需母语者复核 -->
+    <string name="shortcut_action_locate_click">Huli a wehe i ka waihona</string>
+    <string name="shortcut_action_open_editor">Wehe me ka Mea Hoʻoponopono Kikokikona</string>
+    <string name="shortcut_action_preview_html">Nānā i ka waihona HTML</string>
+    <string name="shortcut_created">Ua hana ʻia ka pōkole</string>
+    <string name="shortcut_icon">Kiʻi</string>
+    <string name="shortcut_name">Inoa</string>
+    <!-- UNCERTAIN_HAW：设备说法未核实，需母语者复核 -->
+    <string name="shortcut_not_supported">ʻAʻole kākoʻo kēia mīkini i nā pōkole i hoʻopaʻa ʻia</string>
+    <string name="shortcut_not_text">ʻAʻole he waihona kikokikona, ua wehe ʻia me ka mea nānā o ka ʻōnaehana</string>
+    <!-- UNCERTAIN_HAW：目标缺失说法未核实，需母语者复核 -->
+    <string name="shortcut_target_missing">ʻAʻole i loaʻa ka waihona a ka pōkole, a ʻaʻole hiki ke komo</string>
+    <string name="shortcut_type">ʻAno</string>
+    <string name="shortcut_type_desktop">Pōkole Pākaukau</string>
+    <string name="shortcut_type_desktop_desc">E hana ʻia kekahi kiʻi kūʻokoʻa ma ka pākaukau</string>
+    <string name="shortcut_type_icon">Pōkole Kiʻi</string>
+    <string name="shortcut_type_icon_desc">Hoʻohana ʻia ke kiʻi ʻano waihona ma ke ʻano he kiʻi pākaukau</string>
+    <!-- UNCERTAIN_HAW：流畅模式说法未核实，需母语者复核 -->
+    <string name="smooth_mode">Ke ʻAno Maʻalahi</string>
+    <string name="special_thanks">Mahalo Kūikawā</string>
+    <string name="storage_already_added">Ua hoʻohui ʻē ʻia kēia waihona</string>
+    <string name="storage_name_hint">Inoa</string>
+    <string name="storage_not_supported">ʻAʻole hiki ke hoʻohui ʻia kēia wahi i kēia manawa</string>
+    <string name="storage_path_hint">Ala, e laʻa me /storage/emulated/0/Download</string>
+    <string name="storage_path_invalid">ʻAʻole i loaʻa ke ala, a ʻaʻole paha he kōpaki</string>
+    <!-- UNCERTAIN_HAW：存储用量说法未核实，需母语者复核 -->
+    <string name="storage_usage">Hoʻohana o ka Waihona</string>
+    <string name="swap_panes">Hoʻololi i nā ʻaoʻao</string>
+    <!-- UNCERTAIN_HAW：语法说法未核实，需母语者复核 -->
+    <string name="syntax">ʻAno Kākau</string>
+    <!-- UNCERTAIN_HAW：扩展名说法未核实，需母语者复核 -->
+    <string name="syntax_auto">ʻAkomi (ma ka hope inoa)</string>
+    <string name="syntax_c">C/C++</string>
+    <string name="syntax_java">Java</string>
+    <string name="syntax_json">JSON</string>
+    <string name="syntax_kotlin">Kotlin</string>
+    <!-- UNCERTAIN_HAW：纯文本说法未核实，需母语者复核 -->
+    <string name="syntax_plain">Kikokikona Maʻemaʻe</string>
+    <string name="syntax_python">Python</string>
+    <string name="syntax_shell">Shell</string>
+    <string name="syntax_xml">XML</string>
+    <!-- UNCERTAIN_HAW：长段尽力翻译，需母语者复核 -->
+    <string name="thanks_mp_desc">Ua hoʻohana kēia polokalamu iā MP-Manager ma ke ʻano he kumu hoʻohālike: ka nānā ʻaoʻao pālua a me nā hana ma waena o nā ʻaoʻao (kope, hoʻoneʻe, hoʻopili i ka ʻaoʻao ʻē aʻe); ke ʻano o nā lālani waihona — nā kiʻi huinahā poʻe liʻiliʻi, nā inoa me ka lālani \'lā + nui\'; ka papa koho ⋮ o kēlā me kēia lālani a me ka papa \'Nā Koho Hou\' ʻeiwa; ke kaʻina o ka ʻōpala me ka hoʻihoʻi a me ka holoi loa; ka puka aniani hana; ka mea hoʻoponopono kikokikona me nā helu lālani a me ka pā hōʻailona; ka ʻōpala, nā puke a me nā kōpaki i hoʻopaʻa ʻia; ke komo Shizuku/aʻa; ka hoʻopaʻa a me ka wehe ʻana, ka hoʻopā a me ka wehe ʻana i nā waihona; a me nā waihona kūloko i hana ʻia. Mahalo iā MP-Manager no ka lilo ʻana i kumu hāmama ma lalo o GPL-3.0 ma GitHub (https://github.com/AbdurazaaqMohammed/MP-Manager), no ka hāʻawi ʻana i kumu hoʻohālike e aʻo ai kēia polokalamu, a mahalo i kona mea hana ʻo AbdurazaaqMohammed no ka mālama ʻana iā ia a no ka hōʻike ʻana e hiki i kekahi ke hana i koho hāmama maikaʻi no MT Manager.</string>
+    <!-- UNCERTAIN_HAW：长段尽力翻译，需母语者复核 -->
+    <string name="thanks_mt_desc">Ua hoʻohana kēia polokalamu i ke ʻano ʻaoʻao pālua o MT Manager, nā papa koho waihona, ka papa \'Nā Koho Hou\' ʻeiwa, a me nā puka aniani holoi/hoʻihoʻi ma ke ʻano he kumu hoʻohālike, a mahalo iā ia no ke kumu hoʻohālike a me ka manaʻo.</string>
+    <!-- UNCERTAIN_HAW：长段尽力翻译，需母语者复核 -->
+    <string name="thanks_muse_desc">Mahalo iā Muse no ke kōkua ʻana i ka hoʻomohala ʻana a me ke kākoʻo ʻenehana: ua kōkua ʻo Muse i ke kākau ʻana i ke code, ka hoʻokō ʻana i nā hana, a me ka hoʻoponopono ʻana i nā pilikia o kēia polokalamu.</string>
+    <string name="tools_title">Pahu Mea Hana</string>
+    <string name="trash_move_failed">ʻAʻole i hoʻoneʻe ʻia i ka ʻōpala; ʻaʻohe waihona i holoi ʻia</string>
+    <!-- UNCERTAIN_HAW：更圆润更鲜明说法未核实，需母语者复核 -->
+    <string name="ui_engine_desc_expressive">Nā ʻano poʻe a me nā kala ʻoi aku ka mālamalama</string>
+    <string name="ui_engine_desc_md3">Ke ʻano paʻamau, e like me kēia manawa</string>
+    <string name="ui_engine_desc_miuix">Ke ʻano MIUI o Xiaomi</string>
+    <string name="ui_engine_switch_msg">Ma hope o ka hoʻololi ʻana, e loli ana ka pale holoʻokoʻa o ka polokalamu i “%1$s”, a e hoʻouka hou koke ʻia.</string>
+    <string name="ui_engine_switch_title">Hoʻololi i ka Mīkini UI</string>
+    <string name="unhide">Hōʻike</string>
+    <string name="unsaved_message">Aia nā loli i mālama ʻole ʻia ma kēia waihona. E mālama?</string>
+    <string name="unsaved_title">Nā Loli i Mālama ʻole ʻia</string>
+    <string name="user_agreement">ʻAelike Mea Hoʻohana</string>
+    <string name="version_number">Mana</string>
+    <!-- UNCERTAIN_HAW：自动换行说法未核实，需母语者复核 -->
+    <string name="word_wrap">Wili Hua</string>
+    <string name="wrong_password">He hua huna hewa</string>
+    <string name="zip_failed">ʻAʻole i hoʻopaʻa ʻia</string>
+    <!-- Theme settings (v1.9.7.4) --><!-- UNCERTAIN_HAW：maʻamau 作 standard 未核实，需母语者复核 --><!-- UNCERTAIN_HAW：“类…风格”意译未核实，需母语者复核 --><!-- UNCERTAIN_HAW：句式为拼合译法，需母语者复核 --><!-- UNCERTAIN_HAW：hoʻolālā（设计）未核实，需母语者复核 --><!-- UNCERTAIN_HAW：papa kala（调色板）为拼合译法，需母语者复核 --><!-- UNCERTAIN_HAW：puka aniani 作对话框未核实，需母语者复核 -->
+    <!-- UNCERTAIN_HAW：pihi（按钮）、poʻo（标题）未核实，需母语者复核 -->
+
+    <string name="palette_color_group_base">Nā Kala Kumu</string>
+    <string name="palette_color_group_light">Nā Kala Mālamalama</string>
+    <string name="palette_color_group_dark">Nā Kala Pōʻeleʻele</string>
+    <!-- UNCERTAIN_HAW：hoʻonohonoho paʻamau（默认设置）未核实，需母语者复核 -->
+    <string name="reset_defaults">Hoʻihoʻi i nā hoʻonohonoho paʻamau</string>
+    <!-- UNCERTAIN_HAW：句式为拼合译法，“自定义储存”译法未核实，需母语者复核 -->
+    <string name="reset_defaults_msg">E hoʻihoʻi kēia i ka ʻōlelo, ke kumuhana, ke kala hoʻololi, ke kala o ka polokalamu, ke kala o ka hua, ka mīkini UI, ke kiʻi ʻoniʻoni, ka hoʻonohonoho, ka ʻaoʻao pālua, a me ka hōʻike ʻana i nā mea huna i ko lākou hoʻonohonoho paʻamau. ʻAʻole e pā nā puke, nā kōpaki i hoʻopaʻa ʻia, nā waihona i haku ʻia, a me ka ʻōpala. E hoʻihoʻi i kēia manawa?</string>
+    <string name="follow_system_language">Hahai i ka ʻōnaehana</string>
 </resources>

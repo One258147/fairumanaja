@@ -10,6 +10,68 @@
     <string name="sort_date">Cienz ngiz</string>
     <string name="sort_size">Cienz daeuj</string>
     <string name="sort_type">Cienz leih</string>
+    <string name="sort_by_type">Cienz leih</string>
+    <!-- UNCERTAIN_ZA：新词直译，需母语者复核 -->
+    <string name="sort_reverse">Baenz loeg</string>
+    <!-- UNCERTAIN_ZA：新词直译，需母语者复核 -->
+    <string name="sort_type_folders_only">Duh vwnzgen gvaq</string>
+    <!-- UNCERTAIN_ZA：背景切换尽力翻译，需母语者复核 -->
+    <string name="viewer_background">Bienq Baez</string>
+    <string name="viewer_bg_black">Dam</string>
+    <string name="viewer_bg_white">Hau</string>
+    <!-- UNCERTAIN_ZA：灰色未核实，需母语者复核 -->
+    <string name="viewer_bg_gray">Hwi</string>
+    <!-- UNCERTAIN_ZA：横向翻页尽力翻译，需母语者复核 -->
+    <string name="viewer_view_horizontal">Fan Yieb</string>
+    <!-- UNCERTAIN_ZA：纵向排序尽力翻译，需母语者复核 -->
+    <string name="viewer_view_vertical">Mbanj Doeng</string>
+    <string name="viewer_dimensions">Daeuj ndaej</string>
+    <!-- UNCERTAIN_ZA：格式尽力翻译，需母语者复核 -->
+    <string name="viewer_format">Gizsih</string>
+    <!-- UNCERTAIN_ZA：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_images">Ciz</string>
+    <!-- UNCERTAIN_ZA：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_videos">Dienzgaenq</string>
+    <!-- UNCERTAIN_ZA：媒体页音频分类新词尽力翻译，需母语者复核 -->
+    <string name="media_audios">Yinyoz</string>
+    <!-- UNCERTAIN_ZA：跳转 / 创建HTML 新词尽力翻译，需母语者复核 -->
+    <string name="jump_title">Bae</string>
+    <string name="create_html">Sang HTML</string>
+    <string name="jump_invalid_path">Lwg roen mbouj youq roxnaeuz mbouj dwg faiqloeg</string>
+    <!-- UNCERTAIN_ZA：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_gifs">GIF</string>
+    <!-- UNCERTAIN_ZA：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_today">Ngoenzneix</string>
+    <!-- UNCERTAIN_ZA：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_yesterday">Ngoenzmoq</string>
+    <!-- UNCERTAIN_ZA：抽屉合并新词尽力翻译，需母语者复核 -->
+    <string name="media_images_videos">Ciz caeuq Dienzgaenq</string>
+    <!-- UNCERTAIN_ZA：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="play_video">Lwg dienzgaenq</string>
+    <!-- UNCERTAIN_ZA：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="view_image">Ndaej ciz</string>
+    <!-- UNCERTAIN_ZA：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="browse_archive">Ndaej vwnzgen gvaq</string>
+    <!-- UNCERTAIN_ZA：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_speed">Sokduh</string>
+    <!-- UNCERTAIN_ZA：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_cannot_play">Mbwnj ndaej lwg dienzgaenq</string>
+    <!-- UNCERTAIN_ZA：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="play_music">Lwg yinyoz</string>
+    <!-- UNCERTAIN_ZA：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="music_cannot_play">Mbwnj ndaej lwg yinyoz</string>
+    <!-- UNCERTAIN_ZA：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_play">Lwg</string>
+    <!-- UNCERTAIN_ZA：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_pause">Doengq</string>
+    <!-- UNCERTAIN_ZA：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_fill_screen">Daemj biengj</string>
+    <!-- UNCERTAIN_ZA：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_loop">Lwg youq</string>
+    <!-- UNCERTAIN_ZA：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_landscape">Hengzbingz</string>
+    <!-- UNCERTAIN_ZA：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_duration">Sizganq</string>
     <string name="show_hidden">Hienq vwnzgen lumj</string>
     <string name="copy">Fuzceiq</string>
     <string name="cut">Ciuq</string>
@@ -108,6 +170,9 @@
     <string name="original_path">Roen gij</string>
     <string name="confirm_empty_trash">A eux laengsaep vaengz? Bae mbwnq doengh.</string>
     <string name="language_settings">Gawjsingq Yijyenj</string>
+    <!-- v1.9.7.8: UNCERTAIN_ZA：分组名尽力翻译，需母语者复核 -->
+    <string name="settings_group_language_appearance">Yijyenz caeuq vaengqhoengq</string>
+    <string name="settings_group_app">App</string>
     <string name="confirm">Gwqdingh</string>
     <string name="theme_mode">Moxdoz Cujyiengj</string>
     <string name="more_options">Laj doengz aeu</string>
@@ -177,4 +242,143 @@
     <string name="syntax_c">C/C++</string>
     <string name="deselect_all">Caux lienz</string>
     <string name="unknown">Mbouj ndaej</string>
+    <!-- UNCERTAIN_ZA：“软件介绍”译法待核，需母语者复核 -->
+    <string name="about_intro_title">Gyausauq Yunghgoh</string>
+    <string name="already_here">Youq vwnzgen gvaq neix laeuj</string>
+    <string name="app_color">Saek yunghgoh</string>
+    <string name="app_color_disabled_hint">Aeu yungh gunghnengz neix, cingj guenz saek doengh ceiq</string>
+    <string name="app_color_hint">Lienz saek cujduz yunghgoh, saek gaeq cawz biencawz cienz</string>
+    <!-- UNCERTAIN_ZA：“外观”译法待核，需母语者复核 -->
+    <string name="appearance">Vahcawz</string>
+    <string name="bookmark_added">Cangz laeuj</string>
+    <string name="bookmark_removed">Caux cangz laeuj</string>
+    <string name="bookmarks_title">Cangz</string>
+    <!-- UNCERTAIN_ZA：“剪贴板”译法待核，需母语者复核 -->
+    <string name="clipboard_empty">Ban diq vaengz hwwx mbouj deih saw</string>
+    <string name="compress_item">Ngaiz hawz</string>
+    <string name="copy_path">Fuzceiq loh</string>
+    <string name="copy_to_other">Fuzceiq -&gt;</string>
+    <!-- UNCERTAIN_ZA：“快捷方式”译法待核，需母语者复核 -->
+    <string name="create_shortcut">Gwn faed gven</string>
+    <!-- UNCERTAIN_ZA：“解密”译法待核，需母语者复核 -->
+    <string name="decrypt_failed">Gyaeuj soq mbouj ndaej</string>
+    <!-- UNCERTAIN_ZA：“解密”译法待核，需母语者复核 -->
+    <string name="decrypt_file">Gyaeuj soq vwnzgen</string>
+    <!-- UNCERTAIN_ZA：“解密”译法待核，需母语者复核 -->
+    <string name="decrypted">Gyaeuj soq laeuj</string>
+    <string name="delete_permanent_msg">Loek vwnzgen %1$s laet diuciz gva?</string>
+    <string name="delete_permanent_multi_msg">Loek %1$d doxgaiq laet diuciz gva?</string>
+    <string name="delete_to_trash_msg">Yienz vwnzgen %1$s bae laengsaep gva?</string>
+    <string name="delete_to_trash_multi_msg">Yienz %1$d doxgaiq bae laengsaep gva?</string>
+    <!-- UNCERTAIN_ZA：“免责声明”译法待核，需母语者复核 -->
+    <string name="disclaimer">Saenmingz mbouj fuqciz</string>
+    <!-- UNCERTAIN_ZA：新词直译，需母语者复核 -->
+    <string name="dynamic_color">Saek doengh</string>
+    <string name="dynamic_color_confirm_msg">Haet saek doengh laeuj, saek yunghgoh cienz saek cienq daengz hidungz biencawz. Haet saek doengh gva?</string>
+    <string name="dynamic_color_confirm_title">Saek doengh</string>
+    <string name="dynamic_color_hint">Haet laeuj, saek yunghgoh cienz saek cienq daengz hidungz biencawz</string>
+    <string name="dynamic_color_on_note">Haet saek doengh laeuj, saek yunghgoh mbouj yungh ndaej</string>
+    <!-- UNCERTAIN_ZA：“加密”译法待核，需母语者复核 -->
+    <string name="encrypt_failed">Soq mbouj ndaej</string>
+    <!-- UNCERTAIN_ZA：“加密”译法待核，需母语者复核 -->
+    <string name="encrypt_file">Soq vwnzgen</string>
+    <!-- UNCERTAIN_ZA：“加密”译法待核，需母语者复核 -->
+    <string name="encrypted">Soq laeuj</string>
+    <string name="endangered_language_sub">Ceiq yungh 5 yijyenz, laeng ndaej caemh</string>
+    <string name="endangered_language_switch">Gaij yijyenz codaeuj</string>
+    <string name="experimental_features">Gunghnengz seizyen</string>
+    <string name="experimental_features_hint">Gunghnengz gizneix ceiq youq seizyen, ndaej cingj gaij</string>
+    <!-- UNCERTAIN_ZA：长警告框，措辞待核，需母语者复核 -->
+    <string name="experimental_warning_msg">Gunghnengz seizyen ceiq youq seizyen. Yungh gij, ndaej youq gij gvaq laengz:\n\n• Cawz yunghgoh ndaej coenz coz, ndaej youq saemh, yunghgoh ndaej guenz gyoengq;\n• Gunghnengz doengz aeu ndaej mbouj yungh, hwwx bae banjbonj laeng gaij hwwx loek;\n• Gaij gihgou UI, cawz yunghgoh gwn sin youq;\n• Gunghnengz neix bae mbwnq gaij, mbouj dingh cienz gunghnengz dingh.</string>
+    <string name="experimental_warning_title">Gyaugvunz gunghnengz seizyen</string>
+    <string name="file_count">Vwnzgen</string>
+    <string name="folder_count">Vwnzgen gvaq</string>
+    <string name="font_color">Saek saw</string>
+    <string name="font_color_group_base">Saek gaeq</string>
+    <string name="font_color_group_dark">Saek naek</string>
+    <string name="font_color_group_light">Saek nding</string>
+    <string name="font_color_hint">Lienz saek saw youq yunghgoh, saw cuengq biuj cienz biencawz</string>
+    <string name="hidden_done">Nak laeuj</string>
+    <string name="invalid_name">Mingz mbouj dingh</string>
+    <!-- UNCERTAIN_ZA：新词直译，需母语者复核 -->
+    <string name="more_actions">Gwnz doengz aeu</string>
+    <string name="move_failed">Yienz mbouj ndaej</string>
+    <string name="move_item">Yienz</string>
+    <string name="move_not_supported">Cangq neix mbouj yungh yienz</string>
+    <string name="move_to_other">Yienz -&gt;</string>
+    <string name="move_to_trash">Yienz bae laengsaep</string>
+    <string name="moved">Yienz laeuj</string>
+    <string name="name_exists">Miz vwnzgen hwwx vwnzgen gvaq mingz doengh laeuj</string>
+    <string name="new_file_short">Vwnzgen</string>
+    <string name="new_folder_short">Vwnzgen gvaq</string>
+    <string name="new_title">Sin</string>
+    <string name="oss_components">Bunghvih yienjvunz hek vunz</string>
+    <string name="other_pane_no_folder">Cuengq doengh mbouj miz haet vwnzgen gvaq</string>
+    <string name="password_confirm_hint">Saek mingz daengz sien</string>
+    <string name="password_hint">Saek mingz daengz</string>
+    <string name="password_mismatch">Mingz daengz song bae mbouj doengh</string>
+    <string name="path_copied">Fuzceiq loh laeuj</string>
+    <!-- UNCERTAIN_ZA：“Pin”译法待核，需母语者复核 -->
+    <string name="pin_folder">Dingz vwnzgen gvaq</string>
+    <!-- UNCERTAIN_ZA：“Pin”译法待核，需母语者复核 -->
+    <string name="pinned">Dingz laeuj</string>
+    <string name="restore_confirm_msg">Fuzvunz vwnzgen %1$s bae doengz gij gva?</string>
+    <string name="restore_confirm_multi_msg">Fuzvunz %1$d doxgaiq bae doengz gij gva?</string>
+    <string name="share_zip">Fenzhangj ZIP</string>
+    <string name="shortcut_action">Gwnz</string>
+    <string name="shortcut_action_locate">Cawz doengz youq</string>
+    <string name="shortcut_action_locate_click">Cawz doengz youq caeuq haet</string>
+    <string name="shortcut_action_open_editor">Haet youh bawzswhswh</string>
+    <string name="shortcut_action_preview_html">Yauq HTML gouh</string>
+    <!-- UNCERTAIN_ZA：“快捷方式”译法待核，需母语者复核 -->
+    <string name="shortcut_created">Gwn faed gven laeuj</string>
+    <!-- UNCERTAIN_ZA：“图标”译法待核，需母语者复核 -->
+    <string name="shortcut_icon">Bauhgingq</string>
+    <string name="shortcut_name">Mingz</string>
+    <!-- UNCERTAIN_ZA：“桌面快捷方式”译法待核，需母语者复核 -->
+    <string name="shortcut_not_supported">Gij neix mbouj yungh faed gven couh</string>
+    <string name="shortcut_not_text">Mbouj deih vwnzgen saw, haet youh gyoengq hidungz laeuj</string>
+    <string name="shortcut_target_missing">Vwnzgen faed gven cij mbouj miz hwwx mbouj ndaej youq</string>
+    <string name="shortcut_type">Leih</string>
+    <!-- UNCERTAIN_ZA：“桌面”译法待核，需母语者复核 -->
+    <string name="shortcut_type_desktop">Faed gven couh</string>
+    <string name="shortcut_type_desktop_desc">Couh aeu miz bauhginh aen doengh</string>
+    <!-- UNCERTAIN_ZA：“图标”译法待核，需母语者复核 -->
+    <string name="shortcut_type_icon">Faed gven bauhingq</string>
+    <string name="shortcut_type_icon_desc">Yungh bauhingq leih vwnzgen gwnz bauhingq couh</string>
+    <!-- UNCERTAIN_ZA：新词直译，需母语者复核 -->
+    <string name="splash_animation">Haet bingz doenghvaq</string>
+    <string name="splash_animation_hint">Haet laeuj, baeuj haet yunghgoh youq couh, doiq aeu haet bingz doenghvaq gouh</string>
+    <!-- UNCERTAIN_ZA：长文，措辞待核，需母语者复核 -->
+    <string name="thanks_mp_desc">Yunghgoh neix gwnz youz MP-Manager: cuengq song cawz cienz, gwnz doengz cuengq song (fuzceiq, yienz, diq haeuj cuengq doengh); hangz vwnzgen — bauhingq gvaq nding, mingz caeuq «ngiz + daeuj»; cuengq hangz ⋮ caeuq ban «gwnz doengz aeu» gouh; laengsaep caeuq fuzvunz caeuq loek diuciz; hangz gwn; bawzswhswh miz hangz daih caeuq hangz giz; laengsaep, cangz, vwnzgen gvaq dingz; Shizuku caeuq moxloeg; ngaiz hawz caeuq gyaeuj, soq vwnzgen caeuq gyaeuj soq; cangq bwnzdi doengh. Cawj sij MP-Manager yungh cangq GPL-3.0 youq GitHub (https://github.com/AbdurazaaqMohammed/MP-Manager), byauj vunz cawz gyausauq ndaej cawz cienz; cawj sij AbdurazaaqMohammed guh gvaq cingj guh; cawj sij de cengmingz vunz doengh ndaej gwnz MT Gwnli Fwnzgen cangq hek vunz, byauj yunghgoh neix miz bwnjhingq cawz.</string>
+    <string name="thanks_mt_desc">Yunghgoh neix gwnz youz MT Gwnli Fwnzgen: cuengq song, biuj vwnzgen, ban «gwnz doengz aeu» gouh, loek caeuq fuzvunz; cawj sij MT Gwnli Fwnzgen byauj cawz gyausauq.</string>
+    <string name="thanks_muse_desc">Cawj sij Muse byauj gunghgoh caeuq gunghgeih: seiz vwnzgen, gunghnengz caeuq guh laengz gizneix, Muse byauj guh.</string>
+    <string name="trash_move_failed">Yienz bae laengsaep mbouj ndaej, mbouj miz vwnzgen loek</string>
+    <!-- UNCERTAIN_ZA：“UI引擎”直译，需母语者复核 -->
+    <string name="ui_engine">Gihgou UI</string>
+    <string name="ui_engine_desc_expressive">Gwnz youh yenj gvaq</string>
+    <string name="ui_engine_desc_md3">Doengh gaeq, cawz ceiq</string>
+    <string name="ui_engine_desc_miuix">Xiaomi MIUI</string>
+    <string name="ui_engine_switch_msg">Gaij laeuj, cawz yunghgoh biencawz «%1$s», caeuq gwn sin</string>
+    <string name="ui_engine_switch_title">Gaij gihgou UI</string>
+    <string name="unhidden_done">Caux nak laeuj</string>
+    <!-- UNCERTAIN_ZA：“Pin”译法待核，需母语者复核 -->
+    <string name="unpin_folder">Caux dingz</string>
+    <!-- UNCERTAIN_ZA：“Pin”译法待核，需母语者复核 -->
+    <string name="unpinned">Caux dingz laeuj</string>
+    <string name="wrong_password">Mingz daengz coz</string>
+    <string name="zip_failed">Ngaiz hawz mbouj ndaej</string>
+    <!-- Theme settings (v1.9.7.4) -->
+    <!-- UNCERTAIN_ZA: settings rendered as Ceqcih but language_settings uses Gawjsingq, word choice needs native check --><!-- UNCERTAIN_ZA: “Yangh” for 风格 is my choice, needs native check --><!-- UNCERTAIN_ZA: “biucunj” for 标准 is my choice, needs native check --><!-- UNCERTAIN_ZA: phrasing for 类…风格界面 is my construction, needs native check --><!-- UNCERTAIN_ZA: Vahcawz (外观) already marked uncertain in this file --><!-- UNCERTAIN_ZA: 全新/设计风格 rendered as “sin” only; compound is my construction, needs native check --><!-- UNCERTAIN_ZA: “为应用启用” construction needs native check -->
+    <!-- UNCERTAIN_ZA: “Ban Saek” for 调色板 is my construction, needs native check --><!-- UNCERTAIN_ZA: 对话框 rendered from “hangz” (框, cf. thanks_mp_desc “hangz gwn” for 新建对话框) + “doihvah”, needs native check -->
+    <!-- UNCERTAIN_ZA: “Niuq” (按钮) and “mingz” (标题) are my choices, needs native check -->
+
+    <string name="palette_color_group_base">Saek gaeq</string>
+    <string name="palette_color_group_light">Saek nding</string>
+    <string name="palette_color_group_dark">Saek naek</string>
+    <!-- UNCERTAIN_ZA：“默认设置”译法未核实，需母语者复核 -->
+    <string name="reset_defaults">Fuzvunz Ceqcih gangj gvaq</string>
+    <!-- UNCERTAIN_ZA：新编长句及“自定义储存”译法未核实，需母语者复核 -->
+    <string name="reset_defaults_msg">Doxgaiq neix cingq Yijyenz, Moxdoz Cujyiengj, Saek doengh, Saek yunghgoh, Saek saw, Gihgou UI, Haet bingz doenghvaq, Baenz, Cuengq song, caeuq Hienq vwnzgen lumj bae doengz gij gva. Cangz, vwnzgen dingz laeuj, seizcwngz caemh cix, caeuq Laengsaep mbouj yungh. Fuzvunz ceiq?</string>
+    <string name="follow_system_language">Cienz hidungz</string>
 </resources>

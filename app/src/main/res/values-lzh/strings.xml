@@ -1,0 +1,358 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+<!-- 文言版：简体字。常用词用文言单字（如 删、贴、剪、移、隐、存、复），余皆直译；需母语者或 Max 复核 -->
+    <string name="app_name">Fairumanējā</string>
+    <string name="nav_files">文件</string>
+    <string name="nav_bookmarks">书签</string>
+    <string name="nav_recent">近开</string>
+    <string name="nav_tools">工具</string>
+    <string name="search_hint">寻文件…</string>
+    <string name="sort_name">以名序</string>
+    <string name="sort_date">以日期序</string>
+    <string name="sort_size">以大小序</string>
+    <string name="sort_type">以类序</string>
+    <string name="sort_by_type">以类序</string>
+    <!-- UNCERTAIN_LZH：新词直译，需母语者复核 -->
+    <string name="sort_reverse">逆序</string>
+    <!-- UNCERTAIN_LZH：新词直译，需母语者复核 -->
+    <string name="sort_type_folders_only">唯文件夹</string>
+    <!-- UNCERTAIN_LZH：背景切换尽力翻译，需母语者复核 -->
+    <string name="viewer_background">背景切换</string>
+    <string name="viewer_bg_black">黑色</string>
+    <string name="viewer_bg_white">白色</string>
+    <string name="viewer_bg_gray">灰色</string>
+    <!-- UNCERTAIN_LZH：横向翻页尽力翻译，需母语者复核 -->
+    <string name="viewer_view_horizontal">横向翻页</string>
+    <!-- UNCERTAIN_LZH：纵向排序尽力翻译，需母语者复核 -->
+    <string name="viewer_view_vertical">纵向排序</string>
+    <string name="viewer_dimensions">尺寸</string>
+    <string name="viewer_format">格式</string>
+    <!-- UNCERTAIN_LZH：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_images">圖像</string>
+    <!-- UNCERTAIN_LZH：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_videos">視頻</string>
+    <!-- UNCERTAIN_LZH：媒体页音频分类新词尽力翻译，需母语者复核 -->
+    <string name="media_audios">音頻</string>
+    <!-- UNCERTAIN_LZH：跳转 / 创建HTML 新词尽力翻译，需母语者复核 -->
+    <string name="jump_title">跳轉</string>
+    <string name="create_html">創建 HTML</string>
+    <string name="jump_invalid_path">路徑不存在或非資料夾</string>
+    <!-- UNCERTAIN_LZH：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_gifs">動圖</string>
+    <!-- UNCERTAIN_LZH：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_today">今日</string>
+    <!-- UNCERTAIN_LZH：媒体页新词尽力翻译，需母语者复核 -->
+    <string name="media_yesterday">昨日</string>
+    <!-- UNCERTAIN_LZH：抽屉合并新词尽力翻译，需母语者复核 -->
+    <string name="media_images_videos">圖像與視頻</string>
+    <!-- UNCERTAIN_LZH：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="play_video">播視頻</string>
+    <!-- UNCERTAIN_LZH：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="view_image">觀圖</string>
+    <!-- UNCERTAIN_LZH：九宫格新词尽力翻译，需母语者复核 -->
+    <string name="browse_archive">覽壓縮包</string>
+    <!-- UNCERTAIN_LZH：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_speed">调速</string>
+    <!-- UNCERTAIN_LZH：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_cannot_play">不能播放此视频</string>
+    <!-- UNCERTAIN_LZH：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="play_music">播放音樂</string>
+    <!-- UNCERTAIN_LZH：音乐播放器新词尽力翻译，需母语者复核 -->
+    <string name="music_cannot_play">此音頻不能播放</string>
+    <!-- UNCERTAIN_LZH：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_play">播放</string>
+    <!-- UNCERTAIN_LZH：视频播放器新词尽力翻译，需母语者复核 -->
+    <string name="video_pause">暂止</string>
+    <!-- UNCERTAIN_LZH：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_fill_screen">強制滿屏</string>
+    <!-- UNCERTAIN_LZH：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_loop">循環播</string>
+    <!-- UNCERTAIN_LZH：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_landscape">橫屏</string>
+    <!-- UNCERTAIN_LZH：视频播放器选项新词尽力翻译，需母语者复核 -->
+    <string name="video_duration">時長</string>
+    <string name="show_hidden">示隐文件</string>
+    <string name="copy">复制</string>
+    <string name="cut">剪</string>
+    <string name="paste">贴</string>
+    <string name="delete">删</string>
+    <string name="rename">更名</string>
+    <string name="new_folder">新创文件夹</string>
+    <string name="new_file">新创文件</string>
+    <string name="share">分享</string>
+    <!-- UNCERTAIN_LZH：「开之以」句法是否自然，需复核 -->
+    <string name="open_with">开之以</string>
+    <string name="properties">属性</string>
+    <string name="select_all">皆选</string>
+    <string name="cancel">取消</string>
+    <string name="ok">确定</string>
+    <string name="create">创</string>
+    <string name="confirm_delete">确认删除</string>
+    <string name="delete_message">欲删所选者乎？</string>
+    <string name="delete_direct_message">欲删之乎？将直删之，不入回收站，永不可复。</string>
+    <string name="rename_hint">新名</string>
+    <string name="folder_name_hint">文件夹名</string>
+    <string name="file_name_hint">文件名</string>
+    <string name="storage_internal">内储</string>
+    <string name="no_files">此处空无一物</string>
+    <string name="tools_title">工具箱</string>
+    <string name="storage_usage">储存用量</string>
+    <string name="free_space">可用</string>
+    <string name="used_space">已用</string>
+    <string name="settings">设定</string>
+    <string name="language">语言</string>
+    <string name="theme">主题</string>
+    <string name="theme_system">从系统</string>
+    <string name="theme_light">浅色</string>
+    <string name="theme_dark">深色</string>
+    <string name="about">关于</string>
+    <string name="version">版本</string>
+    <string name="save">存</string>
+    <string name="saved">已存</string>
+    <string name="save_failed">存之未成</string>
+    <string name="extract">解</string>
+    <string name="compress">压为 ZIP</string>
+    <!-- UNCERTAIN_LZH：「尽阅文件之权」为意译，Android 权限名无文言定译，需复核 -->
+    <string name="permission_needed">欲理文件，须得「尽阅文件之权」</string>
+    <string name="grant_access">授权</string>
+    <string name="bookmarks_empty">未有书签，长按文件夹可加书签</string>
+    <string name="recent_empty">未有近开之文件</string>
+    <string name="error">有误</string>
+    <string name="modified">改时</string>
+    <string name="path">路径</string>
+    <string name="size">大小</string>
+    <string name="folder">文件夹</string>
+    <string name="file">文件</string>
+    <string name="grid">网格视</string>
+    <string name="list_view">列表视</string>
+    <string name="refresh">刷新</string>
+    <string name="bookmark">书签</string>
+    <string name="open">开</string>
+    <string name="apk_package">包名</string>
+    <string name="copied">已复制</string>
+    <string name="pasted">已贴</string>
+    <string name="deleted">已删</string>
+    <string name="delete_failed">删除未成，请复试</string>
+    <string name="renamed">已更名</string>
+    <string name="created">已创</string>
+    <string name="extracted">已解</string>
+    <string name="compressed">已压</string>
+    <string name="about_text">Fairumanējā 者，开源文件管理器也，取法 MT 管理器。支 Android、Linux、Windows（桌面版在筹），以 MIT 许可证开源。</string>
+    <string name="name">名称</string>
+    <string name="dual_pane">双窗格</string>
+    <string name="swap_panes">互易窗格</string>
+    <string name="paste_to_other_pane">贴至他窗格</string>
+    <string name="back">返</string>
+    <string name="forward">进</string>
+    <string name="go_up">上一级</string>
+    <string name="pane_stats">文件夹：%1$d  文件：%2$d  储存：%3$s/%4$s</string>
+    <string name="selected_count">已选 %1$d 项</string>
+    <string name="left_pane">左窗格</string>
+    <string name="right_pane">右窗格</string>
+    <string name="items_count">%1$d 项</string>
+    <string name="drawer_local">本地</string>
+    <string name="drawer_tools">工具</string>
+    <string name="root_directory">根目录</string>
+    <string name="trash">回收站</string>
+    <string name="text_editor">文本编辑器</string>
+    <string name="cannot_access">不可入此目录</string>
+    <string name="trash_empty">回收站空矣</string>
+    <string name="restore">复</string>
+    <string name="delete_permanently">永删</string>
+    <string name="empty_trash">尽清回收站</string>
+    <string name="moved_to_trash">已入回收站</string>
+    <string name="restored">已复</string>
+    <string name="permanently_deleted">已永删</string>
+    <string name="trash_emptied">回收站已空</string>
+    <string name="restore_failed">复之未成</string>
+    <string name="file_too_large">文件过大（逾 2 MB），开之或缓，欲开乎？</string>
+    <string name="edit_text">辑文</string>
+    <string name="new_text_file">新建文本文件</string>
+    <string name="original_path">原路径</string>
+    <string name="confirm_empty_trash">欲清空回收站乎？此举不可逆。</string>
+    <string name="language_settings">诸语设定</string>
+    <string name="follow_system_language">从系统</string>
+    <!-- UNCERTAIN_LZH：「一键」意译为「一举」，是否贴切需复核 -->
+    <string name="reset_defaults">一举复原预设</string>
+    <string name="reset_defaults_msg">将语言、主题模式、动态颜色、应用配色、字体颜色、UI 引擎、开屏动画、排序、双窗格、示隐文件复为预设；书签、置顶文件夹、自订储存、回收站不受其扰。欲复原乎？</string>
+    <string name="settings_group_language_appearance">语言与外观</string>
+    <string name="settings_group_app">应用</string>
+    <string name="confirm">确认</string>
+    <string name="theme_mode">主题模式</string>
+    <string name="more_options">更多选项</string>
+    <string name="follow_system_theme">主题从系统</string>
+    <string name="add_network_storage">增网络储存</string>
+    <string name="add_local_storage">增本地储存</string>
+    <string name="add_network_group">增网络分组</string>
+    <string name="manage_tool_groups">理工具分组</string>
+    <string name="not_supported">暂未支</string>
+    <string name="add">增</string>
+    <string name="storage_name_hint">名称</string>
+    <string name="storage_path_hint">路径，如 /storage/emulated/0/Download</string>
+    <string name="storage_path_invalid">路径不存在，或非文件夹</string>
+    <string name="hide">隐</string>
+    <string name="sort">序</string>
+    <string name="unhide">复现</string>
+    <string name="hidden_storages">已隐之储存</string>
+    <string name="move_up">上移</string>
+    <string name="move_down">下移</string>
+    <string name="root_browse_only">根目录仅可览</string>
+    <string name="saf_browse_only">此储存仅可览</string>
+    <string name="shizuku_needed_title">须 Shizuku</string>
+    <string name="shizuku_needed_msg">欲入根目录，须 Shizuku 之授权。请先装而启之，然后复试。</string>
+    <string name="shizuku_download">下载 Shizuku</string>
+    <string name="shizuku_request_msg">请于 Shizuku 所弹之窗，许此次授权。</string>
+    <string name="shizuku_denied">未得 Shizuku 授权，不可入根目录</string>
+    <string name="shizuku_failed">读根目录未成</string>
+    <string name="storage_already_added">此储存已增</string>
+    <string name="storage_not_supported">此处暂不可增</string>
+    <string name="shizuku_failed_detail">读根目录未成：%1$s</string>
+    <string name="version_number">版本号</string>
+    <string name="open_source_license">开源许可证</string>
+    <string name="user_agreement">用户协议</string>
+    <string name="privacy_policy">隐私权政策</string>
+    <string name="special_thanks">特别鸣谢</string>
+    <string name="chinese_version_note">下为中文版</string>
+    <string name="undo">撤</string>
+    <string name="redo">重做</string>
+    <string name="save_as">另存</string>
+    <string name="editor_search">搜寻</string>
+    <string name="syntax">语法</string>
+    <string name="syntax_auto">自动（按扩展名）</string>
+    <string name="syntax_plain">纯文本</string>
+    <string name="prev_position">上一处</string>
+    <string name="next_position">下一处</string>
+    <string name="go_to_line">至指定行</string>
+    <string name="go_to_line_hint">输入行号</string>
+    <string name="word_wrap">自动换行</string>
+    <string name="read_only">只读模式</string>
+    <string name="smooth_mode">流畅模式</string>
+    <string name="code_completion">代码补全</string>
+    <string name="close_file">闭文件</string>
+    <string name="font_size">字号</string>
+    <string name="line_numbers">行号</string>
+    <string name="unsaved_title">未存之改</string>
+    <string name="unsaved_message">此文件有未存之改，欲存乎？</string>
+    <string name="dont_save">不存</string>
+    <string name="search_keyword_hint">输入关键字</string>
+    <string name="search_match_count">%1$d / %2$d</string>
+    <string name="no_match">无匹配</string>
+    <string name="syntax_java">Java</string>
+    <string name="syntax_kotlin">Kotlin</string>
+    <string name="syntax_xml">XML</string>
+    <string name="syntax_json">JSON</string>
+    <string name="syntax_python">Python</string>
+    <string name="syntax_shell">Shell</string>
+    <string name="syntax_c">C/C++</string>
+    <string name="deselect_all">取消选择</string>
+    <string name="unknown">未知</string>
+    <string name="oss_components">开源组件</string>
+    <string name="disclaimer">免责声明</string>
+    <string name="thanks_muse_desc">谢 Muse 助开发与技术支持：此应用之编码、功能、排障，皆赖 Muse 之助而成。</string>
+    <string name="thanks_mp_desc">参 MP-Manager 者：双窗格并列浏览、跨窗格之操作（复制、移动、粘贴至他窗格）；文件列表行之式——小圆角图标、名与「日期 + 大小」副标；行末 ⋮ 菜单与九宫格「更多方式」；删入回收站、恢复与永删之确认对话框；新建对话框；具行号与符号栏之文本编辑器；回收站、书签与置顶文件夹；Shizuku/Root 之入；压缩与解压、文件加密与解密；自订本地储存。谢 MP-Manager 以 GPL-3.0 开源于 GitHub（https://github.com/AbdurazaaqMohammed/MP-Manager），为此应用供可学可比之设计范；谢其作者 AbdurazaaqMohammed 恒修恒新；谢其证凡人亦可以开源之法，成 MT Manager 之佳替，使此应用得明确之学的。</string>
+    <!-- UNCERTAIN_LZH：「开屏动画」无文言对应，沿用今名，需复核 -->
+    <string name="splash_animation">开屏动画</string>
+    <string name="splash_animation_hint">启之，则每自桌面启应用，必先播开屏动画</string>
+    <string name="experimental_features">试验功能</string>
+    <string name="experimental_features_hint">此间功能尚在试验，或有变</string>
+    <string name="experimental_warning_title">实验性功能警告</string>
+    <string name="experimental_warning_msg">实验性功能尚在试验，启而用之，或致：\n\n• 界面或示异、错乱，乃至应用闪退；\n• 或功能不可用，或于后版被改、被除；\n• 切 UI 引擎，则整个应用界面即时重新载入；\n• 此功能随时可改，不保与正式功能同。</string>
+    <!-- UNCERTAIN_LZH：「UI 引擎」无文言对应，沿用原名，需复核 -->
+    <string name="ui_engine">UI 引擎</string>
+    <string name="ui_engine_desc_md3">预设之式，今之貌</string>
+    <string name="ui_engine_desc_expressive">更圆润、更鲜明之造型</string>
+    <string name="ui_engine_desc_miuix">小米 MIUI 之式</string>
+    <!-- UNCERTAIN_LZH：「UI 引擎」无文言对应，沿用原名，需复核 -->
+    <string name="ui_engine_switch_title">切 UI 引擎</string>
+    <!-- UNCERTAIN_LZH：「UI 引擎」无文言对应，沿用原名，需复核 -->
+    <string name="ui_engine_switch_msg">切之，则整个应用界面皆换为「%1$s」，即时重新载入。</string>
+    <string name="endangered_language_switch">濒危语言切换</string>
+    <string name="endangered_language_sub">今仅支五种语言，后或增</string>
+    <string name="thanks_mt_desc">此应用参 MT 管理器之双窗格布局、文件菜单、九宫格「更多方式」、删／复对话框等界面设计，谢其供设计之参与灵感。</string>
+    <string name="about_intro_title">软件介绍</string>
+    <string name="appearance">外观</string>
+    <string name="dynamic_color">动态颜色</string>
+    <string name="dynamic_color_hint">启之，应用颜色从系统壁纸颜色而变</string>
+    <string name="dynamic_color_confirm_title">动态颜色</string>
+    <string name="dynamic_color_confirm_msg">启动态颜色，则应用颜色从系统壁纸颜色而变。欲启动态颜色乎？</string>
+    <string name="app_color">应用配色</string>
+    <string name="app_color_hint">择应用之主题颜色，界面主色随之变</string>
+    <string name="app_color_disabled_hint">欲用此功能，请先闭动态颜色</string>
+    <string name="font_color">字体颜色</string>
+    <string name="font_color_hint">择应用内文字之颜色，尽界面文字皆随之变</string>
+    <string name="font_color_group_base">基础颜色</string>
+    <string name="font_color_group_light">浅颜色</string>
+    <string name="font_color_group_dark">深颜色</string>
+    <string name="palette_color_group_base">基础颜色</string>
+    <string name="palette_color_group_light">浅颜色</string>
+    <string name="palette_color_group_dark">深颜色</string>
+    <string name="compress_item">压</string>
+    <string name="copy_path">抄录路径</string>
+    <string name="move_item">移</string>
+    <string name="more_actions">更多方式</string>
+    <string name="copy_to_other">复制 -&gt;</string>
+    <string name="move_to_other">移动 -&gt;</string>
+    <string name="share_zip">分享 ZIP</string>
+    <!-- UNCERTAIN_LZH：顶置新译法，需母语者复核 -->
+    <string name="pin_folder">置頂</string>
+    <string name="unpin_folder">取消置顶</string>
+    <string name="encrypt_file">加密</string>
+    <string name="decrypt_file">解密</string>
+    <string name="bookmarks_title">书签</string>
+    <string name="move_to_trash">移至回收站</string>
+    <string name="delete_to_trash_msg">欲将文件 %1$s 移至回收站乎？</string>
+    <string name="delete_to_trash_multi_msg">欲将 %1$d 项移至回收站乎？</string>
+    <string name="file_count">文件数</string>
+    <string name="folder_count">文件夹数</string>
+    <string name="restore_confirm_msg">欲将文件 %1$s 复至原处乎？</string>
+    <string name="restore_confirm_multi_msg">欲将 %1$d 项复至原处乎？</string>
+    <string name="delete_permanent_msg">欲将文件 %1$s 永删乎？</string>
+    <string name="delete_permanent_multi_msg">欲将 %1$d 项永删乎？</string>
+    <string name="path_copied">路径已抄录</string>
+    <string name="moved">已移</string>
+    <string name="move_failed">移之未成</string>
+    <string name="move_not_supported">此储存不支移动</string>
+    <string name="other_pane_no_folder">他窗格未开文件夹</string>
+    <string name="already_here">已在此文件夹</string>
+    <string name="new_title">新创</string>
+    <string name="new_file_short">文件</string>
+    <string name="new_folder_short">文件夹</string>
+    <string name="clipboard_empty">剪贴板空，或非文本</string>
+    <string name="name_exists">已有同名文件或文件夹</string>
+    <string name="invalid_name">名称无效</string>
+    <string name="trash_move_failed">移入回收站未成，未删一物</string>
+    <string name="bookmark_added">已入书签</string>
+    <string name="bookmark_removed">已除书签</string>
+    <string name="pinned">已置顶</string>
+    <string name="unpinned">已取消置顶</string>
+    <string name="hidden_done">已隐</string>
+    <string name="unhidden_done">已现</string>
+    <string name="password_hint">输入密码</string>
+    <string name="password_confirm_hint">再输入密码</string>
+    <string name="password_mismatch">两次所输密码不一</string>
+    <string name="wrong_password">密码误</string>
+    <string name="encrypt_failed">加密未成</string>
+    <string name="decrypt_failed">解密未成</string>
+    <string name="encrypted">已加密</string>
+    <string name="decrypted">已解密</string>
+    <string name="zip_failed">压之未成</string>
+    <string name="dynamic_color_on_note">动态颜色启时，应用配色不效</string>
+    <string name="create_shortcut">创捷径</string>
+    <string name="shortcut_icon">图标</string>
+    <string name="shortcut_name">名称</string>
+    <string name="shortcut_type">类型</string>
+    <string name="shortcut_type_desktop">桌面快捷方式</string>
+    <string name="shortcut_type_desktop_desc">桌面将生一独立图标</string>
+    <string name="shortcut_type_icon">图标快捷方式</string>
+    <string name="shortcut_type_icon_desc">以文件类型图标为桌面图标</string>
+    <string name="shortcut_action">执行动作</string>
+    <string name="shortcut_action_locate">定位所在</string>
+    <!-- UNCERTAIN_LZH：「点之」是否对应「点击」，需复核 -->
+    <string name="shortcut_action_locate_click">定位所在并点之</string>
+    <string name="shortcut_action_open_editor">以文本编辑器开之</string>
+    <string name="shortcut_action_preview_html">预览 HTML 文件</string>
+    <string name="shortcut_created">已创捷径</string>
+    <string name="shortcut_not_supported">此设备不支桌面快捷方式</string>
+    <string name="shortcut_not_text">非文本文件，已以系统查看器开之</string>
+    <string name="shortcut_target_missing">捷径所指文件不存在，或不可入</string>
+</resources>
